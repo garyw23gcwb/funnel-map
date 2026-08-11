@@ -17,7 +17,7 @@
     "abandonment":    { "off": true },
     "review-call":    { "status": "theirs", "label": "Paid Plan Review", "job": "A paid one-on-one plan review. You and your COO run these." },
     "backend-offer":  { "status": "theirs", "label": "Advisory Engagement", "job": "Fitzgerald Growth Partners advisory, sold on the review call." },
-    "rb-optin":       { "status": "soon", "label": "The Scorecard", "job": "The free 25-question Scorecard, on its own page." },
+    "rb-optin":       { "url": "https://fitzgeraldgrowthpartners.com/scorecard/", "status": "live", "label": "The Scorecard", "job": "The free 25-question Scorecard, on its own page." },
     "rb-thanks":      { "off": true },
     "sip-page":       { "off": true },
     "sip-confirm":    { "off": true },
