@@ -1,7 +1,7 @@
 {
   "client": "Jim Fitzgerald",
   "from": "Jim Fitzgerald",
-  "source": "client-brain/Clients/jim-fitzgerald/copy/deliver/04_email_sequence.md",
+  "source": "ClickUp: Book Buyer Email Sequence, repointed to the $97 Deep Diagnostic 10 Aug 2026",
   "emails": [
     {
       "n": 1,
@@ -9,7 +9,7 @@
       "subject": "Your copy of The Million-Dollar Hurdle",
       "preview": "And what happens over the next few weeks.",
       "body": [
-        "{{contact.first_name}}, your book is on the way.",
+        "{{contact.first\\_name}}, your book is on the way.",
         "It's a short book. That was deliberate.",
         "It's about the difference between owning a business that makes you money and owning a business that makes you free.",
         "You already know which one you have.",
@@ -22,8 +22,9 @@
         "Or the book rides around on the passenger seat, and next year looks like this one.",
         "I'll be in your inbox over the next few weeks. Some of it comes from the book. Some of it doesn't.",
         "Everything you bought is waiting here.",
-        "[URL NEEDED: reader portal / book access page]",
-        "Jim"
+        "\\[URL NEEDED: reader portal / book access page\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -49,8 +50,9 @@
         "One rule travels with it, and it's the most important sentence in the book.",
         "Do not work on scale while instability exists. Growth does not fix broken businesses. It exposes them.",
         "Take the Scorecard before you read another chapter. Twenty-five statements, 10 to 15 minutes, and you'll know where to start.",
-        "[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal]",
-        "Jim"
+        "\\[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -76,7 +78,8 @@
         "\"I'll run that by my attorney.\"",
         "Both are true. One of them sounds like a company.",
         "Pick one job this week that only you do. Find out what handing it to a professional actually costs.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -96,8 +99,9 @@
         "Anyway. I've been thinking about the people reading this book, and I want to ask you something.",
         "If you vanished for one week with no phone, what would break first?",
         "Be specific. Whatever came to mind in the first two seconds is usually the honest answer.",
-        "Just hit reply and tell me, {{contact.first_name}}. I read these myself.",
-        "Jim"
+        "Just hit reply and tell me, {{contact.first\\_name}}. I read these myself.",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -121,7 +125,8 @@
         "Eleven-year-olds work hard.",
         "What got me off the wall was help. Honest, occasionally uncomfortable advice from people who had already done what I was trying to do.",
         "That's the whole reason this book exists. I'd rather hand you that now than watch you spend another five years working it out alone.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -130,7 +135,7 @@
       "subject": "What this morning looked like",
       "preview": "A quiet hour, and a business that ran anyway.",
       "body": [
-        "Happy {{right_now.day}}.",
+        "Happy {{right\\_now.day}}.",
         "I had coffee and read for an hour this morning. Nobody called. Nothing was on fire.",
         "I want to tell you about the version of that morning I remember best, from the back half of Taradel.",
         "We were generating around two hundred leads a day.",
@@ -143,7 +148,8 @@
         "You still work. You get to choose what you work on.",
         "Right now, other people choose for you.",
         "That's the gap the next ninety days can close.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -155,20 +161,20 @@
         "You've had the book eleven days. From here there are three doors.",
         "I'll be straight about all three, drawbacks included.",
         "Door one. The book, on your own.",
-        "Take the Scorecard, find your weakest section, work the chapters in that order. It costs you nothing more and it genuinely works.",
-        "It also asks everything of you. The checklists, the hiring process, the follow-up system, the templates, all built by you, in hours you don't currently have.",
+        "Score yourself on the twenty-five statements in Chapter 2, find your weakest section, work the chapters in that order. It costs you nothing more and it genuinely works.",
+        "It also asks everything of you. You do the scoring, you decide what the score means, and you build the ninety days yourself, in hours you don't currently have.",
         "Most owners should walk through door one. Some of them will.",
-        "Door two. The Million-Dollar Hurdle Training Kit.",
-        "Same path, with the equipment already built. Five playbooks, one for each Scorecard section. Five AI training files that teach ChatGPT, Claude or Gemini to run my systems inside your business. A ninety-day plan keyed to your scores.",
-        "Train yourself, then train your AI. That's the idea. It sells for $67.",
-        "The honest drawback: your hands stay on the wheel. Nobody does the work for you.",
-        "[URL NEEDED: Training Kit page]",
-        "Door three. You and me, directly.",
-        "That's the narrow door. It suits owners who already know what's broken, have tried to fix it twice, and want somebody who has cleared this hurdle looking over their shoulder while they do it.",
-        "It isn't right for everyone, and I'd rather say that now than later.",
-        "If door three interests you, reply to this email with two things. Where your revenue sits today, and what has stopped you fixing this yourself.",
-        "I'll tell you honestly which door I think you're standing in front of.",
-        "Jim"
+        "Door two. The Million-Dollar Deep Diagnostic.",
+        "Eighty-four questions instead of twenty-five, and every one of them asks about a fact. What your approval threshold is on an estimate. Who follows up on a lead that lands Saturday morning. How long your longest-serving person has been with you.",
+        "What comes back is a report with your name on it. All five sections scored. Your primary constraint named in plain English. Your own weakest answers quoted back and read side by side. What that constraint is costing you this year in dollars. And ninety days of specific moves, in the order they have to happen.",
+        "It's $97, and about fifteen minutes of questions. `[CONFIRM: completion time]`",
+        "The honest drawback: it puts your weakest section in writing, and some owners would rather not have that.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Door three. Tell me where you're stuck.",
+        "Reply to this email with two things. Where your revenue sits today, and what has stopped you fixing this yourself.",
+        "I'll tell you honestly which door I think you're standing in front of, including if the honest answer is door one.",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -177,7 +183,6 @@
       "subject": "The dumbest guy in the room",
       "preview": "What I found sitting with seven-figure founders.",
       "body": [
-        "<!-- SWAP WHEN AVAILABLE: replace with a real client case study once Jim has one -->",
         "I spent years in a CEO roundtable.",
         "Founders running multimillion-dollar companies. Real revenue, real teams, real payroll.",
         "I walked into the first meeting braced to be the dumbest guy in the room.",
@@ -197,7 +202,8 @@
         "The things holding back seven-figure companies are boring, basic and fixable. Yours almost certainly are too.",
         "That should land as relief.",
         "Boring problems have known answers. You are not facing anything exotic.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -206,7 +212,6 @@
       "subject": "One man to thirty million",
       "preview": "What actually moved the number was unglamorous.",
       "body": [
-        "<!-- SWAP WHEN AVAILABLE: replace with a real client case study once Jim has one -->",
         "Taradel started as one guy with a phone. That guy was me.",
         "By the time I sold it we had 25,000 small business customers and thirty million in annual revenue. Inc. 5000 for twelve straight years.",
         "People assume there was a moment. A big idea, a lucky break.",
@@ -221,11 +226,16 @@
         "Everyone had to say yes. Anyone could veto for any reason, including a reason they couldn't put into words.",
         "Our average employee tenure reached eight years.",
         "Almost every hiring mistake we made after that came from overriding our own process.",
-        "That process is written down now. So is the pipeline system, the retention math, the checklists behind all of it.",
-        "They sit inside the Million-Dollar Hurdle Training Kit. Five playbooks, five AI training files that teach ChatGPT, Claude or Gemini to run these systems in your business, and a ninety-day plan keyed to your Scorecard.",
-        "$67. In your inbox in about two minutes. Thirty days to get every penny back.",
-        "[URL NEEDED: Training Kit page]",
-        "Jim"
+        "Here's the part I'd want you to sit with.",
+        "I ran that broken hiring process for years. I knew people were costing me money. I could not have told you it was the thing holding the company back, because I was certain the problem was marketing.",
+        "So I spent real money on marketing. It did nothing. The leads were fine. The people were the leak.",
+        "Owners almost never guess their own constraint correctly. If we did, we'd have fixed it already.",
+        "That's the whole reason the Million-Dollar Deep Diagnostic exists.",
+        "Eighty-four questions about how your business actually runs. What comes back names your primary constraint, quotes your own weakest answers back to you, puts a dollar figure on what it's costing you this year, and lays out ninety days of specific moves in order.",
+        "$97, with a free retake at day ninety so you can see what moved.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -250,32 +260,35 @@
         "Ninety days on one thing is reachable. You can hold that in your head on a Tuesday morning.",
         "And something shifts once you finish the first one.",
         "The second one stops looking like a mountain. That part surprises everybody.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
       "n": 11,
       "day": 16,
-      "subject": "Yes, I sell AI files",
-      "preview": "So here is exactly what I think of AI.",
+      "subject": "Your AI will fix the wrong thing",
+      "preview": "Faster than you ever could on your own.",
       "body": [
-        "Let me get in front of something.",
-        "Part of what I sell trains an AI to run my systems inside your business.",
-        "You may have read that and thought: wonderful, another guy promising a robot will fix my company.",
-        "Fair enough. Here's my honest position.",
-        "I co-founded a company called Paycile. We put AI into payments, reconciliation and cash flow forecasting. I use this stuff every day and I've watched where it earns its keep.",
+        "Let me get in front of something, because I use this stuff every day and I'd rather you hear my position than assume it.",
+        "I co-founded a company called Paycile. We put AI into payments, reconciliation and cash flow forecasting. So I'm not the guy who thinks it's a fad.",
+        "Here's what it's good at.",
         "AI is very good at work you have already defined.",
         "Hand it three years of customer data and ask what your best customers have in common. It will find things you missed.",
         "Hand it your callback script and it will run it at two in the morning without complaining once.",
         "Here's the part that gets skipped in the demos.",
-        "It has no idea what your business stands for.",
+        "It has no idea what your business stands for, and it has never seen the inside of it.",
         "I wrote in the book that you can't ask ChatGPT for a set of core values, print them out and call the job done. Those come from you.",
         "Same with who you promote. Same with who you fire. Same with the customer you turn away because the money isn't worth the drama.",
+        "And same with the question sitting underneath all of it. Which part of this business is actually holding me back.",
+        "Ask an AI that today and you'll get a confident, well-organized answer built on nothing. It has your prompt. It doesn't have your approval thresholds, your weekend lead handling, your average tenure, or the four answers that only mean something once somebody reads them side by side.",
         "Think of it as a caddy. It reads the yardage, hands you the club, carries the bag.",
-        "You still have to swing.",
-        "That's why the playbooks come before the training files. You learn the system, then you teach it to the machine.",
-        "An untrained AI inside an undefined business just makes poor decisions faster.",
-        "Jim"
+        "Somebody still has to tell it which hole you're playing.",
+        "That's the job the Deep Diagnostic does. Eighty-four questions about how your business actually runs, and a report that names your constraint, prices it, and puts your next ninety days in order.",
+        "Once you know that, point every tool you own at it. The AI included.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -301,8 +314,9 @@
         "So before you spend another dollar on lead generation, go and score yourself.",
         "Five sections, twenty-five statements, about 10 to 15 minutes.",
         "Your lowest section is where the money is leaking out.",
-        "[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal]",
-        "Jim"
+        "\\[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -311,7 +325,7 @@
       "subject": "Three kinds of owner",
       "preview": "One of these describes your week exactly.",
       "body": [
-        "Happy {{right_now.day}}.",
+        "Happy {{right\\_now.day}}.",
         "Short diagnostic today. Every owner I meet is standing in one of three places.",
         "One. In the work.",
         "Your day gets set by whoever calls first. You still quote the big jobs. You still handle the upset customer personally.",
@@ -325,10 +339,13 @@
         "You still work. You get to choose what you work on.",
         "Most owners reading this are in one. A decent number are in two. Almost nobody arrives at three by accident.",
         "Getting from one to two is delegation. Getting from two to three takes documented systems, better hiring, and people who own outcomes instead of tasks.",
-        "That second move is the hard one. It's most of what the Training Kit exists to do, one playbook per Scorecard section, ninety days at a time.",
+        "That second move is the hard one, and it's where almost everybody stalls.",
         "Read the three again and be honest about which one describes yesterday.",
+        "Then ask yourself the harder question. Which of the five sections is putting you there?",
+        "Most owners answer that one wrong, and spend a year fixing something that was never the problem.",
         "You can't fix the wrong problem into the right result.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -343,18 +360,20 @@
         "Let me be direct today, then I'll leave this alone for a while.",
         "This is for you if you're running a hands-on business somewhere between six figures and a million.",
         "If you've tried to fix this once already and watched it drift back inside a quarter.",
-        "And if you have no appetite for spending six months building the paperwork yourself.",
-        "If that's you, the Million-Dollar Hurdle Training Kit is the shortest route I know.",
-        "Five Million-Dollar Playbooks, one per Scorecard section: First Impressions, Revenue Flow, Hiring and Culture, The Replaceable Owner, Scale and Niche. Checklists, interview scorecards, templates, calculators. $147 value.",
-        "Five AI Training Files. Paste them in and ChatGPT, Claude or Gemini runs my systems inside your business. Ten minutes to set up, videos included, plus a prebuilt Coach Jim assistant if you'd rather skip the setup entirely. $197 value.",
-        "Your 90-Day Training Plan, built around your Scorecard results, week by week. $47 value.",
-        "$391 of value. Yours for $67.",
-        "Delivered in about two minutes. Email us inside thirty days and we refund every penny. No hoops, no hard feelings.",
-        "[URL NEEDED: Training Kit page]",
-        "One more thing.",
-        "If you'd rather have me looking over your shoulder while you do this, reply with your revenue and your weakest section.",
-        "I'll tell you straight whether that's a fit.",
-        "Jim"
+        "And if you're honestly not certain which of the five sections is costing you the most.",
+        "If that's you, run the Million-Dollar Deep Diagnostic.",
+        "Eighty-four questions about how your business actually runs. Every one of them asks about a fact, so there's nothing to rate and nothing to round up. What your approval threshold is. Who answers a lead on Saturday. How long your people stay. Whether you track close rate.",
+        "Then here's what comes back. `[CONFIRM: delivery window]`",
+        "All five sections scored out of twenty-five, with your primary constraint named in plain English. In our sample report it read: this business doesn't have a growth problem, it has a Mike problem. ($197 value)",
+        "Your own weakest answers quoted back and read against each other, with what that constraint is costing you this year in dollars. In the sample that came to forty to seventy thousand a year, out of one leak nobody had looked at. ($147 value)",
+        "Ninety days of specific moves, in three thirty-day blocks, built from your answers and ordered so you never work on the wrong thing first. Starting the Monday after you finish. ($197 value)",
+        "Your Toolkit: where you sit today on getting work off your own desk, plus the Monday Five, five numbers on a whiteboard for thirty minutes every Monday so you never fly blind again. ($97 value) `[CONFIRM: naming, see production notes]`",
+        "A free retake at day ninety, so your before and after shows exactly which numbers moved. ($97 value)",
+        "$735 of value. $97.",
+        "Read the report. If it doesn't show you something about your own business that the twenty-five statements in the book couldn't have, email us inside thirty days and we'll refund every penny. You keep the report and the retake either way. `[CONFIRM: guarantee window and terms]`",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -363,25 +382,26 @@
       "subject": "What happens after you click",
       "preview": "The whole process, start to finish.",
       "body": [
-        "A few people have asked what actually happens after you buy the Training Kit.",
+        "A few people have asked what actually happens after you run the Deep Diagnostic.",
         "Fair question. Here's the whole thing.",
-        "You click the link and pay $67. That page takes about ninety seconds.",
-        "Then an email lands, usually inside two minutes.",
-        "Inside it: five playbooks, five AI training files, and your 90-Day Training Plan.",
-        "Start with the Scorecard. Twenty-five statements, about 10 to 15 minutes, and it hands you your lowest section.",
-        "That section decides everything else. Open the matching playbook and leave the other four closed.",
-        "Say your lowest section comes back as People, Culture and Management. You open Hiring and Culture.",
-        "Inside it: the three-interview process written out, the interview scorecards, the values exercise, the checklists we actually ran at Taradel.",
-        "Nothing to design. You read it and you run it.",
-        "Week two you set up the AI files. Paste one in and ChatGPT or Claude or Gemini starts running that system inside your business. Ten minutes, videos included.",
-        "If you'd rather skip the setup entirely, use the Coach Jim assistant. It's already built and it comes with the kit.",
-        "Then the 90-Day Training Plan takes over. Week by week, keyed to your scores.",
-        "You open your laptop on a Monday and you already know what this week's work is.",
+        "You click the link and pay $97. That page takes about ninety seconds.",
+        "Then you answer eighty-four questions. About fifteen minutes. `[CONFIRM: completion time]`",
+        "They're not hard and there's nothing to prepare. They ask how the business actually runs. What's your approval threshold on an estimate. Who follows up on a lead that comes in Saturday morning. How long has your longest-serving employee been with you. Do you track close rate, or just the bank balance.",
+        "Answer them the way the book tells you to score yourself. How it runs on an average Tuesday when you're tired, rather than how it runs on your best week.",
+        "Then the report comes back. `[CONFIRM: delivery window]`",
+        "Thirteen pages with your name on the front.",
+        "First page: your five section scores out of twenty-five, and your primary constraint named.",
+        "Then the part most owners read twice. Your own answers, quoted back and read against each other.",
+        "In the sample, the owner scored a 1 on \"decisions don't stall when I'm unavailable.\" Separately, he'd said he personally reviewed every estimate over $2,500, took every after-hours call, and let weekend leads sit until Monday.",
+        "Any one of those is a yellow flag. All four together explained his ceiling better than anything happening in his market.",
+        "That's the thing you can't do to yourself. You score each statement on its own. Nobody holds four of your answers up next to each other and tells you what they add up to.",
+        "Then a page on each section, with your weakest answers and what they actually mean.",
+        "Then your ninety days. Three thirty-day blocks, four moves in each, specific to your answers, starting the Monday after you finish. The sample told that owner to move his estimate approval line from $2,500 to $6,000 for his two senior techs, and to run a decision log for two weeks first. That level of specific.",
+        "Then your Toolkit, and your retake date, already on the calendar.",
         "That's the whole process. No calls to book, no course to sit through, no waiting on me for anything.",
-        "Ninety days from now, your weakest section is running on a system instead of running on you.",
-        "If you open it and decide it's wrong for you, email us inside thirty days and we'll refund every penny. No hoops, no hard feelings.",
-        "[URL NEEDED: Training Kit page]",
-        "Jim"
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -393,31 +413,31 @@
         "I've been having a version of this conversation for twenty years.",
         "Same three objections, in roughly the same order, every time.",
         "Let me take them one at a time.",
-        "\"I'm already overwhelmed. This is one more thing to learn.\"",
+        "\"I'm already overwhelmed. This is one more thing to do.\"",
         "This is the one I hear most, and I understand it. Your week is full. It has been full for years.",
         "Here's what I'd say back.",
-        "You're overwhelmed because you're spending every waking minute on the wrong stuff.",
-        "Quoting jobs a trained estimator could quote. Answering questions your team should be able to answer. Fixing problems that a written process would have prevented on Tuesday.",
-        "This is the right work. It's the work that empties out the rest of the week.",
-        "Ninety days of it buys back hours you're currently donating to your own business.",
+        "There's nothing to learn here. You answer questions for fifteen minutes and you read a report. That's the entire commitment.",
+        "You're overwhelmed because you're spending every waking minute on the wrong stuff. Quoting jobs a trained estimator could quote. Answering questions your team should be able to answer. Fixing problems a written process would have prevented on Tuesday.",
+        "Fifteen minutes to find out which of those is the actual ceiling is the cheapest quarter hour you'll spend this year.",
         "\"Jim, I'm broke.\"",
         "I've heard that one from a man walking back to a brand new Land Rover.",
         "No cash to spare, and a new deck on the house. Not a single cent going spare, and a $57 steak on Friday night.",
         "I say this with affection. Sir, your watch costs more than my first car.",
-        "Real cash constraints exist and I take them seriously. Some months payroll is a genuine decision. If that's you, work the book on your own and keep your money.",
+        "Real cash constraints exist and I take them seriously. Some months payroll is a genuine decision. If that's you, score yourself on the twenty-five statements in the book and keep your money. That path works and I'd have taken it at your stage.",
         "For everyone else, run the comparison.",
         "The Bureau of Labor Statistics puts one bad hire at 30 percent of their first-year wages, minimum. On a $60,000 role that's $18,000 gone, and almost nobody makes that mistake only once.",
-        "The kit costs $67. Set the two numbers side by side and decide.",
+        "The report costs $97. Set the two numbers side by side and decide.",
         "\"My problems are more complicated.\"",
         "Everybody says this. Almost nobody is right.",
-        "I've sat with hundreds of owners who were certain their situation was exotic. Then we'd go looking.",
-        "Broken lead form. Hiring on gut feel. Nobody following up after the quote goes out. Same short list, in company after company.",
-        "That should land as good news. Complicated problems need a genius. Basic problems need a process.",
-        "The Training Kit is the process, already written down.",
-        "[URL NEEDED: Training Kit page]",
+        "I've sat with hundreds of owners who were certain their situation was exotic. Then we'd go looking. Broken lead form. Hiring on gut feel. Nobody following up after the quote goes out. Same short list, company after company.",
+        "But let me say the fairer thing. Neither of us knows yet.",
+        "That's exactly the point. You're carrying a theory about what's holding this business back, and you have never once tested it. Eighty-four questions and $97 will tell you whether you're right.",
+        "If your constraint turns out to be the one you already suspected, you've bought certainty and a ninety-day plan to go with it. If it turns out to be something else, you've saved yourself a year of fixing the wrong thing.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
         "If you've got a fourth objection I haven't covered here, hit reply and give it to me straight.",
         "I'll answer it honestly, including if the honest answer is that this is wrong for you.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -443,7 +463,8 @@
         "Hit reply and send me the number. One to five, that's all I need.",
         "If it's none of those, tell me what it actually is.",
         "I read every one of these myself, and I answer them.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -467,10 +488,13 @@
         "The owner who makes himself replaceable ends up holding something else entirely. A company that runs on people and systems.",
         "That company has a price. Somebody can write you a check for it.",
         "Making yourself replaceable is chapter 15, and it's most of the point of the whole book.",
-        "One of the five playbooks in the Training Kit is called The Replaceable Owner.",
-        "It's the one owners are most nervous to open.",
-        "[URL NEEDED: Training Kit page]",
-        "Jim"
+        "Owner Dependence is one of the five sections you get scored on.",
+        "In our sample report it came back at 9 out of 25. Critical. It was also the section dragging the other four down, and the owner had no idea. He was certain his problem was lead flow.",
+        "It's the section owners are most nervous to look at, and the one that most often turns out to be the constraint.",
+        "The Deep Diagnostic gives you the number, tells you what it's costing you, and hands you ninety days of moves to change it.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -495,7 +519,8 @@
         "Both paths cost you something. Path one costs you the year and hands you the same business back. Path two costs you focused attention on unglamorous work you've been avoiding.",
         "I'm not asking you to choose today.",
         "Just notice that you're standing at a fork, and that standing still quietly picks path one for you.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
@@ -522,14 +547,15 @@
         "I had a phrase for the owners we served back then. They're small businesses, but they're real.",
         "Twelve straight years on the Inc. 5000 came from that same unglamorous work. Answering fast. Hiring slowly. Keeping good people eight years.",
         "Somebody eventually says the same about your company. That's the quiet outcome underneath all of this.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     },
     {
       "n": 21,
       "day": 30,
       "subject": "A month ago",
-      "preview": "A quiet check-in, and two open doors.",
+      "preview": "A quiet check-in, and the smallest possible ask.",
       "body": [
         "About a month ago you ordered my book.",
         "I'll be honest about what usually happens next. Most people read the introduction, agree with all of it, and put the book down.",
@@ -541,16 +567,15 @@
         "The other becomes an asset. It runs on people and systems. You choose what you work on, and one day somebody can buy it.",
         "Almost nobody arrives at the second one by accident.",
         "So here's the smallest possible ask.",
-        "Open the book again this week. Take the Scorecard. Twenty-five statements, 10 to 15 minutes, and it names your lowest section.",
-        "Then give that one section ninety days.",
-        "[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal]",
-        "Two doors from me after that, and both stay open.",
-        "The Training Kit, if you'd rather have the playbooks, the AI files and the ninety-day plan already built for you.",
-        "[URL NEEDED: Training Kit page]",
-        "Or reply to this email and tell me where you're stuck. I read them myself and I answer.",
-        "Both will still be there next month. Next year too.",
+        "Fifteen minutes. Eighty-four questions about how this business actually runs. A report that comes back and tells you which of the five sections is the ceiling, what it's costing you this year, and what to do about it for ninety days.",
+        "$97, with a free retake at day ninety to prove the numbers moved.",
+        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "If that's not for you, the twenty-five statements in Chapter 2 are free and they'll point you at your weakest section. Go and do that instead. I mean it.",
+        "Either way, pick one section and give it ninety days. That's the whole message of the book, and it's the last thing I'll say about it.",
+        "Or reply and tell me where you're stuck. I read them myself.",
         "I'll keep writing either way.",
-        "Jim"
+        "Jim",
+        "* * *"
       ]
     }
   ]

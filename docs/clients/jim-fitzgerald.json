@@ -4,9 +4,8 @@
   "updated": "11 August 2026",
   "nodes": {
     "ads": {
-      "url": "view.html?c=jim-fitzgerald&t=ad",
       "status": "live",
-      "job": "Ten ad concepts. Click a number to see the ad, or open them all."
+      "job": "Ten ad concepts, each running in feed and story sizes. Click a number to see the ad."
     },
     "sales-page": {
       "url": "https://themilliondollarhurdle.com/book",
