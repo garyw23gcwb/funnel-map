@@ -78,6 +78,14 @@ Everything structural is in `docs/catalogue.js`.
   shown, which is why switching a node off removes its wires too.
 - `LAYERS`, `GROUPS` and `SUBLABELS` are the band titles, the box around the side
   funnels, and the small headings inside it.
+- `optional: true` on a node keeps it hidden unless a client's file mentions it.
+  Use it for anything most clients do not have, such as `one-click-2`, so adding
+  a node does not put a phantom "still to come" box on every existing map.
+
+**After editing `catalogue.js`, bump the `?v=` on the script tag in both
+`docs/index.html` and `builder.html`.** GitHub Pages serves assets with a ten
+minute max-age, so without it someone can hold a stale catalogue and see the
+wrong boxes right after an update.
 
 Geometry deliberately lives here and not in the client files, so every client's
 map has the same layout and only the links change. After moving anything, load
