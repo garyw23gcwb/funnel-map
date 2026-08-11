@@ -1,7 +1,7 @@
 {
   "client": "Jim Fitzgerald",
   "from": "Jim Fitzgerald",
-  "source": "ClickUp: Book Buyer Email Sequence, final customer-facing version",
+  "source": "ClickUp: Book Buyer Email Sequence, final customer-facing version (reader portal host corrected)",
   "emails": [
     {
       "n": 1,
@@ -22,7 +22,7 @@
         "Or the book rides around on the passenger seat, and next year looks like this one.",
         "I'll be in your inbox over the next few weeks. Some of it comes from the book. Some of it doesn't.",
         "Everything you bought is waiting here.",
-        "https://readers.milliondollarhurdle.com",
+        "https://readers.themilliondollarhurdle.com",
         "Jim"
       ]
     },
