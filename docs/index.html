@@ -26,7 +26,7 @@
     --paper: var(--navy);
     --ink: var(--pearl);
     --panel: rgba(244, 246, 249, 0.028);
-    --boxbg: #1c2430;
+    --boxbg: #202836;
     --line: rgba(244, 246, 249, 0.16);
     --faint: #8a97ab;
     --slate: #3c4859;
@@ -37,14 +37,7 @@
   }
 
   html { background: var(--paper); }
-  body {
-    margin: 0; color: var(--ink); font-family: var(--sans);
-    background:
-      radial-gradient(1100px 780px at 6% 74%, rgba(23, 107, 123, 0.40), transparent 62%),
-      radial-gradient(1000px 720px at 92% 16%, rgba(35, 72, 107, 0.44), transparent 64%),
-      var(--navy);
-    background-attachment: fixed;
-  }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); background: var(--navy); }
   .wrap { max-width: 1480px; margin: 0 auto; padding: 32px 16px 56px; }
   .head { width: min(1400px, 100%); margin: 0 auto 20px; }
 
@@ -62,15 +55,18 @@
     border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
     font-size: 13.5px; color: var(--ink);
   }
-  .metarow span:last-child { margin-left: auto; color: var(--faint); }
-  .metarow .dim { color: var(--faint); }
+  .metarow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 11.5px; color: var(--faint); }
 
   h1 {
     font-family: var(--serif); font-weight: 300; font-size: 58px;
     line-height: 1.04; letter-spacing: -0.005em; margin: 0; color: var(--ink);
   }
+  .booktitle {
+    font-family: var(--serif); font-weight: 300; font-size: 34px;
+    line-height: 1.12; margin: 6px 0 0; color: var(--cyan);
+  }
   .sub {
-    font-size: 15.5px; color: var(--faint); margin: 14px 0 0;
+    font-size: 15.5px; color: var(--faint); margin: 18px 0 0;
     line-height: 1.6; max-width: 60ch;
   }
   .sub b { color: var(--ink); font-weight: 400; font-style: normal; }
@@ -106,7 +102,12 @@
     transform-origin: top left;
     border: 1px solid var(--line);
     border-radius: 3px;
-    background: var(--panel);
+    /* Dark Mode Gradient 1 lives here, on the board, so the page around it
+       stays the flat brand navy. */
+    background:
+      radial-gradient(880px 620px at 7% 80%, rgba(23, 107, 123, 0.42), transparent 62%),
+      radial-gradient(820px 580px at 93% 12%, rgba(35, 72, 107, 0.46), transparent 64%),
+      var(--navy);
   }
   #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(244,246,249,0.55); pointer-events: none; }
   #wires path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -302,11 +303,9 @@
     <span class="logo" role="img" aria-label="bookfunnels.io"></span>
     <div class="metarow">
       <span>Funnel Map</span>
-      <span class="dim" id="mBook"></span>
-      <span class="dim">bookfunnels.io</span>
-      <span id="mDate"></span>
     </div>
     <h1 id="hClient">Funnel Ecosystem Map</h1>
+    <p class="booktitle" id="hBook"></p>
     <p class="sub" id="hSub"></p>
     <div class="legend" id="legend">
       <span data-state="live"><i class="dot live"></i> Live, click to open</span>
@@ -345,7 +344,7 @@
 <!-- Bump ?v= whenever catalogue.js changes. GitHub Pages serves assets with a
      ten minute max-age, so without this a viewer can hold a stale catalogue
      and see the wrong boxes after an update. -->
-<script src="catalogue.js?v=12"></script>
+<script src="catalogue.js?v=13"></script>
 <script>
 (function () {
   'use strict';
@@ -456,8 +455,7 @@
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
     $('hClient').textContent = title;
 
-    $('mBook').textContent = cfg.book || '';
-    $('mDate').textContent = cfg.updated || '';
+    $('hBook').textContent = cfg.book || '';
     $('hSub').textContent =
       'Everything built for this funnel, and how each piece feeds the next. Click any live box to open it.';
 
