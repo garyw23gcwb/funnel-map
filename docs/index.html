@@ -60,6 +60,9 @@
   }
   .dot.live { border-color: var(--good); background: rgba(85, 211, 160, 0.2); }
   .dot.review { border-color: var(--amber); background: rgba(242, 181, 68, 0.2); }
+  .dot.soon { border-style: dashed; opacity: 0.62; }
+  .legend span { display: none; }
+  .legend span.on { display: inline-flex; }
 
   .notice {
     display: none; margin: 16px 0 0; padding: 10px 14px;
@@ -124,6 +127,17 @@
   .card.soon { border-style: dashed; opacity: 0.62; }
 
   .clabel { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  /* Step number, so the reading order is obvious without tracing the wires.
+     The bands run left to right then wrap back, so the eye needs the hint.
+     It sits bottom-right, beside the short status line, rather than top-right
+     where it would narrow the title and push long ones onto an extra line. */
+  .cstep {
+    position: absolute; bottom: 11px; right: 13px;
+    font-size: 12.5px; font-weight: 600; line-height: 1;
+    font-variant-numeric: tabular-nums; color: var(--faint);
+  }
+  .card.live .cstep, .card.review .cstep { color: var(--ink); }
+  .scard { position: relative; }
   .cjob { font-size: 12.5px; line-height: 1.42; color: var(--faint); flex: 1; }
   .cmeta { font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
   a.card .cmeta { color: var(--pen); }
@@ -207,10 +221,11 @@
     <span class="logo" role="img" aria-label="bookfunnels.io"></span>
     <h1 id="hClient">Funnel Ecosystem Map</h1>
     <p class="sub" id="hSub"></p>
-    <div class="legend">
-      <span><i class="dot live"></i> Live, click to open</span>
-      <span><i class="dot review"></i> Built, in review</span>
-      <span><i class="dot"></i> Still to come</span>
+    <div class="legend" id="legend">
+      <span data-state="live"><i class="dot live"></i> Live, click to open</span>
+      <span data-state="review"><i class="dot review"></i> Built, in review</span>
+      <span data-state="soon"><i class="dot soon"></i> Still to come</span>
+      <span data-state="theirs"><i class="dot"></i> Run by you</span>
     </div>
     <p class="notice" id="notice"></p>
   </div>
@@ -236,7 +251,7 @@
 <!-- Bump ?v= whenever catalogue.js changes. GitHub Pages serves assets with a
      ten minute max-age, so without this a viewer can hold a stale catalogue
      and see the wrong boxes after an update. -->
-<script src="catalogue.js?v=3"></script>
+<script src="catalogue.js?v=4"></script>
 <script>
 (function () {
   'use strict';
@@ -326,7 +341,12 @@
     if (!c) return NODE[id].optional ? null : { status: 'soon', url: '' };
     if (c.off) return null;
     var url = (c.url || '').trim();
-    if (!url) return { status: 'soon', url: '', label: c.label, job: c.job };
+    /* "theirs" is a piece of the ecosystem the client runs themselves. It is
+       not work in progress, so it renders as a plain box with no status line
+       rather than a dashed "still to come". */
+    if (!url) {
+      return { status: c.status === 'theirs' ? 'theirs' : 'soon', url: '', label: c.label, job: c.job };
+    }
     return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job };
   }
 
@@ -356,6 +376,19 @@
     NODES.forEach(function (n) {
       var st = stateOf(cfg, n.id);
       if (st) shown[n.id] = st;
+    });
+
+    /* Number the main path over the nodes actually shown, so switching a
+       piece off closes the gap instead of leaving 1, 2, 4, 5. Side funnels
+       and the order bump carry no number: they are not steps in the run. */
+    NODES.filter(function (n) { return n.step && shown[n.id]; })
+      .sort(function (a, b) { return a.step - b.step; })
+      .forEach(function (n, i) { shown[n.id].num = i + 1; });
+
+    var states = {};
+    Object.keys(shown).forEach(function (id) { states[shown[id].status] = true; });
+    [].forEach.call($('legend').children, function (sp) {
+      sp.classList.toggle('on', !!states[sp.getAttribute('data-state')]);
     });
 
     /* group boxes, drawn first so wires and cards sit on top */
@@ -449,6 +482,12 @@
     var card = el(isLink ? 'a' : 'div', cls + ' ' + st.status);
     if (isLink) { card.href = st.url; card.target = '_blank'; card.rel = 'noopener'; }
 
+    if (st.num) {
+      var num = el('span', 'cstep');
+      num.textContent = st.num;
+      card.appendChild(num);
+    }
+
     var lab = el('span', 'clabel');
     lab.textContent = st.label || n.label;
     card.appendChild(lab);
@@ -460,7 +499,7 @@
     /* The board's slim cards (the order bump) have no room for a third
        line; the stacked phone view always does. They are still clickable,
        and being anchors they still show a pointer cursor. */
-    if (cls === 'scard' || n.h > 100) {
+    if ((cls === 'scard' || n.h > 100) && st.status !== 'theirs') {
       var meta = el('span', 'cmeta');
       meta.textContent = isLink
         ? (n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')

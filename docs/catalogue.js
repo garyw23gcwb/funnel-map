@@ -27,40 +27,40 @@ var LAYERS = [
 ];
 
 var NODES = [
-  { id: 'ads', layer: 'traffic', label: 'Meta Ads', x: 150, y: 102, w: 238, h: 130,
+  { id: 'ads', layer: 'traffic', step: 10, label: 'Meta Ads', x: 150, y: 102, w: 238, h: 130,
     job: 'Ten ad concepts, each running in feed and story sizes.', cta: 'Open ad account' },
 
-  { id: 'sales-page', layer: 'book', label: 'Sales Page', x: 150, y: 310, w: 238, h: 130, tilt: 1,
+  { id: 'sales-page', layer: 'book', step: 20, label: 'Sales Page', x: 150, y: 310, w: 238, h: 130, tilt: 1,
     job: 'Eighteen sections selling the book and nothing else. Every button goes to checkout.' },
-  { id: 'order-form', layer: 'book', label: 'Order Form', x: 422, y: 310, w: 238, h: 130,
+  { id: 'order-form', layer: 'book', step: 30, label: 'Order Form', x: 422, y: 310, w: 238, h: 130,
     job: 'Three format tiers: digital, audiobook, paperback. Card details captured here.' },
   /* h clears the "one-click buyers" wire that runs across at y=556. */
   { id: 'order-bump', layer: 'book', label: 'Order Bump', x: 422, y: 458, w: 238, h: 92,
     job: 'One tick, added above the order button.' },
-  { id: 'one-click', layer: 'book', label: 'One-Click Offer', x: 694, y: 310, w: 238, h: 130, tilt: 2,
+  { id: 'one-click', layer: 'book', step: 40, label: 'One-Click Offer', x: 694, y: 310, w: 238, h: 130, tilt: 2,
     job: 'Your implementation plan, offered on purchase momentum. No card re-entry.' },
   /* Most clients run one upsell and leave this switched off. Jim Fitzgerald
      runs two (Deep Diagnostic, then Training Kit) and no order bump. */
-  { id: 'one-click-2', layer: 'book', label: 'Second One-Click Offer', x: 694, y: 458, w: 238, h: 112, optional: true,
+  { id: 'one-click-2', layer: 'book', step: 45, label: 'Second One-Click Offer', x: 694, y: 458, w: 238, h: 112, optional: true,
     job: 'A second upsell, taken or declined the same way.' },
-  { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: 966, y: 310, w: 238, h: 130,
+  { id: 'confirmation', layer: 'book', step: 50, label: 'Order Confirmation', x: 966, y: 310, w: 238, h: 130,
     job: 'Confirms the order, sets delivery expectations, points to the reader portal.' },
 
-  { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: 150, y: 618, w: 238, h: 130,
+  { id: 'reader-portal', layer: 'delivery', step: 60, label: 'Reader Portal', x: 150, y: 618, w: 238, h: 130,
     job: 'Where the buyer logs in and downloads. EPUB, PDF and cover.', cta: 'Open portal' },
-  { id: 'tinybook', layer: 'delivery', label: 'The Tinybook', x: 422, y: 618, w: 238, h: 130, tilt: 1,
+  { id: 'tinybook', layer: 'delivery', step: 70, label: 'The Tinybook', x: 422, y: 618, w: 238, h: 130, tilt: 1,
     job: 'Digital, audiobook and paperback. The asset the whole funnel is built around.', cta: 'Open the book' },
 
-  { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 150, y: 828, w: 510, h: 130,
+  { id: 'email-sequence', layer: 'followup', step: 80, label: 'Email Sequence', x: 150, y: 828, w: 510, h: 130,
     job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.', cta: 'Read the sequence' },
-  { id: 'plan-page', layer: 'followup', label: 'Plan Page', x: 694, y: 828, w: 238, h: 130, tilt: 2,
+  { id: 'plan-page', layer: 'followup', step: 90, label: 'Plan Page', x: 694, y: 828, w: 238, h: 130, tilt: 2,
     job: 'The one-click offer on its own URL, for readers who buy later from email.' },
-  { id: 'abandonment', layer: 'followup', label: 'Abandonment Sequence', x: 966, y: 828, w: 238, h: 130,
+  { id: 'abandonment', layer: 'followup', step: 100, label: 'Abandonment Sequence', x: 966, y: 828, w: 238, h: 130,
     job: 'Three emails to anyone who opens the plan page and does not buy within 24 hours.', cta: 'Read the emails' },
 
-  { id: 'review-call', layer: 'convert', label: 'Review Call', x: 150, y: 1138, w: 238, h: 130,
+  { id: 'review-call', layer: 'convert', step: 110, label: 'Review Call', x: 150, y: 1138, w: 238, h: 130,
     job: 'Booked by one-click buyers only. No free calls, no cold prospects.', cta: 'Open booking page' },
-  { id: 'backend-offer', layer: 'convert', label: 'Backend Offer', x: 422, y: 1138, w: 238, h: 130, tilt: 1,
+  { id: 'backend-offer', layer: 'convert', step: 120, label: 'Backend Offer', x: 422, y: 1138, w: 238, h: 130, tilt: 1,
     job: 'Your core service, sold on the call to a reader who has already paid you twice.' },
 
   { id: 'rb-optin', layer: 'side', label: 'Reader Bonus Opt-in', x: 1268, y: 326, w: 238, h: 116,

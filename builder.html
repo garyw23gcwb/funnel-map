@@ -127,7 +127,7 @@
   </div>
 </div>
 
-<script src="docs/catalogue.js?v=3"></script>
+<script src="docs/catalogue.js?v=4"></script>
 <script>
 (function () {
   'use strict';
@@ -184,7 +184,7 @@
       var sel = el('select');
       sel.id = 's-' + n.id;
       sel.setAttribute('aria-label', n.label + ' status');
-      [['live', 'Live'], ['review', 'In review']].forEach(function (o) {
+      [['live', 'Live'], ['review', 'In review'], ['theirs', 'Client runs it']].forEach(function (o) {
         var opt = el('option'); opt.value = o[0]; opt.textContent = o[1]; sel.appendChild(opt);
       });
       row.appendChild(sel);
@@ -238,7 +238,11 @@
     NODES.forEach(function (n) {
       if ($('o-' + n.id).checked) { cfg.nodes[n.id] = { off: true }; return; }
       var u = $('u-' + n.id).value.trim();
-      cfg.nodes[n.id] = u ? { url: u, status: $('s-' + n.id).value } : { status: 'soon' };
+      var st = $('s-' + n.id).value;
+      /* "Client runs it" describes the piece, not its build state, so it
+         survives having no link. Anything else with no link is still to come. */
+      cfg.nodes[n.id] = u ? { url: u, status: st === 'theirs' ? 'live' : st }
+                          : { status: st === 'theirs' ? 'theirs' : 'soon' };
     });
     for (var i = 1; i <= EMAIL_COUNT; i++) {
       var u = $('e-' + i).value.trim();
@@ -257,7 +261,7 @@
     NODES.forEach(function (n) {
       var c = nodes[n.id] || {};
       $('u-' + n.id).value = c.url || '';
-      $('s-' + n.id).value = c.status === 'review' ? 'review' : 'live';
+      $('s-' + n.id).value = (c.status === 'review' || c.status === 'theirs') ? c.status : 'live';
       /* Optional nodes start switched off, matching how the map treats a
          node the client file does not mention. */
       var off = c.off !== undefined ? !!c.off : (!(n.id in nodes) && !!n.optional);
