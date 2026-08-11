@@ -392,11 +392,15 @@
     });
 
     /* group boxes, drawn first so wires and cards sit on top */
+    /* A group holding a single card needs no wrapper, no band title and no
+       sub-heading: the card's own label says what it is, and the chrome
+       would only repeat it. */
+    var solo = {};
     GROUPS.forEach(function (g) {
       var members = NODES.filter(function (n) { return n.layer === g.id && shown[n.id]; });
-      if (!members.length) return;
-      /* Shrink to fit what is actually shown. A client running one side
-         funnel should not get a full-height box with one card in it. */
+      if (members.length < 2) { solo[g.id] = members.length === 1; return; }
+      /* Shrink to fit what is actually shown, so a client running one side
+         funnel does not get a full-height box with two cards in it. */
       var bottom = Math.max.apply(null, members.map(function (n) { return n.y + n.h; }));
       var d = el('div', 'group');
       d.style.cssText = pos(g.x, g.y, g.w, Math.min(g.h, bottom + 26 - g.y));
@@ -426,7 +430,7 @@
     /* layer titles */
     LAYERS.forEach(function (L) {
       var any = NODES.some(function (n) { return n.layer === L.id && shown[n.id]; });
-      if (!any) return;
+      if (!any || solo[L.id]) return;
       var t = el('div', 'titlebox');
       t.style.left = L.lx + 'px';
       t.style.top = L.ly + 'px';
@@ -436,6 +440,7 @@
 
     SUBLABELS.forEach(function (s) {
       if (!s.needs.some(function (id) { return shown[id]; })) return;
+      if (s.needs.some(function (id) { return NODE[id] && solo[NODE[id].layer]; })) return;
       var d = el('div', 'sublabel');
       d.style.left = s.x + 'px';
       d.style.top = s.y + 'px';
