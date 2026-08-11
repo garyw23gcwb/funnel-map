@@ -50,6 +50,11 @@ var NODES = [
     job: 'Where the buyer logs in and downloads. EPUB, PDF and cover.', cta: 'Open portal' },
   { id: 'tinybook', layer: 'delivery', step: 70, label: 'The Tinybook', x: 422, y: 618, w: 238, h: 130, tilt: 1,
     job: 'Digital, audiobook and paperback. The asset the whole funnel is built around.', cta: 'Open the book' },
+  /* A free tool or asset the book points at, sitting beside the book rather
+     than in the side column. Unnumbered: it is a destination the book and
+     the emails link to, not a step in the purchase run. */
+  { id: 'scorecard', layer: 'delivery', label: 'The Scorecard', x: 694, y: 618, w: 238, h: 130, optional: true,
+    job: 'A free tool the book points readers to.' },
 
   { id: 'email-sequence', layer: 'followup', step: 80, label: 'Email Sequence', x: 150, y: 828, w: 510, h: 130,
     job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.', cta: 'Read the sequence' },
@@ -105,6 +110,9 @@ var EDGES = [
   { a: 'confirmation:b@0.65', b: 'reader-portal:t', via: [[1121, 610], [269, 610]] },
   { a: 'reader-portal:b',    b: 'email-sequence:t@0.2333' },
   { a: 'reader-portal:r',    b: 'tinybook:l' },
+  { a: 'tinybook:r',         b: 'scorecard:l' },
+  { a: 'email-sequence:t@0.9', b: 'scorecard:b@0.5', via: [[609, 790], [813, 790]],
+    label: 'from the emails', lx: 636, ly: 794 },
   { a: 'email-sequence:r',   b: 'plan-page:l' },
   { a: 'plan-page:r',        b: 'abandonment:l' },
   { a: 'abandonment:b',      b: 'plan-page:b@0.6', via: [[1085, 1010], [837, 1010]],
