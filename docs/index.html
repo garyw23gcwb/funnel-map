@@ -735,8 +735,10 @@
       var fig = el('figure', 'mshot');
       fig.style.margin = '0';
       var img = el('img');
+      /* No lazy loading here: the modal is built while still hidden, and a
+         lazy image in a display:none subtree never starts fetching. There
+         are only two, and the user has just asked for them. */
       img.src = a[pair[0]];
-      img.loading = 'lazy';
       img.alt = 'Concept ' + a.n + ', ' + a.title + ', ' + pair[1];
       fig.appendChild(img);
       var cap = el('figcaption'); cap.textContent = pair[1]; fig.appendChild(cap);
