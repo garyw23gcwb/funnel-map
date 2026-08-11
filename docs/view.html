@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Geist:wght@400;500;600&display=swap">
+<style>*,*::before,*::after{box-sizing:border-box}</style>
+<style>
+  :root {
+    color-scheme: dark;
+    --paper: #1a212c;  --ink: #f4f6f9;   --panel: #202835;
+    --boxbg: #1a212c;  --faint: #8d9aac; --pen: #5bc5d8;
+    --good: #55d3a0;   --amber: #f2b544;
+    --wash: rgba(40, 153, 173, 0.22);
+    --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --hand: 'Architects Daughter', 'Segoe Print', 'Comic Sans MS', cursive;
+  }
+  html { background: var(--paper); }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 28px 18px 80px; }
+
+  .back {
+    display: inline-flex; align-items: center; gap: 7px; margin-bottom: 20px;
+    font-size: 14px; color: var(--pen); text-decoration: none;
+  }
+  .back:hover { text-decoration: underline; }
+
+  h1 { font-size: 27px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 5px; }
+  .lede { color: var(--faint); margin: 0 0 26px; font-size: 15px; }
+
+  .nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 26px; }
+  .nav a, .nav span {
+    display: grid; place-items: center; min-width: 38px; height: 30px; padding: 0 8px;
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    border: 2px solid var(--faint); border-radius: 3px 6px 4px 7px;
+    color: var(--faint); background: var(--boxbg);
+  }
+  .nav a { color: var(--pen); border-color: var(--good); }
+  .nav a:hover { background: var(--wash); color: var(--ink); }
+  .nav span.here { color: var(--ink); border-color: var(--ink); background: var(--wash); }
+
+  /* an email as the reader receives it */
+  .mail {
+    border: 2.5px solid var(--faint); border-radius: 6px 12px 7px 11px;
+    background: var(--panel); overflow: hidden; margin-bottom: 22px;
+  }
+  .mailhead { padding: 15px 20px 14px; border-bottom: 1.5px solid #333e52; }
+  .mailmeta { font-size: 12px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; }
+  .subject { font-size: 19px; font-weight: 600; margin: 6px 0 3px; letter-spacing: -0.01em; }
+  .preview { font-size: 14px; color: var(--faint); }
+  .mailbody { padding: 20px; }
+  .mailbody p { margin: 0 0 15px; font-size: 15.5px; line-height: 1.62; }
+  .mailbody p:last-child { margin-bottom: 0; }
+  .todo {
+    display: inline-block; padding: 3px 10px 4px; font-size: 13px;
+    color: var(--amber); border: 1.5px dashed var(--amber); border-radius: 4px;
+    background: rgba(242, 181, 68, 0.08);
+  }
+
+  /* an ad as it appears in feed */
+  .ad {
+    border: 2.5px solid var(--faint); border-radius: 6px 12px 7px 11px;
+    background: var(--panel); overflow: hidden; margin-bottom: 30px;
+  }
+  .adtop { padding: 14px 18px 12px; }
+  .adnum { font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); }
+  .adtitle { font-size: 18px; font-weight: 600; margin: 4px 0 2px; }
+  .adcreative { font-size: 13px; color: var(--faint); font-style: italic; }
+  .adprimary { padding: 4px 18px 16px; }
+  .adprimary p { margin: 0 0 12px; font-size: 15px; line-height: 1.58; }
+  .adprimary p:last-child { margin-bottom: 0; }
+
+  /* The two placements have different aspect ratios, so match them on height
+     rather than width; stretching either one leaves dead space. */
+  .shots {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: #333e52; align-items: start;
+  }
+  .shot {
+    position: relative; background: var(--boxbg);
+    display: flex; justify-content: center; padding: 14px 10px;
+  }
+  .shot img { display: block; width: auto; max-width: 100%; max-height: 440px; }
+  .shot figcaption {
+    position: absolute; left: 8px; top: 8px; padding: 2px 8px 3px;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink); background: rgba(26, 33, 44, 0.82); border-radius: 4px;
+  }
+  @media (max-width: 620px) { .shots { grid-template-columns: 1fr; } }
+
+  .adfoot {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    padding: 13px 18px 14px; border-top: 1.5px solid #333e52; background: var(--boxbg);
+  }
+  .adfoot .txt { flex: 1; min-width: 200px; }
+  .adhl { font-size: 15px; font-weight: 600; line-height: 1.25; }
+  .addesc { font-size: 13px; color: var(--faint); margin-top: 2px; }
+  .adcta {
+    padding: 8px 14px 9px; font-size: 13px; font-weight: 500; white-space: nowrap;
+    color: var(--ink); background: var(--panel);
+    border: 1.5px solid var(--faint); border-radius: 6px;
+  }
+
+  .notice {
+    margin: 0 0 22px; padding: 11px 15px; font-size: 14px; color: var(--amber);
+    border: 1.5px solid var(--amber); border-radius: 4px 8px 5px 9px;
+    background: rgba(242, 181, 68, 0.08);
+  }
+  .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+  .pager a {
+    font-size: 14px; color: var(--pen); text-decoration: none;
+    border: 1.5px solid #38445a; border-radius: 8px; padding: 8px 14px 9px;
+  }
+  .pager a:hover { background: var(--wash); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" id="back" href="index.html">&larr; Back to the map</a>
+  <h1 id="title">Loading</h1>
+  <p class="lede" id="lede"></p>
+  <div id="out"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function $(id) { return document.getElementById(id); }
+  function el(t, c) { var e = document.createElement(t); if (c) e.className = c; return e; }
+
+  var params = new URLSearchParams(location.search);
+  var raw = (params.get('c') || '').toLowerCase();
+  var slug = /^[a-z0-9-]{1,64}$/.test(raw) ? raw : '';
+  var kind = params.get('t') === 'ad' ? 'ad' : 'email';
+  var num = parseInt(params.get('n'), 10);
+
+  $('back').href = 'index.html?c=' + encodeURIComponent(slug);
+
+  if (!slug) { fail('No client given.'); return; }
+
+  fetch('clients/' + slug + '-' + (kind === 'ad' ? 'ads' : 'emails') + '.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) { kind === 'ad' ? renderAds(data) : renderEmails(data); })
+    .catch(function () {
+      fail(kind === 'ad' ? 'No ads have been loaded for this client yet.'
+                         : 'No emails have been loaded for this client yet.');
+    });
+
+  function fail(msg) {
+    $('title').textContent = 'Nothing to show';
+    var p = el('p', 'notice');
+    p.textContent = msg;
+    $('out').appendChild(p);
+  }
+
+  /* Body lines the copy still has to have a URL dropped into. Shown rather
+     than hidden, so an unfinished asset reads as unfinished. */
+  function isTodo(s) { return /^\[.*\]$/.test(s.trim()); }
+
+  function paras(into, list, cls) {
+    list.forEach(function (t) {
+      var p = el('p');
+      if (isTodo(t)) {
+        var s = el('span', 'todo');
+        s.textContent = t.replace(/^\[|\]$/g, '');
+        p.appendChild(s);
+      } else {
+        p.textContent = t;
+      }
+      into.appendChild(p);
+    });
+  }
+
+  /* ------------------------------ emails ------------------------------ */
+
+  function renderEmails(data) {
+    var list = data.emails || [];
+    document.title = (data.client || '') + ' | Email sequence';
+    var one = list.filter(function (e) { return e.n === num; })[0];
+
+    $('title').textContent = data.client ? data.client + ': email sequence' : 'Email sequence';
+    $('lede').textContent = list.length + ' emails over ' +
+      (list.length ? list[list.length - 1].day : 0) + ' days. Sent from ' + (data.from || '') + '.';
+
+    var nav = el('div', 'nav');
+    list.forEach(function (e) {
+      var a = el(e.n === (one && one.n) ? 'span' : 'a', e.n === (one && one.n) ? 'here' : '');
+      if (e.n !== (one && one.n)) a.href = '?c=' + slug + '&t=email&n=' + e.n;
+      a.textContent = e.n;
+      a.title = 'Email ' + e.n + ', day ' + e.day;
+      nav.appendChild(a);
+    });
+    $('out').appendChild(nav);
+
+    (one ? [one] : list).forEach(function (e) { $('out').appendChild(mail(e, data)); });
+
+    if (one) {
+      var pager = el('div', 'pager');
+      var prev = list.filter(function (x) { return x.n === one.n - 1; })[0];
+      var next = list.filter(function (x) { return x.n === one.n + 1; })[0];
+      if (prev) { var a = el('a'); a.href = '?c=' + slug + '&t=email&n=' + prev.n; a.textContent = '← Email ' + prev.n; pager.appendChild(a); }
+      else { pager.appendChild(el('span')); }
+      if (next) { var b = el('a'); b.href = '?c=' + slug + '&t=email&n=' + next.n; b.textContent = 'Email ' + next.n + ' →'; pager.appendChild(b); }
+      $('out').appendChild(pager);
+    }
+  }
+
+  function mail(e, data) {
+    var box = el('div', 'mail');
+    var head = el('div', 'mailhead');
+    var meta = el('div', 'mailmeta');
+    meta.textContent = 'Email ' + e.n + ' · Day ' + e.day + ' · From ' + (data.from || '');
+    head.appendChild(meta);
+    var s = el('div', 'subject'); s.textContent = e.subject; head.appendChild(s);
+    if (e.preview) { var p = el('div', 'preview'); p.textContent = e.preview; head.appendChild(p); }
+    box.appendChild(head);
+    var body = el('div', 'mailbody');
+    paras(body, e.body || []);
+    box.appendChild(body);
+    return box;
+  }
+
+  /* -------------------------------- ads -------------------------------- */
+
+  function renderAds(data) {
+    var list = data.ads || [];
+    document.title = (data.client || '') + ' | Meta ads';
+    $('title').textContent = data.client ? data.client + ': Meta ads' : 'Meta ads';
+    $('lede').textContent = list.length + ' ad concepts. Each one runs as a single ad carrying both ' +
+      'a 4:5 feed image and a 9:16 story image.';
+
+    var nav = el('div', 'nav');
+    list.forEach(function (a) {
+      var link = el('a');
+      link.href = '#ad-' + a.n;
+      link.textContent = a.n;
+      link.title = a.title;
+      nav.appendChild(link);
+    });
+    $('out').appendChild(nav);
+
+    list.forEach(function (a) { $('out').appendChild(adCard(a)); });
+  }
+
+  function adCard(a) {
+    var box = el('div', 'ad');
+    box.id = 'ad-' + a.n;
+
+    var top = el('div', 'adtop');
+    var n = el('div', 'adnum'); n.textContent = 'Concept ' + a.n; top.appendChild(n);
+    var t = el('div', 'adtitle'); t.textContent = a.title; top.appendChild(t);
+    if (a.creative) { var c = el('div', 'adcreative'); c.textContent = a.creative; top.appendChild(c); }
+    box.appendChild(top);
+
+    var prim = el('div', 'adprimary');
+    paras(prim, a.primary || []);
+    box.appendChild(prim);
+
+    var shots = el('div', 'shots');
+    [['feed', '4:5 feed'], ['story', '9:16 story']].forEach(function (pair) {
+      if (!a[pair[0]]) return;
+      var fig = el('figure', 'shot');
+      fig.style.margin = '0';
+      var img = el('img');
+      img.src = a[pair[0]];
+      img.loading = 'lazy';
+      img.alt = 'Concept ' + a.n + ', ' + a.title + ', ' + pair[1];
+      fig.appendChild(img);
+      var cap = el('figcaption'); cap.textContent = pair[1]; fig.appendChild(cap);
+      shots.appendChild(fig);
+    });
+    box.appendChild(shots);
+
+    var foot = el('div', 'adfoot');
+    var txt = el('div', 'txt');
+    var hl = el('div', 'adhl'); hl.textContent = a.headline; txt.appendChild(hl);
+    if (a.description) { var d = el('div', 'addesc'); d.textContent = a.description; txt.appendChild(d); }
+    foot.appendChild(txt);
+    if (a.cta) { var b = el('div', 'adcta'); b.textContent = a.cta; foot.appendChild(b); }
+    box.appendChild(foot);
+
+    return box;
+  }
+})();
+</script>
+</body>
+</html>

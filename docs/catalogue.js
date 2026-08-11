@@ -63,9 +63,11 @@ var NODES = [
   { id: 'abandonment', layer: 'followup', step: 100, label: 'Abandonment Sequence', x: 966, y: 828, w: 238, h: 130,
     job: 'Three emails to anyone who opens the plan page and does not buy within 24 hours.', cta: 'Read the emails' },
 
-  { id: 'review-call', layer: 'convert', step: 110, label: 'Review Call', x: 150, y: 1138, w: 238, h: 130,
+  { id: 'survey', layer: 'convert', step: 105, label: 'The Survey', x: 150, y: 1138, w: 238, h: 130,
+    job: 'The questions that build the plan. Filled in before the call is booked.' },
+  { id: 'review-call', layer: 'convert', step: 110, label: 'Review Call', x: 422, y: 1138, w: 238, h: 130,
     job: 'Booked by one-click buyers only. No free calls, no cold prospects.', cta: 'Open booking page' },
-  { id: 'backend-offer', layer: 'convert', step: 120, label: 'Backend Offer', x: 422, y: 1138, w: 238, h: 130, tilt: 1,
+  { id: 'backend-offer', layer: 'convert', step: 120, label: 'Backend Offer', x: 694, y: 1138, w: 238, h: 130, tilt: 1,
     job: 'Your core service, sold on the call to a reader who has already paid you twice.' },
 
   { id: 'rb-optin', layer: 'side', label: 'Reader Bonus Opt-in', x: 1268, y: 326, w: 238, h: 116,
@@ -94,6 +96,10 @@ var SUBLABELS = [
 
 var CHIPS = { x: 150, y: 974, w: 510, h: 68, count: 21 };
 
+/* The ten ad concepts, sitting beside the ads card rather than under it:
+   the book-funnel band title is directly below. */
+var AD_CHIPS = { x: 422, y: 153, w: 460, h: 28, count: 10 };
+
 /* Edges. `a` and `b` are anchors written as id:side, optionally with a
    fraction along that side (one-click:b@0.72). `via` holds waypoints in
    board coordinates. An edge is drawn only if both its nodes are shown. */
@@ -117,12 +123,13 @@ var EDGES = [
   { a: 'plan-page:r',        b: 'abandonment:l' },
   { a: 'abandonment:b',      b: 'plan-page:b@0.6', via: [[1085, 1010], [837, 1010]],
     label: 're-pitch', lx: 928, ly: 1020 },
-  { a: 'plan-page:b@0.15',   b: 'review-call:t', via: [[730, 1080], [269, 1080]] },
+  { a: 'plan-page:b@0.15',   b: 'survey:t', via: [[730, 1080], [269, 1080]] },
   /* Leaves from the left edge and drops through the 34px gap between the
      order form and the upsell column, so it clears one-click-2 when that
      is switched on. */
-  { a: 'one-click:l@0.9',    b: 'review-call:l', via: [[677, 427], [677, 556], [70, 556], [70, 1203]],
+  { a: 'one-click:l@0.9',    b: 'survey:l', via: [[677, 427], [677, 556], [70, 556], [70, 1203]],
     label: 'one-click buyers', lx: 62, ly: 1012, vert: true },
+  { a: 'survey:r',           b: 'review-call:l' },
   { a: 'review-call:r',      b: 'backend-offer:l' },
   { a: 'tinybook:r',         b: 'rb-optin:l', via: [[1232, 683], [1232, 384]],
     label: 'in-book CTA', lx: 950, ly: 658 },
@@ -135,6 +142,6 @@ var EDGES = [
   return {
     BOARD_W: BOARD_W, BOARD_H: BOARD_H,
     LAYERS: LAYERS, NODES: NODES, GROUPS: GROUPS,
-    SUBLABELS: SUBLABELS, CHIPS: CHIPS, EDGES: EDGES
+    SUBLABELS: SUBLABELS, CHIPS: CHIPS, AD_CHIPS: AD_CHIPS, EDGES: EDGES
   };
 })();

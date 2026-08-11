@@ -3,35 +3,182 @@
   "book": "The Million-Dollar Hurdle",
   "updated": "11 August 2026",
   "nodes": {
-    "ads":            { "status": "soon" },
-    "sales-page":     { "url": "https://themilliondollarhurdle.com/book", "status": "live" },
-    "order-form":     { "url": "https://themilliondollarhurdle.com/order", "status": "live" },
-    "order-bump":     { "off": true },
-    "one-click":      { "url": "https://themilliondollarhurdle.com/special-offer", "status": "live", "label": "The Deep Diagnostic", "job": "The 84-question Deep Diagnostic, $97. Offered on purchase momentum, no card re-entry." },
-    "one-click-2":    { "off": true },
-    "confirmation":   { "url": "https://themilliondollarhurdle.com/success", "status": "live" },
-    "reader-portal":  { "url": "https://readers.themilliondollarhurdle.com", "status": "live", "job": "Where the reader logs in and downloads the book." },
-    "tinybook":       { "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf", "status": "live", "label": "The Book", "job": "The Million-Dollar Hurdle. The asset the whole funnel is built around." },
-    "email-sequence": { "status": "soon" },
-    "plan-page":      { "status": "soon", "label": "Diagnostic Page", "job": "The Deep Diagnostic on its own URL, for readers who buy later from email." },
-    "abandonment":    { "off": true },
-    "review-call":    { "status": "theirs", "label": "Paid Plan Review", "job": "A paid one-on-one plan review. You and your COO run these." },
-    "backend-offer":  { "status": "theirs", "label": "Advisory Engagement", "job": "Fitzgerald Growth Partners advisory, sold on the review call." },
-    "scorecard":      { "url": "https://fitzgeraldgrowthpartners.com/scorecard/", "status": "live", "job": "The free 25-question Scorecard. Linked from inside the book and from the emails." },
-    "rb-optin":       { "off": true },
-    "rb-thanks":      { "off": true },
-    "sip-page":       { "off": true },
-    "sip-confirm":    { "off": true },
-    "wl-optin":       { "off": true },
-    "wl-confirm":     { "off": true }
+    "ads": {
+      "url": "view.html?c=jim-fitzgerald&t=ad",
+      "status": "live",
+      "job": "Ten ad concepts. Click a number to see the ad, or open them all."
+    },
+    "sales-page": {
+      "url": "https://themilliondollarhurdle.com/book",
+      "status": "live"
+    },
+    "order-form": {
+      "url": "https://themilliondollarhurdle.com/order",
+      "status": "live"
+    },
+    "order-bump": {
+      "off": true
+    },
+    "one-click": {
+      "url": "https://themilliondollarhurdle.com/special-offer",
+      "status": "live",
+      "label": "The Deep Diagnostic",
+      "job": "The 84-question Deep Diagnostic, $97. Offered on purchase momentum, no card re-entry."
+    },
+    "one-click-2": {
+      "off": true
+    },
+    "confirmation": {
+      "url": "https://themilliondollarhurdle.com/success",
+      "status": "live"
+    },
+    "reader-portal": {
+      "url": "https://readers.themilliondollarhurdle.com",
+      "status": "live",
+      "job": "Where the reader logs in and downloads the book."
+    },
+    "tinybook": {
+      "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf",
+      "status": "live",
+      "label": "The Book",
+      "job": "The Million-Dollar Hurdle. The asset the whole funnel is built around."
+    },
+    "email-sequence": {
+      "url": "view.html?c=jim-fitzgerald&t=email",
+      "status": "live"
+    },
+    "plan-page": {
+      "status": "soon",
+      "label": "Diagnostic Page",
+      "job": "The Deep Diagnostic on its own URL, for readers who buy later from email."
+    },
+    "abandonment": {
+      "off": true
+    },
+    "review-call": {
+      "status": "theirs",
+      "label": "Paid Plan Review",
+      "job": "A paid one-on-one plan review. You and your COO run these."
+    },
+    "backend-offer": {
+      "status": "theirs",
+      "label": "Advisory Engagement",
+      "job": "Fitzgerald Growth Partners advisory, sold on the review call."
+    },
+    "scorecard": {
+      "url": "https://fitzgeraldgrowthpartners.com/scorecard/",
+      "status": "live",
+      "job": "The free 25-question Scorecard. Linked from inside the book and from the emails."
+    },
+    "rb-optin": {
+      "off": true
+    },
+    "rb-thanks": {
+      "off": true
+    },
+    "sip-page": {
+      "off": true
+    },
+    "sip-confirm": {
+      "off": true
+    },
+    "wl-optin": {
+      "off": true
+    },
+    "wl-confirm": {
+      "off": true
+    },
+    "survey": {
+      "status": "soon",
+      "job": "The questions that build the diagnostic report, before the call is booked."
+    }
   },
   "emails": [
-    { "n": 1, "day": 0 },  { "n": 2, "day": 1 },  { "n": 3, "day": 3 },
-    { "n": 4, "day": 5 },  { "n": 5, "day": 7 },  { "n": 6, "day": 9 },
-    { "n": 7, "day": 11 }, { "n": 8, "day": 12 }, { "n": 9, "day": 13 },
-    { "n": 10, "day": 15 }, { "n": 11, "day": 16 }, { "n": 12, "day": 17 },
-    { "n": 13, "day": 18 }, { "n": 14, "day": 19 }, { "n": 15, "day": 21 },
-    { "n": 16, "day": 22 }, { "n": 17, "day": 24 }, { "n": 18, "day": 26 },
-    { "n": 19, "day": 27 }, { "n": 20, "day": 28 }, { "n": 21, "day": 30 }
-  ]
+    {
+      "n": 1,
+      "day": 0
+    },
+    {
+      "n": 2,
+      "day": 1
+    },
+    {
+      "n": 3,
+      "day": 3
+    },
+    {
+      "n": 4,
+      "day": 5
+    },
+    {
+      "n": 5,
+      "day": 7
+    },
+    {
+      "n": 6,
+      "day": 9
+    },
+    {
+      "n": 7,
+      "day": 11
+    },
+    {
+      "n": 8,
+      "day": 12
+    },
+    {
+      "n": 9,
+      "day": 13
+    },
+    {
+      "n": 10,
+      "day": 15
+    },
+    {
+      "n": 11,
+      "day": 16
+    },
+    {
+      "n": 12,
+      "day": 17
+    },
+    {
+      "n": 13,
+      "day": 18
+    },
+    {
+      "n": 14,
+      "day": 19
+    },
+    {
+      "n": 15,
+      "day": 21
+    },
+    {
+      "n": 16,
+      "day": 22
+    },
+    {
+      "n": 17,
+      "day": 24
+    },
+    {
+      "n": 18,
+      "day": 26
+    },
+    {
+      "n": 19,
+      "day": 27
+    },
+    {
+      "n": 20,
+      "day": 28
+    },
+    {
+      "n": 21,
+      "day": 30
+    }
+  ],
+  "emailPages": true,
+  "adPages": true
 }

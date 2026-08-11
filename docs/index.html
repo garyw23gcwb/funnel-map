@@ -160,9 +160,76 @@
     text-decoration: none; background: var(--boxbg);
     border: 2px solid var(--faint); border-radius: 3px 6px 4px 7px;
   }
-  a.chip { color: var(--pen); border-color: var(--good); }
-  a.chip:hover, a.chip:focus-visible { background: var(--wash); color: var(--ink); }
-  a.chip:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+  a.chip, button.chip { color: var(--pen); border-color: var(--good); }
+  button.chip { font-family: var(--sans); cursor: pointer; padding: 0; }
+  a.chip:hover, a.chip:focus-visible,
+  button.chip:hover, button.chip:focus-visible { background: var(--wash); color: var(--ink); }
+  a.chip:focus-visible, button.chip:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+  /* Pop-up for a single ad or email, so a click does not lose the map. */
+  .veil {
+    position: fixed; inset: 0; z-index: 50; display: none;
+    background: rgba(12, 16, 22, 0.78); padding: 28px 18px;
+    overflow-y: auto; font-family: var(--sans);
+  }
+  .veil.on { display: block; }
+  .modal {
+    position: relative; max-width: 720px; margin: 0 auto;
+    background: var(--panel); border: 2.5px solid var(--faint);
+    border-radius: 6px 12px 7px 11px;
+  }
+  .mclose {
+    position: absolute; top: -14px; right: -14px; width: 34px; height: 34px;
+    display: grid; place-items: center; cursor: pointer;
+    font-size: 19px; line-height: 1; color: var(--ink);
+    background: var(--boxbg); border: 2px solid var(--faint); border-radius: 50%;
+  }
+  .mclose:hover { background: var(--wash); }
+  .mclose:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+  .mhead { padding: 16px 20px 13px; border-bottom: 1.5px solid #333e52; }
+  .mkicker { font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); }
+  .mtitle { font-size: 19px; font-weight: 600; margin: 4px 0 2px; letter-spacing: -0.01em; }
+  .msub { font-size: 13.5px; color: var(--faint); }
+  .msub.it { font-style: italic; }
+  .mbody { padding: 16px 20px; }
+  .mbody p { margin: 0 0 12px; font-size: 15px; line-height: 1.6; }
+  .mbody p:last-child { margin-bottom: 0; }
+  .mtodo {
+    display: inline-block; padding: 3px 10px 4px; font-size: 13px;
+    color: var(--amber); border: 1.5px dashed var(--amber); border-radius: 4px;
+    background: rgba(242, 181, 68, 0.08);
+  }
+  .mshots {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    align-items: start; background: #333e52;
+  }
+  .mshot { position: relative; display: flex; justify-content: center; padding: 12px 10px; background: var(--boxbg); }
+  .mshot img { display: block; width: auto; max-width: 100%; max-height: 360px; }
+  .mshot figcaption {
+    position: absolute; left: 8px; top: 8px; padding: 2px 8px 3px;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink); background: rgba(26, 33, 44, 0.82); border-radius: 4px;
+  }
+  @media (max-width: 620px) { .mshots { grid-template-columns: 1fr; } }
+  .mfoot {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    padding: 13px 20px 14px; border-top: 1.5px solid #333e52; background: var(--boxbg);
+  }
+  .mfoot .txt { flex: 1; min-width: 190px; }
+  .mhl { font-size: 15px; font-weight: 600; line-height: 1.25; }
+  .mdesc { font-size: 13px; color: var(--faint); margin-top: 2px; }
+  .mcta {
+    padding: 8px 14px 9px; font-size: 13px; font-weight: 500; white-space: nowrap;
+    color: var(--ink); background: var(--panel);
+    border: 1.5px solid var(--faint); border-radius: 6px;
+  }
+  .mnav { display: flex; justify-content: space-between; gap: 10px; padding: 12px 20px 16px; }
+  .mnav button {
+    font-family: var(--sans); font-size: 13.5px; cursor: pointer; color: var(--pen);
+    background: transparent; border: 1.5px solid #38445a; border-radius: 8px; padding: 7px 13px 8px;
+  }
+  .mnav button:hover:not(:disabled) { background: var(--wash); }
+  .mnav button:disabled { opacity: 0.35; cursor: default; }
 
   /* Narrow view. Below roughly 1000px the board has to scale under 0.62,
      which puts the job lines under 8px. The same nodes are listed layer by
@@ -248,10 +315,17 @@
   <div class="stack" id="stack"></div>
 </div>
 
+<div class="veil" id="veil" role="dialog" aria-modal="true" aria-labelledby="mtitle" hidden>
+  <div class="modal" id="modal">
+    <button class="mclose" id="mclose" aria-label="Close">&times;</button>
+    <div id="mcontent"></div>
+  </div>
+</div>
+
 <!-- Bump ?v= whenever catalogue.js changes. GitHub Pages serves assets with a
      ten minute max-age, so without this a viewer can hold a stale catalogue
      and see the wrong boxes after an update. -->
-<script src="catalogue.js?v=5"></script>
+<script src="catalogue.js?v=7"></script>
 <script>
 (function () {
   'use strict';
@@ -261,7 +335,7 @@
      stacked list, so the board never renders smaller than this. */
   var BOARD_W = C.BOARD_W, BOARD_H = C.BOARD_H, MIN_SCALE = 0.62;
   var LAYERS = C.LAYERS, NODES = C.NODES, GROUPS = C.GROUPS;
-  var SUBLABELS = C.SUBLABELS, CHIPS = C.CHIPS, EDGES = C.EDGES;
+  var SUBLABELS = C.SUBLABELS, CHIPS = C.CHIPS, AD_CHIPS = C.AD_CHIPS, EDGES = C.EDGES;
 
   /* --------------------------- helpers --------------------------- */
 
@@ -468,17 +542,50 @@
       for (var i = 1; i <= CHIPS.count; i++) {
         var e = byN[i] || {};
         var url = (e.url || '').trim();
-        var c = el(url ? 'a' : 'span', 'chip');
-        if (url) { c.href = url; c.target = '_blank'; c.rel = 'noopener'; }
-        c.textContent = i;
-        c.title = 'Email ' + i + (e.day != null ? ', day ' + e.day : '');
+        var title = 'Email ' + i + (e.day != null ? ', day ' + e.day : '');
+        var c;
+        if (url) {
+          c = el('a', 'chip');
+          c.href = url; c.target = '_blank'; c.rel = 'noopener';
+          c.textContent = i;
+          c.title = title;
+        } else if (cfg.emailPages) {
+          /* No explicit link, but the copy is loaded: open the pop-up. */
+          c = popChip('email', i, title);
+        } else {
+          c = el('span', 'chip');
+          c.textContent = i;
+          c.title = title;
+        }
         box.appendChild(c);
       }
       board.appendChild(box);
     }
 
+    /* ten ad concepts, each opening the pop-up */
+    if (shown['ads'] && cfg.adPages) {
+      var ab = el('div', 'chips');
+      ab.style.cssText = pos(AD_CHIPS.x, AD_CHIPS.y, AD_CHIPS.w, AD_CHIPS.h);
+      for (var a = 1; a <= AD_CHIPS.count; a++) {
+        ab.appendChild(popChip('ad', a, 'Ad concept ' + a));
+      }
+      board.appendChild(ab);
+    }
+
     buildStack(cfg, shown);
     fitBoard();
+  }
+
+  /* A chip that opens the pop-up rather than navigating. A button, so it is
+     keyboard reachable and is not announced as a link to nowhere. */
+  function popChip(kind, n, title) {
+    var b = el('button', 'chip');
+    b.type = 'button';
+    b.textContent = n;
+    b.title = title;
+    b.setAttribute('aria-label', title);
+    b.addEventListener('click', function () { openPop(kind, n); });
+    return b;
   }
 
   function pos(x, y, w, h) {
@@ -539,6 +646,135 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
     });
   }
+
+  /* --------------------------- pop-up --------------------------- */
+
+  var cache = {}, lastFocus = null, popKind = null, popN = 0, popMax = 0;
+
+  function load(kind) {
+    var file = 'clients/' + slug + '-' + (kind === 'ad' ? 'ads' : 'emails') + '.json';
+    if (!cache[kind]) {
+      cache[kind] = fetch(file, { cache: 'no-cache' }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      });
+    }
+    return cache[kind];
+  }
+
+  function openPop(kind, n) {
+    load(kind).then(function (data) {
+      var list = kind === 'ad' ? (data.ads || []) : (data.emails || []);
+      var item = list.filter(function (x) { return x.n === n; })[0];
+      if (!item) return;
+      popKind = kind; popN = n; popMax = list.length;
+      lastFocus = document.activeElement;
+      var c = $('mcontent');
+      c.textContent = '';
+      (kind === 'ad' ? adPop : mailPop)(c, item, data);
+      c.appendChild(popNav());
+      var veil = $('veil');
+      veil.hidden = false;
+      veil.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      $('mclose').focus();
+    }).catch(function () { /* nothing loaded for this client */ });
+  }
+
+  function closePop() {
+    var veil = $('veil');
+    veil.classList.remove('on');
+    veil.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function popNav() {
+    var nav = el('div', 'mnav');
+    var prev = el('button'), next = el('button');
+    prev.type = next.type = 'button';
+    prev.textContent = '← Previous';
+    next.textContent = 'Next →';
+    prev.disabled = popN <= 1;
+    next.disabled = popN >= popMax;
+    prev.addEventListener('click', function () { openPop(popKind, popN - 1); });
+    next.addEventListener('click', function () { openPop(popKind, popN + 1); });
+    nav.appendChild(prev);
+    nav.appendChild(next);
+    return nav;
+  }
+
+  function isTodo(s) { return /^\[.*\]$/.test(String(s).trim()); }
+
+  function popParas(into, list) {
+    (list || []).forEach(function (t) {
+      var p = el('p');
+      if (isTodo(t)) {
+        var s = el('span', 'mtodo');
+        s.textContent = String(t).replace(/^\[|\]$/g, '');
+        p.appendChild(s);
+      } else { p.textContent = t; }
+      into.appendChild(p);
+    });
+  }
+
+  function adPop(c, a) {
+    var head = el('div', 'mhead');
+    var k = el('div', 'mkicker'); k.textContent = 'Ad concept ' + a.n + ' of ' + popMax; head.appendChild(k);
+    var t = el('div', 'mtitle'); t.id = 'mtitle'; t.textContent = a.title; head.appendChild(t);
+    if (a.creative) { var s = el('div', 'msub it'); s.textContent = a.creative; head.appendChild(s); }
+    c.appendChild(head);
+
+    var body = el('div', 'mbody');
+    popParas(body, a.primary);
+    c.appendChild(body);
+
+    var shots = el('div', 'mshots');
+    [['feed', '4:5 feed'], ['story', '9:16 story']].forEach(function (pair) {
+      if (!a[pair[0]]) return;
+      var fig = el('figure', 'mshot');
+      fig.style.margin = '0';
+      var img = el('img');
+      img.src = a[pair[0]];
+      img.loading = 'lazy';
+      img.alt = 'Concept ' + a.n + ', ' + a.title + ', ' + pair[1];
+      fig.appendChild(img);
+      var cap = el('figcaption'); cap.textContent = pair[1]; fig.appendChild(cap);
+      shots.appendChild(fig);
+    });
+    c.appendChild(shots);
+
+    var foot = el('div', 'mfoot');
+    var txt = el('div', 'txt');
+    var hl = el('div', 'mhl'); hl.textContent = a.headline; txt.appendChild(hl);
+    if (a.description) { var d = el('div', 'mdesc'); d.textContent = a.description; txt.appendChild(d); }
+    foot.appendChild(txt);
+    if (a.cta) { var b = el('div', 'mcta'); b.textContent = a.cta; foot.appendChild(b); }
+    c.appendChild(foot);
+  }
+
+  function mailPop(c, e, data) {
+    var head = el('div', 'mhead');
+    var k = el('div', 'mkicker');
+    k.textContent = 'Email ' + e.n + ' of ' + popMax + ' · Day ' + e.day +
+      (data.from ? ' · From ' + data.from : '');
+    head.appendChild(k);
+    var t = el('div', 'mtitle'); t.id = 'mtitle'; t.textContent = e.subject; head.appendChild(t);
+    if (e.preview) { var s = el('div', 'msub'); s.textContent = e.preview; head.appendChild(s); }
+    c.appendChild(head);
+    var body = el('div', 'mbody');
+    popParas(body, e.body);
+    c.appendChild(body);
+  }
+
+  $('mclose').addEventListener('click', closePop);
+  $('veil').addEventListener('click', function (ev) { if (ev.target === $('veil')) closePop(); });
+  document.addEventListener('keydown', function (ev) {
+    if (!$('veil').classList.contains('on')) return;
+    if (ev.key === 'Escape') { closePop(); }
+    else if (ev.key === 'ArrowRight' && popN < popMax) { openPop(popKind, popN + 1); }
+    else if (ev.key === 'ArrowLeft' && popN > 1) { openPop(popKind, popN - 1); }
+  });
 
   /* --------------------------- fit --------------------------- */
 
