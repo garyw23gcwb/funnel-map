@@ -34,10 +34,15 @@ var NODES = [
     job: 'Eighteen sections selling the book and nothing else. Every button goes to checkout.' },
   { id: 'order-form', layer: 'book', label: 'Order Form', x: 422, y: 310, w: 238, h: 130,
     job: 'Three format tiers: digital, audiobook, paperback. Card details captured here.' },
-  { id: 'order-bump', layer: 'book', label: 'Order Bump', x: 422, y: 458, w: 238, h: 82,
+  /* h clears the "one-click buyers" wire that runs across at y=556. */
+  { id: 'order-bump', layer: 'book', label: 'Order Bump', x: 422, y: 458, w: 238, h: 92,
     job: 'One tick, added above the order button.' },
   { id: 'one-click', layer: 'book', label: 'One-Click Offer', x: 694, y: 310, w: 238, h: 130, tilt: 2,
     job: 'Your implementation plan, offered on purchase momentum. No card re-entry.' },
+  /* Most clients run one upsell and leave this switched off. Jim Fitzgerald
+     runs two (Deep Diagnostic, then Training Kit) and no order bump. */
+  { id: 'one-click-2', layer: 'book', label: 'Second One-Click Offer', x: 694, y: 458, w: 238, h: 112, optional: true,
+    job: 'A second upsell, taken or declined the same way.' },
   { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: 966, y: 310, w: 238, h: 130,
     job: 'Confirms the order, sets delivery expectations, points to the reader portal.' },
 
@@ -93,8 +98,10 @@ var EDGES = [
   { a: 'order-form:r',       b: 'one-click:l' },
   { a: 'one-click:r',        b: 'confirmation:l' },
   { a: 'order-form:b',       b: 'order-bump:t', dashed: true, arrow: false },
+  { a: 'one-click:b@0.3',    b: 'one-click-2:t@0.3' },
+  { a: 'one-click-2:r',      b: 'confirmation:b@0.118', via: [[994, 514]] },
   { a: 'one-click:b@0.72',   b: 'confirmation:b@0.35', via: [[865, 592], [1049, 592]],
-    label: 'decline', lx: 916, ly: 568 },
+    label: 'decline', lx: 940, ly: 568 },
   { a: 'confirmation:b@0.65', b: 'reader-portal:t', via: [[1121, 610], [269, 610]] },
   { a: 'reader-portal:b',    b: 'email-sequence:t@0.2333' },
   { a: 'reader-portal:r',    b: 'tinybook:l' },
@@ -103,7 +110,10 @@ var EDGES = [
   { a: 'abandonment:b',      b: 'plan-page:b@0.6', via: [[1085, 1010], [837, 1010]],
     label: 're-pitch', lx: 928, ly: 1020 },
   { a: 'plan-page:b@0.15',   b: 'review-call:t', via: [[730, 1080], [269, 1080]] },
-  { a: 'one-click:b@0.1',    b: 'review-call:l', via: [[718, 556], [70, 556], [70, 1203]],
+  /* Leaves from the left edge and drops through the 34px gap between the
+     order form and the upsell column, so it clears one-click-2 when that
+     is switched on. */
+  { a: 'one-click:l@0.9',    b: 'review-call:l', via: [[677, 427], [677, 556], [70, 556], [70, 1203]],
     label: 'one-click buyers', lx: 62, ly: 1012, vert: true },
   { a: 'review-call:r',      b: 'backend-offer:l' },
   { a: 'tinybook:r',         b: 'rb-optin:l', via: [[1232, 683], [1232, 384]],

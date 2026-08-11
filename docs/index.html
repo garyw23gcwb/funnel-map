@@ -316,7 +316,11 @@
   }
 
   function stateOf(cfg, id) {
-    var c = cfg.nodes[id] || {};
+    var c = cfg.nodes[id];
+    /* Nodes marked optional stay hidden unless a client file mentions them,
+       so adding one does not put a phantom "still to come" box on every
+       existing client's map. Everything else defaults to still-to-come. */
+    if (!c) return NODE[id].optional ? null : { status: 'soon', url: '' };
     if (c.off) return null;
     var url = (c.url || '').trim();
     if (!url) return { status: 'soon', url: '', label: c.label, job: c.job };
@@ -450,9 +454,10 @@
     job.textContent = st.job || n.job;
     card.appendChild(job);
 
-    /* The board's order bump card is too short for a third line; the
-       stacked phone view always has room. */
-    if (cls === 'scard' || n.h > 90) {
+    /* The board's slim cards (the order bump) have no room for a third
+       line; the stacked phone view always does. They are still clickable,
+       and being anchors they still show a pointer cursor. */
+    if (cls === 'scard' || n.h > 100) {
       var meta = el('span', 'cmeta');
       meta.textContent = isLink
         ? (n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')

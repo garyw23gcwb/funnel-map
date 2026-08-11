@@ -258,8 +258,11 @@
       var c = nodes[n.id] || {};
       $('u-' + n.id).value = c.url || '';
       $('s-' + n.id).value = c.status === 'review' ? 'review' : 'live';
-      $('o-' + n.id).checked = !!c.off;
-      $('row-' + n.id).classList.toggle('isoff', !!c.off);
+      /* Optional nodes start switched off, matching how the map treats a
+         node the client file does not mention. */
+      var off = c.off !== undefined ? !!c.off : (!(n.id in nodes) && !!n.optional);
+      $('o-' + n.id).checked = off;
+      $('row-' + n.id).classList.toggle('isoff', off);
     });
     var byN = {};
     (cfg.emails || []).forEach(function (e) { if (e && e.n) byN[e.n] = e; });
