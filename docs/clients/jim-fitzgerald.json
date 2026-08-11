@@ -48,7 +48,7 @@
     },
     "plan-page": {
       "status": "soon",
-      "label": "Diagnostic Page",
+      "label": "Deep Diagnostic Order Page",
       "job": "The Deep Diagnostic on its own URL, for readers who buy later from email."
     },
     "abandonment": {
@@ -89,7 +89,8 @@
     },
     "survey": {
       "status": "soon",
-      "job": "The questions that build the diagnostic report, before the call is booked."
+      "job": "Filled in after purchase. The answers build the diagnostic report.",
+      "label": "Deep Diagnostic Survey"
     }
   },
   "emails": [
