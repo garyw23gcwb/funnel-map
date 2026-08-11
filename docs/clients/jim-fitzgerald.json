@@ -47,9 +47,10 @@
       "status": "live"
     },
     "plan-page": {
-      "status": "soon",
+      "status": "live",
       "label": "Deep Diagnostic Order Page",
-      "job": "The Deep Diagnostic on its own URL, for readers who buy later from email."
+      "job": "The Deep Diagnostic on its own URL, for readers who buy later from email.",
+      "url": "https://milliondollarhurdle.com/deep-diagnostic"
     },
     "abandonment": {
       "off": true
@@ -65,7 +66,7 @@
       "job": "Fitzgerald Growth Partners advisory, sold on the review call."
     },
     "scorecard": {
-      "url": "https://fitzgeraldgrowthpartners.com/scorecard/",
+      "url": "https://milliondollarhurdle.com/scorecard",
       "status": "live",
       "job": "The free 25-question Scorecard. Linked from inside the book and from the emails."
     },

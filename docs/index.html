@@ -6,69 +6,94 @@
 <title>Funnel Ecosystem Map</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Geist:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
 <style>*,*::before,*::after{box-sizing:border-box}</style>
 <style>
+  /* Brand Guidelines, GCWB & Bookfunnels.io. Dark Navy is the page, Pearl
+     Blue the type, and the background is Dark Mode Gradient 1: a teal glow
+     low left and a blue one high right. */
   :root {
     color-scheme: dark;
-    --paper: #1a212c;
-    --ink: #f4f6f9;
-    --red: #ff8a7a;
-    --panel: #202835;
-    --boxbg: #1a212c;
-    --hatch: rgba(244, 246, 249, 0.05);
-    --faint: #8d9aac;
-    --wash: rgba(40, 153, 173, 0.22);
-    --good: #55d3a0;
-    --pen: #5bc5d8;
-    --amber: #f2b544;
+    --navy: #1a212c;
+    --pearl: #f4f6f9;
+    --teal: #2899ad;
+    --cyan: #37bbd4;
+    --aqua: #d3f5fa;
+    --deep-teal: #176b7b;
+    --deep-blue: #23486b;
+
+    --paper: var(--navy);
+    --ink: var(--pearl);
+    --panel: rgba(244, 246, 249, 0.028);
+    --boxbg: #1c2430;
+    --line: rgba(244, 246, 249, 0.16);
+    --faint: #8a97ab;
+    --slate: #3c4859;
+    --wash: rgba(55, 187, 212, 0.14);
+    --pen: var(--cyan);
     --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    --hand: 'Architects Daughter', 'Segoe Print', 'Comic Sans MS', cursive;
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   }
 
   html { background: var(--paper); }
   body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--hand);
+    margin: 0; color: var(--ink); font-family: var(--sans);
+    background:
+      radial-gradient(1100px 780px at 6% 74%, rgba(23, 107, 123, 0.40), transparent 62%),
+      radial-gradient(1000px 720px at 92% 16%, rgba(35, 72, 107, 0.44), transparent 64%),
+      var(--navy);
+    background-attachment: fixed;
   }
   .wrap { max-width: 1480px; margin: 0 auto; padding: 32px 16px 56px; }
   .head { width: min(1400px, 100%); margin: 0 auto 20px; }
 
   .logo {
-    display: block; width: 212px; height: 34px; margin-bottom: 22px;
+    display: block; width: 168px; height: 27px; margin-bottom: 22px;
     background: url(logo.png) no-repeat left center / contain;
   }
 
+  /* The guidelines' page header: a hairline rule with a four-part meta row
+     under it, then the title set in the display serif. */
+  .metarow {
+    display: flex; flex-wrap: wrap; gap: 6px 40px;
+    padding: 13px 0 14px; margin-bottom: 40px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 13.5px; color: var(--ink);
+  }
+  .metarow span:last-child { margin-left: auto; color: var(--faint); }
+  .metarow .dim { color: var(--faint); }
+
   h1 {
-    font-family: var(--sans); font-weight: 600; font-size: 34px;
-    letter-spacing: -0.015em; margin: 0; color: var(--ink);
+    font-family: var(--serif); font-weight: 300; font-size: 58px;
+    line-height: 1.04; letter-spacing: -0.005em; margin: 0; color: var(--ink);
   }
   .sub {
-    font-family: var(--sans); font-size: 16px; color: var(--faint);
-    margin: 7px 0 0; line-height: 1.5;
+    font-size: 15.5px; color: var(--faint); margin: 14px 0 0;
+    line-height: 1.6; max-width: 60ch;
   }
-  .sub b { color: var(--pen); font-weight: 500; }
+  .sub b { color: var(--ink); font-weight: 400; font-style: normal; }
 
   .legend {
-    display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 0;
-    font-family: var(--sans); font-size: 13.5px; color: var(--faint);
+    display: flex; flex-wrap: wrap; gap: 8px 26px; margin: 26px 0 0;
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--faint);
   }
   .legend span { display: inline-flex; align-items: center; gap: 8px; }
   .dot {
-    width: 11px; height: 11px; flex: none;
-    border: 2px solid var(--faint); border-radius: 2px 4px 3px 5px;
+    width: 10px; height: 10px; flex: none;
+    border: 2px solid var(--slate); border-radius: 2px 4px 3px 5px;
   }
-  .dot.live { border-color: var(--good); background: rgba(85, 211, 160, 0.2); }
-  .dot.review { border-color: var(--amber); background: rgba(242, 181, 68, 0.2); }
-  .dot.soon { border-style: dashed; opacity: 0.62; }
+  .dot.live { border-color: var(--cyan); background: rgba(55, 187, 212, 0.22); }
+  .dot.review { border-color: var(--teal); }
+  .dot.soon { border-style: dashed; }
   .legend span { display: none; }
   .legend span.on { display: inline-flex; }
 
   .notice {
-    display: none; margin: 16px 0 0; padding: 10px 14px;
-    font-family: var(--sans); font-size: 14px; color: var(--amber);
-    border: 1.5px solid var(--amber); border-radius: 4px 8px 5px 9px;
-    background: rgba(242, 181, 68, 0.08);
+    display: none; margin: 22px 0 0; padding: 10px 14px;
+    font-size: 13.5px; color: var(--aqua);
+    border: 1px solid rgba(211, 245, 250, 0.3); border-radius: 2px;
+    background: rgba(211, 245, 250, 0.06);
   }
   .notice.on { display: block; }
 
@@ -77,36 +102,32 @@
   .board {
     position: relative; width: 1400px; height: 1400px; margin: 0 auto;
     transform-origin: top left;
-    border: 2.5px solid var(--ink);
-    border-radius: 22px 26px 20px 28px;
-    background-color: var(--panel);
-    background-image:
-      repeating-linear-gradient(45deg, var(--hatch) 0 1px, transparent 1px 7px),
-      repeating-linear-gradient(-45deg, var(--hatch) 0 1px, transparent 1px 7px);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--panel);
   }
-  #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--ink); pointer-events: none; }
-  #wires path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(244,246,249,0.55); pointer-events: none; }
+  #wires path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   #wires path.dashed { stroke-dasharray: 7 7; opacity: 0.65; }
 
   .group {
-    position: absolute; background: var(--boxbg);
-    border: 2.5px solid var(--ink); border-radius: 16px 22px 14px 20px;
+    position: absolute; background: rgba(244, 246, 249, 0.022);
+    border: 1px solid var(--line); border-radius: 3px;
   }
   .titlebox {
-    position: absolute; display: inline-block; padding: 6px 20px 8px;
-    background: var(--boxbg); border: 2.5px solid var(--ink);
-    border-radius: 3px 7px 4px 8px;
-    font-size: 17px; letter-spacing: 2px; text-transform: uppercase;
-    white-space: nowrap; transform: rotate(-1deg);
+    position: absolute; display: inline-block; padding: 6px 16px 7px;
+    background: var(--navy); border: 1px solid var(--line); border-radius: 2px;
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); white-space: nowrap;
   }
   .sublabel {
-    position: absolute; font-size: 13px; letter-spacing: 1.6px;
+    position: absolute; font-size: 11px; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--faint); white-space: nowrap;
   }
   .wirelabel {
-    position: absolute; font-family: var(--sans); font-size: 12.5px;
-    letter-spacing: 0.02em; color: var(--faint); white-space: nowrap;
-    background: var(--panel); padding: 1px 6px 2px; border-radius: 4px;
+    position: absolute; font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+    white-space: nowrap; background: var(--navy); padding: 2px 7px 3px; border-radius: 2px;
   }
   /* Reads bottom-to-top alongside a vertical wire, where a horizontal
      label would collide with a layer title. */
@@ -115,16 +136,16 @@
   .card {
     position: absolute; display: flex; flex-direction: column; gap: 5px;
     padding: 13px 15px 12px; text-decoration: none; color: inherit;
-    background: var(--boxbg); border: 2.5px solid var(--faint);
+    background: var(--boxbg); border: 2.5px solid var(--slate);
     border-radius: 4px 9px 5px 8px;
     font-family: var(--sans); overflow: hidden;
     transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
   }
   .card.tilt { transform: rotate(0.6deg); }
   .card.tilt2 { transform: rotate(-0.5deg); }
-  .card.live { border-color: var(--good); }
-  .card.review { border-color: var(--amber); }
-  .card.soon { border-style: dashed; opacity: 0.62; }
+  .card.live { border-color: var(--cyan); }
+  .card.review { border-color: var(--teal); }
+  .card.soon { border-style: dashed; opacity: 0.55; }
 
   .clabel { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
   .scard { position: relative; }
@@ -134,7 +155,7 @@
 
   a.card:hover, a.card:focus-visible {
     background: var(--wash); transform: translateY(-2px);
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.28);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   }
   a.card.tilt:hover, a.card.tilt:focus-visible { transform: rotate(0.6deg) translateY(-2px); }
   a.card.tilt2:hover, a.card.tilt2:focus-visible { transform: rotate(-0.5deg) translateY(-2px); }
@@ -148,9 +169,9 @@
     display: grid; place-items: center; width: 40px; height: 28px;
     font-size: 12.5px; font-weight: 500; color: var(--faint);
     text-decoration: none; background: var(--boxbg);
-    border: 2px solid var(--faint); border-radius: 3px 6px 4px 7px;
+    border: 2px solid var(--slate); border-radius: 3px 6px 4px 7px;
   }
-  a.chip, button.chip { color: var(--pen); border-color: var(--good); }
+  a.chip, button.chip { color: var(--cyan); border-color: var(--cyan); }
   button.chip { font-family: var(--sans); cursor: pointer; padding: 0; }
   a.chip:hover, a.chip:focus-visible,
   button.chip:hover, button.chip:focus-visible { background: var(--wash); color: var(--ink); }
@@ -159,26 +180,26 @@
   /* Pop-up for a single ad or email, so a click does not lose the map. */
   .veil {
     position: fixed; inset: 0; z-index: 50; display: none;
-    background: rgba(12, 16, 22, 0.78); padding: 28px 18px;
+    background: rgba(14, 19, 26, 0.86); padding: 28px 18px;
     overflow-y: auto; font-family: var(--sans);
   }
   .veil.on { display: block; }
   .modal {
     position: relative; max-width: 720px; margin: 0 auto;
-    background: var(--panel); border: 2.5px solid var(--faint);
-    border-radius: 6px 12px 7px 11px;
+    background: #1c2430; border: 1px solid var(--line); border-radius: 3px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
   }
   .mclose {
     position: absolute; top: -14px; right: -14px; width: 34px; height: 34px;
     display: grid; place-items: center; cursor: pointer;
     font-size: 19px; line-height: 1; color: var(--ink);
-    background: var(--boxbg); border: 2px solid var(--faint); border-radius: 50%;
+    background: var(--navy); border: 1px solid var(--line); border-radius: 50%;
   }
   .mclose:hover { background: var(--wash); }
   .mclose:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
   .mhead { padding: 16px 20px 13px; border-bottom: 1.5px solid #333e52; }
-  .mkicker { font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); }
-  .mtitle { font-size: 19px; font-weight: 600; margin: 4px 0 2px; letter-spacing: -0.01em; }
+  .mkicker { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .mtitle { font-family: var(--serif); font-size: 27px; font-weight: 400; margin: 6px 0 3px; line-height: 1.15; }
   .msub { font-size: 13.5px; color: var(--faint); }
   .msub.it { font-style: italic; }
   .mbody { padding: 16px 20px; }
@@ -186,8 +207,8 @@
   .mbody p:last-child { margin-bottom: 0; }
   .mtodo {
     display: inline-block; padding: 3px 10px 4px; font-size: 13px;
-    color: var(--amber); border: 1.5px dashed var(--amber); border-radius: 4px;
-    background: rgba(242, 181, 68, 0.08);
+    color: var(--aqua); border: 1px dashed rgba(211, 245, 250, 0.4); border-radius: 2px;
+    background: rgba(211, 245, 250, 0.06);
   }
   .mshots {
     display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
@@ -227,19 +248,20 @@
   .stack { display: none; width: 100%; margin: 4px auto 0; font-family: var(--sans); }
   .slayer { margin: 0 0 26px; }
   .stitle {
-    font-family: var(--hand); font-size: 15px; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--ink); margin: 0 0 10px;
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 12px;
+    padding-bottom: 9px; border-bottom: 1px solid var(--line);
   }
   .scard {
     display: flex; flex-direction: column; gap: 4px;
     text-decoration: none; color: inherit;
     padding: 12px 14px; margin: 0 0 8px;
-    background: var(--boxbg); border: 2px solid var(--faint);
+    background: var(--boxbg); border: 2px solid var(--slate);
     border-radius: 4px 9px 5px 8px;
   }
-  .scard.live { border-color: var(--good); }
-  .scard.review { border-color: var(--amber); }
-  .scard.soon { border-style: dashed; opacity: 0.62; }
+  .scard.live { border-color: var(--cyan); }
+  .scard.review { border-color: var(--teal); }
+  .scard.soon { border-style: dashed; opacity: 0.55; }
   .scard .clabel { font-size: 15.5px; }
   .scard .cjob { font-size: 13px; flex: none; }
   .scard .cmeta { font-size: 11px; margin-top: 2px; }
@@ -276,6 +298,12 @@
 <div class="wrap">
   <div class="head">
     <span class="logo" role="img" aria-label="bookfunnels.io"></span>
+    <div class="metarow">
+      <span>Funnel Map</span>
+      <span class="dim" id="mBook"></span>
+      <span class="dim">bookfunnels.io</span>
+      <span id="mDate"></span>
+    </div>
     <h1 id="hClient">Funnel Ecosystem Map</h1>
     <p class="sub" id="hSub"></p>
     <div class="legend" id="legend">
@@ -315,7 +343,7 @@
 <!-- Bump ?v= whenever catalogue.js changes. GitHub Pages serves assets with a
      ten minute max-age, so without this a viewer can hold a stale catalogue
      and see the wrong boxes after an update. -->
-<script src="catalogue.js?v=10"></script>
+<script src="catalogue.js?v=12"></script>
 <script>
 (function () {
   'use strict';
@@ -426,11 +454,10 @@
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
     $('hClient').textContent = title;
 
-    var parts = [];
-    if (cfg.book) parts.push('<b>' + esc(cfg.book) + '</b>');
-    parts.push('Everything built for this funnel, and how each piece feeds the next. Click any live box to open it.');
-    if (cfg.updated) parts.push('Last updated ' + esc(cfg.updated) + '.');
-    $('hSub').innerHTML = parts.join('<br>');
+    $('mBook').textContent = cfg.book || '';
+    $('mDate').textContent = cfg.updated || '';
+    $('hSub').textContent =
+      'Everything built for this funnel, and how each piece feeds the next. Click any live box to open it.';
 
     if (noticeText) {
       $('notice').textContent = noticeText;
@@ -577,6 +604,11 @@
     $('board').style.height = BOARD_H + 'px';
     $('wires').setAttribute('viewBox', '0 0 ' + BOARD_W + ' ' + BOARD_H);
 
+    /* Warm the pop-up data now, so the first chip click is instant instead
+       of waiting on a cold fetch. Failures are retried on click. */
+    if (cfg.adPages && shown['ads']) { load('ad').catch(function () {}); }
+    if (cfg.emailPages && shown['email-sequence']) { load('email').catch(function () {}); }
+
     buildStack(cfg, shown);
     fitBoard();
   }
@@ -652,34 +684,67 @@
 
   var cache = {}, lastFocus = null, popKind = null, popN = 0, popMax = 0;
 
+  /* These files are static, so let the browser cache them normally: forcing
+     revalidation on every open cost seconds on a cold CDN. A rejection is
+     never cached, otherwise one blip would disable every chip on the page
+     until reload. */
   function load(kind) {
     var file = 'clients/' + slug + '-' + (kind === 'ad' ? 'ads' : 'emails') + '.json';
     if (!cache[kind]) {
-      cache[kind] = fetch(file, { cache: 'no-cache' }).then(function (r) {
+      cache[kind] = fetch(file).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
+      }).catch(function (err) {
+        delete cache[kind];
+        throw err;
       });
     }
     return cache[kind];
   }
 
+  function showVeil() {
+    var veil = $('veil');
+    if (veil.classList.contains('on')) return;
+    lastFocus = document.activeElement;
+    veil.hidden = false;
+    veil.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    $('mclose').focus();
+  }
+
+  function popMessage(text) {
+    var c = $('mcontent');
+    c.textContent = '';
+    var head = el('div', 'mhead');
+    var t = el('div', 'mtitle');
+    t.id = 'mtitle';
+    t.textContent = text;
+    head.appendChild(t);
+    c.appendChild(head);
+  }
+
+  /* Open straight away and fill in when the data lands. Waiting silently for
+     a slow fetch made every chip look broken. */
   function openPop(kind, n) {
+    showVeil();
+    var pending = true;
+    setTimeout(function () { if (pending) popMessage('Loading…'); }, 150);
+
     load(kind).then(function (data) {
+      pending = false;
       var list = kind === 'ad' ? (data.ads || []) : (data.emails || []);
       var item = list.filter(function (x) { return x.n === n; })[0];
-      if (!item) return;
+      if (!item) { popMessage('That one is not in the file yet.'); return; }
       popKind = kind; popN = n; popMax = list.length;
-      lastFocus = document.activeElement;
       var c = $('mcontent');
       c.textContent = '';
       (kind === 'ad' ? adPop : mailPop)(c, item, data);
       c.appendChild(popNav());
-      var veil = $('veil');
-      veil.hidden = false;
-      veil.classList.add('on');
-      document.body.style.overflow = 'hidden';
-      $('mclose').focus();
-    }).catch(function () { /* nothing loaded for this client */ });
+    }).catch(function () {
+      pending = false;
+      popMessage(kind === 'ad' ? 'The ads could not be loaded. Try again in a moment.'
+                               : 'The emails could not be loaded. Try again in a moment.');
+    });
   }
 
   function closePop() {
