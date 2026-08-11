@@ -1,7 +1,7 @@
 {
   "client": "Jim Fitzgerald",
   "from": "Jim Fitzgerald",
-  "source": "ClickUp: Book Buyer Email Sequence, repointed to the $97 Deep Diagnostic 10 Aug 2026",
+  "source": "ClickUp: Book Buyer Email Sequence, final customer-facing version",
   "emails": [
     {
       "n": 1,
@@ -22,9 +22,8 @@
         "Or the book rides around on the passenger seat, and next year looks like this one.",
         "I'll be in your inbox over the next few weeks. Some of it comes from the book. Some of it doesn't.",
         "Everything you bought is waiting here.",
-        "\\[URL NEEDED: reader portal / book access page\\]",
-        "Jim",
-        "* * *"
+        "https://readers.milliondollarhurdle.com",
+        "Jim"
       ]
     },
     {
@@ -50,9 +49,8 @@
         "One rule travels with it, and it's the most important sentence in the book.",
         "Do not work on scale while instability exists. Growth does not fix broken businesses. It exposes them.",
         "Take the Scorecard before you read another chapter. Twenty-five statements, 10 to 15 minutes, and you'll know where to start.",
-        "\\[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/scorecard",
+        "Jim"
       ]
     },
     {
@@ -78,8 +76,7 @@
         "\"I'll run that by my attorney.\"",
         "Both are true. One of them sounds like a company.",
         "Pick one job this week that only you do. Find out what handing it to a professional actually costs.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -100,8 +97,7 @@
         "If you vanished for one week with no phone, what would break first?",
         "Be specific. Whatever came to mind in the first two seconds is usually the honest answer.",
         "Just hit reply and tell me, {{contact.first\\_name}}. I read these myself.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -125,8 +121,7 @@
         "Eleven-year-olds work hard.",
         "What got me off the wall was help. Honest, occasionally uncomfortable advice from people who had already done what I was trying to do.",
         "That's the whole reason this book exists. I'd rather hand you that now than watch you spend another five years working it out alone.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -148,8 +143,7 @@
         "You still work. You get to choose what you work on.",
         "Right now, other people choose for you.",
         "That's the gap the next ninety days can close.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -167,14 +161,13 @@
         "Door two. The Million-Dollar Deep Diagnostic.",
         "Eighty-four questions instead of twenty-five, and every one of them asks about a fact. What your approval threshold is on an estimate. Who follows up on a lead that lands Saturday morning. How long your longest-serving person has been with you.",
         "What comes back is a report with your name on it. All five sections scored. Your primary constraint named in plain English. Your own weakest answers quoted back and read side by side. What that constraint is costing you this year in dollars. And ninety days of specific moves, in the order they have to happen.",
-        "It's $97, and about fifteen minutes of questions. `[CONFIRM: completion time]`",
+        "It's $97, and about fifteen minutes of questions.",
         "The honest drawback: it puts your weakest section in writing, and some owners would rather not have that.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "https://milliondollarhurdle.com/deep-diagnostic",
         "Door three. Tell me where you're stuck.",
         "Reply to this email with two things. Where your revenue sits today, and what has stopped you fixing this yourself.",
         "I'll tell you honestly which door I think you're standing in front of, including if the honest answer is door one.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -202,8 +195,7 @@
         "The things holding back seven-figure companies are boring, basic and fixable. Yours almost certainly are too.",
         "That should land as relief.",
         "Boring problems have known answers. You are not facing anything exotic.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -233,9 +225,8 @@
         "That's the whole reason the Million-Dollar Deep Diagnostic exists.",
         "Eighty-four questions about how your business actually runs. What comes back names your primary constraint, quotes your own weakest answers back to you, puts a dollar figure on what it's costing you this year, and lays out ninety days of specific moves in order.",
         "$97, with a free retake at day ninety so you can see what moved.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/deep-diagnostic",
+        "Jim"
       ]
     },
     {
@@ -260,8 +251,7 @@
         "Ninety days on one thing is reachable. You can hold that in your head on a Tuesday morning.",
         "And something shifts once you finish the first one.",
         "The second one stops looking like a mountain. That part surprises everybody.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -286,9 +276,8 @@
         "Somebody still has to tell it which hole you're playing.",
         "That's the job the Deep Diagnostic does. Eighty-four questions about how your business actually runs, and a report that names your constraint, prices it, and puts your next ninety days in order.",
         "Once you know that, point every tool you own at it. The AI included.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/deep-diagnostic",
+        "Jim"
       ]
     },
     {
@@ -314,9 +303,8 @@
         "So before you spend another dollar on lead generation, go and score yourself.",
         "Five sections, twenty-five statements, about 10 to 15 minutes.",
         "Your lowest section is where the money is leaking out.",
-        "\\[URL NEEDED: free 25-question Million-Dollar Scorecard in the reader portal\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/scorecard",
+        "Jim"
       ]
     },
     {
@@ -344,8 +332,7 @@
         "Then ask yourself the harder question. Which of the five sections is putting you there?",
         "Most owners answer that one wrong, and spend a year fixing something that was never the problem.",
         "You can't fix the wrong problem into the right result.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -363,17 +350,15 @@
         "And if you're honestly not certain which of the five sections is costing you the most.",
         "If that's you, run the Million-Dollar Deep Diagnostic.",
         "Eighty-four questions about how your business actually runs. Every one of them asks about a fact, so there's nothing to rate and nothing to round up. What your approval threshold is. Who answers a lead on Saturday. How long your people stay. Whether you track close rate.",
-        "Then here's what comes back. `[CONFIRM: delivery window]`",
+        "Then here's what comes back.",
         "All five sections scored out of twenty-five, with your primary constraint named in plain English. In our sample report it read: this business doesn't have a growth problem, it has a Mike problem. ($197 value)",
         "Your own weakest answers quoted back and read against each other, with what that constraint is costing you this year in dollars. In the sample that came to forty to seventy thousand a year, out of one leak nobody had looked at. ($147 value)",
         "Ninety days of specific moves, in three thirty-day blocks, built from your answers and ordered so you never work on the wrong thing first. Starting the Monday after you finish. ($197 value)",
-        "Your Toolkit: where you sit today on getting work off your own desk, plus the Monday Five, five numbers on a whiteboard for thirty minutes every Monday so you never fly blind again. ($97 value) `[CONFIRM: naming, see production notes]`",
         "A free retake at day ninety, so your before and after shows exactly which numbers moved. ($97 value)",
-        "$735 of value. $97.",
-        "Read the report. If it doesn't show you something about your own business that the twenty-five statements in the book couldn't have, email us inside thirty days and we'll refund every penny. You keep the report and the retake either way. `[CONFIRM: guarantee window and terms]`",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
-        "Jim",
-        "* * *"
+        "$638 of value. $97.",
+        "Read the report. If it doesn't show you something about your own business that the twenty-five statements in the book couldn't have, email us inside thirty days and we'll refund every penny. You keep the report and the retake either way.",
+        "https://milliondollarhurdle.com/deep-diagnostic",
+        "Jim"
       ]
     },
     {
@@ -385,10 +370,10 @@
         "A few people have asked what actually happens after you run the Deep Diagnostic.",
         "Fair question. Here's the whole thing.",
         "You click the link and pay $97. That page takes about ninety seconds.",
-        "Then you answer eighty-four questions. About fifteen minutes. `[CONFIRM: completion time]`",
+        "Then you answer eighty-four questions. About fifteen minutes.",
         "They're not hard and there's nothing to prepare. They ask how the business actually runs. What's your approval threshold on an estimate. Who follows up on a lead that comes in Saturday morning. How long has your longest-serving employee been with you. Do you track close rate, or just the bank balance.",
         "Answer them the way the book tells you to score yourself. How it runs on an average Tuesday when you're tired, rather than how it runs on your best week.",
-        "Then the report comes back. `[CONFIRM: delivery window]`",
+        "Then the report comes back.",
         "Thirteen pages with your name on the front.",
         "First page: your five section scores out of twenty-five, and your primary constraint named.",
         "Then the part most owners read twice. Your own answers, quoted back and read against each other.",
@@ -397,11 +382,10 @@
         "That's the thing you can't do to yourself. You score each statement on its own. Nobody holds four of your answers up next to each other and tells you what they add up to.",
         "Then a page on each section, with your weakest answers and what they actually mean.",
         "Then your ninety days. Three thirty-day blocks, four moves in each, specific to your answers, starting the Monday after you finish. The sample told that owner to move his estimate approval line from $2,500 to $6,000 for his two senior techs, and to run a decision log for two weeks first. That level of specific.",
-        "Then your Toolkit, and your retake date, already on the calendar.",
+        "Then your retake date, already on the calendar.",
         "That's the whole process. No calls to book, no course to sit through, no waiting on me for anything.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/deep-diagnostic",
+        "Jim"
       ]
     },
     {
@@ -433,11 +417,10 @@
         "But let me say the fairer thing. Neither of us knows yet.",
         "That's exactly the point. You're carrying a theory about what's holding this business back, and you have never once tested it. Eighty-four questions and $97 will tell you whether you're right.",
         "If your constraint turns out to be the one you already suspected, you've bought certainty and a ninety-day plan to go with it. If it turns out to be something else, you've saved yourself a year of fixing the wrong thing.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "https://milliondollarhurdle.com/deep-diagnostic",
         "If you've got a fourth objection I haven't covered here, hit reply and give it to me straight.",
         "I'll answer it honestly, including if the honest answer is that this is wrong for you.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -463,8 +446,7 @@
         "Hit reply and send me the number. One to five, that's all I need.",
         "If it's none of those, tell me what it actually is.",
         "I read every one of these myself, and I answer them.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -492,9 +474,8 @@
         "In our sample report it came back at 9 out of 25. Critical. It was also the section dragging the other four down, and the owner had no idea. He was certain his problem was lead flow.",
         "It's the section owners are most nervous to look at, and the one that most often turns out to be the constraint.",
         "The Deep Diagnostic gives you the number, tells you what it's costing you, and hands you ninety days of moves to change it.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
-        "Jim",
-        "* * *"
+        "https://milliondollarhurdle.com/deep-diagnostic",
+        "Jim"
       ]
     },
     {
@@ -519,8 +500,7 @@
         "Both paths cost you something. Path one costs you the year and hands you the same business back. Path two costs you focused attention on unglamorous work you've been avoiding.",
         "I'm not asking you to choose today.",
         "Just notice that you're standing at a fork, and that standing still quietly picks path one for you.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -547,8 +527,7 @@
         "I had a phrase for the owners we served back then. They're small businesses, but they're real.",
         "Twelve straight years on the Inc. 5000 came from that same unglamorous work. Answering fast. Hiring slowly. Keeping good people eight years.",
         "Somebody eventually says the same about your company. That's the quiet outcome underneath all of this.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     },
     {
@@ -569,13 +548,12 @@
         "So here's the smallest possible ask.",
         "Fifteen minutes. Eighty-four questions about how this business actually runs. A report that comes back and tells you which of the five sections is the ceiling, what it's costing you this year, and what to do about it for ninety days.",
         "$97, with a free retake at day ninety to prove the numbers moved.",
-        "\\[URL NEEDED: Deep Diagnostic page, $97\\]",
+        "https://milliondollarhurdle.com/deep-diagnostic",
         "If that's not for you, the twenty-five statements in Chapter 2 are free and they'll point you at your weakest section. Go and do that instead. I mean it.",
         "Either way, pick one section and give it ninety days. That's the whole message of the book, and it's the last thing I'll say about it.",
         "Or reply and tell me where you're stuck. I read them myself.",
         "I'll keep writing either way.",
-        "Jim",
-        "* * *"
+        "Jim"
       ]
     }
   ]

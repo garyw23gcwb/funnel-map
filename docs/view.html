@@ -70,6 +70,7 @@
   .mailbody { padding: 20px; }
   .mailbody p { margin: 0 0 15px; font-size: 15.5px; line-height: 1.62; }
   .mailbody p:last-child { margin-bottom: 0; }
+  .mlink { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(55,187,212,0.45); }
   .todo {
     display: inline-block; padding: 3px 10px 4px; font-size: 13px;
     color: var(--aqua); border: 1px dashed rgba(211, 245, 250, 0.4); border-radius: 2px;
@@ -178,6 +179,21 @@
      than hidden, so an unfinished asset reads as unfinished. */
   function isTodo(s) { return /^\[.*\]$/.test(s.trim()); }
 
+  /* Copy carries live URLs; show them as links. Built as nodes, never
+     innerHTML, so the copy can never inject markup. */
+  function linkify(into, text) {
+    var re = /https?:\/\/[^\s)<>"']+/g, last = 0, m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) into.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var a = el('a', 'mlink');
+      a.href = m[0]; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = m[0].replace(/^https?:\/\//, '');
+      into.appendChild(a);
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) into.appendChild(document.createTextNode(text.slice(last)));
+  }
+
   function paras(into, list, cls) {
     list.forEach(function (t) {
       var p = el('p');
@@ -186,7 +202,7 @@
         s.textContent = t.replace(/^\[|\]$/g, '');
         p.appendChild(s);
       } else {
-        p.textContent = t;
+        linkify(p, String(t));
       }
       into.appendChild(p);
     });
