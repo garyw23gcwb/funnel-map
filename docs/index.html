@@ -67,7 +67,11 @@
   }
   .sub {
     font-size: 15.5px; color: var(--faint); margin: 18px 0 0;
-    line-height: 1.6; max-width: 60ch;
+    line-height: 1.6; max-width: 880px;
+    /* Wide enough for the sentence to sit on one line on a desktop header;
+       balance keeps the break even rather than orphaning "to open it."
+       when the viewport is narrower. */
+    text-wrap: balance;
   }
   .sub b { color: var(--ink); font-weight: 400; font-style: normal; }
 
