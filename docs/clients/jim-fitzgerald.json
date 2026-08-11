@@ -11,7 +11,7 @@
     "one-click-2":    { "off": true },
     "confirmation":   { "url": "https://themilliondollarhurdle.com/success", "status": "live" },
     "reader-portal":  { "url": "https://readers.themilliondollarhurdle.com", "status": "live", "job": "Where the reader logs in and downloads the book." },
-    "tinybook":       { "status": "soon", "label": "The Book", "job": "The Million-Dollar Hurdle. The asset the whole funnel is built around." },
+    "tinybook":       { "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf", "status": "live", "label": "The Book", "job": "The Million-Dollar Hurdle. The asset the whole funnel is built around." },
     "email-sequence": { "status": "soon" },
     "plan-page":      { "status": "soon", "label": "Diagnostic Page", "job": "The Deep Diagnostic on its own URL, for readers who buy later from email." },
     "abandonment":    { "off": true },
