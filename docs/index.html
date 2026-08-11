@@ -393,10 +393,13 @@
 
     /* group boxes, drawn first so wires and cards sit on top */
     GROUPS.forEach(function (g) {
-      var any = NODES.some(function (n) { return n.layer === g.id && shown[n.id]; });
-      if (!any) return;
+      var members = NODES.filter(function (n) { return n.layer === g.id && shown[n.id]; });
+      if (!members.length) return;
+      /* Shrink to fit what is actually shown. A client running one side
+         funnel should not get a full-height box with one card in it. */
+      var bottom = Math.max.apply(null, members.map(function (n) { return n.y + n.h; }));
       var d = el('div', 'group');
-      d.style.cssText = pos(g.x, g.y, g.w, g.h);
+      d.style.cssText = pos(g.x, g.y, g.w, Math.min(g.h, bottom + 26 - g.y));
       board.appendChild(d);
     });
 
