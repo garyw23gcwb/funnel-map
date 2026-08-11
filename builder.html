@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel Map Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Geist:wght@400;500;600&display=swap">
+<style>*,*::before,*::after{box-sizing:border-box}</style>
+<style>
+  :root {
+    color-scheme: dark;
+    --paper: #1a212c;  --ink: #f4f6f9;   --panel: #202835;
+    --boxbg: #1a212c;  --faint: #8d9aac; --pen: #5bc5d8;
+    --good: #55d3a0;   --amber: #f2b544; --red: #ff8a7a;
+    --wash: rgba(40, 153, 173, 0.22);
+    --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --hand: 'Architects Daughter', 'Segoe Print', 'Comic Sans MS', cursive;
+  }
+  html { background: var(--paper); }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 15px; line-height: 1.5;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 30px 18px 90px; }
+
+  h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 6px; }
+  .lede { color: var(--faint); margin: 0 0 26px; max-width: 66ch; }
+  .lede code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--pen); }
+
+  h2 {
+    font-family: var(--hand); font-size: 17px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 400;
+    margin: 34px 0 12px; padding-bottom: 8px;
+    border-bottom: 2.5px solid var(--panel);
+  }
+
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  label { display: block; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); margin-bottom: 5px; }
+
+  input[type=text], input[type=url], select {
+    width: 100%; padding: 8px 10px; color: var(--ink);
+    font-family: var(--sans); font-size: 14px;
+    background: var(--boxbg); border: 1.5px solid #38445a; border-radius: 6px;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--pen); background: var(--wash); }
+  input::placeholder { color: #5d6a80; }
+
+  .row {
+    display: grid; grid-template-columns: 190px 1fr 132px 34px;
+    gap: 10px; align-items: center;
+    padding: 9px 10px; border-radius: 7px;
+    border: 1.5px solid transparent;
+  }
+  .row:nth-child(odd) { background: rgba(32, 40, 53, 0.55); }
+  .row.isoff { opacity: 0.4; }
+  .row.isoff input[type=url], .row.isoff select { pointer-events: none; }
+
+  .nm { font-weight: 500; font-size: 14px; }
+  .nm small { display: block; font-weight: 400; font-size: 11.5px; color: var(--faint); letter-spacing: 0.04em; }
+  .off { display: grid; place-items: center; }
+  .off input { width: 17px; height: 17px; accent-color: var(--red); cursor: pointer; }
+  .hdr {
+    display: grid; grid-template-columns: 190px 1fr 132px 34px; gap: 10px;
+    padding: 0 10px 6px; font-size: 11px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--faint);
+  }
+
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: var(--pen); font-size: 14px; padding: 6px 0; }
+  .emails { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+  .erow { display: grid; grid-template-columns: 58px 1fr; gap: 8px; align-items: center; }
+  .erow span { font-size: 12px; color: var(--faint); }
+
+  .bar {
+    position: sticky; bottom: 0; margin-top: 30px; padding: 14px 0 16px;
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    background: linear-gradient(to top, var(--paper) 72%, rgba(26, 33, 44, 0));
+  }
+  button {
+    padding: 9px 16px 10px; cursor: pointer; font-family: var(--sans);
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    background: var(--boxbg); border: 1.5px solid var(--ink); border-radius: 8px;
+  }
+  button:hover { background: var(--wash); }
+  button:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+  button.primary { border-color: var(--good); color: var(--good); }
+  button.ghost { border-color: #38445a; color: var(--faint); }
+  .status { font-size: 13px; color: var(--faint); margin-left: 4px; }
+  .status.ok { color: var(--good); }
+  .status.warn { color: var(--amber); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Funnel Map Builder</h1>
+  <p class="lede">
+    Paste each link, pick its status, then <b>Download</b>. Drop the file it writes into
+    <code>docs/clients/</code>, commit and push, and the client's map is live at
+    <code>?c=&lt;slug&gt;</code>. Nothing is uploaded from this page; your work in progress is
+    kept in this browser only.
+  </p>
+
+  <h2>Client</h2>
+  <div class="meta">
+    <div><label for="fClient">Client name</label><input type="text" id="fClient" placeholder="Jacqueline Oberst"></div>
+    <div><label for="fBook">Book title</label><input type="text" id="fBook" placeholder="The Rate Card Reset"></div>
+    <div><label for="fSlug">Slug (the file name)</label><input type="text" id="fSlug" placeholder="jacqueline-oberst"></div>
+  </div>
+
+  <div id="layers"></div>
+
+  <h2>Email sequence</h2>
+  <details id="emailBlock">
+    <summary>Per-email links (optional). Without these, the sequence box links to the master doc.</summary>
+    <div class="emails" id="emails"></div>
+  </details>
+
+  <div class="bar">
+    <button class="primary" id="bDownload">Download JSON</button>
+    <button id="bPreview">Preview map</button>
+    <button class="ghost" id="bLoad">Load a file</button>
+    <button class="ghost" id="bClear">Clear form</button>
+    <input type="file" id="fFile" accept=".json,application/json" hidden>
+    <span class="status" id="status"></span>
+  </div>
+</div>
+
+<script src="docs/catalogue.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var C = window.FUNNEL_CATALOGUE;
+  if (!C) {
+    document.body.innerHTML = '<div class="wrap"><h1>Catalogue not found</h1>' +
+      '<p class="lede">This page loads <code>docs/catalogue.js</code>. Keep builder.html ' +
+      'in the repo root, next to the <code>docs</code> folder.</p></div>';
+    return;
+  }
+
+  var NODES = C.NODES, LAYERS = C.LAYERS, EMAIL_COUNT = C.CHIPS.count;
+  var DAYS = [0, 1, 3, 5, 7, 9, 11, 12, 13, 15, 16, 17, 18, 19, 21, 22, 24, 26, 27, 28, 30];
+  var DRAFT_KEY = 'funnel-map-draft:';
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+
+  /* ------------------------- build the form ------------------------- */
+
+  LAYERS.forEach(function (L) {
+    var members = NODES.filter(function (n) { return n.layer === L.id; });
+    if (!members.length) return;
+
+    var h = el('h2');
+    h.textContent = L.title;
+    $('layers').appendChild(h);
+
+    var hdr = el('div', 'hdr');
+    ['Piece', 'Link', 'Status', 'Off'].forEach(function (t) {
+      var s = el('span'); s.textContent = t; hdr.appendChild(s);
+    });
+    $('layers').appendChild(hdr);
+
+    members.forEach(function (n) {
+      var row = el('div', 'row');
+      row.id = 'row-' + n.id;
+
+      var nm = el('div', 'nm');
+      nm.appendChild(document.createTextNode(n.label));
+      var sm = el('small');
+      sm.textContent = n.id;
+      nm.appendChild(sm);
+      row.appendChild(nm);
+
+      var url = el('input');
+      url.type = 'url';
+      url.id = 'u-' + n.id;
+      url.placeholder = 'https://…  (leave blank for “still to come”)';
+      url.setAttribute('aria-label', n.label + ' link');
+      row.appendChild(url);
+
+      var sel = el('select');
+      sel.id = 's-' + n.id;
+      sel.setAttribute('aria-label', n.label + ' status');
+      [['live', 'Live'], ['review', 'In review']].forEach(function (o) {
+        var opt = el('option'); opt.value = o[0]; opt.textContent = o[1]; sel.appendChild(opt);
+      });
+      row.appendChild(sel);
+
+      var off = el('div', 'off');
+      var cb = el('input');
+      cb.type = 'checkbox';
+      cb.id = 'o-' + n.id;
+      cb.title = 'Not part of this client’s build. Hides the box and its arrows.';
+      cb.setAttribute('aria-label', n.label + ': not in this build');
+      cb.addEventListener('change', function () {
+        row.classList.toggle('isoff', cb.checked);
+        touch();
+      });
+      off.appendChild(cb);
+      row.appendChild(off);
+
+      $('layers').appendChild(row);
+    });
+  });
+
+  for (var i = 1; i <= EMAIL_COUNT; i++) {
+    var er = el('div', 'erow');
+    var lab = el('span');
+    lab.textContent = i + ' · d' + DAYS[i - 1];
+    er.appendChild(lab);
+    var inp = el('input');
+    inp.type = 'url';
+    inp.id = 'e-' + i;
+    inp.placeholder = 'link';
+    inp.setAttribute('aria-label', 'Email ' + i + ' link');
+    er.appendChild(inp);
+    $('emails').appendChild(er);
+  }
+
+  /* --------------------------- form <-> data --------------------------- */
+
+  function slug() {
+    return ($('fSlug').value || '').trim().toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  function collect() {
+    var cfg = {
+      client: $('fClient').value.trim(),
+      book: $('fBook').value.trim(),
+      updated: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
+      nodes: {},
+      emails: []
+    };
+    NODES.forEach(function (n) {
+      if ($('o-' + n.id).checked) { cfg.nodes[n.id] = { off: true }; return; }
+      var u = $('u-' + n.id).value.trim();
+      cfg.nodes[n.id] = u ? { url: u, status: $('s-' + n.id).value } : { status: 'soon' };
+    });
+    for (var i = 1; i <= EMAIL_COUNT; i++) {
+      var u = $('e-' + i).value.trim();
+      var e = { n: i, day: DAYS[i - 1] };
+      if (u) e.url = u;
+      cfg.emails.push(e);
+    }
+    return cfg;
+  }
+
+  function apply(cfg) {
+    cfg = cfg || {};
+    $('fClient').value = cfg.client || '';
+    $('fBook').value = cfg.book || '';
+    var nodes = cfg.nodes || {};
+    NODES.forEach(function (n) {
+      var c = nodes[n.id] || {};
+      $('u-' + n.id).value = c.url || '';
+      $('s-' + n.id).value = c.status === 'review' ? 'review' : 'live';
+      $('o-' + n.id).checked = !!c.off;
+      $('row-' + n.id).classList.toggle('isoff', !!c.off);
+    });
+    var byN = {};
+    (cfg.emails || []).forEach(function (e) { if (e && e.n) byN[e.n] = e; });
+    for (var i = 1; i <= EMAIL_COUNT; i++) {
+      $('e-' + i).value = (byN[i] && byN[i].url) || '';
+    }
+    if ((cfg.emails || []).some(function (e) { return e && e.url; })) {
+      $('emailBlock').open = true;
+    }
+  }
+
+  /* ----------------------------- drafts ----------------------------- */
+
+  var saveTimer = null;
+  function touch() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      var s = slug();
+      if (!s) return;
+      try {
+        localStorage.setItem(DRAFT_KEY + s, JSON.stringify(collect()));
+        note('Draft saved for "' + s + '"');
+      } catch (err) { note('Could not save the draft in this browser', 'warn'); }
+    }, 600);
+  }
+  document.addEventListener('input', touch);
+
+  function loadDraft() {
+    var s = slug();
+    if (!s) return false;
+    try {
+      var raw = localStorage.getItem(DRAFT_KEY + s);
+      if (!raw) return false;
+      apply(JSON.parse(raw));
+      note('Loaded your saved draft for "' + s + '"', 'ok');
+      return true;
+    } catch (err) { return false; }
+  }
+  $('fSlug').addEventListener('change', loadDraft);
+
+  var noteTimer = null;
+  function note(msg, kind) {
+    var s = $('status');
+    s.textContent = msg;
+    s.className = 'status' + (kind ? ' ' + kind : '');
+    clearTimeout(noteTimer);
+    noteTimer = setTimeout(function () { s.textContent = ''; }, 4000);
+  }
+
+  /* ----------------------------- actions ----------------------------- */
+
+  $('bDownload').addEventListener('click', function () {
+    var s = slug();
+    if (!s) { note('Give the client a slug first, for example jacqueline-oberst', 'warn'); $('fSlug').focus(); return; }
+    var blob = new Blob([JSON.stringify(collect(), null, 2) + '\n'], { type: 'application/json' });
+    var a = el('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = s + '.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    note('Saved ' + s + '.json. Drop it in docs/clients/, then commit and push.', 'ok');
+  });
+
+  /* The map reads ?d= so a preview works before anything is committed.
+     base64url, because a raw JSON query string breaks on # and &. */
+  $('bPreview').addEventListener('click', function () {
+    var json = JSON.stringify(collect());
+    var bytes = new TextEncoder().encode(json);
+    var bin = '';
+    bytes.forEach(function (b) { bin += String.fromCharCode(b); });
+    var d = btoa(bin).replace(/\+/g, '-').replace(/\//g, '_');
+    window.open('docs/index.html?d=' + d, '_blank', 'noopener');
+    note('Preview opened in a new tab');
+  });
+
+  $('bLoad').addEventListener('click', function () { $('fFile').click(); });
+  $('fFile').addEventListener('change', function () {
+    var file = this.files && this.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        apply(JSON.parse(reader.result));
+        if (!slug()) $('fSlug').value = file.name.replace(/\.json$/i, '');
+        note('Loaded ' + file.name, 'ok');
+      } catch (err) { note('That file is not valid JSON', 'warn'); }
+    };
+    reader.readAsText(file);
+    this.value = '';
+  });
+
+  $('bClear').addEventListener('click', function () {
+    if (!confirm('Clear every field on this form? The downloaded files are not affected.')) return;
+    apply({});
+    note('Form cleared');
+  });
+
+  apply({});
+  loadDraft();
+})();
+</script>
+</body>
+</html>

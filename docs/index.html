@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel Ecosystem Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Geist:wght@400;500;600&display=swap">
+<style>*,*::before,*::after{box-sizing:border-box}</style>
+<style>
+  :root {
+    color-scheme: dark;
+    --paper: #1a212c;
+    --ink: #f4f6f9;
+    --red: #ff8a7a;
+    --panel: #202835;
+    --boxbg: #1a212c;
+    --hatch: rgba(244, 246, 249, 0.05);
+    --faint: #8d9aac;
+    --wash: rgba(40, 153, 173, 0.22);
+    --good: #55d3a0;
+    --pen: #5bc5d8;
+    --amber: #f2b544;
+    --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --hand: 'Architects Daughter', 'Segoe Print', 'Comic Sans MS', cursive;
+  }
+
+  html { background: var(--paper); }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--hand);
+  }
+  .wrap { max-width: 1640px; margin: 0 auto; padding: 32px 16px 56px; }
+  .head { width: min(1560px, 100%); margin: 0 auto 20px; }
+
+  .logo {
+    display: block; width: 212px; height: 34px; margin-bottom: 22px;
+    background: url(logo.png) no-repeat left center / contain;
+  }
+
+  h1 {
+    font-family: var(--sans); font-weight: 600; font-size: 34px;
+    letter-spacing: -0.015em; margin: 0; color: var(--ink);
+  }
+  .sub {
+    font-family: var(--sans); font-size: 16px; color: var(--faint);
+    margin: 7px 0 0; line-height: 1.5;
+  }
+  .sub b { color: var(--pen); font-weight: 500; }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 0;
+    font-family: var(--sans); font-size: 13.5px; color: var(--faint);
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .dot {
+    width: 11px; height: 11px; flex: none;
+    border: 2px solid var(--faint); border-radius: 2px 4px 3px 5px;
+  }
+  .dot.live { border-color: var(--good); background: rgba(85, 211, 160, 0.2); }
+  .dot.review { border-color: var(--amber); background: rgba(242, 181, 68, 0.2); }
+
+  .notice {
+    display: none; margin: 16px 0 0; padding: 10px 14px;
+    font-family: var(--sans); font-size: 14px; color: var(--amber);
+    border: 1.5px solid var(--amber); border-radius: 4px 8px 5px 9px;
+    background: rgba(242, 181, 68, 0.08);
+  }
+  .notice.on { display: block; }
+
+  .shell { overflow-x: auto; padding-bottom: 6px; }
+  .stage { position: relative; margin: 0 auto; }
+  .board {
+    position: relative; width: 1560px; height: 1312px; margin: 0 auto;
+    transform-origin: top left;
+    border: 2.5px solid var(--ink);
+    border-radius: 22px 26px 20px 28px;
+    background-color: var(--panel);
+    background-image:
+      repeating-linear-gradient(45deg, var(--hatch) 0 1px, transparent 1px 7px),
+      repeating-linear-gradient(-45deg, var(--hatch) 0 1px, transparent 1px 7px);
+  }
+  #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--ink); pointer-events: none; }
+  #wires path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  #wires path.dashed { stroke-dasharray: 7 7; opacity: 0.65; }
+
+  .group {
+    position: absolute; background: var(--boxbg);
+    border: 2.5px solid var(--ink); border-radius: 16px 22px 14px 20px;
+  }
+  .titlebox {
+    position: absolute; display: inline-block; padding: 6px 20px 8px;
+    background: var(--boxbg); border: 2.5px solid var(--ink);
+    border-radius: 3px 7px 4px 8px;
+    font-size: 17px; letter-spacing: 2px; text-transform: uppercase;
+    white-space: nowrap; transform: rotate(-1deg);
+  }
+  .sublabel {
+    position: absolute; font-size: 13px; letter-spacing: 1.6px;
+    text-transform: uppercase; color: var(--faint); white-space: nowrap;
+  }
+  .wirelabel {
+    position: absolute; font-family: var(--sans); font-size: 12.5px;
+    letter-spacing: 0.02em; color: var(--faint); white-space: nowrap;
+    background: var(--panel); padding: 1px 6px 2px; border-radius: 4px;
+  }
+  /* Reads bottom-to-top alongside a vertical wire, where a horizontal
+     label would collide with a layer title. */
+  .wirelabel.vert { transform: rotate(-90deg); transform-origin: left top; }
+
+  .card {
+    position: absolute; display: flex; flex-direction: column; gap: 5px;
+    padding: 13px 15px 12px; text-decoration: none; color: inherit;
+    background: var(--boxbg); border: 2.5px solid var(--faint);
+    border-radius: 4px 9px 5px 8px;
+    font-family: var(--sans); overflow: hidden;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .card.tilt { transform: rotate(0.6deg); }
+  .card.tilt2 { transform: rotate(-0.5deg); }
+  .card.live { border-color: var(--good); }
+  .card.review { border-color: var(--amber); }
+  .card.soon { border-style: dashed; opacity: 0.62; }
+
+  .clabel { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  .cjob { font-size: 12.5px; line-height: 1.42; color: var(--faint); flex: 1; }
+  .cmeta { font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+  a.card .cmeta { color: var(--pen); }
+
+  a.card:hover, a.card:focus-visible {
+    background: var(--wash); transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.28);
+  }
+  a.card.tilt:hover, a.card.tilt:focus-visible { transform: rotate(0.6deg) translateY(-2px); }
+  a.card.tilt2:hover, a.card.tilt2:focus-visible { transform: rotate(-0.5deg) translateY(-2px); }
+  a.card:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+
+  .chips {
+    position: absolute; display: flex; flex-wrap: wrap; gap: 6px;
+    align-content: flex-start; font-family: var(--sans);
+  }
+  .chip {
+    display: grid; place-items: center; width: 40px; height: 28px;
+    font-size: 12.5px; font-weight: 500; color: var(--faint);
+    text-decoration: none; background: var(--boxbg);
+    border: 2px solid var(--faint); border-radius: 3px 6px 4px 7px;
+  }
+  a.chip { color: var(--pen); border-color: var(--good); }
+  a.chip:hover, a.chip:focus-visible { background: var(--wash); color: var(--ink); }
+  a.chip:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+  /* Narrow view. Below roughly 1000px the board has to scale under 0.62,
+     which puts the job lines under 8px. The same nodes are listed layer by
+     layer instead, which stays readable all the way down to a phone. */
+  .stack { display: none; width: 100%; margin: 4px auto 0; font-family: var(--sans); }
+  .slayer { margin: 0 0 26px; }
+  .stitle {
+    font-family: var(--hand); font-size: 15px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink); margin: 0 0 10px;
+  }
+  .scard {
+    display: flex; flex-direction: column; gap: 4px;
+    text-decoration: none; color: inherit;
+    padding: 12px 14px; margin: 0 0 8px;
+    background: var(--boxbg); border: 2px solid var(--faint);
+    border-radius: 4px 9px 5px 8px;
+  }
+  .scard.live { border-color: var(--good); }
+  .scard.review { border-color: var(--amber); }
+  .scard.soon { border-style: dashed; opacity: 0.62; }
+  .scard .clabel { font-size: 15.5px; }
+  .scard .cjob { font-size: 13px; flex: none; }
+  .scard .cmeta { font-size: 11px; margin-top: 2px; }
+  a.scard .cmeta { color: var(--pen); }
+  a.scard:active { background: var(--wash); }
+
+  @media (max-width: 999px) {
+    .shell { display: none; }
+    .stack { display: block; }
+  }
+  @media (max-width: 620px) {
+    .wrap { padding: 22px 14px 40px; }
+    h1 { font-size: 26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { transition: none; }
+    a.card:hover, a.card:focus-visible { transform: none; }
+  }
+
+  @page { size: landscape; margin: 10mm; }
+  @media print {
+    .wrap { padding: 0; max-width: none; }
+    .shell { overflow: visible; }
+    .stack, .notice { display: none !important; }
+    .head { margin-bottom: 10px; }
+    .logo { margin-bottom: 12px; }
+    h1 { font-size: 24px; }
+    .sub, .legend { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <span class="logo" role="img" aria-label="bookfunnels.io"></span>
+    <h1 id="hClient">Funnel Ecosystem Map</h1>
+    <p class="sub" id="hSub"></p>
+    <div class="legend">
+      <span><i class="dot live"></i> Live, click to open</span>
+      <span><i class="dot review"></i> Built, in review</span>
+      <span><i class="dot"></i> Still to come</span>
+    </div>
+    <p class="notice" id="notice"></p>
+  </div>
+
+  <div class="shell">
+    <div class="stage" id="stage">
+      <div class="board" id="board">
+        <svg id="wires" viewBox="0 0 1560 1312" aria-hidden="true">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M1.5,1.2 L8.5,5 L1.5,8.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <g id="wiregroup"></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack" id="stack"></div>
+</div>
+
+<script src="catalogue.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var C = window.FUNNEL_CATALOGUE;
+  /* Matches the 999px breakpoint below which the board is swapped for the
+     stacked list, so the board never renders smaller than this. */
+  var BOARD_W = C.BOARD_W, BOARD_H = C.BOARD_H, MIN_SCALE = 0.62;
+  var LAYERS = C.LAYERS, NODES = C.NODES, GROUPS = C.GROUPS;
+  var SUBLABELS = C.SUBLABELS, CHIPS = C.CHIPS, EDGES = C.EDGES;
+
+  /* --------------------------- helpers --------------------------- */
+
+  var NODE = {};
+  NODES.forEach(function (n) { NODE[n.id] = n; });
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+  function r1(v) { return Math.round(v * 10) / 10; }
+
+  function anchor(spec) {
+    var at = spec.split('@');
+    var bits = at[0].split(':');
+    var n = NODE[bits[0]], side = bits[1];
+    var f = at.length > 1 ? parseFloat(at[1]) : 0.5;
+    if (side === 't') return [n.x + n.w * f, n.y];
+    if (side === 'b') return [n.x + n.w * f, n.y + n.h];
+    if (side === 'l') return [n.x, n.y + n.h * f];
+    return [n.x + n.w, n.y + n.h * f];
+  }
+  function edgeNodeIds(e) {
+    return [e.a.split('@')[0].split(':')[0], e.b.split('@')[0].split(':')[0]];
+  }
+
+  function len(a, b) { return Math.hypot(b[0] - a[0], b[1] - a[1]); }
+  function unit(a, b) {
+    var d = len(a, b) || 1;
+    return [(b[0] - a[0]) / d, (b[1] - a[1]) / d];
+  }
+
+  /* Polyline with rounded corners. The last point is pulled back a few
+     pixels so the arrowhead sits just off the card edge rather than on it. */
+  function routePath(pts, gap) {
+    pts = pts.slice();
+    var n = pts.length;
+    if (gap) {
+      var u = unit(pts[n - 2], pts[n - 1]);
+      pts[n - 1] = [pts[n - 1][0] - u[0] * gap, pts[n - 1][1] - u[1] * gap];
+    }
+    var d = 'M' + r1(pts[0][0]) + ',' + r1(pts[0][1]);
+    for (var i = 1; i < pts.length - 1; i++) {
+      var p = pts[i], a = pts[i - 1], b = pts[i + 1];
+      var u1 = unit(a, p), u2 = unit(p, b);
+      var rr = Math.min(18, len(a, p) / 2, len(p, b) / 2);
+      d += ' L' + r1(p[0] - u1[0] * rr) + ',' + r1(p[1] - u1[1] * rr);
+      d += ' Q' + r1(p[0]) + ',' + r1(p[1]) + ' ' + r1(p[0] + u2[0] * rr) + ',' + r1(p[1] + u2[1] * rr);
+    }
+    var last = pts[pts.length - 1];
+    return d + ' L' + r1(last[0]) + ',' + r1(last[1]);
+  }
+
+  /* --------------------------- config --------------------------- */
+
+  function decodeInline(s) {
+    try {
+      var bin = atob(s.replace(/-/g, '+').replace(/_/g, '/'));
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return JSON.parse(new TextDecoder().decode(bytes));
+    } catch (err) { return null; }
+  }
+
+  var EMPTY = { client: '', book: '', nodes: {}, emails: [] };
+
+  function normalise(cfg) {
+    cfg = cfg || {};
+    cfg.nodes = cfg.nodes || {};
+    cfg.emails = cfg.emails || [];
+    return cfg;
+  }
+
+  function stateOf(cfg, id) {
+    var c = cfg.nodes[id] || {};
+    if (c.off) return null;
+    var url = (c.url || '').trim();
+    if (!url) return { status: 'soon', url: '', label: c.label, job: c.job };
+    return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job };
+  }
+
+  /* --------------------------- render --------------------------- */
+
+  function render(cfg, noticeText) {
+    cfg = normalise(cfg);
+
+    var title = cfg.client ? cfg.client : 'Funnel Ecosystem Map';
+    document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
+    $('hClient').textContent = title;
+
+    var parts = [];
+    if (cfg.book) parts.push('<b>' + esc(cfg.book) + '</b>');
+    parts.push('Everything built for this funnel, and how each piece feeds the next. Click any live box to open it.');
+    if (cfg.updated) parts.push('Last updated ' + esc(cfg.updated) + '.');
+    $('hSub').innerHTML = parts.join('<br>');
+
+    if (noticeText) {
+      $('notice').textContent = noticeText;
+      $('notice').classList.add('on');
+    }
+
+    var board = $('board');
+    var shown = {};
+
+    NODES.forEach(function (n) {
+      var st = stateOf(cfg, n.id);
+      if (st) shown[n.id] = st;
+    });
+
+    /* group boxes, drawn first so wires and cards sit on top */
+    GROUPS.forEach(function (g) {
+      var any = NODES.some(function (n) { return n.layer === g.id && shown[n.id]; });
+      if (!any) return;
+      var d = el('div', 'group');
+      d.style.cssText = pos(g.x, g.y, g.w, g.h);
+      board.appendChild(d);
+    });
+
+    /* wires */
+    var wg = $('wiregroup'), NS = 'http://www.w3.org/2000/svg';
+    EDGES.forEach(function (e) {
+      var ids = edgeNodeIds(e);
+      if (!shown[ids[0]] || !shown[ids[1]]) return;
+      var pts = [anchor(e.a)].concat(e.via || []).concat([anchor(e.b)]);
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', routePath(pts, e.arrow === false ? 0 : 5));
+      if (e.dashed) p.setAttribute('class', 'dashed');
+      if (e.arrow !== false) p.setAttribute('marker-end', 'url(#ah)');
+      wg.appendChild(p);
+      if (e.label) {
+        var l = el('div', 'wirelabel' + (e.vert ? ' vert' : ''));
+        l.style.left = e.lx + 'px';
+        l.style.top = e.ly + 'px';
+        l.textContent = e.label;
+        board.appendChild(l);
+      }
+    });
+
+    /* layer titles */
+    LAYERS.forEach(function (L) {
+      var any = NODES.some(function (n) { return n.layer === L.id && shown[n.id]; });
+      if (!any) return;
+      var t = el('div', 'titlebox');
+      t.style.left = L.lx + 'px';
+      t.style.top = L.ly + 'px';
+      t.textContent = L.title;
+      board.appendChild(t);
+    });
+
+    SUBLABELS.forEach(function (s) {
+      if (!s.needs.some(function (id) { return shown[id]; })) return;
+      var d = el('div', 'sublabel');
+      d.style.left = s.x + 'px';
+      d.style.top = s.y + 'px';
+      d.textContent = s.text;
+      board.appendChild(d);
+    });
+
+    /* cards */
+    NODES.forEach(function (n) {
+      var st = shown[n.id];
+      if (!st) return;
+      var card = buildCard(n, st, 'card');
+      card.style.cssText += pos(n.x, n.y, n.w, n.h);
+      if (n.tilt === 1) card.className += ' tilt';
+      if (n.tilt === 2) card.className += ' tilt2';
+      board.appendChild(card);
+    });
+
+    /* email chips */
+    if (shown['email-sequence']) {
+      var box = el('div', 'chips');
+      box.style.cssText = pos(CHIPS.x, CHIPS.y, CHIPS.w, CHIPS.h);
+      var byN = {};
+      cfg.emails.forEach(function (e) { if (e && e.n) byN[e.n] = e; });
+      for (var i = 1; i <= CHIPS.count; i++) {
+        var e = byN[i] || {};
+        var url = (e.url || '').trim();
+        var c = el(url ? 'a' : 'span', 'chip');
+        if (url) { c.href = url; c.target = '_blank'; c.rel = 'noopener'; }
+        c.textContent = i;
+        c.title = 'Email ' + i + (e.day != null ? ', day ' + e.day : '');
+        box.appendChild(c);
+      }
+      board.appendChild(box);
+    }
+
+    buildStack(cfg, shown);
+    fitBoard();
+  }
+
+  function pos(x, y, w, h) {
+    return 'left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;height:' + h + 'px;';
+  }
+
+  function buildCard(n, st, cls) {
+    var isLink = !!st.url;
+    var card = el(isLink ? 'a' : 'div', cls + ' ' + st.status);
+    if (isLink) { card.href = st.url; card.target = '_blank'; card.rel = 'noopener'; }
+
+    var lab = el('span', 'clabel');
+    lab.textContent = st.label || n.label;
+    card.appendChild(lab);
+
+    var job = el('span', 'cjob');
+    job.textContent = st.job || n.job;
+    card.appendChild(job);
+
+    /* The board's order bump card is too short for a third line; the
+       stacked phone view always has room. */
+    if (cls === 'scard' || n.h > 90) {
+      var meta = el('span', 'cmeta');
+      meta.textContent = isLink
+        ? (n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')
+        : 'Still to come';
+      card.appendChild(meta);
+    }
+    return card;
+  }
+
+  function buildStack(cfg, shown) {
+    var stack = $('stack');
+    LAYERS.forEach(function (L) {
+      var members = NODES.filter(function (n) { return n.layer === L.id && shown[n.id]; });
+      if (!members.length) return;
+      var sec = el('section', 'slayer');
+      var h = el('h2', 'stitle');
+      h.textContent = L.title;
+      sec.appendChild(h);
+      members.forEach(function (n) {
+        var c = buildCard(n, shown[n.id], 'scard');
+        sec.appendChild(c);
+      });
+      stack.appendChild(sec);
+    });
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  /* --------------------------- fit --------------------------- */
+
+  /* The catalogue is authoritative for board size; the CSS values are
+     only there so the board looks right before this script runs. */
+  $('board').style.width = BOARD_W + 'px';
+  $('board').style.height = BOARD_H + 'px';
+  $('wires').setAttribute('viewBox', '0 0 ' + BOARD_W + ' ' + BOARD_H);
+
+  function scaleTo(s) {
+    $('board').style.transform = 'scale(' + s + ')';
+    $('stage').style.width = (BOARD_W * s) + 'px';
+    $('stage').style.height = (BOARD_H * s) + 'px';
+  }
+
+  function fitBoard() {
+    var avail = document.querySelector('.wrap').clientWidth - 32;
+    scaleTo(Math.min(1, Math.max(MIN_SCALE, avail / BOARD_W)));
+  }
+  window.addEventListener('resize', fitBoard);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitBoard); }
+
+  /* Printing keeps whatever scale the screen last used, which spills the
+     board off the page. Size it to the usable width of a landscape sheet
+     at 10mm margins instead, then put it back afterwards. Fitting the
+     height too would shrink the type past readable, so a tall board is
+     allowed to run onto a second page. */
+  var PRINT_W = 1020;
+  window.addEventListener('beforeprint', function () { scaleTo(PRINT_W / BOARD_W); });
+  window.addEventListener('afterprint', fitBoard);
+
+  /* --------------------------- boot --------------------------- */
+
+  var params = new URLSearchParams(location.search);
+  var inline = params.get('d');
+  var raw = (params.get('c') || 'demo').toLowerCase();
+  var slug = /^[a-z0-9-]{1,64}$/.test(raw) ? raw : 'demo';
+
+  if (inline) {
+    var cfg = decodeInline(inline);
+    render(cfg || EMPTY, cfg ? '' : 'That preview link could not be read. Showing an empty map.');
+  } else {
+    fetch('clients/' + slug + '.json', { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (cfg) { render(cfg); })
+      .catch(function () {
+        if (slug === 'demo') { render(EMPTY, 'No client map found. Showing an empty board.'); return; }
+        fetch('clients/demo.json', { cache: 'no-cache' })
+          .then(function (r) { return r.json(); })
+          .then(function (cfg) { render(cfg, 'No map found for "' + slug + '". Showing the example map instead.'); })
+          .catch(function () { render(EMPTY, 'No map found for "' + slug + '".'); });
+      });
+  }
+
+  /* When embedded, report our height so the parent iframe can size itself.
+     The page height is not monotonic with width: the board scales, and below
+     1000px it is replaced by the stacked list. */
+  if (window.parent !== window) {
+    var lastH = 0;
+    var reportHeight = function () {
+      var h = Math.ceil(document.body.getBoundingClientRect().height);
+      if (h !== lastH) {
+        lastH = h;
+        window.parent.postMessage({ type: 'bfmap:height', height: h }, '*');
+      }
+    };
+    window.addEventListener('resize', reportHeight);
+    window.addEventListener('load', reportHeight);
+    if (window.ResizeObserver) { new ResizeObserver(reportHeight).observe(document.documentElement); }
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(reportHeight); }
+    reportHeight();
+  }
+})();
+</script>
+</body>
+</html>
