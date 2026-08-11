@@ -445,9 +445,9 @@
        ads card holding its ten concepts. Anything undeclared is still to come. */
     if (!url) {
       var declared = c.status === 'theirs' || c.status === 'live' || c.status === 'review';
-      return { status: declared ? c.status : 'soon', url: '', label: c.label, job: c.job };
+      return { status: declared ? c.status : 'soon', url: '', label: c.label, job: c.job, cta: c.cta };
     }
-    return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job };
+    return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job, cta: c.cta };
   }
 
   /* --------------------------- render --------------------------- */
@@ -654,7 +654,7 @@
     if ((cls === 'scard' || n.h > 100) && wantsMeta) {
       var meta = el('span', 'cmeta');
       meta.textContent = isLink
-        ? (n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')
+        ? (st.cta || n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')
         : 'Still to come';
       card.appendChild(meta);
     }

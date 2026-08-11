@@ -1,0 +1,38 @@
+{
+  "client": "Jared Wood",
+  "book": "The Myth and the Mountain",
+  "updated": "11 August 2026",
+  "nodes": {
+    "ads":            { "status": "soon" },
+    "sales-page":     { "url": "https://mythandmountain.com/book", "status": "live" },
+    "order-form":     { "url": "https://mythandmountain.com/order", "status": "live" },
+    "order-bump":     { "status": "soon" },
+    "one-click":      { "url": "https://mythandmountain.com/special-offer", "status": "live", "label": "The Moving Forward Plan", "job": "Your personalized Moving Forward Plan, $97. Offered on purchase momentum, no card re-entry." },
+    "one-click-2":    { "off": true },
+    "confirmation":   { "url": "https://mythandmountain.com/success", "status": "live" },
+    "reader-portal":  { "url": "https://readers.mythandmountain.com", "status": "live" },
+    "tinybook":       { "url": "https://storage.googleapis.com/msgsndr/kTvrh2VTYd7oWQindLdn/media/6a4a762d1209780f805407d2.epub", "status": "live", "label": "The Book", "job": "The Myth and the Mountain. The asset the whole funnel is built around.", "cta": "Download the EPUB" },
+    "scorecard":      { "off": true },
+    "email-sequence": { "status": "soon" },
+    "plan-page":      { "url": "https://mythandmountain.com/plan", "status": "live", "label": "Plan Page", "job": "The Moving Forward Plan on its own URL, for readers who buy later from email." },
+    "abandonment":    { "status": "soon" },
+    "survey":         { "status": "soon", "job": "Filled in by plan buyers. The answers build the personalized plan." },
+    "review-call":    { "status": "soon" },
+    "backend-offer":  { "status": "soon", "label": "Moving Forward Program", "job": "Jared's core program, sold to a reader who has already paid twice." },
+    "rb-optin":       { "url": "https://mythandmountain.com/bonus", "status": "live" },
+    "rb-thanks":      { "status": "soon" },
+    "sip-page":       { "off": true },
+    "sip-confirm":    { "off": true },
+    "wl-optin":       { "off": true },
+    "wl-confirm":     { "off": true }
+  },
+  "emails": [
+    { "n": 1, "day": 0 },  { "n": 2, "day": 1 },  { "n": 3, "day": 3 },
+    { "n": 4, "day": 5 },  { "n": 5, "day": 7 },  { "n": 6, "day": 9 },
+    { "n": 7, "day": 11 }, { "n": 8, "day": 12 }, { "n": 9, "day": 13 },
+    { "n": 10, "day": 15 }, { "n": 11, "day": 16 }, { "n": 12, "day": 17 },
+    { "n": 13, "day": 18 }, { "n": 14, "day": 19 }, { "n": 15, "day": 21 },
+    { "n": 16, "day": 22 }, { "n": 17, "day": 24 }, { "n": 18, "day": 26 },
+    { "n": 19, "day": 27 }, { "n": 20, "day": 28 }, { "n": 21, "day": 30 }
+  ]
+}
