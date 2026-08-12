@@ -16,7 +16,25 @@
       "status": "live"
     },
     "order-bump": {
-      "off": true
+      "status": "live",
+      "label": "Bump Upgrade",
+      "job": "Jim's Million-Dollar Playbooks, $47. One tick, above the order button.",
+      "cta": "See the copy",
+      "popup": {
+        "kicker": "Bump upgrade, inside the order form",
+        "title": "The 5 Fixes That Get Your Business Running Without You, Plus The AI Files That Install Them For You",
+        "price": "$47",
+        "was": "$197",
+        "note": "76% off",
+        "check": "YES! Add Jim's Million-Dollar Playbooks To My Order For Just $47 (76% OFF)",
+        "body": [
+          "The Million Dollar Hurdle shows you what keeps businesses under seven figures. These are the five fixes, the plays I ran to clear the hurdle, each with step-by-step instructions and fill-in-the-blank templates you can use today.",
+          "Every playbook comes with an AI training file: load it into ChatGPT, describe your business, and get that play adapted to you in minutes.",
+          "The book shows you the hurdle. These clear it."
+        ],
+        "cta": "Add",
+        "footnote": "Taken from the live order form"
+      }
     },
     "one-click": {
       "url": "https://themilliondollarhurdle.com/special-offer",
@@ -92,6 +110,22 @@
       "status": "soon",
       "job": "Filled in after purchase. The answers build the diagnostic report.",
       "label": "Deep Diagnostic Survey"
+    },
+    "file-pdf": {
+      "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf",
+      "status": "live"
+    },
+    "file-epub": {
+      "status": "soon"
+    },
+    "file-mp3": {
+      "status": "soon"
+    },
+    "file-m4b": {
+      "status": "soon"
+    },
+    "file-extra": {
+      "status": "soon"
     }
   },
   "emails": [

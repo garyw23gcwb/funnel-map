@@ -48,7 +48,9 @@ window.FUNNEL_CATALOGUE = (function () {
       job: 'Eighteen sections selling the book. Every button goes to checkout.' },
     { id: 'order-form', layer: 'book', label: 'Order Form', x: B, y: 250, w: CW, h: 130,
       job: 'Three format tiers: digital, audiobook, paperback. Card details captured here.' },
-    { id: 'order-bump', layer: 'book', label: 'Order Bump', x: B, y: 410, w: CW, h: 92,
+    /* Drops down from the order form: it lives inside that page, above the
+       order button. Always called a Bump Upgrade, never an order bump. */
+    { id: 'order-bump', layer: 'book', label: 'Bump Upgrade', x: B, y: 410, w: CW, h: 114,
       job: 'One tick, added above the order button.' },
     { id: 'one-click', layer: 'book', label: 'One-Click Offer', x: C, y: 250, w: CW, h: 130, tilt: 2,
       job: 'Offered on purchase momentum, with no card re-entry.' },
@@ -57,8 +59,18 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: D, y: 250, w: CW, h: 130,
       job: 'Confirms the order and points the buyer to the reader portal.' },
 
+    /* A container: the files it delivers are drawn as slots inside it, each
+       with its own status, so it is obvious which formats the client has
+       supplied and which are still missing. */
     { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: P, y: 560, w: CW, h: 130,
-      job: 'Where the buyer logs in and downloads.', cta: 'Open portal' },
+      job: 'Where the buyer logs in and downloads.',
+      slots: { x: 245, y: 650, w: 258, h: 28, items: [
+        { id: 'file-pdf',   label: 'PDF',  title: 'The ebook, PDF' },
+        { id: 'file-epub',  label: 'EPUB', title: 'The ebook, EPUB' },
+        { id: 'file-mp3',   label: 'MP3',  title: 'The audiobook, MP3' },
+        { id: 'file-m4b',   label: 'M4B',  title: 'The audiobook, M4B' },
+        { id: 'file-extra', label: 'Bump', title: 'The bump upgrade content' }
+      ] } },
     { id: 'tinybook', layer: 'delivery', label: 'The Tinybook', x: Q, y: 560, w: CW, h: 130, tilt: 1,
       job: 'Digital, audiobook and paperback. What the whole funnel is built around.', cta: 'Open the book' },
     /* A free tool the book points at, sitting beside the book rather than

@@ -148,6 +148,12 @@
     font-family: var(--sans); overflow: hidden;
     transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
   }
+  button.card { font: inherit; text-align: left; cursor: pointer; }
+  button.card:hover, button.card:focus-visible {
+    background: var(--wash); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+  button.card:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+  button.card .cmeta { color: var(--pen); }
   .card.tilt { transform: rotate(0.6deg); }
   .card.tilt2 { transform: rotate(-0.5deg); }
   .card.live { border-color: var(--cyan); }
@@ -184,6 +190,24 @@
   button.chip:hover, button.chip:focus-visible { background: var(--wash); color: var(--ink); }
   a.chip:focus-visible, button.chip:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
 
+  /* Files a container delivers, each with its own status, so it is obvious
+     what the client has supplied and what is still missing. */
+  .slots {
+    position: absolute; display: flex; gap: 6px;
+    align-items: stretch; font-family: var(--sans);
+  }
+  .slot {
+    flex: 1 1 0; min-width: 0; display: grid; place-items: center;
+    font-size: 10.5px; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; color: var(--faint); background: var(--navy);
+    border: 1.5px solid var(--slate); border-radius: 3px 5px 3px 5px;
+    overflow: hidden; white-space: nowrap;
+  }
+  a.slot { color: var(--cyan); border-color: var(--cyan); }
+  a.slot:hover, a.slot:focus-visible { background: var(--wash); color: var(--ink); }
+  a.slot:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+  .slot.soon { border-style: dashed; opacity: 0.65; }
+
   /* Pop-up for a single ad or email, so a click does not lose the map. */
   .veil {
     position: fixed; inset: 0; z-index: 50; display: none;
@@ -209,6 +233,21 @@
   .mtitle { font-family: var(--serif); font-size: 27px; font-weight: 400; margin: 6px 0 3px; line-height: 1.15; }
   .msub { font-size: 13.5px; color: var(--faint); }
   .msub.it { font-style: italic; }
+  .mprice { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; font-size: 15px; }
+  .mprice b { font-size: 21px; font-weight: 600; color: var(--cyan); }
+  .mprice s { color: var(--faint); }
+  .mprice span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+  .mcheck {
+    display: flex; gap: 11px; align-items: flex-start;
+    margin: 16px 20px 0; padding: 13px 15px;
+    border: 1.5px dashed var(--cyan); border-radius: 3px 7px 4px 6px;
+    background: rgba(55, 187, 212, 0.07); font-size: 14.5px; line-height: 1.45;
+  }
+  .mtick {
+    flex: none; display: grid; place-items: center; width: 20px; height: 20px;
+    color: var(--navy); background: var(--cyan);
+    border-radius: 3px 5px 3px 5px; font-size: 13px; font-weight: 700;
+  }
   .mbody { padding: 16px 20px; }
   .mbody p { margin: 0 0 12px; font-size: 15px; line-height: 1.6; }
   .mbody p:last-child { margin-bottom: 0; }
@@ -350,7 +389,7 @@
 <!-- Bump ?v= whenever catalogue.js changes. GitHub Pages serves assets with a
      ten minute max-age, so without this a viewer can hold a stale catalogue
      and see the wrong boxes after an update. -->
-<script src="catalogue.js?v=13"></script>
+<script src="catalogue.js?v=14"></script>
 <script>
 (function () {
   'use strict';
@@ -447,9 +486,9 @@
        ads card holding its ten concepts. Anything undeclared is still to come. */
     if (!url) {
       var declared = c.status === 'theirs' || c.status === 'live' || c.status === 'review';
-      return { status: declared ? c.status : 'soon', url: '', label: c.label, job: c.job, cta: c.cta };
+      return { status: declared ? c.status : 'soon', url: '', label: c.label, job: c.job, cta: c.cta, popup: c.popup };
     }
-    return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job, cta: c.cta };
+    return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job, cta: c.cta, popup: c.popup };
   }
 
   /* --------------------------- render --------------------------- */
@@ -595,6 +634,24 @@
       board.appendChild(box);
     }
 
+    /* file slots inside their container */
+    NODES.forEach(function (n) {
+      if (!n.slots || !shown[n.id]) return;
+      var box = el('div', 'slots');
+      box.style.cssText = pos(n.slots.x, n.slots.y, n.slots.w, n.slots.h);
+      n.slots.items.forEach(function (it) {
+        var c = cfg.nodes[it.id] || {};
+        if (c.off) return;
+        var url = (c.url || '').trim();
+        var sl = el(url ? 'a' : 'span', 'slot' + (url ? '' : ' soon'));
+        if (url) { sl.href = url; sl.target = '_blank'; sl.rel = 'noopener'; }
+        sl.textContent = c.label || it.label;
+        sl.title = (it.title || it.label) + (url ? '' : ' — still to come');
+        box.appendChild(sl);
+      });
+      board.appendChild(box);
+    });
+
     /* ten ad concepts, each opening the pop-up */
     if (shown['ads'] && cfg.adPages) {
       var ab = el('div', 'chips');
@@ -637,8 +694,15 @@
 
   function buildCard(n, st, cls) {
     var isLink = !!st.url;
-    var card = el(isLink ? 'a' : 'div', cls + ' ' + st.status);
+    /* A node with its own pop-up content and no page of its own becomes a
+       button, so it is keyboard reachable and not a link to nowhere. */
+    var isPop = !isLink && !!st.popup;
+    var card = el(isLink ? 'a' : (isPop ? 'button' : 'div'), cls + ' ' + st.status);
     if (isLink) { card.href = st.url; card.target = '_blank'; card.rel = 'noopener'; }
+    if (isPop) {
+      card.type = 'button';
+      card.addEventListener('click', function () { openInline(st.popup); });
+    }
 
 
     var lab = el('span', 'clabel');
@@ -652,11 +716,11 @@
     /* The board's slim cards (the order bump) have no room for a third
        line; the stacked phone view always does. They are still clickable,
        and being anchors they still show a pointer cursor. */
-    var wantsMeta = isLink || st.status === 'soon';
+    var wantsMeta = isLink || isPop || st.status === 'soon';
     if ((cls === 'scard' || n.h > 100) && wantsMeta) {
       var meta = el('span', 'cmeta');
-      meta.textContent = isLink
-        ? (st.cta || n.cta || 'Open page') + (st.status === 'review' ? ' · in review' : '')
+      meta.textContent = (isLink || isPop)
+        ? (st.cta || n.cta || (isPop ? 'See the copy' : 'Open page')) + (st.status === 'review' ? ' · in review' : '')
         : 'Still to come';
       card.appendChild(meta);
     }
@@ -751,6 +815,51 @@
       popMessage(kind === 'ad' ? 'The ads could not be loaded. Try again in a moment.'
                                : 'The emails could not be loaded. Try again in a moment.');
     });
+  }
+
+  /* Content that belongs to a node rather than to a numbered set, such as
+     the bump upgrade that lives inside the order form. No prev/next. */
+  function openInline(pop) {
+    if (!pop) return;
+    showVeil();
+    var c = $('mcontent');
+    c.textContent = '';
+
+    var head = el('div', 'mhead');
+    if (pop.kicker) { var k = el('div', 'mkicker'); k.textContent = pop.kicker; head.appendChild(k); }
+    var t = el('div', 'mtitle'); t.id = 'mtitle'; t.textContent = pop.title || ''; head.appendChild(t);
+    if (pop.price || pop.was) {
+      var pr = el('div', 'mprice');
+      var now = el('b'); now.textContent = pop.price || ''; pr.appendChild(now);
+      if (pop.was) { var w = el('s'); w.textContent = pop.was; pr.appendChild(w); }
+      if (pop.note) { var nn = el('span'); nn.textContent = pop.note; pr.appendChild(nn); }
+      head.appendChild(pr);
+    }
+    c.appendChild(head);
+
+    if (pop.check) {
+      var row = el('div', 'mcheck');
+      var box = el('span', 'mtick');
+      box.textContent = '\u2713';
+      row.appendChild(box);
+      var lab = el('span');
+      lab.textContent = pop.check;
+      row.appendChild(lab);
+      c.appendChild(row);
+    }
+
+    var body = el('div', 'mbody');
+    popParas(body, pop.body || []);
+    c.appendChild(body);
+
+    if (pop.cta) {
+      var foot = el('div', 'mfoot');
+      var txt = el('div', 'txt');
+      if (pop.footnote) { var d = el('div', 'mdesc'); d.textContent = pop.footnote; txt.appendChild(d); }
+      foot.appendChild(txt);
+      var b = el('div', 'mcta'); b.textContent = pop.cta; foot.appendChild(b);
+      c.appendChild(foot);
+    }
   }
 
   function closePop() {
