@@ -276,7 +276,25 @@
 
     /* Warm the pop-up data now, so the first chip click is instant instead
        of waiting on a cold fetch. Failures are retried on click. */
-    if (cfg.adPages && shown['ads']) { load('ad').catch(function () {}); }
+    if (cfg.adPages && shown['ads']) {
+      load('ad').then(function (data) {
+        /* Fetch the creative quietly once the map is up, a few at a time, so
+           the first pop-up is instant instead of waiting on a cold image. */
+        var queue = [];
+        (data.ads || []).forEach(function (a) {
+          if (a.feed) queue.push(a.feed);
+          if (a.story) queue.push(a.story);
+        });
+        var at = 0;
+        function next() {
+          if (at >= queue.length) return;
+          var im = new Image();
+          im.onload = im.onerror = next;
+          im.src = queue[at++];
+        }
+        for (var lane = 0; lane < 3; lane++) { next(); }
+      }).catch(function () {});
+    }
     if (cfg.emailPages && shown['email-sequence']) { load('email').catch(function () {}); }
 
     buildStack(cfg, shown);
@@ -541,9 +559,14 @@
       var fig = el('figure', 'mshot');
       fig.style.margin = '0';
       var img = el('img');
-      /* No lazy loading here: the modal is built while still hidden, and a
-         lazy image in a display:none subtree never starts fetching. There
-         are only two, and the user has just asked for them. */
+      /* Intrinsic size up front so the frame is reserved before the file
+         lands. Without it the grid collapses to nothing while loading and
+         the pop-up looks as though it has no imagery at all. No lazy
+         loading: the modal is built while hidden, where it never fires. */
+      if (pair[0] === 'feed') { img.width = 864; img.height = 1080; }
+      else { img.width = 787; img.height = 1400; }
+      img.decoding = 'async';
+      if ('fetchPriority' in img) { img.fetchPriority = 'high'; }
       img.src = a[pair[0]];
       img.alt = 'Concept ' + a.n + ', ' + a.title + ', ' + pair[1];
       fig.appendChild(img);

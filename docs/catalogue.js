@@ -38,7 +38,7 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'delivery', title: 'Delivery' },
     { id: 'followup', title: 'Follow-up' },
     { id: 'convert',  title: 'Conversion' },
-    { id: 'side',     title: 'Side Funnels', lx: 216, ly: 1720 }
+    { id: 'side',     title: 'Side Funnels', lx: 216, ly: 1800 }
   ];
 
   var NODES = [
@@ -64,9 +64,9 @@ window.FUNNEL_CATALOGUE = (function () {
 
     /* A container. The book is delivered here, so its formats are slots
        inside this card rather than a node of their own. */
-    { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: P, y: 722, w: CW, h: 168,
+    { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: P, y: 802, w: CW, h: 168,
       job: 'Where the buyer logs in and downloads.', cta: 'Open portal',
-      slots: { x: 242, y: 852, w: 256, h: 28, items: [
+      slots: { x: 242, y: 932, w: 256, h: 28, items: [
         { id: 'file-pdf',   label: 'PDF',  title: 'The ebook, PDF' },
         { id: 'file-epub',  label: 'EPUB', title: 'The ebook, EPUB' },
         { id: 'file-mp3',   label: 'MP3',  title: 'The audiobook, MP3' },
@@ -75,49 +75,49 @@ window.FUNNEL_CATALOGUE = (function () {
       ] } },
     /* A free tool the book points at. It comes out of the portal, because
        the book carrying that CTA is delivered there. */
-    { id: 'scorecard', layer: 'delivery', label: 'The Scorecard', x: S, y: 722, w: CW, h: CH, optional: true,
+    { id: 'scorecard', layer: 'delivery', label: 'The Scorecard', x: S, y: 802, w: CW, h: CH, optional: true,
       job: 'A free tool the book points readers to.' },
 
-    { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 990, w: 540, h: 218,
+    { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 1070, w: 540, h: 218,
       job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.' },
-    { id: 'plan-page', layer: 'followup', label: 'Plan Page', x: Q, y: 1308, w: CW, h: CH, tilt: 2,
+    { id: 'plan-page', layer: 'followup', label: 'Plan Page', x: Q, y: 1388, w: CW, h: CH, tilt: 2,
       job: 'The offer on its own URL, for readers who buy later from email.' },
-    { id: 'abandonment', layer: 'followup', label: 'Abandonment Sequence', x: S, y: 1308, w: CW, h: CH,
+    { id: 'abandonment', layer: 'followup', label: 'Abandonment Sequence', x: S, y: 1388, w: CW, h: CH,
       job: 'Three emails to anyone who opens the page and does not buy within 24 hours.', cta: 'Read the emails' },
 
-    { id: 'survey', layer: 'convert', label: 'The Survey', x: P, y: 1548, w: CW, h: CH,
+    { id: 'survey', layer: 'convert', label: 'The Survey', x: P, y: 1628, w: CW, h: CH,
       job: 'Filled in by one-click buyers. The answers build the plan before the call.' },
-    { id: 'review-call', layer: 'convert', label: 'Review Call', x: Q, y: 1548, w: CW, h: CH,
+    { id: 'review-call', layer: 'convert', label: 'Review Call', x: Q, y: 1628, w: CW, h: CH,
       job: 'Booked by one-click buyers only. No free calls, no cold prospects.', cta: 'Open booking page' },
-    { id: 'backend-offer', layer: 'convert', label: 'Backend Offer', x: S, y: 1548, w: CW, h: CH, tilt: 1,
+    { id: 'backend-offer', layer: 'convert', label: 'Backend Offer', x: S, y: 1628, w: CW, h: CH, tilt: 1,
       job: 'Your core service, sold to a reader who has already paid you twice.' },
 
-    { id: 'rb-optin', layer: 'side', label: 'Reader Bonus Opt-in', x: P, y: 1828, w: CW, h: 132,
+    { id: 'rb-optin', layer: 'side', label: 'Reader Bonus Opt-in', x: P, y: 1908, w: CW, h: 132,
       job: 'Claims the bonus the book promises, in exchange for an email.' },
-    { id: 'rb-thanks', layer: 'side', label: 'Bonus Delivery', x: P, y: 1992, w: CW, h: 132,
+    { id: 'rb-thanks', layer: 'side', label: 'Bonus Delivery', x: P, y: 2072, w: CW, h: 132,
       job: 'Hands over the bonus and adds the reader to your list.' },
-    { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: Q, y: 1828, w: CW, h: 132,
+    { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: Q, y: 1908, w: CW, h: 132,
       job: 'Sells the plan on its own, with the survey that builds it.' },
-    { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: Q, y: 1992, w: CW, h: 132,
+    { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: Q, y: 2072, w: CW, h: 132,
       job: 'Sends the buyer straight into the survey.' },
-    { id: 'wl-optin', layer: 'side', label: 'Waitlist Opt-in', x: S, y: 1828, w: CW, h: 132,
+    { id: 'wl-optin', layer: 'side', label: 'Waitlist Opt-in', x: S, y: 1908, w: CW, h: 132,
       job: 'Collects emails before launch, against first access.' },
-    { id: 'wl-confirm', layer: 'side', label: 'Waitlist Confirmation', x: S, y: 1992, w: CW, h: 132,
+    { id: 'wl-confirm', layer: 'side', label: 'Waitlist Confirmation', x: S, y: 2072, w: CW, h: 132,
       job: 'Confirms the spot and sets the launch expectation.' }
   ];
 
   var GROUPS = [
-    { id: 'side', x: 193, y: 1782, w: 1014, h: 360 }
+    { id: 'side', x: 193, y: 1862, w: 1014, h: 360 }
   ];
 
   var SUBLABELS = [
-    { text: 'Reader bonus',   x: P, y: 1804, needs: ['rb-optin', 'rb-thanks'] },
-    { text: 'Standalone SIP', x: Q, y: 1804, needs: ['sip-page', 'sip-confirm'] },
-    { text: 'Waitlist',       x: S, y: 1804, needs: ['wl-optin', 'wl-confirm'] }
+    { text: 'Reader bonus',   x: P, y: 1884, needs: ['rb-optin', 'rb-thanks'] },
+    { text: 'Standalone SIP', x: Q, y: 1884, needs: ['sip-page', 'sip-confirm'] },
+    { text: 'Waitlist',       x: S, y: 1884, needs: ['wl-optin', 'wl-confirm'] }
   ];
 
   /* Both chip strips sit inside their card. */
-  var CHIPS = { x: 450, y: 1080, w: 500, h: 62, count: 21 };
+  var CHIPS = { x: 450, y: 1160, w: 500, h: 62, count: 21 };
   var AD_CHIPS = { x: 82, y: 156, w: 460, h: 28, count: 10 };
 
   /* Edges. `a` and `b` are anchors written as id:side, optionally with a
@@ -133,21 +133,22 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'one-click:b',        b: 'one-click-2:t' },
     { a: 'one-click-2:r',      b: 'confirmation:b@0.5', via: [[1195, 560]] },
 
-    { a: 'confirmation:b@0.35', b: 'reader-portal:t', via: [[1151, 662], [370, 662]] },
-    { a: 'reader-portal:r@0.4167', b: 'scorecard:l', label: 'in-book CTA', lx: 600, ly: 766 },
+    { a: 'confirmation:b@0.35', b: 'reader-portal:t', via: [[1151, 712], [370, 712]] },
+    { a: 'reader-portal:r@0.4167', b: 'scorecard:l', label: 'in-book CTA', lx: 600, ly: 846 },
 
-    { a: 'reader-portal:b',    b: 'email-sequence:t@0.5', via: [[370, 940], [700, 940]] },
-    { a: 'email-sequence:r',   b: 'scorecard:b@0.5', via: [[1030, 1099]],
-      label: 'from the emails', lx: 1040, ly: 962 },
+    { a: 'reader-portal:b',    b: 'email-sequence:t@0.5', via: [[370, 1020], [700, 1020]] },
+    /* No label: the arrow already leaves the email card, so saying so twice
+       reads as noise. */
+    { a: 'email-sequence:r',   b: 'scorecard:b@0.5', via: [[1030, 1179]] },
     { a: 'email-sequence:b@0.3926', b: 'plan-page:t@0.3' },
     /* The free scorecard feeds the paid diagnostic. Routed down the right so
        it clears the email card and stops short of the abandonment row. */
-    { a: 'scorecard:b@0.8',    b: 'plan-page:t@0.7', via: [[1117, 1256], [758, 1256]] },
+    { a: 'scorecard:b@0.8',    b: 'plan-page:t@0.7', via: [[1117, 1336], [758, 1336]] },
 
     { a: 'plan-page:r',        b: 'abandonment:l' },
-    { a: 'abandonment:b@0.5',  b: 'plan-page:b@0.9', via: [[1030, 1478], [816, 1478]],
-      label: 're-pitch', lx: 882, ly: 1458 },
-    { a: 'plan-page:b@0.3',    b: 'survey:t', via: [[642, 1498], [370, 1498]] },
+    { a: 'abandonment:b@0.5',  b: 'plan-page:b@0.9', via: [[1030, 1558], [816, 1558]],
+      label: 're-pitch', lx: 882, ly: 1538 },
+    { a: 'plan-page:b@0.3',    b: 'survey:t', via: [[642, 1578], [370, 1578]] },
 
     { a: 'survey:r',           b: 'review-call:l' },
     { a: 'review-call:r',      b: 'backend-offer:l' },

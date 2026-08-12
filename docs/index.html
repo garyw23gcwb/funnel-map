@@ -266,7 +266,10 @@
     align-items: start; background: #333e52;
   }
   .mshot { position: relative; display: flex; justify-content: center; padding: 12px 10px; background: var(--boxbg); }
-  .mshot img { display: block; width: auto; max-width: 100%; max-height: 360px; }
+  .mshot img {
+    display: block; width: auto; height: auto; max-width: 100%; max-height: 360px;
+    background: rgba(244, 246, 249, 0.04);
+  }
   .mshot figcaption {
     position: absolute; left: 8px; top: 8px; padding: 2px 8px 3px;
     font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
