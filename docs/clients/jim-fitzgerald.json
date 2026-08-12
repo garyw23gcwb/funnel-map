@@ -54,12 +54,6 @@
       "status": "live",
       "job": "Where the reader logs in and downloads the book."
     },
-    "tinybook": {
-      "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf",
-      "status": "live",
-      "label": "The Book",
-      "job": "The Million-Dollar Hurdle. The asset the whole funnel is built around."
-    },
     "email-sequence": {
       "status": "live",
       "job": "Twenty-one emails over thirty days. Click a number to read one."
