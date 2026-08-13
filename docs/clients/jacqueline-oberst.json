@@ -3,9 +3,18 @@
   "book": "Looks Profitable",
   "updated": "12 August 2026",
   "nodes": {
-    "ads":            { "status": "soon" },
-    "sales-page":     { "url": "https://looksprofitable.com/book", "status": "live" },
-    "order-form":     { "url": "https://looksprofitable.com/order", "status": "live", "job": "Three format tiers: $21 digital, $29 audiobook, $37 paperback. Card details captured here." },
+    "ads": {
+      "status": "soon"
+    },
+    "sales-page": {
+      "url": "https://looksprofitable.com/book",
+      "status": "live"
+    },
+    "order-form": {
+      "url": "https://looksprofitable.com/order",
+      "status": "live",
+      "job": "Three format tiers: $21 digital, $29 audiobook, $37 paperback. Card details captured here."
+    },
     "order-bump": {
       "status": "live",
       "label": "Bump Upgrade",
@@ -27,36 +36,181 @@
         "footnote": "Taken from the live order form"
       }
     },
-    "one-click":      { "url": "https://looksprofitable.com/special-offer", "status": "live", "label": "The CLARITY Plan", "job": "The CLARITY Business Implementation Plan, $97. Offered on purchase momentum, no card re-entry." },
-    "one-click-2":    { "off": true },
-    "confirmation":   { "url": "https://looksprofitable.com/success", "status": "live" },
-    "reader-portal":  { "url": "https://readers.looksprofitable.com", "status": "live" },
-    "file-pdf":       { "status": "soon" },
-    "file-epub":      { "status": "soon" },
-    "file-mp3":       { "status": "soon" },
-    "file-m4b":       { "status": "soon" },
-    "file-extra":     { "status": "soon" },
-    "scorecard":      { "off": true },
-    "email-sequence": { "status": "soon", "job": "Twenty-one emails over thirty days. Written, not yet built." },
-    "plan-page":      { "status": "soon", "label": "Plan Page", "job": "The CLARITY Plan on its own URL. The printed book points here three times." },
-    "abandonment":    { "status": "soon" },
-    "survey":         { "status": "soon", "job": "Filled in by plan buyers. The answers build the CLARITY Plan." },
-    "review-call":    { "status": "soon" },
-    "backend-offer":  { "status": "theirs", "label": "Strategic Bookkeeping", "job": "CFO-level financial insight, $500 a month. Your core service." },
-    "rb-optin":       { "status": "soon", "label": "Reader Bonus Opt-in", "job": "Claims the Performance Gap Calculator. The printed book points here twice." },
-    "rb-thanks":      { "status": "soon", "label": "Calculator Delivery", "job": "Hands over the Performance Gap Calculator and adds the reader to the list." },
-    "sip-page":       { "off": true },
-    "sip-confirm":    { "off": true },
-    "wl-optin":       { "off": true },
-    "wl-confirm":     { "off": true }
+    "one-click": {
+      "url": "https://looksprofitable.com/special-offer",
+      "status": "live",
+      "label": "The CLARITY Plan",
+      "job": "The CLARITY Business Implementation Plan, $97. Offered on purchase momentum, no card re-entry."
+    },
+    "one-click-2": {
+      "off": true
+    },
+    "confirmation": {
+      "url": "https://looksprofitable.com/success",
+      "status": "live"
+    },
+    "reader-portal": {
+      "url": "https://readers.looksprofitable.com",
+      "status": "live"
+    },
+    "file-pdf": {
+      "status": "soon"
+    },
+    "file-epub": {
+      "status": "soon"
+    },
+    "file-mp3": {
+      "status": "soon"
+    },
+    "file-m4b": {
+      "status": "soon"
+    },
+    "file-extra": {
+      "status": "soon"
+    },
+    "scorecard": {
+      "off": true
+    },
+    "email-sequence": {
+      "status": "soon",
+      "job": "Twenty-one emails over thirty days. Written, not yet built."
+    },
+    "plan-page": {
+      "status": "soon",
+      "label": "Plan Page",
+      "job": "The CLARITY Plan on its own URL. The printed book points here three times."
+    },
+    "abandonment": {
+      "status": "soon"
+    },
+    "survey": {
+      "status": "soon",
+      "job": "Filled in by plan buyers. The answers build the CLARITY Plan."
+    },
+    "review-call": {
+      "status": "soon"
+    },
+    "backend-offer": {
+      "status": "theirs",
+      "label": "Strategic Bookkeeping",
+      "job": "CFO-level financial insight, $500 a month. Your core service."
+    },
+    "rb-optin": {
+      "url": "https://looksprofitable.com/bonus",
+      "status": "live",
+      "label": "Reader Bonus Opt-in",
+      "job": "Claims the Performance Gap Calculator. The printed book points here."
+    },
+    "rb-thanks": {
+      "url": "https://looksprofitable.com/bonus-confirmation",
+      "status": "live",
+      "label": "Bonus Confirmation",
+      "job": "Confirms the opt-in and hands over the calculator."
+    },
+    "sip-page": {
+      "off": true
+    },
+    "sip-confirm": {
+      "off": true
+    },
+    "wl-optin": {
+      "off": true
+    },
+    "wl-confirm": {
+      "off": true
+    },
+    "rb-tool": {
+      "url": "https://calculator.looksprofitable.com/",
+      "status": "live",
+      "label": "The Calculator",
+      "job": "Runs the Confront and Locate steps from chapters 1 and 2 in about two minutes.",
+      "cta": "Open the calculator"
+    }
   },
   "emails": [
-    { "n": 1, "day": 0 },  { "n": 2, "day": 1 },  { "n": 3, "day": 3 },
-    { "n": 4, "day": 5 },  { "n": 5, "day": 7 },  { "n": 6, "day": 9 },
-    { "n": 7, "day": 11 }, { "n": 8, "day": 12 }, { "n": 9, "day": 13 },
-    { "n": 10, "day": 15 }, { "n": 11, "day": 16 }, { "n": 12, "day": 17 },
-    { "n": 13, "day": 18 }, { "n": 14, "day": 19 }, { "n": 15, "day": 21 },
-    { "n": 16, "day": 22 }, { "n": 17, "day": 24 }, { "n": 18, "day": 26 },
-    { "n": 19, "day": 27 }, { "n": 20, "day": 28 }, { "n": 21, "day": 30 }
+    {
+      "n": 1,
+      "day": 0
+    },
+    {
+      "n": 2,
+      "day": 1
+    },
+    {
+      "n": 3,
+      "day": 3
+    },
+    {
+      "n": 4,
+      "day": 5
+    },
+    {
+      "n": 5,
+      "day": 7
+    },
+    {
+      "n": 6,
+      "day": 9
+    },
+    {
+      "n": 7,
+      "day": 11
+    },
+    {
+      "n": 8,
+      "day": 12
+    },
+    {
+      "n": 9,
+      "day": 13
+    },
+    {
+      "n": 10,
+      "day": 15
+    },
+    {
+      "n": 11,
+      "day": 16
+    },
+    {
+      "n": 12,
+      "day": 17
+    },
+    {
+      "n": 13,
+      "day": 18
+    },
+    {
+      "n": 14,
+      "day": 19
+    },
+    {
+      "n": 15,
+      "day": 21
+    },
+    {
+      "n": 16,
+      "day": 22
+    },
+    {
+      "n": 17,
+      "day": 24
+    },
+    {
+      "n": 18,
+      "day": 26
+    },
+    {
+      "n": 19,
+      "day": 27
+    },
+    {
+      "n": 20,
+      "day": 28
+    },
+    {
+      "n": 21,
+      "day": 30
+    }
   ]
 }

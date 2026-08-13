@@ -131,7 +131,11 @@
     if (shown['email-sequence']) lowest = Math.max(lowest, CHIPS.y + CHIPS.h);
     GROUPS.forEach(function (g) {
       var members = NODES.filter(function (n) { return n.layer === g.id && shown[n.id]; });
-      if (members.length > 1) lowest = Math.max(lowest, g.y + g.h);
+      if (members.length < 2) return;
+      /* Use the height the box will actually be drawn at, not its declared
+         maximum, or a client using a short column gets dead board below. */
+      var bottom = Math.max.apply(null, members.map(function (n) { return n.y + n.h; }));
+      lowest = Math.max(lowest, g.y + Math.min(g.h, bottom + 26 - g.y));
     });
     BOARD_H = lowest + 44;
 

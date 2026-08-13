@@ -96,6 +96,11 @@ window.FUNNEL_CATALOGUE = (function () {
       job: 'Claims the bonus the book promises, in exchange for an email.' },
     { id: 'rb-thanks', layer: 'side', label: 'Bonus Delivery', x: P, y: 2072, w: CW, h: 132,
       job: 'Hands over the bonus and adds the reader to your list.' },
+    /* Some reader bonuses hand over a hosted tool rather than a file, which
+       makes the bonus a three-step run. Optional, so a two-step bonus is
+       unaffected. */
+    { id: 'rb-tool', layer: 'side', label: 'The Calculator', x: P, y: 2236, w: CW, h: 132, optional: true,
+      job: 'The tool itself, on its own subdomain.' },
     { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: Q, y: 1908, w: CW, h: 132,
       job: 'Sells the plan on its own, with the survey that builds it.' },
     { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: Q, y: 2072, w: CW, h: 132,
@@ -107,7 +112,7 @@ window.FUNNEL_CATALOGUE = (function () {
   ];
 
   var GROUPS = [
-    { id: 'side', x: 193, y: 1862, w: 1014, h: 360 }
+    { id: 'side', x: 193, y: 1862, w: 1014, h: 526 }
   ];
 
   var SUBLABELS = [
@@ -154,6 +159,7 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'review-call:r',      b: 'backend-offer:l' },
 
     { a: 'rb-optin:b',         b: 'rb-thanks:t' },
+    { a: 'rb-thanks:b',        b: 'rb-tool:t' },
     { a: 'sip-page:b',         b: 'sip-confirm:t' },
     { a: 'wl-optin:b',         b: 'wl-confirm:t' }
   ];
