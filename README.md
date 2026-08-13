@@ -1,10 +1,10 @@
 # Funnel Ecosystem Map
 
 One page that shows a client their whole funnel: ads, sales page, order form and
-bump, one-click offer, confirmation, reader portal, the email sequence, the plan
-page, the review call, and the three side funnels. Every piece is a box, wired to
-the pieces it feeds, with a line saying what it does. Click a box and that page,
-document or ad account opens.
+bump, one-click offer, confirmation, reader portal, what the book itself points
+at, the email sequence, the plan page, the review call, and the side funnels.
+Every piece is a box, wired to the pieces it feeds, with a line saying what it
+does. Click a box and that page, document or ad account opens.
 
 Same idea as Funnelytics or Geru, without the simulation. It replaces sending a
 client a list of links.

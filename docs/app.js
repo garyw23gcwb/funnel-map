@@ -374,15 +374,20 @@
     lab.textContent = st.label || n.label;
     card.appendChild(lab);
 
-    var job = el('span', 'cjob');
-    job.textContent = st.job || n.job;
-    card.appendChild(job);
+    /* A node drawn small enough to read as a marker carries its name and
+       nothing else on the board. The job line still shows in the stacked
+       list, where there is room for it. */
+    if (!n.terse || cls === 'scard') {
+      var job = el('span', 'cjob');
+      job.textContent = st.job || n.job;
+      card.appendChild(job);
+    }
 
     /* The board's slim cards (the order bump) have no room for a third
        line; the stacked phone view always does. They are still clickable,
        and being anchors they still show a pointer cursor. */
     var wantsMeta = isLink || isPop || st.status === 'soon';
-    if ((cls === 'scard' || n.h > 100) && wantsMeta) {
+    if ((cls === 'scard' || n.terse || n.h > 100) && wantsMeta) {
       var meta = el('span', 'cmeta');
       meta.textContent = (isLink || isPop)
         ? (st.cta || n.cta || (isPop ? 'See the copy' : 'Open page')) + (st.status === 'review' ? ' · in review' : '')

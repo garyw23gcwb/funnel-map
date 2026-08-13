@@ -93,16 +93,20 @@ window.FUNNEL_CATALOGUE = (function () {
       job: 'A free tool the book points readers to.' },
 
     /* The bonus run the book sends readers on, straight out of the portal,
-       because the book carrying the CTA is delivered there. It fills the rest
-       of the delivery row, and the tool at the end steps down to clear it. */
-    { id: 'rb-optin', layer: 'inbook', label: 'Reader Bonus Opt-in', x: Q, y: 802, w: CW, h: CH,
+       because the book carrying the CTA is delivered there. The two pages are
+       a little narrower than a standard card so the whole run, tool included,
+       finishes on one line at the same right edge as the checkout row. */
+    { id: 'rb-optin', layer: 'inbook', label: 'Reader Bonus Opt-in', x: 555, y: 802, w: 265, h: CH,
       job: 'Claims the bonus the book promises, in exchange for an email.' },
-    { id: 'rb-thanks', layer: 'inbook', label: 'Bonus Delivery', x: S, y: 802, w: CW, h: CH,
+    { id: 'rb-thanks', layer: 'inbook', label: 'Bonus Delivery', x: 860, y: 802, w: 265, h: CH,
       job: 'Hands over the bonus and adds the reader to your list.' },
     /* Some bonuses hand over a hosted tool rather than a file, which makes
-       the run three steps. Optional, so a two-step bonus is unaffected. */
-    { id: 'free-tool', layer: 'inbook', label: 'The Free Tool', x: D, y: 982, w: CW, h: CH, optional: true,
-      job: 'The tool itself, free, on its own page.' },
+       the run three steps. Drawn as a marker rather than a card, and centred
+       on the row: it is a tool the reader uses, not another page they land
+       on, and at this size it says so before the label is read. Optional, so
+       a two-step bonus is unaffected. */
+    { id: 'free-tool', layer: 'inbook', label: 'The Free Tool', x: 1165, y: 832, w: 175, h: 80,
+      optional: true, terse: true, job: 'The tool itself, free, on its own page.' },
 
     { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 1070, w: 540, h: 218,
       job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.' },
@@ -171,16 +175,18 @@ window.FUNNEL_CATALOGUE = (function () {
        draws at the same time. */
     { a: 'reader-portal:r@0.4167', b: 'rb-optin:l' },
     { a: 'rb-optin:r',         b: 'rb-thanks:l' },
-    { a: 'rb-thanks:r',        b: 'free-tool:t', via: [[1195, 872]] },
+    { a: 'rb-thanks:r',        b: 'free-tool:l' },
 
     { a: 'reader-portal:b',    b: 'email-sequence:t@0.5', via: [[370, 1020], [700, 1020]] },
     /* No label: the arrow already leaves the email card, so saying so twice
        reads as noise. */
     { a: 'email-sequence:r',   b: 'scorecard:b@0.5', via: [[1030, 1179]] },
     { a: 'email-sequence:b@0.3926', b: 'plan-page:t@0.3' },
-    /* The free scorecard feeds the paid diagnostic. Routed down the right so
-       it clears the email card and stops short of the abandonment row. */
+    /* Either shape of free tool feeds the paid plan, because the plan is
+       pitched on the tool. Routed down the right so it clears the email card
+       and stops short of the abandonment row. */
     { a: 'scorecard:b@0.8',    b: 'plan-page:t@0.7', via: [[1117, 1336], [758, 1336]] },
+    { a: 'free-tool:b@0.5',    b: 'plan-page:t@0.7', via: [[1252, 1336], [758, 1336]] },
 
     { a: 'plan-page:r',        b: 'abandonment:l' },
     { a: 'abandonment:b@0.5',  b: 'plan-page:b@0.9', via: [[1030, 1558], [816, 1558]],

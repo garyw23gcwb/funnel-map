@@ -50,7 +50,6 @@
       "status": "live"
     },
     "reader-portal": {
-      "url": "https://readers.looksprofitable.com",
       "status": "live"
     },
     "file-pdf": {
@@ -74,18 +73,19 @@
     },
     "plan-page": {
       "status": "soon",
-      "label": "Plan Page",
-      "job": "The CLARITY Plan on its own URL. The printed book points here three times."
+      "label": "The CLARITY Plan",
+      "job": "The plan on its own URL. The printed book points here three times, and the calculator pitches it."
     },
     "abandonment": {
-      "status": "soon"
+      "off": true
     },
     "survey": {
       "status": "soon",
       "job": "Filled in by plan buyers. The answers build the CLARITY Plan."
     },
     "review-call": {
-      "status": "soon"
+      "status": "theirs",
+      "job": "Booked by plan buyers only. You run these."
     },
     "backend-offer": {
       "status": "theirs",
@@ -121,7 +121,7 @@
       "status": "live",
       "label": "The Calculator",
       "job": "Runs the Confront and Locate steps from chapters 1 and 2 in about two minutes.",
-      "cta": "Open the calculator"
+      "cta": "Open the tool"
     }
   },
   "emails": [
