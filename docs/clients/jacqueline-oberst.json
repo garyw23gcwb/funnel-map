@@ -53,13 +53,16 @@
       "status": "live"
     },
     "file-pdf": {
-      "status": "soon"
+      "url": "https://assets.cdn.filesafe.space/AGMENK6bHBPsMjonvqza/media/6a7e33bbc0662ee5c420de0a.pdf",
+      "status": "live"
     },
     "file-epub": {
-      "status": "soon"
+      "url": "https://assets.cdn.filesafe.space/AGMENK6bHBPsMjonvqza/media/6a7e33bb255b571c8e4c32e7.epub",
+      "status": "live"
     },
     "file-mp3": {
-      "status": "soon"
+      "url": "https://pub-28c40aa5d0c948729a4b6a3a03bfc329.r2.dev/Looks%20Profitable/player.html",
+      "status": "live"
     },
     "file-m4b": {
       "status": "soon"
@@ -80,7 +83,8 @@
       "off": true
     },
     "survey": {
-      "status": "soon",
+      "url": "https://build.bookfunnels.io/widget/survey/vUKNSb3j3AiMEmqGc88s",
+      "status": "live",
       "job": "Filled in by plan buyers. The answers build the CLARITY Plan."
     },
     "review-call": {
