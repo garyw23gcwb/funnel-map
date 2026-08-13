@@ -2,6 +2,8 @@
   "client": "Jacqueline Oberst",
   "book": "Looks Profitable",
   "updated": "12 August 2026",
+  "bookPointsToPlan": true,
+  "quietSoon": true,
   "nodes": {
     "ads": {
       "status": "soon"
@@ -39,7 +41,7 @@
     "one-click": {
       "url": "https://looksprofitable.com/special-offer",
       "status": "live",
-      "label": "The CLARITY Plan",
+      "label": "One-Click Offer Upgrade",
       "job": "The CLARITY Business Implementation Plan, $97. Offered on purchase momentum, no card re-entry."
     },
     "one-click-2": {

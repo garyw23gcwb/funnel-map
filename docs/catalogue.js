@@ -181,12 +181,25 @@ window.FUNNEL_CATALOGUE = (function () {
     /* No label: the arrow already leaves the email card, so saying so twice
        reads as noise. */
     { a: 'email-sequence:r',   b: 'scorecard:b@0.5', via: [[1030, 1179]] },
-    { a: 'email-sequence:b@0.3926', b: 'plan-page:t@0.3' },
+    /* Everything that feeds the plan page arrives at its top edge, shared
+       out evenly. Where the book points at it too that is three arrivals,
+       so the email sequence takes the middle at 0.5 and the other two sit
+       at 0.25 and 0.75, mirroring each other off the same turn height.
+       Without the book's arrow it stays the two-arrival routing. */
+    { a: 'email-sequence:b@0.5', b: 'plan-page:t@0.5', needs: 'bookPointsToPlan' },
+    { a: 'email-sequence:b@0.3926', b: 'plan-page:t@0.3', not: 'bookPointsToPlan' },
     /* Either shape of free tool feeds the paid plan, because the plan is
        pitched on the tool. Routed down the right so it clears the email card
        and stops short of the abandonment row. */
     { a: 'scorecard:b@0.8',    b: 'plan-page:t@0.7', via: [[1117, 1336], [758, 1336]] },
-    { a: 'free-tool:b@0.5',    b: 'plan-page:t@0.7', via: [[1252, 1336], [758, 1336]] },
+    { a: 'free-tool:b@0.5',    b: 'plan-page:t@0.75', via: [[1252, 1336], [772.5, 1336]] },
+
+    /* Some books send the reader to the plan page themselves: Jacqueline's
+       printed book carries that CTA three times. Down the left gutter, then
+       into the top alongside the other two. `needs` keeps it to the clients
+       whose book actually says so. */
+    { a: 'reader-portal:b@0.1', b: 'plan-page:t@0.25', needs: 'bookPointsToPlan',
+      via: [[254, 1336], [627.5, 1336]] },
 
     { a: 'plan-page:r',        b: 'abandonment:l' },
     { a: 'abandonment:b@0.5',  b: 'plan-page:b@0.9', via: [[1030, 1558], [816, 1558]],

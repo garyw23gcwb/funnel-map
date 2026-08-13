@@ -106,6 +106,12 @@
     return cfg;
   }
 
+  /* Set from the client file at render. A map being shown before the build
+     is finished can keep every box, and its wires, without captioning the
+     unfinished ones: they are already dashed and dimmed, which reads as
+     not-yet without labouring it. */
+  var quietSoon = false;
+
   function stateOf(cfg, id) {
     var c = cfg.nodes[id];
     /* Nodes marked optional stay hidden unless a client file mentions them,
@@ -129,6 +135,7 @@
 
   function render(cfg, noticeText) {
     cfg = normalise(cfg);
+    quietSoon = !!cfg.quietSoon;
 
     var title = cfg.client ? cfg.client : 'Funnel Ecosystem Map';
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
@@ -179,6 +186,7 @@
 
     var states = {};
     Object.keys(shown).forEach(function (id) { states[shown[id].status] = true; });
+    if (quietSoon) states.soon = false;
     [].forEach.call($('legend').children, function (sp) {
       sp.classList.toggle('on', !!states[sp.getAttribute('data-state')]);
     });
@@ -202,6 +210,13 @@
     EDGES.forEach(function (e) {
       var ids = edgeNodeIds(e);
       if (!shown[ids[0]] || !shown[ids[1]]) return;
+      /* A wire that is a claim about one client's funnel rather than about
+         the shape everyone shares, so the client file has to ask for it:
+         whether the book itself points at a later page depends on what was
+         printed in it. `not` is the other half of the pair, for the routing
+         that only holds while that wire is absent. */
+      if (e.needs && !cfg[e.needs]) return;
+      if (e.not && cfg[e.not]) return;
       var pts = [anchor(e.a)].concat(e.via || []).concat([anchor(e.b)]);
       var p = document.createElementNS(NS, 'path');
       p.setAttribute('d', routePath(pts, e.arrow === false ? 0 : 5));
@@ -292,7 +307,7 @@
         var sl = el(url ? 'a' : 'span', 'slot' + (url ? '' : ' soon'));
         if (url) { sl.href = url; sl.target = '_blank'; sl.rel = 'noopener'; }
         sl.textContent = c.label || it.label;
-        sl.title = (it.title || it.label) + (url ? '' : ' — still to come');
+        sl.title = (it.title || it.label) + (url || quietSoon ? '' : ' — still to come');
         box.appendChild(sl);
       });
       board.appendChild(box);
@@ -386,7 +401,7 @@
     /* The board's slim cards (the order bump) have no room for a third
        line; the stacked phone view always does. They are still clickable,
        and being anchors they still show a pointer cursor. */
-    var wantsMeta = isLink || isPop || st.status === 'soon';
+    var wantsMeta = isLink || isPop || (st.status === 'soon' && !quietSoon);
     if ((cls === 'scard' || n.terse || n.h > 100) && wantsMeta) {
       var meta = el('span', 'cmeta');
       meta.textContent = (isLink || isPop)

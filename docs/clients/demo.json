@@ -2,6 +2,7 @@
   "client": "Sample Client",
   "book": "The Rate Card Reset",
   "updated": "11 August 2026",
+  "bookPointsToPlan": true,
   "nodes": {
     "ads":            { "url": "https://example.com/ads",            "status": "live" },
     "sales-page":     { "url": "https://example.com/book",           "status": "live" },

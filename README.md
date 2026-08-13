@@ -78,7 +78,12 @@ Everything structural is in `docs/catalogue.js`.
   (`ads:b@+145`, which holds its place whichever size that card is drawn at).
   `via` holds waypoints the arrow routes through, so wires can be steered around
   the boxes. An arrow is drawn only when both its boxes are shown, which is why
-  switching a node off removes its wires too.
+  switching a node off removes its wires too. `needs: 'flag'` and `not: 'flag'`
+  additionally tie an arrow to a switch in the client file, for a wire that is a
+  claim about one funnel rather than about the shape everyone shares. Today that
+  is `bookPointsToPlan`, set by a client whose book sends readers to the plan
+  page itself: it adds the arrow out of the reader portal, and rearranges the
+  plan page's top edge to share three arrivals evenly instead of two.
 - `LAYERS`, `GROUPS` and `SUBLABELS` are the band titles, the box around the side
   funnels, and the small headings inside it. A layer is a heading in the
   narrow-screen list, not a row on the board: `delivery` and `inbook` sit side by
@@ -88,6 +93,10 @@ Everything structural is in `docs/catalogue.js`.
   `holds` naming the flag in the client file that fills it. The ads card is only
   560 wide because of its ten ad chips; a client without `adPages` gets a
   standard card instead of a wide empty box.
+- `quietSoon: true` in a client file drops the "Still to come" caption, its
+  legend key and its tooltips, for a map being shown before the build is
+  finished. The unbuilt boxes stay dashed and dimmed, and keep their wires, so
+  the flow still reads. Delete the line when the map is ready to say it again.
 - `optional: true` on a node keeps it hidden unless a client's file mentions it.
   Use it for anything most clients do not have, such as `one-click-2`, so adding
   a node does not put a phantom "still to come" box on every existing map.
