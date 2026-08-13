@@ -18,6 +18,7 @@
     "backend-offer":  { "url": "https://example.com/docs/backend",   "status": "live" },
     "rb-optin":       { "url": "https://example.com/bonus",          "status": "live" },
     "rb-thanks":      { "url": "https://example.com/bonus-thanks",   "status": "live" },
+    "free-tool":      { "url": "https://example.com/tool",           "status": "live" },
     "sip-page":       { "url": "https://example.com/plan-sales",     "status": "review" },
     "sip-confirm":    { "url": "https://example.com/plan-confirm",   "status": "review" },
     "wl-optin":       { "status": "soon" },

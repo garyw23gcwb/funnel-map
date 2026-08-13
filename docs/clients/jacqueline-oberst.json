@@ -68,9 +68,6 @@
     "file-extra": {
       "status": "soon"
     },
-    "scorecard": {
-      "off": true
-    },
     "email-sequence": {
       "status": "soon",
       "job": "Twenty-one emails over thirty days. Written, not yet built."
@@ -119,7 +116,7 @@
     "wl-confirm": {
       "off": true
     },
-    "rb-tool": {
+    "free-tool": {
       "url": "https://calculator.looksprofitable.com/",
       "status": "live",
       "label": "The Calculator",

@@ -7,10 +7,11 @@
    drift apart. Add a node here and it shows up in both.
 
    Layout: the book funnel runs left to right across the top, the way a
-   buyer moves through a checkout. Everything after the purchase then
-   continues downwards. Anything hanging off a step (the bump upgrade, a
-   second upsell, the abandonment emails) sits directly below or beside
-   its parent.
+   buyer moves through a checkout. The delivery band under it runs the same
+   way: the reader gets the book, then follows the calls to action inside
+   it. Everything after that continues downwards. Anything hanging off a
+   step (the bump upgrade, a second upsell, the abandonment emails) sits
+   directly below or beside its parent.
 
    Vertical rhythm: 100px between bands, 40px between a card and the
    thing that drops out of it. Board coordinates are plain pixels on a
@@ -36,6 +37,10 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'traffic',  title: 'Traffic' },
     { id: 'book',     title: 'The Book Funnel' },
     { id: 'delivery', title: 'Delivery' },
+    /* The book's own calls to action. On the board they run across the
+       delivery band, out of the portal; this title is the heading they get
+       in the narrow-screen list. */
+    { id: 'inbook',   title: 'What The Book Points To' },
     { id: 'followup', title: 'Follow-up' },
     { id: 'convert',  title: 'Conversion' },
     { id: 'side',     title: 'Side Funnels', lx: 216, ly: 1800 }
@@ -43,8 +48,11 @@ window.FUNNEL_CATALOGUE = (function () {
 
   var NODES = [
     /* Wide enough to hold the ten ad chips inside it, and left aligned so
-       the arrow drops straight into the sales page below. */
+       the arrow drops straight into the sales page below. `holds` names the
+       flag in the client file that fills it; without the chips it falls back
+       to `compact` rather than sitting there as a wide empty box. */
     { id: 'ads', layer: 'traffic', label: 'Meta Ads', x: A, y: 60, w: 560, h: 158,
+      holds: 'adPages', compact: { w: CW, h: CH },
       job: 'Ten ad concepts, each running in feed and story sizes.' },
 
     { id: 'sales-page', layer: 'book', label: 'Sales Page', x: A, y: 318, w: CW, h: CH, tilt: 1,
@@ -62,8 +70,10 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: D, y: 318, w: CW, h: CH,
       job: 'Confirms the order and points the buyer to the reader portal.' },
 
-    /* A container. The book is delivered here, so its formats are slots
-       inside this card rather than a node of their own. */
+    /* A container, and the book itself as far as this map is concerned: the
+       formats are slots inside this card rather than a node of their own.
+       It starts the delivery band, and what the book points at follows it
+       across the same row. */
     { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: P, y: 802, w: CW, h: 168,
       job: 'Where the buyer logs in and downloads.', cta: 'Open portal',
       slots: { x: 242, y: 932, w: 256, h: 28, items: [
@@ -73,10 +83,26 @@ window.FUNNEL_CATALOGUE = (function () {
         { id: 'file-m4b',   label: 'M4B',  title: 'The audiobook, M4B' },
         { id: 'file-extra', label: 'Bump', title: 'The bump upgrade content' }
       ] } },
-    /* A free tool the book points at. It comes out of the portal, because
-       the book carrying that CTA is delivered there. */
+
+    /* Legacy, and used by one map only. Jim's book was made before the free
+       tool became the end of the reader-bonus run, and his map has been
+       handed over, so this node holds the shape it was presented in. New
+       clients get the run below instead, which is why this is optional and
+       why it can share the row with `rb-thanks`: no map has both. */
     { id: 'scorecard', layer: 'delivery', label: 'The Scorecard', x: S, y: 802, w: CW, h: CH, optional: true,
       job: 'A free tool the book points readers to.' },
+
+    /* The bonus run the book sends readers on, straight out of the portal,
+       because the book carrying the CTA is delivered there. It fills the rest
+       of the delivery row, and the tool at the end steps down to clear it. */
+    { id: 'rb-optin', layer: 'inbook', label: 'Reader Bonus Opt-in', x: Q, y: 802, w: CW, h: CH,
+      job: 'Claims the bonus the book promises, in exchange for an email.' },
+    { id: 'rb-thanks', layer: 'inbook', label: 'Bonus Delivery', x: S, y: 802, w: CW, h: CH,
+      job: 'Hands over the bonus and adds the reader to your list.' },
+    /* Some bonuses hand over a hosted tool rather than a file, which makes
+       the run three steps. Optional, so a two-step bonus is unaffected. */
+    { id: 'free-tool', layer: 'inbook', label: 'The Free Tool', x: D, y: 982, w: CW, h: CH, optional: true,
+      job: 'The tool itself, free, on its own page.' },
 
     { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 1070, w: 540, h: 218,
       job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.' },
@@ -92,33 +118,28 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'backend-offer', layer: 'convert', label: 'Backend Offer', x: S, y: 1628, w: CW, h: CH, tilt: 1,
       job: 'Your core service, sold to a reader who has already paid you twice.' },
 
-    { id: 'rb-optin', layer: 'side', label: 'Reader Bonus Opt-in', x: P, y: 1908, w: CW, h: 132,
-      job: 'Claims the bonus the book promises, in exchange for an email.' },
-    { id: 'rb-thanks', layer: 'side', label: 'Bonus Delivery', x: P, y: 2072, w: CW, h: 132,
-      job: 'Hands over the bonus and adds the reader to your list.' },
-    /* Some reader bonuses hand over a hosted tool rather than a file, which
-       makes the bonus a three-step run. Optional, so a two-step bonus is
-       unaffected. */
-    { id: 'rb-tool', layer: 'side', label: 'The Calculator', x: P, y: 2236, w: CW, h: 132, optional: true,
-      job: 'The tool itself, on its own subdomain.' },
-    { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: Q, y: 1908, w: CW, h: 132,
+    /* What is left down here is the traffic that does not come through the
+       book at all: a plan sold on its own, and a list built before launch. */
+    { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: P, y: 1908, w: CW, h: 132,
       job: 'Sells the plan on its own, with the survey that builds it.' },
-    { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: Q, y: 2072, w: CW, h: 132,
+    { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: P, y: 2072, w: CW, h: 132,
       job: 'Sends the buyer straight into the survey.' },
-    { id: 'wl-optin', layer: 'side', label: 'Waitlist Opt-in', x: S, y: 1908, w: CW, h: 132,
+    { id: 'wl-optin', layer: 'side', label: 'Waitlist Opt-in', x: Q, y: 1908, w: CW, h: 132,
       job: 'Collects emails before launch, against first access.' },
-    { id: 'wl-confirm', layer: 'side', label: 'Waitlist Confirmation', x: S, y: 2072, w: CW, h: 132,
+    { id: 'wl-confirm', layer: 'side', label: 'Waitlist Confirmation', x: Q, y: 2072, w: CW, h: 132,
       job: 'Confirms the spot and sets the launch expectation.' }
   ];
 
+  /* The frame is drawn at the size the columns actually shown need, so the
+     declared width and height are the three-column, three-row maximum:
+     32px of clearance past the last card on every side. */
   var GROUPS = [
-    { id: 'side', x: 193, y: 1862, w: 1014, h: 526 }
+    { id: 'side', x: 193, y: 1862, w: 684, h: 374 }
   ];
 
   var SUBLABELS = [
-    { text: 'Reader bonus',   x: P, y: 1884, needs: ['rb-optin', 'rb-thanks'] },
-    { text: 'Standalone SIP', x: Q, y: 1884, needs: ['sip-page', 'sip-confirm'] },
-    { text: 'Waitlist',       x: S, y: 1884, needs: ['wl-optin', 'wl-confirm'] }
+    { text: 'Standalone SIP', x: P, y: 1884, needs: ['sip-page', 'sip-confirm'] },
+    { text: 'Waitlist',       x: Q, y: 1884, needs: ['wl-optin', 'wl-confirm'] }
   ];
 
   /* Both chip strips sit inside their card. */
@@ -126,10 +147,14 @@ window.FUNNEL_CATALOGUE = (function () {
   var AD_CHIPS = { x: 82, y: 156, w: 460, h: 28, count: 10 };
 
   /* Edges. `a` and `b` are anchors written as id:side, optionally with a
-     fraction along that side (confirmation:b@0.35). `via` holds waypoints
-     in board coordinates. An edge is drawn only if both nodes are shown. */
+     fraction along that side (confirmation:b@0.35), or a fixed number of
+     pixels from the start of that side (ads:b@+145) for a card whose size
+     changes with what it holds. `via` holds waypoints in board coordinates.
+     An edge is drawn only if both nodes are shown. */
   var EDGES = [
-    { a: 'ads:b@0.259',        b: 'sales-page:t' },
+    /* Fixed at 145px so it drops into the middle of the sales page below
+       whether the ads card is at its full width or its compact one. */
+    { a: 'ads:b@+145',         b: 'sales-page:t' },
 
     { a: 'sales-page:r',       b: 'order-form:l' },
     { a: 'order-form:r',       b: 'one-click:l' },
@@ -140,6 +165,13 @@ window.FUNNEL_CATALOGUE = (function () {
 
     { a: 'confirmation:b@0.35', b: 'reader-portal:t', via: [[1151, 712], [370, 712]] },
     { a: 'reader-portal:r@0.4167', b: 'scorecard:l', label: 'in-book CTA', lx: 600, ly: 846 },
+
+    /* The book's own run: opt in, get the bonus, use the tool. It leaves the
+       portal on the same side as the legacy scorecard wire, which no map
+       draws at the same time. */
+    { a: 'reader-portal:r@0.4167', b: 'rb-optin:l' },
+    { a: 'rb-optin:r',         b: 'rb-thanks:l' },
+    { a: 'rb-thanks:r',        b: 'free-tool:t', via: [[1195, 872]] },
 
     { a: 'reader-portal:b',    b: 'email-sequence:t@0.5', via: [[370, 1020], [700, 1020]] },
     /* No label: the arrow already leaves the email card, so saying so twice
@@ -158,8 +190,6 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'survey:r',           b: 'review-call:l' },
     { a: 'review-call:r',      b: 'backend-offer:l' },
 
-    { a: 'rb-optin:b',         b: 'rb-thanks:t' },
-    { a: 'rb-thanks:b',        b: 'rb-tool:t' },
     { a: 'sip-page:b',         b: 'sip-confirm:t' },
     { a: 'wl-optin:b',         b: 'wl-confirm:t' }
   ];

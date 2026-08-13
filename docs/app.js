@@ -11,8 +11,18 @@
 
   /* --------------------------- helpers --------------------------- */
 
+  /* Clearance between the last card in a group and the frame around it, on
+     every side, so a group holding one column looks as deliberate as one
+     holding three. */
+  var GROUP_PAD = 32;
+
   var NODE = {};
-  NODES.forEach(function (n) { NODE[n.id] = n; });
+  NODES.forEach(function (n) {
+    NODE[n.id] = n;
+    /* Keep the declared size: a card with a compact fallback is switched
+       between the two at render, once the client file is known. */
+    if (n.compact) n.full = { w: n.w, h: n.h };
+  });
 
   function $(id) { return document.getElementById(id); }
   function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
@@ -22,14 +32,31 @@
     var at = spec.split('@');
     var bits = at[0].split(':');
     var n = NODE[bits[0]], side = bits[1];
+    /* A fraction along the side, or, written "+145", that many pixels from
+       the start of it: a fixed offset holds its place on a card whose size
+       depends on what the client has to put in it. */
     var f = at.length > 1 ? parseFloat(at[1]) : 0.5;
-    if (side === 't') return [n.x + n.w * f, n.y];
-    if (side === 'b') return [n.x + n.w * f, n.y + n.h];
-    if (side === 'l') return [n.x, n.y + n.h * f];
-    return [n.x + n.w, n.y + n.h * f];
+    var px = at.length > 1 && at[1].charAt(0) === '+';
+    var along = function (span) { return px ? f : span * f; };
+    if (side === 't') return [n.x + along(n.w), n.y];
+    if (side === 'b') return [n.x + along(n.w), n.y + n.h];
+    if (side === 'l') return [n.x, n.y + along(n.h)];
+    return [n.x + n.w, n.y + along(n.h)];
   }
   function edgeNodeIds(e) {
     return [e.a.split('@')[0].split(':')[0], e.b.split('@')[0].split(':')[0]];
+  }
+
+  /* The frame drawn around a group of side funnels, shrunk to the cards this
+     client actually has. A client running one two-step funnel got the full
+     three-column, three-row box with most of it empty; it now closes up to
+     the same clearance on every side. */
+  function groupBox(g, members) {
+    var edge = function (f) { return Math.max.apply(null, members.map(f)); };
+    return {
+      w: Math.min(g.w, edge(function (n) { return n.x + n.w; }) + GROUP_PAD - g.x),
+      h: Math.min(g.h, edge(function (n) { return n.y + n.h; }) + GROUP_PAD - g.y)
+    };
   }
 
   function len(a, b) { return Math.hypot(b[0] - a[0], b[1] - a[1]); }
@@ -124,6 +151,17 @@
       if (st) shown[n.id] = st;
     });
 
+    /* A card sized around what it holds shrinks back when this client has
+       nothing to put in it: the ads card is only 560 wide because of its ten
+       chips, and without them it was a wide empty rectangle. Done before
+       anything is measured or drawn, so the wires follow it. */
+    NODES.forEach(function (n) {
+      if (!n.compact) return;
+      var size = (!n.holds || cfg[n.holds]) ? n.full : n.compact;
+      n.w = size.w;
+      n.h = size.h;
+    });
+
     /* Size the board to what this client actually has, so switching whole
        sections off shortens the page instead of leaving empty space. */
     var lowest = 0;
@@ -134,8 +172,7 @@
       if (members.length < 2) return;
       /* Use the height the box will actually be drawn at, not its declared
          maximum, or a client using a short column gets dead board below. */
-      var bottom = Math.max.apply(null, members.map(function (n) { return n.y + n.h; }));
-      lowest = Math.max(lowest, g.y + Math.min(g.h, bottom + 26 - g.y));
+      lowest = Math.max(lowest, g.y + groupBox(g, members).h);
     });
     BOARD_H = lowest + 44;
 
@@ -154,11 +191,9 @@
     GROUPS.forEach(function (g) {
       var members = NODES.filter(function (n) { return n.layer === g.id && shown[n.id]; });
       if (members.length < 2) { solo[g.id] = members.length === 1; return; }
-      /* Shrink to fit what is actually shown, so a client running one side
-         funnel does not get a full-height box with two cards in it. */
-      var bottom = Math.max.apply(null, members.map(function (n) { return n.y + n.h; }));
+      var box = groupBox(g, members);
       var d = el('div', 'group');
-      d.style.cssText = pos(g.x, g.y, g.w, Math.min(g.h, bottom + 26 - g.y));
+      d.style.cssText = pos(g.x, g.y, box.w, box.h);
       board.appendChild(d);
     });
 
