@@ -103,7 +103,7 @@
       "n": 6,
       "name": "LP_C06_ElevenCharges",
       "title": "Eleven Charges",
-      "creative": "Designed piece, data style. Eleven line items stacked like a printed bank statement column, eight struck through, three circled by hand. Imagery to produce, designer.",
+      "creative": "Designed piece, data style. Eleven line items stacked like a printed bank statement column, eight struck through, three circled by hand. Imagery ready.",
       "primary": [
         "She found eleven charges she did not recognize. Every month. Some had been running for years.",
         "Eight were subscriptions she had forgotten about. She cancelled all eight in a week. It took her under an hour.",
@@ -113,13 +113,15 @@
       ],
       "headline": "Eleven Charges She Did Not Recognize",
       "description": "Eight cancelled in a week. Under an hour.",
-      "cta": "Shop now"
+      "cta": "Shop now",
+      "feed": "ads/jacqueline-oberst/6-feed.png",
+      "story": "ads/jacqueline-oberst/6-story.png"
     },
     {
       "n": 7,
       "name": "LP_C07_ThreeNumbers",
       "title": "The Three Numbers",
-      "creative": "Designed piece, sparse. Three blank ruled lines labelled REVENUE, EXPENSES, IN THE BANK, nothing filled in. Imagery to produce, designer.",
+      "creative": "Designed piece, sparse. Three blank ruled lines labelled REVENUE, EXPENSES, IN THE BANK, nothing filled in. Imagery ready.",
       "primary": [
         "Here is something you can do tonight. It is free and it takes thirty minutes.",
         "Write down three numbers from memory. Your monthly revenue. Your monthly expenses. What is in the bank right now.",
@@ -131,7 +133,9 @@
       ],
       "headline": "Three Numbers. Thirty Minutes.",
       "description": "Do not fix it. Do not judge it. Just look.",
-      "cta": "Learn more"
+      "cta": "Learn more",
+      "feed": "ads/jacqueline-oberst/7-feed.png",
+      "story": "ads/jacqueline-oberst/7-story.png"
     },
     {
       "n": 8,
