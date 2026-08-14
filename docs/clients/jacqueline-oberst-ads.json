@@ -1,0 +1,176 @@
+{
+  "client": "Jacqueline Oberst",
+  "from": "Looks Profitable",
+  "source": "Looks Profitable - Meta Ads Copy",
+  "ads": [
+    {
+      "n": 1,
+      "name": "LP_C01_NightSheLooked",
+      "title": "The Night She Looked",
+      "creative": "Kitchen table at night, bank statements spread out, coffee cup, pen, book on the pile. Imagery ready.",
+      "primary": [
+        "Her banker asked one question she could not answer.",
+        "Your revenue is up twelve percent. Your cash is down twenty. Why?",
+        "She had no idea.",
+        "That night she spread twelve months of bank statements across her kitchen table. Her P&L said she was fine. Her bank account said something else.",
+        "It was not good news. But it was a list.",
+        "And you can fix a list. You cannot fix a feeling.",
+        "$21. A hundred days to get it back."
+      ],
+      "headline": "Revenue Up 12%. Cash Down 20%.",
+      "description": "The fear is worse than the truth. Every single time.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 2,
+      "name": "LP_C02_ToolNotSystem",
+      "title": "The Tool Is Not The System",
+      "creative": "Hand holding the paperback against a plain white wall. Imagery ready.",
+      "primary": [
+        "QuickBooks, set up years ago and never properly maintained.",
+        "Most owners buy it, watch a few tutorials, and then wonder why nothing got better.",
+        "The tool is not the system. A tool without a system is just expensive software.",
+        "This is not an accounting book. No debits and credits. No lecture.",
+        "It is for owners doing $250K to $5M a year who are great at the work and were never taught the money side.",
+        "$21."
+      ],
+      "headline": "The Tool Is Not The System",
+      "description": "You bought the software. Nothing changed.",
+      "cta": "Shop now"
+    },
+    {
+      "n": 3,
+      "name": "LP_C03_CouldNotProve",
+      "title": "She Could Not Prove It Was Good",
+      "creative": "Jackie seated, holding the book, direct eye contact, office background. Imagery ready, subject to the 9:16 crop lift and a cover subtitle check at 100%.",
+      "primary": [
+        "The bank said no.",
+        "Not because her business was bad. Because she could not prove it was good.",
+        "She brought a P&L from six months ago and a balance sheet she could not explain.",
+        "A year and a half later she walked back in with numbers she could explain. She got the loan.",
+        "Same business. Same owner. She could just see it now.",
+        "$21."
+      ],
+      "headline": "She Could Not Prove It Was Good",
+      "description": "Approved on the first ask, not the third.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 4,
+      "name": "LP_C04_TenErrors",
+      "title": "Ten Errors in the First Month",
+      "creative": "Jackie across a desk from a client, pen in hand, taking notes. Imagery ready.",
+      "primary": [
+        "She had a part time bookkeeper who did the minimum.",
+        "She put the change off for more than a year. She was sure the clean up would be brutal.",
+        "It took a month.",
+        "In that first month I found ten errors her last bookkeeper had made.",
+        "She had not been careless. She had been paying someone who did the minimum, and she had no way to check.",
+        "Simple, efficient and stress free. Her words, not mine.",
+        "$21."
+      ],
+      "headline": "Ten Errors in the First Month",
+      "description": "She put it off a year. It took four weeks.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 5,
+      "name": "LP_C05_HundredDays",
+      "title": "A Hundred Days",
+      "creative": "Open cardboard box of paperbacks on a desk. Imagery ready, ad on hold pending the free audiobook with paperback mechanic on the order form.",
+      "primary": [
+        "$21, and a hundred days to decide.",
+        "Read the whole book. Do the quick win at the end of each chapter. If your business is not clearer than it is today, one email gets every penny back.",
+        "No hoops. No awkward questions.",
+        "Paperback, ebook or audiobook. Short enough to read in an evening.",
+        "[On hold until the free audiobook with paperback mechanic is confirmed on the order form.]"
+      ],
+      "headline": "100 Days, or You Pay Nothing",
+      "description": "Looks Profitable. $21, all three formats.",
+      "cta": "Shop now"
+    },
+    {
+      "n": 6,
+      "name": "LP_C06_ElevenCharges",
+      "title": "Eleven Charges",
+      "creative": "Designed piece, data style. Eleven line items stacked like a printed bank statement column, eight struck through, three circled by hand. Imagery to produce, designer.",
+      "primary": [
+        "She found eleven charges she did not recognize. Every month. Some had been running for years.",
+        "Eight were subscriptions she had forgotten about. She cancelled all eight in a week. It took her under an hour.",
+        "The other three were vendors who had quietly raised their prices. She called them. Two gave her a discount.",
+        "That is one hour of one step. There are seven.",
+        "$21."
+      ],
+      "headline": "Eleven Charges She Did Not Recognize",
+      "description": "Eight cancelled in a week. Under an hour.",
+      "cta": "Shop now"
+    },
+    {
+      "n": 7,
+      "name": "LP_C07_ThreeNumbers",
+      "title": "The Three Numbers",
+      "creative": "Designed piece, sparse. Three blank ruled lines labelled REVENUE, EXPENSES, IN THE BANK, nothing filled in. Imagery to produce, designer.",
+      "primary": [
+        "Here is something you can do tonight. It is free and it takes thirty minutes.",
+        "Write down three numbers from memory. Your monthly revenue. Your monthly expenses. What is in the bank right now.",
+        "Then go and check all three.",
+        "The gap between what you wrote and what is really there is the part of your business you are running blind.",
+        "Do not fix it. Do not judge it. Just look.",
+        "That is step one of seven. It takes thirty minutes and costs nothing.",
+        "$21."
+      ],
+      "headline": "Three Numbers. Thirty Minutes.",
+      "description": "Do not fix it. Do not judge it. Just look.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 8,
+      "name": "LP_C08_TwoKinds",
+      "title": "Two Kinds of Owner",
+      "creative": "Photo of Jackie, three quarter frame, with clear space to one side for the overlay line: looking profitable and being profitable are two different businesses. Imagery to produce, Jackie then designer.",
+      "primary": [
+        "Someone at a networking dinner brings up profit margins. Most owners I meet nod along and hope nobody asks what theirs are.",
+        "There are two kinds of business owner. The ones working flat out to look profitable. And the ones who know they are.",
+        "The difference is not how hard they work. It is what they can see.",
+        "Seven steps. Read it in an evening.",
+        "$21."
+      ],
+      "headline": "Two Kinds of Business Owner",
+      "description": "The difference is not effort. It is visibility.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 9,
+      "name": "LP_C09_NeverShowedHer",
+      "title": "Her Bookkeeper Never Showed Her",
+      "creative": "Closed manila folder of unopened statements with the book on top, shot from directly overhead in cool daylight. Imagery to produce, Jackie.",
+      "primary": [
+        "Her bookkeeper made a cash flow statement every month. Filed it away. Never showed it to her.",
+        "She found out it existed when the bank asked for it.",
+        "She had never seen one in her life. The loan was declined.",
+        "Nobody had cheated her. He was doing the job he was hired to do. Nobody had ever been hired to explain any of it to her.",
+        "$21."
+      ],
+      "headline": "Her Bookkeeper Never Showed Her",
+      "description": "She found out it existed when the bank asked.",
+      "cta": "Learn more"
+    },
+    {
+      "n": 10,
+      "name": "LP_C10_WednesdayCall",
+      "title": "The Wednesday Call",
+      "creative": "Phone face down on a desk beside the book, dim office at dusk. Imagery to produce, Jackie.",
+      "primary": [
+        "A competitor called on a Wednesday and offered to buy his business.",
+        "He said he would think about it. Then he opened his books.",
+        "Everything was current. The business could run without him for a month. He knew what it was worth.",
+        "He said no.",
+        "The point is that he could have said yes.",
+        "$21."
+      ],
+      "headline": "A Competitor Offered to Buy It",
+      "description": "He said no. The point is he could have said yes.",
+      "cta": "Learn more"
+    }
+  ]
+}

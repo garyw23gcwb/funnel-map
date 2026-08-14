@@ -4,9 +4,11 @@
   "updated": "12 August 2026",
   "bookPointsToPlan": true,
   "quietSoon": true,
+  "adPages": true,
   "nodes": {
     "ads": {
-      "status": "soon"
+      "status": "review",
+      "job": "Ten ad concepts, each in feed and story sizes. Click a number to read one."
     },
     "sales-page": {
       "url": "https://looksprofitable.com/book",
