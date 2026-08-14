@@ -81,9 +81,10 @@
       "job": "Twenty-one emails over thirty days. Written, not yet built."
     },
     "plan-page": {
-      "status": "soon",
+      "url": "https://looksprofitable.com/plan",
+      "status": "live",
       "label": "The CLARITY Plan",
-      "job": "The plan on its own URL. The printed book points here three times, and the calculator pitches it."
+      "job": "The plan on its own URL, $197. The printed book points here three times, and the calculator pitches it."
     },
     "abandonment": {
       "off": true
