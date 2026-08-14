@@ -307,7 +307,9 @@
         var sl = el(url ? 'a' : 'span', 'slot' + (url ? '' : ' soon'));
         if (url) { sl.href = url; sl.target = '_blank'; sl.rel = 'noopener'; }
         sl.textContent = c.label || it.label;
-        sl.title = (it.title || it.label) + (url || quietSoon ? '' : ' — still to come');
+        /* A client can rename a slot, so it can retitle it too: a renamed
+           chip whose tooltip still names the old format says two things. */
+        sl.title = (c.title || it.title || it.label) + (url || quietSoon ? '' : ' — still to come');
         box.appendChild(sl);
       });
       board.appendChild(box);

@@ -66,10 +66,12 @@
     },
     "file-mp3": {
       "url": "https://pub-28c40aa5d0c948729a4b6a3a03bfc329.r2.dev/Looks%20Profitable/player.html",
-      "status": "live"
+      "status": "live",
+      "label": "Audio",
+      "title": "The audiobook"
     },
     "file-m4b": {
-      "status": "soon"
+      "off": true
     },
     "file-extra": {
       "status": "soon"
