@@ -315,11 +315,13 @@
       board.appendChild(box);
     });
 
-    /* ten ad concepts, each opening the pop-up */
+    /* One chip per ad concept, each opening the pop-up. Ten is the usual
+       number, so it is the default, but a client file can say otherwise:
+       a chip with no concept behind it reads as a broken map. */
     if (shown['ads'] && cfg.adPages) {
       var ab = el('div', 'chips');
       ab.style.cssText = pos(AD_CHIPS.x, AD_CHIPS.y, AD_CHIPS.w, AD_CHIPS.h);
-      for (var a = 1; a <= AD_CHIPS.count; a++) {
+      for (var a = 1; a <= (cfg.adCount || AD_CHIPS.count); a++) {
         ab.appendChild(popChip('ad', a, 'Ad concept ' + a));
       }
       board.appendChild(ab);

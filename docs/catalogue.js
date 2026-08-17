@@ -146,9 +146,11 @@ window.FUNNEL_CATALOGUE = (function () {
     { text: 'Waitlist',       x: Q, y: 1884, needs: ['wl-optin', 'wl-confirm'] }
   ];
 
-  /* Both chip strips sit inside their card. */
+  /* Both chip strips sit inside their card. The ad strip is wide enough for
+     eleven chips on one row, since a client file can raise the count past
+     the ten most campaigns launch with; `count` is only the default. */
   var CHIPS = { x: 450, y: 1160, w: 500, h: 62, count: 21 };
-  var AD_CHIPS = { x: 82, y: 156, w: 460, h: 28, count: 10 };
+  var AD_CHIPS = { x: 82, y: 156, w: 500, h: 28, count: 10 };
 
   /* Edges. `a` and `b` are anchors written as id:side, optionally with a
      fraction along that side (confirmation:b@0.35), or a fixed number of

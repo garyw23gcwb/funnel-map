@@ -89,6 +89,10 @@ Everything structural is in `docs/catalogue.js`.
   narrow-screen list, not a row on the board: `delivery` and `inbook` sit side by
   side in the same band. The group box is drawn at the size the columns actually
   shown need, so its declared `w/h` is the full two-column, two-row maximum.
+- `adCount` in a client file overrides the ten ad chips most campaigns launch
+  with, for a set that has grown or been cut. The strip holds eleven on one row.
+  Keep it in step with `<slug>-ads.json`: a chip with no concept behind it opens
+  a pop-up saying so.
 - `compact` on a node is the size it drops to when it has nothing to hold, with
   `holds` naming the flag in the client file that fills it. The ads card is only
   560 wide because of its ten ad chips; a client without `adPages` gets a
