@@ -5,7 +5,7 @@
   "nodes": {
     "ads": {
       "status": "live",
-      "job": "Ten ad concepts, each running in feed and story sizes. Click a number to see the ad."
+      "job": "Ten ads, each in feed and story sizes. Click a number to open it in Ads Manager."
     },
     "sales-page": {
       "url": "https://themilliondollarhurdle.com/book",
@@ -204,5 +204,47 @@
     }
   ],
   "emailPages": true,
-  "adPages": true
+  "adCount": 10,
+  "ads": [
+    {
+      "n": 1,
+      "url": "https://fb.me/1VyoDVLO6IgDoV5"
+    },
+    {
+      "n": 2,
+      "url": "https://fb.me/2HxyFEHJCokGdqJ"
+    },
+    {
+      "n": 3,
+      "url": "https://fb.me/2aQPADdbSLdUw6I"
+    },
+    {
+      "n": 4,
+      "url": "https://fb.me/27mj5pMRqZa4SGr"
+    },
+    {
+      "n": 5,
+      "url": "https://fb.me/2DzmodX1ff9jwC4"
+    },
+    {
+      "n": 6,
+      "url": "https://fb.me/2dOos7KLBlxmnuC"
+    },
+    {
+      "n": 7,
+      "url": "https://fb.me/1UJypT6yBjD4Ray"
+    },
+    {
+      "n": 8,
+      "url": "https://fb.me/1QnRarGcNkVh13F"
+    },
+    {
+      "n": 9,
+      "url": "https://fb.me/2bhg18hRT5dgBNk"
+    },
+    {
+      "n": 10,
+      "url": "https://fb.me/2mxqheLz3ILXXmI"
+    }
+  ]
 }
