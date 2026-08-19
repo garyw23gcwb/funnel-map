@@ -4,7 +4,8 @@
   "updated": "11 August 2026",
   "nodes": {
     "ads": {
-      "status": "soon"
+      "status": "live",
+      "job": "Ten ads, each in feed and story sizes. Click a number to see it."
     },
     "sales-page": {
       "url": "https://mythandmountain.com/book",
@@ -177,6 +178,49 @@
     {
       "n": 21,
       "day": 30
+    }
+  ],
+  "adCount": 10,
+  "ads": [
+    {
+      "n": 1,
+      "url": "https://fb.me/adspreview/facebook/27vOtZdFx0IXbwp"
+    },
+    {
+      "n": 2,
+      "url": "https://fb.me/adspreview/facebook/1VjmTkpsmsBDs2O"
+    },
+    {
+      "n": 3,
+      "url": "https://fb.me/adspreview/facebook/28VwqU5sLPaPbhI"
+    },
+    {
+      "n": 4,
+      "url": "https://fb.me/adspreview/facebook/2bm6qr3rMQcOYW5"
+    },
+    {
+      "n": 5,
+      "url": "https://fb.me/adspreview/facebook/1UTnQOaqkc7ufM7"
+    },
+    {
+      "n": 6,
+      "url": "https://fb.me/adspreview/facebook/29rtD8HOxQzcs7I"
+    },
+    {
+      "n": 7,
+      "url": "https://fb.me/adspreview/facebook/2vtjHHuY7eD2orU"
+    },
+    {
+      "n": 8,
+      "url": "https://fb.me/adspreview/facebook/29AegJmYXVJR6PA"
+    },
+    {
+      "n": 9,
+      "url": "https://fb.me/adspreview/facebook/2cP20NtZRqhwCXY"
+    },
+    {
+      "n": 10,
+      "url": "https://fb.me/adspreview/facebook/2iyiPh4aIZTnOEL"
     }
   ]
 }
