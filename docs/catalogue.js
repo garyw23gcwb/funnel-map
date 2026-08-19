@@ -76,12 +76,13 @@ window.FUNNEL_CATALOGUE = (function () {
        across the same row. */
     { id: 'reader-portal', layer: 'delivery', label: 'Reader Portal', x: P, y: 802, w: CW, h: 168,
       job: 'Where the buyer logs in and downloads.', cta: 'Open portal',
+      /* One slot per thing the reader collects, not per file format: the
+         portal hands over a single digital page carrying PDF and EPUB, and a
+         single audiobook page carrying MP3 and M4B. */
       slots: { x: 242, y: 932, w: 256, h: 28, items: [
-        { id: 'file-pdf',   label: 'PDF',  title: 'The ebook, PDF' },
-        { id: 'file-epub',  label: 'EPUB', title: 'The ebook, EPUB' },
-        { id: 'file-mp3',   label: 'MP3',  title: 'The audiobook, MP3' },
-        { id: 'file-m4b',   label: 'M4B',  title: 'The audiobook, M4B' },
-        { id: 'file-extra', label: 'Bump', title: 'The bump upgrade content' }
+        { id: 'file-digital', label: 'Digital', title: 'The ebook, PDF and EPUB' },
+        { id: 'file-audio',   label: 'Audio',   title: 'The audiobook, MP3 and M4B' },
+        { id: 'file-bump',    label: 'Bump',    title: 'The bump upgrade content' }
       ] } },
 
     /* Legacy, and used by one map only. Jim's book was made before the free

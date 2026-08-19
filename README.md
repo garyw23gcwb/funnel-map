@@ -104,6 +104,12 @@ Everything structural is in `docs/catalogue.js`.
 - `optional: true` on a node keeps it hidden unless a client's file mentions it.
   Use it for anything most clients do not have, such as `one-click-2`, so adding
   a node does not put a phantom "still to come" box on every existing map.
+- `slots` on a node draws a strip of small buttons along its bottom edge, one
+  per thing the reader collects rather than one per file format. The reader
+  portal carries `file-digital` (the PDF and EPUB), `file-audio` (the MP3 and
+  M4B) and `file-bump` (whatever the order bump hands over). Each is an ordinary
+  node id, so a client file gives it a URL and a status like any other box. A
+  slot with no entry shows as still to come.
 
 The delivery band is the Tinybook shape: the reader gets the book in the portal,
 then follows what the book points at across the same row, ending in `free-tool`

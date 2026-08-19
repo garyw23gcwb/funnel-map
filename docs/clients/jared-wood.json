@@ -79,6 +79,15 @@
     },
     "wl-confirm": {
       "off": true
+    },
+    "file-digital": {
+      "status": "soon"
+    },
+    "file-audio": {
+      "status": "soon"
+    },
+    "file-bump": {
+      "status": "soon"
     }
   },
   "emails": [

@@ -105,20 +105,14 @@
       "job": "Filled in after purchase. The answers build the diagnostic report.",
       "label": "Deep Diagnostic Survey"
     },
-    "file-pdf": {
+    "file-digital": {
       "url": "https://storage.googleapis.com/msgsndr/mJGTwMeDhmGKF1Br2UVQ/media/6a747a878880872019e3b498.pdf",
       "status": "live"
     },
-    "file-epub": {
+    "file-audio": {
       "status": "soon"
     },
-    "file-mp3": {
-      "status": "soon"
-    },
-    "file-m4b": {
-      "status": "soon"
-    },
-    "file-extra": {
+    "file-bump": {
       "status": "soon"
     }
   },
