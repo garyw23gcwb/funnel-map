@@ -4,12 +4,11 @@
   "updated": "12 August 2026",
   "bookPointsToPlan": true,
   "quietSoon": true,
-  "adPages": true,
   "adCount": 11,
   "nodes": {
     "ads": {
       "status": "review",
-      "job": "Eleven ad concepts, each in feed and story sizes. Click a number to read one."
+      "job": "Eleven ads, each in feed and story sizes. Click a number to open it in Ads Manager."
     },
     "sales-page": {
       "url": "https://looksprofitable.com/book",
@@ -212,6 +211,52 @@
     {
       "n": 21,
       "day": 30
+    }
+  ],
+  "ads": [
+    {
+      "n": 1,
+      "url": "https://fb.me/2ajBwkK3Hz7nXsZ"
+    },
+    {
+      "n": 2,
+      "url": "https://fb.me/1TPXYU3ZRtOu54I"
+    },
+    {
+      "n": 3,
+      "url": "https://fb.me/2h9nwUUekESFlPe"
+    },
+    {
+      "n": 4,
+      "url": "https://fb.me/21T3nlE9LlWtKRy"
+    },
+    {
+      "n": 5,
+      "url": "https://fb.me/2aZ2ftiM4Tzcdnq"
+    },
+    {
+      "n": 6,
+      "url": "https://fb.me/25K2BE1niu0OOT1"
+    },
+    {
+      "n": 7,
+      "url": "https://fb.me/2Jl9SyZdtkRzcem"
+    },
+    {
+      "n": 8,
+      "url": "https://fb.me/2bIkcW3uT6PPr0c"
+    },
+    {
+      "n": 9,
+      "url": "https://fb.me/25p4MshiDO5QEKv"
+    },
+    {
+      "n": 10,
+      "url": "https://fb.me/1Ux59Pn6X0YiSTa"
+    },
+    {
+      "n": 11,
+      "url": "https://fb.me/1VWY4VcFxDy64aY"
     }
   ]
 }

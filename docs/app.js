@@ -164,7 +164,10 @@
        anything is measured or drawn, so the wires follow it. */
     NODES.forEach(function (n) {
       if (!n.compact) return;
-      var size = (!n.holds || cfg[n.holds]) ? n.full : n.compact;
+      var size = (!n.holds || [].concat(n.holds).some(function (k) {
+        var v = cfg[k];
+        return Array.isArray(v) ? v.length > 0 : !!v;
+      })) ? n.full : n.compact;
       n.w = size.w;
       n.h = size.h;
     });
@@ -315,14 +318,38 @@
       board.appendChild(box);
     });
 
-    /* One chip per ad concept, each opening the pop-up. Ten is the usual
-       number, so it is the default, but a client file can say otherwise:
-       a chip with no concept behind it reads as a broken map. */
-    if (shown['ads'] && cfg.adPages) {
+    /* One chip per ad concept. Once a campaign is running, a client file
+       lists the live ads and each chip links straight out to one, which
+       beats showing a mock-up of an ad the reader can go and see. Without a
+       link the chip falls back to the concept pop-up, the same way the email
+       chips do. Ten is the usual number, so it is the default, but a client
+       file can say otherwise: a chip with no ad behind it reads as a broken
+       map. */
+    var adPopUsed = false;
+    if (shown['ads'] && (cfg.adPages || (cfg.ads || []).length)) {
       var ab = el('div', 'chips');
       ab.style.cssText = pos(AD_CHIPS.x, AD_CHIPS.y, AD_CHIPS.w, AD_CHIPS.h);
+      var byA = {};
+      (cfg.ads || []).forEach(function (x) { if (x && x.n) byA[x.n] = x; });
       for (var a = 1; a <= (cfg.adCount || AD_CHIPS.count); a++) {
-        ab.appendChild(popChip('ad', a, 'Ad concept ' + a));
+        var ad = byA[a] || {};
+        var aurl = (ad.url || '').trim();
+        var atitle = ad.title || ('Ad ' + a);
+        var ac;
+        if (aurl) {
+          ac = el('a', 'chip');
+          ac.href = aurl; ac.target = '_blank'; ac.rel = 'noopener';
+          ac.textContent = a;
+          ac.title = atitle;
+        } else if (cfg.adPages) {
+          ac = popChip('ad', a, 'Ad concept ' + a);
+          adPopUsed = true;
+        } else {
+          ac = el('span', 'chip');
+          ac.textContent = a;
+          ac.title = atitle;
+        }
+        ab.appendChild(ac);
       }
       board.appendChild(ab);
     }
@@ -334,7 +361,7 @@
 
     /* Warm the pop-up data now, so the first chip click is instant instead
        of waiting on a cold fetch. Failures are retried on click. */
-    if (cfg.adPages && shown['ads']) {
+    if (adPopUsed) {
       load('ad').then(function (data) {
         /* Fetch the creative quietly once the map is up, a few at a time, so
            the first pop-up is instant instead of waiting on a cold image. */

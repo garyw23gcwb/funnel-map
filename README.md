@@ -93,10 +93,17 @@ Everything structural is in `docs/catalogue.js`.
   with, for a set that has grown or been cut. The strip holds eleven on one row.
   Keep it in step with `<slug>-ads.json`: a chip with no concept behind it opens
   a pop-up saying so.
+- `ads` in a client file is the live campaign, `[{ "n": 1, "url": "..." }]`, and
+  works exactly like `emails`: a numbered chip with a link opens that ad, and a
+  number with no link falls back to the concept pop-up if `adPages` is set.
+  Once a campaign is running, prefer the links and drop `adPages`, because
+  sending the client to the ad itself beats showing them a mock-up of it. The
+  ads card stays at full width for either, so the strip always has room.
 - `compact` on a node is the size it drops to when it has nothing to hold, with
-  `holds` naming the flag in the client file that fills it. The ads card is only
-  560 wide because of its ten ad chips; a client without `adPages` gets a
-  standard card instead of a wide empty box.
+  `holds` naming the key in the client file that fills it, or a list of keys any
+  one of which will do. The ads card is only 560 wide because of its ten ad
+  chips; a client with neither `adPages` nor `ads` gets a standard card instead
+  of a wide empty box.
 - `quietSoon: true` in a client file drops the "Still to come" caption, its
   legend key and its tooltips, for a map being shown before the build is
   finished. The unbuilt boxes stay dashed and dimmed, and keep their wires, so

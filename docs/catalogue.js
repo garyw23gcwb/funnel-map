@@ -52,7 +52,7 @@ window.FUNNEL_CATALOGUE = (function () {
        flag in the client file that fills it; without the chips it falls back
        to `compact` rather than sitting there as a wide empty box. */
     { id: 'ads', layer: 'traffic', label: 'Meta Ads', x: A, y: 60, w: 560, h: 158,
-      holds: 'adPages', compact: { w: CW, h: CH },
+      holds: ['adPages', 'ads'], compact: { w: CW, h: CH },
       job: 'Ten ad concepts, each running in feed and story sizes.' },
 
     { id: 'sales-page', layer: 'book', label: 'Sales Page', x: A, y: 318, w: CW, h: CH, tilt: 1,
