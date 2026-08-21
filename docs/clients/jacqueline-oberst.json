@@ -1,262 +1,263 @@
 {
-  "client": "Jacqueline Oberst",
-  "book": "Looks Profitable",
-  "updated": "12 August 2026",
-  "bookPointsToPlan": true,
-  "quietSoon": true,
-  "adCount": 11,
-  "nodes": {
-    "ads": {
-      "status": "live",
-      "job": "Eleven ads, each in feed and story sizes. Click a number to open it in Ads Manager."
-    },
-    "sales-page": {
-      "url": "https://looksprofitable.com/book",
-      "status": "live"
-    },
-    "order-form": {
-      "url": "https://looksprofitable.com/order",
-      "status": "live",
-      "job": "Three format tiers: $21 digital, $29 audiobook, $37 paperback. Card details captured here."
-    },
-    "order-bump": {
-      "status": "live",
-      "label": "Bump Upgrade",
-      "job": "The Monday Morning Reports, $27. One tick, above the order button.",
-      "cta": "See the copy",
-      "popup": {
-        "kicker": "Bump upgrade, inside the order form",
-        "title": "The Financial Operating System That Turns A One-Time Cleanup Into A Permanent Capability",
-        "price": "$27",
-        "was": "$97",
-        "note": "72% off",
-        "check": "YES! Add The Monday Morning Reports To My Order For Just $27 (72% OFF)",
-        "body": [
-          "Looks Profitable shows you where to look. These are three of the reports I set up for every client: the Monday Morning Numbers Brief, the Monthly Review Calendar, and the Quarterly Cost Audit, each one a fill-in-the-blank template with step-by-step instructions you can run this week.",
-          "No formulas to write and no accounting knowledge needed. Fifteen minutes on a Monday and you will know where the business stands before the week starts.",
-          "The book shows you where to look. These make sure you actually do it."
-        ],
-        "cta": "Add",
-        "footnote": "Taken from the live order form"
-      }
-    },
-    "one-click": {
-      "url": "https://looksprofitable.com/special-offer",
-      "status": "live",
-      "label": "One-Click Offer Upgrade",
-      "job": "The CLARITY Business Implementation Plan, $97. Offered on purchase momentum, no card re-entry."
-    },
-    "one-click-2": {
-      "off": true
-    },
-    "confirmation": {
-      "url": "https://looksprofitable.com/success",
-      "status": "live"
-    },
-    "reader-portal": {
-      "status": "live"
-    },
-    "file-digital": {
-      "url": "https://build.bookfunnels.io/preview/WIriBhxQMzJldTuYh6Yd?notrack=true",
-      "status": "live"
-    },
-    "file-audio": {
-      "url": "https://build.bookfunnels.io/preview/uG7XIHDAxrJCrc8NO973?notrack=true",
-      "status": "live"
-    },
-    "file-bump": {
-      "status": "live",
-      "url": "https://build.bookfunnels.io/preview/kERXsCWkO6z5mVHnyrvy?notrack=true"
-    },
-    "email-sequence": {
-      "status": "soon",
-      "job": "Twenty-one emails over thirty days. Written, not yet built."
-    },
-    "plan-page": {
-      "url": "https://looksprofitable.com/plan",
-      "status": "live",
-      "label": "The CLARITY Plan",
-      "job": "The plan on its own URL, $197. The printed book points here three times, and the calculator pitches it."
-    },
-    "abandonment": {
-      "off": true
-    },
-    "survey": {
-      "url": "https://build.bookfunnels.io/widget/survey/vUKNSb3j3AiMEmqGc88s",
-      "status": "live",
-      "job": "Filled in by plan buyers. The answers build the CLARITY Plan."
-    },
-    "review-call": {
-      "status": "theirs",
-      "job": "Booked by plan buyers only. You run these."
-    },
-    "backend-offer": {
-      "status": "theirs",
-      "label": "Strategic Bookkeeping",
-      "job": "CFO-level financial insight, $500 a month. Your core service."
-    },
-    "rb-optin": {
-      "url": "https://looksprofitable.com/bonus",
-      "status": "live",
-      "label": "Reader Bonus Opt-in",
-      "job": "Claims the Performance Gap Calculator. The printed book points here."
-    },
-    "rb-thanks": {
-      "url": "https://looksprofitable.com/bonus-confirmation",
-      "status": "live",
-      "label": "Bonus Confirmation",
-      "job": "Confirms the opt-in and hands over the calculator."
-    },
-    "sip-page": {
-      "off": true
-    },
-    "sip-confirm": {
-      "off": true
-    },
-    "wl-optin": {
-      "off": true
-    },
-    "wl-confirm": {
-      "off": true
-    },
-    "free-tool": {
-      "url": "https://calculator.looksprofitable.com/",
-      "status": "live",
-      "label": "The Calculator",
-      "job": "Runs the Confront and Locate steps from chapters 1 and 2 in about two minutes.",
-      "cta": "Open the tool"
-    }
+ "client": "Jacqueline Oberst",
+ "book": "Looks Profitable",
+ "updated": "21 August 2026",
+ "bookPointsToPlan": true,
+ "quietSoon": true,
+ "adCount": 11,
+ "nodes": {
+  "ads": {
+   "status": "live",
+   "job": "Eleven ads, each in feed and story sizes. Click a number to open it in Ads Manager."
   },
-  "emails": [
-    {
-      "n": 1,
-      "day": 0
-    },
-    {
-      "n": 2,
-      "day": 1
-    },
-    {
-      "n": 3,
-      "day": 3
-    },
-    {
-      "n": 4,
-      "day": 5
-    },
-    {
-      "n": 5,
-      "day": 7
-    },
-    {
-      "n": 6,
-      "day": 9
-    },
-    {
-      "n": 7,
-      "day": 11
-    },
-    {
-      "n": 8,
-      "day": 12
-    },
-    {
-      "n": 9,
-      "day": 13
-    },
-    {
-      "n": 10,
-      "day": 15
-    },
-    {
-      "n": 11,
-      "day": 16
-    },
-    {
-      "n": 12,
-      "day": 17
-    },
-    {
-      "n": 13,
-      "day": 18
-    },
-    {
-      "n": 14,
-      "day": 19
-    },
-    {
-      "n": 15,
-      "day": 21
-    },
-    {
-      "n": 16,
-      "day": 22
-    },
-    {
-      "n": 17,
-      "day": 24
-    },
-    {
-      "n": 18,
-      "day": 26
-    },
-    {
-      "n": 19,
-      "day": 27
-    },
-    {
-      "n": 20,
-      "day": 28
-    },
-    {
-      "n": 21,
-      "day": 30
-    }
-  ],
-  "ads": [
-    {
-      "n": 1,
-      "url": "https://fb.me/2ajBwkK3Hz7nXsZ"
-    },
-    {
-      "n": 2,
-      "url": "https://fb.me/1TPXYU3ZRtOu54I"
-    },
-    {
-      "n": 3,
-      "url": "https://fb.me/2h9nwUUekESFlPe"
-    },
-    {
-      "n": 4,
-      "url": "https://fb.me/21T3nlE9LlWtKRy"
-    },
-    {
-      "n": 5,
-      "url": "https://fb.me/2aZ2ftiM4Tzcdnq"
-    },
-    {
-      "n": 6,
-      "url": "https://fb.me/25K2BE1niu0OOT1"
-    },
-    {
-      "n": 7,
-      "url": "https://fb.me/2Jl9SyZdtkRzcem"
-    },
-    {
-      "n": 8,
-      "url": "https://fb.me/2bIkcW3uT6PPr0c"
-    },
-    {
-      "n": 9,
-      "url": "https://fb.me/25p4MshiDO5QEKv"
-    },
-    {
-      "n": 10,
-      "url": "https://fb.me/1Ux59Pn6X0YiSTa"
-    },
-    {
-      "n": 11,
-      "url": "https://fb.me/1VWY4VcFxDy64aY"
-    }
-  ]
+  "sales-page": {
+   "url": "https://looksprofitable.com/book",
+   "status": "live"
+  },
+  "order-form": {
+   "url": "https://looksprofitable.com/order",
+   "status": "live",
+   "job": "Three format tiers: $21 digital, $29 audiobook, $37 paperback. Card details captured here."
+  },
+  "order-bump": {
+   "status": "live",
+   "label": "Bump Upgrade",
+   "job": "The Monday Morning Reports, $27. One tick, above the order button.",
+   "cta": "See the copy",
+   "popup": {
+    "kicker": "Bump upgrade, inside the order form",
+    "title": "The Financial Operating System That Turns A One-Time Cleanup Into A Permanent Capability",
+    "price": "$27",
+    "was": "$97",
+    "note": "72% off",
+    "check": "YES! Add The Monday Morning Reports To My Order For Just $27 (72% OFF)",
+    "body": [
+     "Looks Profitable shows you where to look. These are three of the reports I set up for every client: the Monday Morning Numbers Brief, the Monthly Review Calendar, and the Quarterly Cost Audit, each one a fill-in-the-blank template with step-by-step instructions you can run this week.",
+     "No formulas to write and no accounting knowledge needed. Fifteen minutes on a Monday and you will know where the business stands before the week starts.",
+     "The book shows you where to look. These make sure you actually do it."
+    ],
+    "cta": "Add",
+    "footnote": "Taken from the live order form"
+   }
+  },
+  "one-click": {
+   "url": "https://looksprofitable.com/special-offer",
+   "status": "live",
+   "label": "One-Click Offer Upgrade",
+   "job": "The CLARITY Business Implementation Plan, $97. Offered on purchase momentum, no card re-entry."
+  },
+  "one-click-2": {
+   "off": true
+  },
+  "confirmation": {
+   "url": "https://looksprofitable.com/success",
+   "status": "live"
+  },
+  "reader-portal": {
+   "status": "live"
+  },
+  "file-digital": {
+   "url": "https://build.bookfunnels.io/preview/WIriBhxQMzJldTuYh6Yd?notrack=true",
+   "status": "live"
+  },
+  "file-audio": {
+   "url": "https://build.bookfunnels.io/preview/uG7XIHDAxrJCrc8NO973?notrack=true",
+   "status": "live"
+  },
+  "file-bump": {
+   "status": "live",
+   "url": "https://build.bookfunnels.io/preview/kERXsCWkO6z5mVHnyrvy?notrack=true"
+  },
+  "email-sequence": {
+   "status": "soon",
+   "job": "Twenty-one emails over thirty days. Click a number to read one."
+  },
+  "plan-page": {
+   "url": "https://looksprofitable.com/plan",
+   "status": "live",
+   "label": "The CLARITY Plan",
+   "job": "The plan on its own URL, $197. The printed book points here three times, and the calculator pitches it."
+  },
+  "abandonment": {
+   "off": true
+  },
+  "survey": {
+   "url": "https://build.bookfunnels.io/widget/survey/vUKNSb3j3AiMEmqGc88s",
+   "status": "live",
+   "job": "Filled in by plan buyers. The answers build the CLARITY Plan."
+  },
+  "review-call": {
+   "status": "theirs",
+   "job": "Booked by plan buyers only. You run these."
+  },
+  "backend-offer": {
+   "status": "theirs",
+   "label": "Strategic Bookkeeping",
+   "job": "CFO-level financial insight, $500 a month. Your core service."
+  },
+  "rb-optin": {
+   "url": "https://looksprofitable.com/bonus",
+   "status": "live",
+   "label": "Reader Bonus Opt-in",
+   "job": "Claims the Performance Gap Calculator. The printed book points here."
+  },
+  "rb-thanks": {
+   "url": "https://looksprofitable.com/bonus-confirmation",
+   "status": "live",
+   "label": "Bonus Confirmation",
+   "job": "Confirms the opt-in and hands over the calculator."
+  },
+  "sip-page": {
+   "off": true
+  },
+  "sip-confirm": {
+   "off": true
+  },
+  "wl-optin": {
+   "off": true
+  },
+  "wl-confirm": {
+   "off": true
+  },
+  "free-tool": {
+   "url": "https://calculator.looksprofitable.com/",
+   "status": "live",
+   "label": "The Calculator",
+   "job": "Runs the Confront and Locate steps from chapters 1 and 2 in about two minutes.",
+   "cta": "Open the tool"
+  }
+ },
+ "emails": [
+  {
+   "n": 1,
+   "day": 0
+  },
+  {
+   "n": 2,
+   "day": 1
+  },
+  {
+   "n": 3,
+   "day": 3
+  },
+  {
+   "n": 4,
+   "day": 5
+  },
+  {
+   "n": 5,
+   "day": 7
+  },
+  {
+   "n": 6,
+   "day": 9
+  },
+  {
+   "n": 7,
+   "day": 11
+  },
+  {
+   "n": 8,
+   "day": 12
+  },
+  {
+   "n": 9,
+   "day": 13
+  },
+  {
+   "n": 10,
+   "day": 15
+  },
+  {
+   "n": 11,
+   "day": 16
+  },
+  {
+   "n": 12,
+   "day": 17
+  },
+  {
+   "n": 13,
+   "day": 18
+  },
+  {
+   "n": 14,
+   "day": 19
+  },
+  {
+   "n": 15,
+   "day": 21
+  },
+  {
+   "n": 16,
+   "day": 22
+  },
+  {
+   "n": 17,
+   "day": 24
+  },
+  {
+   "n": 18,
+   "day": 26
+  },
+  {
+   "n": 19,
+   "day": 27
+  },
+  {
+   "n": 20,
+   "day": 28
+  },
+  {
+   "n": 21,
+   "day": 30
+  }
+ ],
+ "ads": [
+  {
+   "n": 1,
+   "url": "https://fb.me/2ajBwkK3Hz7nXsZ"
+  },
+  {
+   "n": 2,
+   "url": "https://fb.me/1TPXYU3ZRtOu54I"
+  },
+  {
+   "n": 3,
+   "url": "https://fb.me/2h9nwUUekESFlPe"
+  },
+  {
+   "n": 4,
+   "url": "https://fb.me/21T3nlE9LlWtKRy"
+  },
+  {
+   "n": 5,
+   "url": "https://fb.me/2aZ2ftiM4Tzcdnq"
+  },
+  {
+   "n": 6,
+   "url": "https://fb.me/25K2BE1niu0OOT1"
+  },
+  {
+   "n": 7,
+   "url": "https://fb.me/2Jl9SyZdtkRzcem"
+  },
+  {
+   "n": 8,
+   "url": "https://fb.me/2bIkcW3uT6PPr0c"
+  },
+  {
+   "n": 9,
+   "url": "https://fb.me/25p4MshiDO5QEKv"
+  },
+  {
+   "n": 10,
+   "url": "https://fb.me/1Ux59Pn6X0YiSTa"
+  },
+  {
+   "n": 11,
+   "url": "https://fb.me/1VWY4VcFxDy64aY"
+  }
+ ],
+ "emailPages": true
 }
