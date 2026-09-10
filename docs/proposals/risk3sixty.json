@@ -20,7 +20,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1050, "before": "followup", "text": "Break-even: $72 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+    { "y": 1050, "before": "followup", "text": "Break-even: $71 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -51,18 +51,17 @@
       "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
 
     { "id": "order-bump", "layer": "book", "label": "STOS Audiobook", "status": "build",
-      "x": 378, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$40",
+      "x": 378, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$37",
       "job": "Bump upgrade. One tick, above the order button.",
       "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
-        "price": "$40",
-        "check": "YES! Add the audiobook to my order for $40",
+        "price": "$37",
+        "check": "YES! Add the audiobook to my order for $37",
         "body": [
           "The full book, chaptered, in Christian's voice.",
           "For the security leader with no reading time. Commutes and flights.",
           "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well for authority and discovery."
         ],
-        "cta": "Add",
-        "footnote": "Round pricing throughout the stack. Charm pricing reads as an info product to this buyer." } },
+        "cta": "Add" } },
 
     { "id": "one-click", "layer": "book", "label": "STOS Implementation Pack", "status": "build", "tilt": 2,
       "x": 696, "y": 348, "w": 290, "h": 156, "cta": "See the offer", "price": "$250",
@@ -108,7 +107,7 @@
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already yours", "title": "The ebook",
           "body": [ "The Kindle edition as it exists today, delivered as a download the moment the order goes through." ] } },
         { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the bump upgrade", "title": "The audiobook",
-          "body": [ "The full book, chaptered, in Christian's voice, for the buyer who ticked the $40 bump.", "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well." ] } },
+          "body": [ "The full book, chaptered, in Christian's voice, for the buyer who ticked the $37 bump.", "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well." ] } },
         { "label": "Implementation Pack", "status": "build", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "The Implementation Pack",
           "body": [
             "The recorded walkthrough, six modules of 15 to 20 minutes in Christian's voice: Orientation and the 90-day calendar; Purpose (the Purpose Finder and the three business objectives); Values (the Values Creator and where to integrate values); Roles (the org chart, the four RACI tables, delegate and elevate); Rhythms (the rhythm calendar, six meeting agendas, the two Commander's tools); Goals and KPIs (the goal tree, the KPI table, and the invitation to the workshop).",
@@ -239,15 +238,15 @@
     "quote": "$6K spend/month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
-      "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $40, pack $250, digital downsell $100 offered to pack decliners.",
+      "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $37, pack $250, digital downsell $100 offered to pack decliners.",
       "columns": [ "", "Conservative", "Expected", "Strong" ],
       "rows": [
-        [ "Audiobook bump, $40", "30% = $12", "35% = $14", "40% = $16" ],
+        [ "Audiobook bump, $37", "30% = $11.10", "35% = $12.95", "40% = $14.80" ],
         [ "Implementation Pack, $250", "7% = $17.50", "11% = $27.50", "14% = $35" ],
         [ "Digital Pack, $100 (decliners only)", "8% of 93% = $7", "10% of 89% = $9", "12% of 86% = $10" ]
       ],
-      "total": [ "AOV", "$59", "$72", "$83" ],
-      "cpa": [ "Against a $60 CPA", "Breaks even", "$12 ahead per buyer", "$23 ahead per buyer" ]
+      "total": [ "AOV", "$58", "$71", "$82" ],
+      "cpa": [ "Against a $60 CPA", "$2 short per buyer", "$11 ahead per buyer", "$22 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for risk3sixty, 10 September 2026. A proposal, ahead of the call."
