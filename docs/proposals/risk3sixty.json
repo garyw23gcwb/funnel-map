@@ -23,48 +23,19 @@
   ],
   "sublabels": [],
   "nodes": [
-    { "id": "seed-list", "layer": "traffic", "label": "Your List", "status": "exists",
-      "x": 60, "y": 60, "w": 290, "h": 140, "cta": "What it does",
-      "job": "HubSpot workbook and first-chapter downloads, past clients, newsletter, and Christian's LinkedIn audience.",
-      "popup": { "kicker": "Traffic, already yours", "title": "The list you already have",
+    { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
+      "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
+      "job": "Meta and LinkedIn, pointed at the sales page. Your HubSpot list is the seed for lookalikes and retargeting.",
+      "popup": { "kicker": "Traffic, we build", "title": "Where the readers come from",
         "body": [
-          "Everyone who downloaded the STOS workbook or the free first chapter through HubSpot, past clients, and the newsletter. Christian's LinkedIn audience on top.",
-          "Two jobs. It is the first audience the book is announced to, and it is the seed list Meta builds lookalikes from.",
-          "Nothing to build here. It gets wired in."
+          "Meta: lookalike audiences built from your HubSpot list (workbook and first-chapter downloads, past clients, newsletter), interest stacks such as CISSP, SANS, RSA Conference, Black Hat, CISO Tradecraft and Traction, and retargeting for everyone who reaches the sales page and does not buy.",
+          "LinkedIn: title targeting, CISO, VP Security, Director of GRC, as the cold front door.",
+          "Expected cost per book buyer: $40 to $80 on Meta, $80 to $150 with LinkedIn as the front door."
         ] } },
 
-    { "id": "meta-ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
-      "x": 390, "y": 60, "w": 290, "h": 168, "cta": "See the targeting",
-      "job": "Lookalikes from your list, interest stacks, and retargeting for everyone who visits and does not buy. Three hooks.",
-      "popup": { "kicker": "Traffic, we build", "title": "Meta: lookalikes and retargeting",
-        "body": [
-          "Lookalike audiences built from your seed list.",
-          "Interest stacks: cybersecurity, CISSP, SANS, RSA Conference, Black Hat, CISO Tradecraft, Traction, The CISO Evolution.",
-          "Retargeting for everyone who reaches the sales page and does not buy.",
-          "Expected cost per book buyer on Meta for this audience: $40 to $80."
-        ] },
-      "chips": { "x": 407, "y": 190, "w": 256, "h": 28, "items": [
-        { "label": "Book", "popup": { "kicker": "Ad hook 1 of 3", "title": "The book",
-          "body": [ "\"The book on how to run an unstoppable security team.\"", "The direct hook. Cold and warm audiences, sent straight to the sales page." ] } },
-        { "label": "Workbook", "popup": { "kicker": "Ad hook 2 of 3", "title": "The workbook",
-          "body": [ "The 41-page STOS Workbook, the free asset that already draws downloads, as the reason to click.", "Lands on the sales page. The printed workbook then appears again inside the Implementation Pack." ] } },
-        { "label": "Quiz", "popup": { "kicker": "Ad hook 3 of 3", "title": "The archetype quiz",
-          "body": [ "The five-minute CISO Archetype quiz as the reason to click. Which kind of security leader are you?", "Lands on the sales page. The quiz itself waits on the thank-you page, where it tags the buyer." ] } }
-      ] } },
-
-    { "id": "linkedin-ads", "layer": "traffic", "label": "LinkedIn Ads", "status": "build",
-      "x": 720, "y": 60, "w": 290, "h": 140, "cta": "See the targeting",
-      "job": "Title targeting: CISO, VP Security, Director of GRC. The cold front door.",
-      "popup": { "kicker": "Traffic, we build", "title": "LinkedIn: the cold front door",
-        "body": [
-          "Title targeting reaches the exact buyer: CISO, VP Security, Director of GRC.",
-          "LinkedIn is the cold front door. Meta picks up the retargeting.",
-          "Expected cost per book buyer with LinkedIn as the front door: $80 to $150."
-        ] } },
-
-    { "id": "sales-page", "layer": "book", "label": "Sales Page", "status": "build", "tilt": 1,
+    { "id": "sales-page", "layer": "book", "label": "The Book", "status": "build", "tilt": 1,
       "x": 60, "y": 348, "w": 290, "h": 140, "cta": "See the page plan",
-      "job": "Built on Bookfunnels. Replaces the Amazon link. Leads with the back cover paragraph.",
+      "job": "Sales page on Bookfunnels, $25 paperback or $15 ebook. Replaces the Amazon link.",
       "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
         "body": [
           "Opens with the back cover, in Christian's words: \"Have you felt the pressure of leading an InfoSec program? The board of directors and executives have questions. Peers in Legal, I.T., Engineering, and Sales need your support. Roles and responsibilities expand boundaries from vulnerability management to compliance audits. The weight of the job can feel overwhelming.\"",
@@ -77,9 +48,9 @@
       "x": 390, "y": 348, "w": 290, "h": 140,
       "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
 
-    { "id": "order-bump", "layer": "book", "label": "Bump Upgrade", "status": "build",
+    { "id": "order-bump", "layer": "book", "label": "The Audiobook", "status": "build",
       "x": 390, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
-      "job": "The audiobook, $40. One tick, above the order button.",
+      "job": "Bump upgrade, $40. One tick, above the order button.",
       "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
         "price": "$40",
         "check": "YES! Add the audiobook to my order for $40",
@@ -91,9 +62,9 @@
         "cta": "Add",
         "footnote": "Round pricing throughout the stack. Charm pricing reads as an info product to this buyer." } },
 
-    { "id": "one-click", "layer": "book", "label": "One-Click Offer", "status": "build", "tilt": 2,
+    { "id": "one-click", "layer": "book", "label": "STOS Implementation Pack", "status": "build", "tilt": 2,
       "x": 720, "y": 348, "w": 290, "h": 140, "cta": "See the offer",
-      "job": "The STOS Implementation Pack, $250. Offered on purchase momentum, no card re-entry.",
+      "job": "One-click offer, $250. Offered on purchase momentum, no card re-entry.",
       "popup": { "kicker": "One-click offer, after checkout", "title": "The STOS Implementation Pack",
         "price": "$250",
         "body": [
@@ -106,9 +77,9 @@
         ],
         "cta": "Yes, add the pack" } },
 
-    { "id": "downsell", "layer": "book", "label": "Downsell", "status": "build",
+    { "id": "downsell", "layer": "book", "label": "Digital Implementation Pack", "status": "build",
       "x": 720, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
-      "job": "The Digital Implementation Pack, $100. Shown only to people who decline the pack.",
+      "job": "Downsell, $100. Shown only to people who decline the pack.",
       "popup": { "kicker": "Downsell, shown only if the pack is declined", "title": "The Digital Implementation Pack",
         "price": "$100",
         "body": [
@@ -117,9 +88,9 @@
           "Decliners go straight to the thank-you page and the quiz. Pack buyers and digital buyers enter the same walkthrough and the same nurture."
         ] } },
 
-    { "id": "thank-you", "layer": "book", "label": "Thank-you Page", "status": "build",
+    { "id": "thank-you", "layer": "book", "label": "Thank You Page: Archetypes Quiz", "status": "build",
       "x": 1050, "y": 348, "w": 290, "h": 140, "cta": "See the quiz",
-      "job": "The CISO Archetype quiz. Five minutes, result emailed, contact tagged with one of five archetypes.",
+      "job": "Five minutes. Result emailed, contact tagged with one of five archetypes.",
       "popup": { "kicker": "Thank-you page, rebuilt from your quiz", "title": "The CISO Archetype quiz",
         "body": [
           "A five-minute self-assessment. The result is emailed.",
@@ -280,9 +251,7 @@
       ] } }
   ],
   "edges": [
-    { "a": "seed-list:b@0.35", "b": "sales-page:t@0.35" },
-    { "a": "meta-ads:b", "b": "sales-page:t@0.5", "via": [[535, 272], [205, 272]] },
-    { "a": "linkedin-ads:b", "b": "sales-page:t@0.65", "via": [[865, 304], [248.5, 304]] },
+    { "a": "ads:b", "b": "sales-page:t" },
 
     { "a": "sales-page:r", "b": "order-form:l" },
     { "a": "order-form:r", "b": "one-click:l" },
