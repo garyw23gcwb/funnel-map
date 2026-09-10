@@ -322,7 +322,7 @@
 
     if (cfg.economics) {
       var ec = cfg.economics;
-      var e = section('The economics', 'What a book sale is worth');
+      var e = section(ec.kicker || 'The economics', ec.title || 'What a book sale is worth');
       if (ec.quote) { var q = el('blockquote', 'quote'); q.textContent = ec.quote; e.appendChild(q); }
       [ec.aov, ec.monthly].forEach(function (spec) {
         if (!spec) return;

@@ -233,7 +233,8 @@
     { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1546 }
   ],
   "economics": {
-    "quote": "Six thousand a month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
+    "title": "Ad spend example",
+    "quote": "$6K spend/month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
       "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $40, pack $250, digital downsell $100 offered to pack decliners.",
