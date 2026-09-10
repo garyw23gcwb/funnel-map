@@ -34,7 +34,7 @@
         ] } },
 
     { "id": "sales-page", "layer": "book", "label": "STOS Book", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 156, "cta": "See the page plan", "price": "$25 paperback, $15 ebook",
+      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$25 paperback, $15 ebook",
       "job": "Sales page on Bookfunnels. Replaces the Amazon link.",
       "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
         "price": "$25", "note": "paperback, or $15 ebook",
@@ -47,11 +47,11 @@
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
-      "x": 378, "y": 348, "w": 290, "h": 156,
+      "x": 378, "y": 348, "w": 290, "h": 164,
       "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
 
     { "id": "order-bump", "layer": "book", "label": "STOS Audiobook", "status": "build",
-      "x": 378, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$37",
+      "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$37",
       "job": "Bump upgrade. One tick, above the order button.",
       "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
         "price": "$37",
@@ -64,12 +64,12 @@
         "cta": "Add" } },
 
     { "id": "one-click", "layer": "book", "label": "STOS Implementation Pack", "status": "build", "tilt": 2,
-      "x": 696, "y": 348, "w": 290, "h": 156, "cta": "See the offer", "price": "$250",
-      "job": "One-click offer. Printed workbook in the box, plus walkthrough, tools and calendar.",
+      "x": 696, "y": 348, "w": 290, "h": 164, "cta": "See the offer", "price": "$250",
+      "job": "One-click offer. Physical branded workbook shipped in the box, plus walkthrough, tools and calendar.",
       "popup": { "kicker": "One-click offer, after checkout", "title": "The STOS Implementation Pack",
         "price": "$250",
         "body": [
-          "The printed workbook, shipped in the same box as the book.",
+          "The physical branded workbook, shipped in the same box as the book.",
           "The recorded walkthrough: six modules in Christian's voice, one per section of the workbook.",
           "The seven editable Word tools.",
           "A 90-day implementation calendar.",
@@ -79,18 +79,18 @@
         "cta": "Yes, add the pack" } },
 
     { "id": "downsell", "layer": "book", "label": "Downsell: Digital Implementation Pack", "status": "build",
-      "x": 696, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$100",
+      "x": 696, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$100",
       "job": "Shown only to people who decline the pack.",
       "popup": { "kicker": "Downsell, shown only if the pack is declined", "title": "The Digital Implementation Pack",
         "price": "$100",
         "body": [
-          "The recorded walkthrough, the digital workbook (PDF), the seven editable Word tools and the 90-day calendar. No printed workbook, no shipping.",
+          "The recorded walkthrough, the digital workbook (PDF), the seven editable Word tools and the 90-day calendar. No physical branded workbook shipped.",
           "For the buyer who wants to start tonight without the physical version, or who balked at the price.",
           "Decliners go straight to the thank-you page and the quiz. Pack buyers and digital buyers enter the same walkthrough and the same nurture."
         ] } },
 
     { "id": "thank-you", "layer": "book", "label": "Thank You Page: Archetypes Quiz", "status": "build",
-      "x": 1050, "y": 348, "w": 290, "h": 156, "cta": "See the quiz",
+      "x": 1050, "y": 348, "w": 290, "h": 164, "cta": "See the quiz",
       "job": "Five minutes. Result emailed, contact tagged with one of five archetypes.",
       "popup": { "kicker": "Thank-you page, rebuilt from your quiz", "title": "The CISO Archetype quiz",
         "body": [
@@ -102,7 +102,7 @@
 
     { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
       "x": 555, "y": 800, "w": 440, "h": 168,
-      "job": "Where the buyer logs in and downloads. The paperback and printed workbook ship in one box; everything else is in here. Click a box.",
+      "job": "Where the buyer logs in and downloads. The paperback and physical branded workbook ship in one box; everything else is in here. Click a box.",
       "chips": { "x": 572, "y": 930, "w": 406, "h": 28, "items": [
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already yours", "title": "The ebook",
           "body": [ "The Kindle edition as it exists today, delivered as a download the moment the order goes through." ] } },
@@ -112,7 +112,7 @@
           "body": [
             "The recorded walkthrough, six modules of 15 to 20 minutes in Christian's voice: Orientation and the 90-day calendar; Purpose (the Purpose Finder and the three business objectives); Values (the Values Creator and where to integrate values); Roles (the org chart, the four RACI tables, delegate and elevate); Rhythms (the rhythm calendar, six meeting agendas, the two Commander's tools); Goals and KPIs (the goal tree, the KPI table, and the invitation to the workshop).",
             "The seven editable Word tools and the 90-day implementation calendar, as downloads.",
-            "The digital workbook (PDF). The printed workbook does not live here: it ships in the box with the book.",
+            "The digital workbook (PDF). The physical branded workbook does not live here: it ships in the box with the book.",
             "Pack buyers and Digital Pack buyers land in the same walkthrough. Module 6 ends on the Guided STOS Workshop."
           ] } }
       ] } },
@@ -179,7 +179,7 @@
         "body": [
           "Included: 45 minutes on Zoom with a risk3sixty practitioner walking through the completed RACI and rhythm calendar, plus a one-page gap summary and recommended next step.",
           "The reader has documented, in their own hand, the audits, frameworks and testing nobody owns. The workshop turns the blanks into a scoped engagement.",
-          "Four ways in: the QR code in the printed workbook, the end of walkthrough module 6, the final email of every archetype branch, and the pack thank-you page for people ready to move fast.",
+          "Four ways in: the QR code in the physical branded workbook shipped with the book, the end of walkthrough module 6, the final email of every archetype branch, and the pack thank-you page for people ready to move fast.",
           "Booking: a short qualifying form (company size, frameworks in play, archetype pre-filled, optional upload of the completed RACI), then the calendar. Your HubSpot meetings scheduler, or a GHL calendar pushing to HubSpot.",
           "Today it is a free walkthrough of a free workbook for someone who has not filled it in. Same team, same hour, different conversation: a workshop on work the reader has already done."
         ] } },
@@ -219,9 +219,9 @@
     { "a": "sales-page:r", "b": "order-form:l" },
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
-    { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 515 },
+    { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 523 },
     { "a": "one-click:r", "b": "thank-you:l" },
-    { "a": "downsell:r", "b": [1018, 426], "via": [[1018, 624]], "arrow": false },
+    { "a": "downsell:r", "b": [1018, 430], "via": [[1018, 632]], "arrow": false },
 
     { "a": "thank-you:b@0.35", "b": "reader-portal:t", "via": [[1151.5, 740], [775, 740]] },
 
