@@ -15,12 +15,9 @@
     { "id": "delivery", "title": "After Checkout" },
     { "id": "followup", "title": "Follow-up" },
     { "id": "convert", "title": "The Workshop" },
-    { "id": "backend", "title": "Backend Engagement", "lx": 124, "ly": 1567 },
-    { "id": "pipeline", "title": "Pipeline" }
+    { "id": "backend", "title": "Backend Engagement" }
   ],
-  "groups": [
-    { "id": "backend", "x": 100, "y": 1582, "w": 1200, "h": 220 }
-  ],
+  "groups": [],
   "sublabels": [],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -37,11 +34,13 @@
       "x": 60, "y": 348, "w": 290, "h": 140, "cta": "See the page plan",
       "job": "Sales page on Bookfunnels, $25 paperback or $15 ebook. Replaces the Amazon link.",
       "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
+        "price": "$25", "note": "paperback, or $15 ebook",
         "body": [
           "Opens with the back cover, in Christian's words: \"Have you felt the pressure of leading an InfoSec program? The board of directors and executives have questions. Peers in Legal, I.T., Engineering, and Sales need your support. Roles and responsibilities expand boundaries from vulnerability management to compliance audits. The weight of the job can feel overwhelming.\"",
           "Product selector: paperback $25, ebook $15. The audiobook is the bump, not a selector option.",
           "Endorsements from Major General David Kratzer (US Army, Ret), Matthew Sharp, Greg Crabtree, Ross Young, Aviva Wolmer and Phil Agcaoili.",
-          "Captures email, shipping address and role. Fulfillment through AccuTrack."
+          "Captures email, shipping address and role. Paperback shipped by AccuTrack.",
+          "Replaces the Amazon link with a page that knows who bought."
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
@@ -174,6 +173,7 @@
       "x": 555, "y": 1340, "w": 290, "h": 168, "cta": "How it works",
       "job": "45 minutes on Zoom with a risk3sixty practitioner, on the completed RACI and rhythm calendar. A one-page gap summary and a next step.",
       "popup": { "kicker": "The backend door, your guided workshop reframed", "title": "The Guided STOS Workshop",
+        "price": "45 minutes", "note": "the backend door",
         "body": [
           "Included: 45 minutes on Zoom with a risk3sixty practitioner walking through the completed RACI and rhythm calendar, plus a one-page gap summary and recommended next step.",
           "The reader has documented, in their own hand, the audits, frameworks and testing nobody owns. The workshop turns the blanks into a scoped engagement.",
@@ -182,33 +182,33 @@
           "Today it is a free walkthrough of a free workbook for someone who has not filled it in. Same team, same hour, different conversation: a workshop on work the reader has already done."
         ] } },
 
-    { "id": "comply", "layer": "backend", "label": "Comply (ethOS)", "status": "exists",
-      "x": 225, "y": 1630, "w": 290, "h": 140, "cta": "The full list",
-      "job": "Audits and certifications, SOC 2 to FedRAMP, plus Compliance as a Service and multi-framework harmonization.",
-      "popup": { "kicker": "Backend engagement, already yours", "title": "Comply (ethOS)",
+    { "id": "backend", "layer": "backend", "label": "Backend Engagement", "status": "exists",
+      "x": 225, "y": 1610, "w": 950, "h": 168, "cta": "The proof",
+      "job": "One partner, one program. Comply, Optimize and Secure, scoped from what the workshop found. One engagement covers a year of book ad spend. Click a service line.",
+      "popup": { "kicker": "Backend engagement, already yours", "title": "One partner. One program. Built for CISOs.",
         "body": [
-          "SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
-          "Includes Compliance as a Service and multi-framework harmonization.",
-          "Runs the Engineer, Technician and Builder workshops."
-        ] } },
-    { "id": "optimize", "layer": "backend", "label": "Optimize (fullCircle)", "status": "exists",
-      "x": 555, "y": 1630, "w": 290, "h": 140,
-      "job": "The GRC platform plus AI agents that automate evidence collection, vendor assessments and policy compliance." },
-    { "id": "secure", "layer": "backend", "label": "Secure (Armada)", "status": "exists",
-      "x": 885, "y": 1630, "w": 290, "h": 140,
-      "job": "Attack surface management, continuous penetration testing, red teaming." },
-
-    { "id": "pipeline", "layer": "pipeline", "label": "Pipeline", "status": "build",
-      "x": 100, "y": 1902, "w": 1200, "h": 110,
-      "job": "Seven stages in HubSpot, or GHL pushing to HubSpot, so you can read what a book sale is worth in engagements.",
-      "slots": { "x": 122, "y": 1970, "w": 1156, "h": 28, "items": [
-        { "label": "Book buyer", "status": "stage" },
-        { "label": "Pack buyer", "status": "stage" },
-        { "label": "Quiz completed", "status": "stage" },
-        { "label": "Workshop booked", "status": "stage" },
-        { "label": "Workshop completed", "status": "stage" },
-        { "label": "Proposal sent", "status": "stage" },
-        { "label": "Won", "status": "stage" }
+          "Replace the patchwork of vendors, compliance firms and GRC software with one team. Three product lines, one buyer.",
+          "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA. 100% three-year client retention. Clients include GE, Citrix, Tinder, VMware, Washington Post and Datadog.",
+          "Every engagement is scoped from the workshop, where the reader has already written down the audits, frameworks and testing nobody owns."
+        ] },
+      "chips": { "x": 242, "y": 1740, "w": 916, "h": 28, "items": [
+        { "label": "Comply (ethOS)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Comply (ethOS)",
+          "body": [
+            "Audits and certifications: SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
+            "Includes Compliance as a Service and multi-framework harmonization.",
+            "Runs the Engineer, Technician and Builder workshops."
+          ] } },
+        { "label": "Optimize (fullCircle)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Optimize (fullCircle)",
+          "body": [
+            "The GRC platform plus AI agents that automate evidence collection, vendor assessments and policy compliance.",
+            "Harmonization lives here: Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA.",
+            "Runs the Executive workshops."
+          ] } },
+        { "label": "Secure (Armada)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Secure (Armada)",
+          "body": [
+            "Attack surface management, continuous penetration testing, red teaming.",
+            "Runs the GRC Guru workshops."
+          ] } }
       ] } }
   ],
   "edges": [
@@ -230,31 +230,7 @@
 
     { "a": "reader-portal:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1424]], "dashed": true, "label": "QR code in the workbook, end of module 6", "lx": 1010, "ly": 1398 },
 
-    { "a": "review:b@0.3", "b": "comply:t@0.55", "via": [[642, 1560], [384.5, 1560]], "label": "Engineer, Technician, Builder", "lx": 400, "ly": 1534 },
-    { "a": "review:b@0.5", "b": "optimize:t", "label": "Executive", "lx": 712, "ly": 1530 },
-    { "a": "review:b@0.7", "b": "secure:t", "via": [[758, 1560], [1030, 1560]], "label": "GRC Guru", "lx": 930, "ly": 1534 }
-  ],
-  "offers": [
-    { "name": "The Book", "tag": "The front end", "status": "build",
-      "price": "$25 paperback", "price2": "$15 ebook",
-      "included": [ "Paperback or ebook, shipped by AccuTrack", "Six named endorsements on the page", "Email, shipping address and role captured" ],
-      "problem": "Replaces the Amazon link with a page that knows who bought." },
-    { "name": "The Audiobook", "tag": "Bump upgrade, one tick at checkout", "status": "build",
-      "price": "$40",
-      "included": [ "The full book, chaptered, in Christian's voice", "Listed on Audible as well" ],
-      "problem": "No reading time. Commutes and flights." },
-    { "name": "The STOS Implementation Pack", "tag": "One-click offer", "status": "build",
-      "price": "$250",
-      "included": [ "Printed workbook, in the same box as the book", "Six-module recorded walkthrough", "The seven editable Word tools", "A 90-day implementation calendar" ],
-      "problem": "The book says what a good team looks like. The pack gets it built in a quarter, with Christian guiding every worksheet." },
-    { "name": "The Digital Implementation Pack", "tag": "Downsell", "status": "build", "branch": "Shown only if the pack is declined",
-      "price": "$100",
-      "included": [ "The recorded walkthrough", "The digital workbook (PDF)", "The seven editable Word tools", "The 90-day calendar" ],
-      "problem": "For the buyer who wants to start tonight, or who balked at the price. No printing, no shipping." },
-    { "name": "The Guided STOS Workshop", "tag": "The backend door", "status": "reframe",
-      "price": "45 minutes",
-      "included": [ "A risk3sixty practitioner on Zoom", "The completed RACI and rhythm calendar walked through", "A one-page gap summary and a recommended next step" ],
-      "problem": "The reader has written down the audits, frameworks and testing nobody owns. The workshop turns the blanks into a scoped engagement." }
+    { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1546 }
   ],
   "routing": {
     "columns": [ "Archetype", "In your ebook's words", "Where their RACI goes blank", "Service line", "Who runs the workshop" ],
