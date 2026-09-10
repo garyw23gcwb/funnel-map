@@ -15,11 +15,11 @@
     { "id": "delivery", "title": "After Checkout" },
     { "id": "followup", "title": "Follow-up" },
     { "id": "convert", "title": "The Workshop" },
-    { "id": "backend", "title": "Backend Engagement", "lx": 124, "ly": 1837 },
+    { "id": "backend", "title": "Backend Engagement", "lx": 124, "ly": 1567 },
     { "id": "pipeline", "title": "Pipeline" }
   ],
   "groups": [
-    { "id": "backend", "x": 100, "y": 1852, "w": 1200, "h": 220 }
+    { "id": "backend", "x": 100, "y": 1582, "w": 1200, "h": 220 }
   ],
   "sublabels": [],
   "nodes": [
@@ -116,82 +116,62 @@
           ] } }
       ] } },
 
-    { "id": "core-nurture", "layer": "followup", "label": "Core Nurture", "status": "build",
-      "x": 430, "y": 1070, "w": 540, "h": 168,
-      "job": "Eight emails over three weeks, one per worksheet. Each ends on a single cell to fill in, with an optional short audio clip of Christian introducing it. Click an email.",
-      "chips": { "x": 452, "y": 1198, "w": 370, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "Core nurture, email 1 of 8", "title": "Welcome", "body": [ "What's in the box. Take the quiz." ] } },
-        { "n": 2, "popup": { "kicker": "Core nurture, email 2 of 8", "title": "Purpose", "body": [ "Ends on one cell: \"Which of the three objectives is your exec team really paying you for?\"" ] } },
-        { "n": 3, "popup": { "kicker": "Core nurture, email 3 of 8", "title": "Values", "body": [ "Ends on one cell: \"Which value would your team say you don't live?\"" ] } },
-        { "n": 4, "popup": { "kicker": "Core nurture, email 4 of 8", "title": "Org chart", "body": [ "Ends on one cell: \"Which box has no name in it?\"" ] } },
-        { "n": 5, "popup": { "kicker": "Core nurture, email 5 of 8", "title": "RACI, Risk and Compliance", "body": [ "Ends on one cell: \"Who is Responsible for SOC 2 and ISO? Is it the same overloaded person?\"" ] } },
-        { "n": 6, "popup": { "kicker": "Core nurture, email 6 of 8", "title": "RACI, Security Operations", "body": [ "Ends on one cell: \"Who owns penetration testing this year?\"" ] } },
-        { "n": 7, "popup": { "kicker": "Core nurture, email 7 of 8", "title": "Rhythms", "body": [ "Ends on one cell: \"Which audits and tests are actually on your calendar?\"" ] } },
-        { "n": 8, "popup": { "kicker": "Core nurture, email 8 of 8", "title": "KPIs", "body": [ "Ends on one cell: \"Can you report audit results to the board next quarter without a scramble?\"" ] } }
-      ] } },
-
-    { "id": "branch-engineer", "layer": "followup", "label": "Engineer or Technician", "status": "build",
-      "x": 60, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
-      "job": "Their compliance rows are the blanks. Three emails, closing on Compliance as a Service and fullCircle.",
-      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Engineer or Technician",
-        "body": [
-          "From your archetypes ebook. The Engineer \"dislikes compliance and bureaucracies\" and \"thrives when paired with GRC managers.\" The Technician \"took on security as an additional duty\" and \"will require a security manager or analyst as soon as feasible.\"",
-          "Three emails, then the workshop. The workshop goes to a Comply practitioner.",
-          "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\""
-        ] },
-      "chips": { "x": 77, "y": 1468, "w": 132, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "Engineer or Technician, email 1 of 3", "title": "Your compliance rows are the ones with blanks", "body": [ "Points at the Risk and Compliance table in their own RACI." ] } },
-        { "n": 2, "popup": { "kicker": "Engineer or Technician, email 2 of 3", "title": "What a GRC partner does for a technical leader", "body": [ "The pairing the ebook already recommends." ] } },
-        { "n": 3, "popup": { "kicker": "Engineer or Technician, email 3 of 3", "title": "Compliance as a Service and fullCircle, then book the workshop", "body": [ "\"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"" ] } }
-      ] } },
-
-    { "id": "branch-grc", "layer": "followup", "label": "GRC Guru", "status": "build",
-      "x": 390, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
-      "job": "Their Security Operations rows are the gap. Three emails, closing on Armada.",
-      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "GRC Guru",
-        "body": [
-          "From your archetypes ebook. The GRC Guru \"lacks experience with tools and technology\" and \"may not have the expertise to manage or implement technical solutions.\"",
-          "Three emails, then the workshop. The workshop goes to an Armada practitioner.",
-          "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\""
-        ] },
-      "chips": { "x": 407, "y": 1468, "w": 132, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "GRC Guru, email 1 of 3", "title": "Your Security Operations rows are the gap", "body": [ "Penetration testing, red team, vulnerability management: the table their RACI leaves blank." ] } },
-        { "n": 2, "popup": { "kicker": "GRC Guru, email 2 of 3", "title": "What continuous testing looks like", "body": [ "The testing rhythm a GRC-led program is missing." ] } },
-        { "n": 3, "popup": { "kicker": "GRC Guru, email 3 of 3", "title": "Armada, then book the workshop", "body": [ "\"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"" ] } }
-      ] } },
-
-    { "id": "branch-executive", "layer": "followup", "label": "Executive", "status": "build",
-      "x": 720, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
-      "job": "The MegaSaaS case study and the Platform.sh result. Three emails, closing on Optimize.",
-      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Executive",
-        "body": [
-          "From your archetypes ebook. The Executive \"may lack technical skills or compliance experience\" and is the best fit for \"organizations with multiple business units.\"",
-          "Three emails, then the workshop. The workshop goes to harmonization.",
-          "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\""
-        ] },
-      "chips": { "x": 737, "y": 1468, "w": 132, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "Executive, email 1 of 3", "title": "The MegaSaaS case study is you", "body": [ "Your own case study: SOC 2, ISO 27001, HITRUST, PCI, GDPR, engineers missing deadlines collecting audit evidence." ] } },
-        { "n": 2, "popup": { "kicker": "Executive, email 2 of 3", "title": "The Platform.sh 75% harmonization result", "body": [ "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA." ] } },
-        { "n": 3, "popup": { "kicker": "Executive, email 3 of 3", "title": "Optimize (harmonization and fullCircle), then book the workshop", "body": [ "\"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"" ] } }
-      ] } },
-
-    { "id": "branch-builder", "layer": "followup", "label": "Builder", "status": "build",
-      "x": 1050, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
-      "job": "Getting a program off the ground. Three emails, closing on Comply.",
-      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Builder",
-        "body": [
-          "From your archetypes ebook. The Builder is the \"best fit for any organization with the goal of getting a security program off the ground,\" especially \"achieving certification.\"",
-          "Three emails, then the workshop. The workshop goes to a Comply practitioner.",
-          "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\""
-        ] },
-      "chips": { "x": 1067, "y": 1468, "w": 132, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "Builder, email 1 of 3", "title": "The ISO 27001 goal tree in the workbook is your plan", "body": [ "They have already drawn the plan. This email tells them so." ] } },
-        { "n": 2, "popup": { "kicker": "Builder, email 2 of 3", "title": "Certification on a timeline", "body": [ "What the 90-day calendar becomes when certification is the goal." ] } },
-        { "n": 3, "popup": { "kicker": "Builder, email 3 of 3", "title": "Comply, then book the workshop", "body": [ "\"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"" ] } }
+    { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
+      "x": 225, "y": 1070, "w": 950, "h": 168,
+      "job": "Eight emails over three weeks for every buyer, one per worksheet, each ending on a single cell to fill in. Then three more, chosen by the quiz result, that close on the workshop. Click a track.",
+      "chips": { "x": 242, "y": 1200, "w": 916, "h": 28, "items": [
+        { "label": "Core: 8 emails", "status": "build", "popup": { "kicker": "Nurture, everyone", "title": "The core track: eight emails over three weeks",
+          "body": [
+            "1. Welcome. What's in the box. Take the quiz.",
+            "2. Purpose: \"Which of the three objectives is your exec team really paying you for?\"",
+            "3. Values: \"Which value would your team say you don't live?\"",
+            "4. Org chart: \"Which box has no name in it?\"",
+            "5. RACI, Risk and Compliance: \"Who is Responsible for SOC 2 and ISO? Is it the same overloaded person?\"",
+            "6. RACI, Security Operations: \"Who owns penetration testing this year?\"",
+            "7. Rhythms: \"Which audits and tests are actually on your calendar?\"",
+            "8. KPIs: \"Can you report audit results to the board next quarter without a scramble?\"",
+            "One email per worksheet. Each ends on a single cell to fill in, with an optional short audio clip of Christian introducing the worksheet."
+          ] } },
+        { "label": "Engineer or Technician", "status": "build", "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Engineer or Technician",
+          "body": [
+            "From your archetypes ebook. The Engineer \"dislikes compliance and bureaucracies\" and \"thrives when paired with GRC managers.\" The Technician \"took on security as an additional duty\" and \"will require a security manager or analyst as soon as feasible.\"",
+            "Email 1: your compliance rows are the ones with blanks.",
+            "Email 2: what a GRC partner does for a technical leader.",
+            "Email 3: Compliance as a Service and fullCircle, then book the workshop.",
+            "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"",
+            "The workshop goes to a Comply practitioner."
+          ] } },
+        { "label": "GRC Guru", "status": "build", "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "GRC Guru",
+          "body": [
+            "From your archetypes ebook. The GRC Guru \"lacks experience with tools and technology\" and \"may not have the expertise to manage or implement technical solutions.\"",
+            "Email 1: your Security Operations rows are the gap.",
+            "Email 2: what continuous testing looks like.",
+            "Email 3: Armada, then book the workshop.",
+            "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"",
+            "The workshop goes to an Armada practitioner."
+          ] } },
+        { "label": "Executive", "status": "build", "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Executive",
+          "body": [
+            "From your archetypes ebook. The Executive \"may lack technical skills or compliance experience\" and is the best fit for \"organizations with multiple business units.\"",
+            "Email 1: the MegaSaaS case study is you.",
+            "Email 2: the Platform.sh 75% harmonization result.",
+            "Email 3: Optimize (harmonization and fullCircle), then book the workshop.",
+            "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"",
+            "The workshop goes to harmonization."
+          ] } },
+        { "label": "Builder", "status": "build", "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Builder",
+          "body": [
+            "From your archetypes ebook. The Builder is the \"best fit for any organization with the goal of getting a security program off the ground,\" especially \"achieving certification.\"",
+            "Email 1: the ISO 27001 goal tree in the workbook is your plan.",
+            "Email 2: certification on a timeline.",
+            "Email 3: Comply, then book the workshop.",
+            "Every branch closes the same way: \"Bring your completed RACI to the workshop and we'll tell you what to do about the blanks.\"",
+            "The workshop goes to a Comply practitioner."
+          ] } }
       ] } },
 
     { "id": "review", "layer": "convert", "label": "Guided STOS Workshop", "status": "reframe",
-      "x": 555, "y": 1610, "w": 290, "h": 168, "cta": "How it works",
+      "x": 555, "y": 1340, "w": 290, "h": 168, "cta": "How it works",
       "job": "45 minutes on Zoom with a risk3sixty practitioner, on the completed RACI and rhythm calendar. A one-page gap summary and a next step.",
       "popup": { "kicker": "The backend door, your guided workshop reframed", "title": "The Guided STOS Workshop",
         "body": [
@@ -203,7 +183,7 @@
         ] } },
 
     { "id": "comply", "layer": "backend", "label": "Comply (ethOS)", "status": "exists",
-      "x": 225, "y": 1900, "w": 290, "h": 140, "cta": "The full list",
+      "x": 225, "y": 1630, "w": 290, "h": 140, "cta": "The full list",
       "job": "Audits and certifications, SOC 2 to FedRAMP, plus Compliance as a Service and multi-framework harmonization.",
       "popup": { "kicker": "Backend engagement, already yours", "title": "Comply (ethOS)",
         "body": [
@@ -212,16 +192,16 @@
           "Runs the Engineer, Technician and Builder workshops."
         ] } },
     { "id": "optimize", "layer": "backend", "label": "Optimize (fullCircle)", "status": "exists",
-      "x": 555, "y": 1900, "w": 290, "h": 140,
+      "x": 555, "y": 1630, "w": 290, "h": 140,
       "job": "The GRC platform plus AI agents that automate evidence collection, vendor assessments and policy compliance." },
     { "id": "secure", "layer": "backend", "label": "Secure (Armada)", "status": "exists",
-      "x": 885, "y": 1900, "w": 290, "h": 140,
+      "x": 885, "y": 1630, "w": 290, "h": 140,
       "job": "Attack surface management, continuous penetration testing, red teaming." },
 
     { "id": "pipeline", "layer": "pipeline", "label": "Pipeline", "status": "build",
-      "x": 100, "y": 2172, "w": 1200, "h": 110,
+      "x": 100, "y": 1902, "w": 1200, "h": 110,
       "job": "Seven stages in HubSpot, or GHL pushing to HubSpot, so you can read what a book sale is worth in engagements.",
-      "slots": { "x": 122, "y": 2240, "w": 1156, "h": 28, "items": [
+      "slots": { "x": 122, "y": 1970, "w": 1156, "h": 28, "items": [
         { "label": "Book buyer", "status": "stage" },
         { "label": "Pack buyer", "status": "stage" },
         { "label": "Quiz completed", "status": "stage" },
@@ -243,24 +223,16 @@
     { "a": "one-click:r", "b": "reader-portal:t", "via": [[1120, 418], [1120, 740], [775, 740]] },
     { "a": "one-click:r", "b": "thank-you:t", "via": [[1120, 418], [1120, 740], [370, 740]] },
 
-    { "a": "reader-portal:b", "b": "core-nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1004 },
-    { "a": "thank-you:b", "b": [370, 1290], "arrow": false, "label": "split by quiz result", "vert": true, "lx": 380, "ly": 1215 },
+    { "a": "thank-you:b", "b": "nurture:t@0.1526", "label": "result picks the branch", "lx": 382, "ly": 1004 },
+    { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1276 },
 
-    { "a": "core-nurture:b@0.5", "b": "branch-engineer:t", "via": [[700, 1290], [205, 1290]] },
-    { "a": "core-nurture:b@0.5", "b": "branch-grc:t", "via": [[700, 1290], [535, 1290]] },
-    { "a": "core-nurture:b@0.5", "b": "branch-executive:t", "via": [[700, 1290], [865, 1290]] },
-    { "a": "core-nurture:b@0.5", "b": "branch-builder:t", "via": [[700, 1290], [1195, 1290]] },
 
-    { "a": "branch-engineer:b", "b": "review:t@0.2", "via": [[205, 1560], [613, 1560]] },
-    { "a": "branch-grc:b", "b": "review:t@0.4", "via": [[535, 1560], [671, 1560]] },
-    { "a": "branch-executive:b", "b": "review:t@0.6", "via": [[865, 1560], [729, 1560]] },
-    { "a": "branch-builder:b", "b": "review:t@0.8", "via": [[1195, 1560], [787, 1560]] },
 
-    { "a": "reader-portal:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1694]], "dashed": true, "label": "QR code in the workbook, end of module 6", "lx": 1010, "ly": 1668 },
+    { "a": "reader-portal:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1424]], "dashed": true, "label": "QR code in the workbook, end of module 6", "lx": 1010, "ly": 1398 },
 
-    { "a": "review:b@0.3", "b": "comply:t@0.55", "via": [[642, 1830], [384.5, 1830]], "label": "Engineer, Technician, Builder", "lx": 400, "ly": 1804 },
-    { "a": "review:b@0.5", "b": "optimize:t", "label": "Executive", "lx": 712, "ly": 1800 },
-    { "a": "review:b@0.7", "b": "secure:t", "via": [[758, 1830], [1030, 1830]], "label": "GRC Guru", "lx": 930, "ly": 1804 }
+    { "a": "review:b@0.3", "b": "comply:t@0.55", "via": [[642, 1560], [384.5, 1560]], "label": "Engineer, Technician, Builder", "lx": 400, "ly": 1534 },
+    { "a": "review:b@0.5", "b": "optimize:t", "label": "Executive", "lx": 712, "ly": 1530 },
+    { "a": "review:b@0.7", "b": "secure:t", "via": [[758, 1560], [1030, 1560]], "label": "GRC Guru", "lx": 930, "ly": 1534 }
   ],
   "offers": [
     { "name": "The Book", "tag": "The front end", "status": "build",
