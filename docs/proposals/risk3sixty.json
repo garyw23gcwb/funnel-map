@@ -232,16 +232,6 @@
 
     { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1546 }
   ],
-  "routing": {
-    "columns": [ "Archetype", "In your ebook's words", "Where their RACI goes blank", "Service line", "Who runs the workshop" ],
-    "rows": [
-      [ "Executive", "\"may lack technical skills or compliance experience\"; best fit for \"organizations with multiple business units\"", "The MegaSaaS pattern: SOC 2, ISO 27001, HITRUST, PCI, GDPR, engineers missing deadlines collecting audit evidence", "Optimize: harmonization and fullCircle", "Harmonization" ],
-      [ "Engineer", "\"dislikes compliance and bureaucracies,\" \"thrives when paired with GRC managers\"", "The Risk and Compliance table", "Comply: Compliance as a Service and fullCircle", "Comply practitioner" ],
-      [ "Technician", "\"took on security as an additional duty,\" \"will require a security manager or analyst as soon as feasible\"", "The Risk and Compliance table", "Comply", "Comply practitioner" ],
-      [ "GRC Guru", "\"lacks experience with tools and technology,\" \"may not have the expertise to manage or implement technical solutions\"", "The Security Operations table: penetration testing, red team, vulnerability management", "Secure: Armada", "Armada practitioner" ],
-      [ "Builder", "\"best fit for any organization with the goal of getting a security program off the ground,\" especially \"achieving certification\"", "The ISO 27001 goal tree", "Comply", "Comply practitioner" ]
-    ]
-  },
   "economics": {
     "quote": "Six thousand a month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
     "aov": {
@@ -276,26 +266,6 @@
       "AOV is not margin. Print, packing and AccuTrack shipping on the pack come off the top, and the plan carries a per-unit cost line once the print quote is in.",
       "Further levers if needed: the pack to $300, a second bump (the Five CISO Archetypes package at $20), a shift in mix toward paperback.",
       "One SOC 2 or ISO 27001 engagement per quarter pays for the year. Two makes it your cheapest channel. Read the CPA as cost per qualified conversation, not cost per book."
-    ]
-  },
-  "assets": {
-    "columns": [ "Asset", "Format", "Status", "Where it goes" ],
-    "rows": [
-      [ "STOS Workbook", "41-page designed PDF, landscape", "Exists, free", "Printed and bundled in the pack (portrait reformat for print)" ],
-      [ "Purpose Finder", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Values Creator", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Security Program RACI", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Security Program KPIs", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Meeting Rhythm Agendas", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Commander's Critical Information Requirements", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Commander's Impact Filter", "Editable .docx", "Exists, free", "Pack and digital pack" ],
-      [ "Five CISO Archetypes ebook", "24-page designed PDF", "Exists, free", "Source for the quiz and the nurture branches" ],
-      [ "CISO Archetype quiz", "Microsoft Forms, 5 minutes", "Exists, free", "Rebuilt in GHL for tagging" ],
-      [ "Guided workshop", "Free call with a risk3sixty professional", "Exists, unproductized", "Becomes the Guided STOS Workshop, on completed work" ],
-      [ "Free first chapter", "HubSpot form", "Exists", "Retargeting seed list" ],
-      [ "Workbook download page", "HubSpot form", "Exists", "Existing STOS lead list" ],
-      [ "Audiobook", "AI voice clone of Christian", "Does not exist", "The bump upgrade" ],
-      [ "Recorded walkthrough", "Six modules, AI voice clone", "Does not exist", "The pack and the digital pack" ]
     ]
   },
   "footer": "Prepared by Get Clients With Books for risk3sixty, 10 September 2026. A proposal, ahead of the call."
