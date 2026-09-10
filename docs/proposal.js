@@ -18,7 +18,10 @@
 
   /* --------------------------- wires --------------------------- */
 
+  /* An anchor is id:side, or a bare [x, y] for a wire that ends on another
+     wire rather than on a card: the downsell rejoining the upsell's line. */
   function anchor(spec) {
+    if (Array.isArray(spec)) return spec;
     var at = spec.split('@');
     var bits = at[0].split(':');
     var n = NODE[bits[0]], side = bits[1];
