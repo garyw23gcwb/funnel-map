@@ -235,7 +235,7 @@
   ],
   "economics": {
     "title": "Ad spend example",
-    "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month who paid to read your book and gave you their role and address. The front end pays for itself in the expected case, so one SOC 2 or ISO 27001 engagement a quarter pays for the year.",
+    "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month working through your RACI with your voice in their ear, each one a qualified conversation waiting to be booked. The front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
       "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $37, pack $250, digital downsell $100 offered to pack decliners.",
