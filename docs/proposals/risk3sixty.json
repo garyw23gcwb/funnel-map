@@ -237,7 +237,7 @@
     "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month working through your RACI with your voice in their ear, each one a qualified conversation waiting to be booked. The front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
-      "note": "Book blended at $31 on a 50/30/20 mix of paperback $37, audiobook $29 and ebook $21. Bump $17, pack $250, digital downsell $100 offered to pack decliners.",
+      "note": "Book blended at $31 on a 50/30/20 mix of paperback bundle $37, audiobook $29 and ebook $21. Bump $17, pack $250, digital downsell $100 offered to pack decliners.",
       "columns": [ "", "Conservative", "Expected", "Strong" ],
       "rows": [
         [ "CISO the Dog bump, $17", "35% = $5.95", "40% = $6.80", "45% = $7.65" ],
