@@ -20,7 +20,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1110, "before": "followup", "text": "Break-even: $75 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+    { "y": 1110, "before": "followup", "text": "Break-even: $75 benchmark AOV against a $60 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -234,11 +234,11 @@
   ],
   "economics": {
     "title": "Ad spend example",
-    "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month working through your RACI with your voice in their ear, each one a qualified conversation waiting to be booked. The front end pays for itself in the expected case.",
+    "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month working through your RACI with your voice in their ear, each one a qualified conversation waiting to be booked. The front end pays for itself in the benchmark case.",
     "aov": {
       "title": "Average order value per book buyer",
       "note": "Book blended on a 50/30/20 mix of paperback bundle $37, audiobook $29 and ebook $21. Bump $17, pack $250, digital downsell $100 offered to pack decliners.",
-      "columns": [ "", "Conservative", "Expected", "Strong" ],
+      "columns": [ "", "Conservative", "Benchmark", "Strong" ],
       "rows": [
         [ "CISO the Dog bump, $17", "35% = $5.95", "40% = $6.80", "45% = $7.65" ],
         [ "Implementation Pack, $250", "7% = $17.50", "11% = $27.50", "14% = $35" ],
