@@ -20,7 +20,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1110, "before": "followup", "text": "Break-even: $71 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+    { "y": 1110, "before": "followup", "text": "Break-even: $74 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -34,13 +34,13 @@
         ] } },
 
     { "id": "sales-page", "layer": "book", "label": "STOS Book", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$25 paperback, $15 ebook",
+      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$21 ebook, $29 audiobook, $37 paperback",
       "job": "Sales page on Bookfunnels. Replaces the Amazon link.",
       "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
-        "price": "$25", "note": "paperback, or $15 ebook",
+        "price": "$21", "note": "ebook; $29 with the audiobook; $37 paperback",
         "body": [
           "Opens with the back cover, in Christian's words: \"Have you felt the pressure of leading an InfoSec program? The board of directors and executives have questions. Peers in Legal, I.T., Engineering, and Sales need your support. Roles and responsibilities expand boundaries from vulnerability management to compliance audits. The weight of the job can feel overwhelming.\"",
-          "Product selector: paperback $25, ebook $15. The audiobook is the bump, not a selector option.",
+          "Product selector: ebook $21, audiobook $29, paperback $37. The audiobook is a format tier, not a bump.",
           "Endorsements from Major General David Kratzer (US Army, Ret), Matthew Sharp, Greg Crabtree, Ross Young, Aviva Wolmer and Phil Agcaoili.",
           "Captures email, shipping address and role. Paperback shipped by AccuTrack.",
           "Replaces the Amazon link with a page that knows who bought."
@@ -48,18 +48,17 @@
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
       "x": 378, "y": 348, "w": 290, "h": 164,
-      "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
+      "job": "Three format tiers: $21 ebook, $29 audiobook, $37 paperback. Card details captured here. Invoice-style receipt with company name." },
 
-    { "id": "order-bump", "layer": "book", "label": "STOS Audiobook", "status": "build",
-      "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$37",
+    { "id": "order-bump", "layer": "book", "label": "CISO the Dog Saves Secure City", "status": "build",
+      "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$17",
       "job": "Bump upgrade. One tick, above the order button.",
-      "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
-        "price": "$37",
-        "check": "YES! Add the audiobook to my order for $37",
+      "popup": { "kicker": "Bump upgrade, inside the order form", "title": "Chief Information Security Officer: CISO the Dog Saves Secure City",
+        "price": "$17",
+        "check": "YES! Add CISO the Dog Saves Secure City to my order for $17",
         "body": [
-          "The full book, chaptered, in Christian's voice.",
-          "For the security leader with no reading time. Commutes and flights.",
-          "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well for authority and discovery."
+          "The kids' book, added to the order with one tick above the order button.",
+          "The audiobook moves into the format tiers, so the bump is a second book rather than a second format."
         ],
         "cta": "Add" } },
 
@@ -106,8 +105,8 @@
       "chips": { "x": 572, "y": 990, "w": 406, "h": 28, "items": [
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already yours", "title": "The ebook",
           "body": [ "The Kindle edition as it exists today, delivered as a download the moment the order goes through." ] } },
-        { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the bump upgrade", "title": "The audiobook",
-          "body": [ "The full book, chaptered, in Christian's voice, for the buyer who ticked the $37 bump.", "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well." ] } },
+        { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
+          "body": [ "The full book, chaptered, in Christian's voice, for the buyer on the $29 or $37 tier.", "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well." ] } },
         { "label": "Implementation Pack", "status": "build", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "The Implementation Pack",
           "body": [
             "The recorded walkthrough, six modules of 15 to 20 minutes in Christian's voice: Orientation and the 90-day calendar; Purpose (the Purpose Finder and the three business objectives); Values (the Values Creator and where to integrate values); Roles (the org chart, the four RACI tables, delegate and elevate); Rhythms (the rhythm calendar, six meeting agendas, the two Commander's tools); Goals and KPIs (the goal tree, the KPI table, and the invitation to the workshop).",
@@ -238,15 +237,15 @@
     "quote": "$6K spend/month ($200 a day) buys you 100 security leaders a month working through your RACI with your voice in their ear, each one a qualified conversation waiting to be booked. The front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
-      "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $37, pack $250, digital downsell $100 offered to pack decliners.",
+      "note": "Book blended at $31 on a 50/30/20 mix of paperback $37, audiobook $29 and ebook $21. Bump $17, pack $250, digital downsell $100 offered to pack decliners.",
       "columns": [ "", "Conservative", "Expected", "Strong" ],
       "rows": [
-        [ "Audiobook bump, $37", "30% = $11.10", "35% = $12.95", "40% = $14.80" ],
+        [ "CISO the Dog bump, $17", "30% = $5.10", "35% = $5.95", "40% = $6.80" ],
         [ "Implementation Pack, $250", "7% = $17.50", "11% = $27.50", "14% = $35" ],
         [ "Digital Pack, $100 (decliners only)", "8% of 93% = $7", "10% of 89% = $9", "12% of 86% = $10" ]
       ],
-      "total": [ "AOV", "$58", "$71", "$82" ],
-      "cpa": [ "Against a $60 CPA", "$2 short per buyer", "$11 ahead per buyer", "$22 ahead per buyer" ]
+      "total": [ "AOV", "$61", "$74", "$83" ],
+      "cpa": [ "Against a $60 CPA", "$1 ahead per buyer", "$14 ahead per buyer", "$23 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for risk3sixty, 10 September 2026. A proposal, ahead of the call."
