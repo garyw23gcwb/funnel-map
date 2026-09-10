@@ -89,8 +89,8 @@
           "Decliners go straight to the thank-you page and the quiz. Pack buyers and digital buyers enter the same walkthrough and the same nurture."
         ] } },
 
-    { "id": "thank-you", "layer": "delivery", "label": "Thank You Page: Archetypes Quiz", "status": "build",
-      "x": 225, "y": 800, "w": 290, "h": 168, "cta": "See the quiz",
+    { "id": "thank-you", "layer": "book", "label": "Thank You Page: Archetypes Quiz", "status": "build",
+      "x": 1050, "y": 348, "w": 290, "h": 156, "cta": "See the quiz",
       "job": "Five minutes. Result emailed, contact tagged with one of five archetypes.",
       "popup": { "kicker": "Thank-you page, rebuilt from your quiz", "title": "The CISO Archetype quiz",
         "body": [
@@ -220,12 +220,12 @@
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
     { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 515 },
-    { "a": "downsell:r", "b": [1120, 624], "arrow": false },
+    { "a": "one-click:r", "b": "thank-you:l" },
+    { "a": "downsell:r", "b": [1018, 426], "via": [[1018, 624]], "arrow": false },
 
-    { "a": "one-click:r", "b": "reader-portal:t", "via": [[1120, 418], [1120, 740], [775, 740]] },
-    { "a": "one-click:r", "b": "thank-you:t", "via": [[1120, 418], [1120, 740], [370, 740]] },
+    { "a": "thank-you:b@0.35", "b": "reader-portal:t", "via": [[1151.5, 740], [775, 740]] },
 
-    { "a": "thank-you:b", "b": "nurture:t@0.1526", "label": "result picks the branch", "lx": 382, "ly": 1004 },
+    { "a": "thank-you:b@0.65", "b": "nurture:t@0.921", "via": [[1238.5, 1090], [1100, 1090]], "label": "result picks the branch", "vert": true, "lx": 1250, "ly": 1010 },
     { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1336 },
 
 
