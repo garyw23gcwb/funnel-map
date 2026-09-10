@@ -12,7 +12,7 @@
   "layers": [
     { "id": "traffic", "title": "Traffic" },
     { "id": "book", "title": "The Book Funnel" },
-    { "id": "delivery", "title": "What The Buyer Gets" },
+    { "id": "delivery", "title": "Delivery" },
     { "id": "followup", "title": "Follow-up" },
     { "id": "convert", "title": "The Review" },
     { "id": "backend", "title": "Backend Engagement", "lx": 124, "ly": 1837 },
@@ -64,7 +64,7 @@
 
     { "id": "one-click", "layer": "book", "label": "STOS Implementation Pack", "status": "build", "tilt": 2,
       "x": 696, "y": 348, "w": 290, "h": 140, "cta": "See the offer",
-      "job": "One-click offer, $250. Offered on purchase momentum, no card re-entry.",
+      "job": "One-click offer, $250. Printed workbook shipped with the book, plus the walkthrough, tools and calendar.",
       "popup": { "kicker": "One-click offer, after checkout", "title": "The STOS Implementation Pack",
         "price": "$250",
         "body": [
@@ -99,40 +99,21 @@
           "Your quiz exists today in Microsoft Forms. We rebuild it in GoHighLevel so the tag lands on the contact."
         ] } },
 
-    { "id": "what-ships", "layer": "delivery", "label": "What Ships", "status": "exists",
-      "x": 140, "y": 800, "w": 290, "h": 168,
-      "job": "The paperback and the printed workbook, one box, via AccuTrack. The workbook carries a QR code to the review where the \"Book a Guided Workshop\" buttons are now.",
-      "slots": { "x": 157, "y": 930, "w": 256, "h": 28, "items": [
-        { "label": "Paperback", "status": "exists", "title": "The book as it exists today" },
-        { "label": "Printed workbook", "status": "build", "title": "Portrait reformat of the 41-page workbook for print" }
-      ] } },
-
-    { "id": "what-downloads", "layer": "delivery", "label": "What Downloads", "status": "exists",
-      "x": 470, "y": 800, "w": 290, "h": 168,
-      "job": "The digital side of the order: the ebook, the audiobook, the seven Word tools and the 90-day calendar.",
-      "slots": { "x": 487, "y": 930, "w": 256, "h": 28, "items": [
-        { "label": "Ebook", "status": "exists", "title": "The Kindle edition as it exists today" },
-        { "label": "Audio", "status": "build", "title": "The audiobook, created for the bump" },
-        { "label": "Tools", "status": "exists", "title": "The seven editable Word tools" },
-        { "label": "Calendar", "status": "build", "title": "The 90-day implementation calendar" }
-      ] } },
-
-    { "id": "walkthrough", "layer": "delivery", "label": "The Recorded Walkthrough", "status": "build",
-      "x": 800, "y": 800, "w": 540, "h": 168, "cta": "About the voice",
-      "job": "Six modules, 15 to 20 minutes each, in Christian's voice. Pack and digital buyers both land here. Click a module.",
-      "popup": { "kicker": "Inside the Implementation Pack", "title": "The recorded walkthrough",
-        "body": [
-          "Six modules, 15 to 20 minutes each, one per section of the workbook.",
-          "Voice: an AI clone of Christian. The same voice as the audiobook and the short audio clips in the nurture emails.",
-          "Today the walkthrough happens live, for free, on a call your team gives away. Recorded, it is the product, and the call becomes a review of finished work."
-        ] },
-      "chips": { "x": 822, "y": 928, "w": 300, "h": 28, "items": [
-        { "n": 1, "popup": { "kicker": "Module 1 of 6", "title": "Orientation", "body": [ "How to use the pack, and the 90-day calendar.", "Workbook: the whole pack, front to back." ] } },
-        { "n": 2, "popup": { "kicker": "Module 2 of 6", "title": "Purpose", "body": [ "The Purpose Finder and the three business objectives: risk management, cost and complexity reduction, revenue and customer trust.", "Workbook: Chapter 2, the Purpose Finder." ] } },
-        { "n": 3, "popup": { "kicker": "Module 3 of 6", "title": "Values", "body": [ "The Values Creator and where to integrate values: hiring, onboarding, performance reviews.", "Workbook: Chapter 3, the Values Creator." ] } },
-        { "n": 4, "popup": { "kicker": "Module 4 of 6", "title": "Roles", "body": [ "The org chart, the four RACI tables (Executive and Governance, Risk and Compliance, Security Operations, Product, IT), delegate and elevate.", "Workbook: Chapter 4, the Security Program RACI and the Security Program KPIs." ] } },
-        { "n": 5, "popup": { "kicker": "Module 5 of 6", "title": "Rhythms", "body": [ "The rhythm calendar, six meeting agendas (annual off-site, quarterly team review, IRC, IRB, weekly all-hands, weekly stand-up, 1-on-1), and the two Commander's tools.", "Workbook: Chapter 5, the Meeting Rhythm Agendas, the Commander's Critical Information Requirements and the Commander's Impact Filter." ] } },
-        { "n": 6, "popup": { "kicker": "Module 6 of 6", "title": "Goals and KPIs", "body": [ "The goal tree, the KPI table, what to do with the finished workbook, and the invitation to the review.", "Workbook: Goals and KPIs.", "This is one of the four doors into the Security Program Review." ] } }
+    { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
+      "x": 480, "y": 800, "w": 440, "h": 168,
+      "job": "Where the buyer logs in and downloads. The paperback and the printed workbook ship in one box via AccuTrack; everything else is in here. Click a box.",
+      "chips": { "x": 497, "y": 930, "w": 406, "h": 28, "items": [
+        { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already yours", "title": "The ebook",
+          "body": [ "The Kindle edition as it exists today, delivered as a download the moment the order goes through." ] } },
+        { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the bump upgrade", "title": "The audiobook",
+          "body": [ "The full book, chaptered, in Christian's voice, for the buyer who ticked the $40 bump.", "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well." ] } },
+        { "label": "Implementation Pack", "status": "build", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "The Implementation Pack",
+          "body": [
+            "The recorded walkthrough, six modules of 15 to 20 minutes in Christian's voice: Orientation and the 90-day calendar; Purpose (the Purpose Finder and the three business objectives); Values (the Values Creator and where to integrate values); Roles (the org chart, the four RACI tables, delegate and elevate); Rhythms (the rhythm calendar, six meeting agendas, the two Commander's tools); Goals and KPIs (the goal tree, the KPI table, and the invitation to the review).",
+            "The seven editable Word tools and the 90-day implementation calendar, as downloads.",
+            "The digital workbook (PDF). The printed workbook does not live here: it ships in the box with the book.",
+            "Pack buyers and Digital Pack buyers land in the same walkthrough. Module 6 ends on the Security Program Review."
+          ] } }
       ] } },
 
     { "id": "core-nurture", "layer": "followup", "label": "Core Nurture", "status": "build",
@@ -260,13 +241,9 @@
     { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 497 },
     { "a": "downsell:r", "b": [1018, 418], "via": [[1018, 590]], "arrow": false },
 
-    { "a": "thank-you:b@0.3", "b": "what-ships:t", "via": [[1137, 740], [285, 740]], "label": "on purchase", "lx": 760, "ly": 714 },
-    { "a": "thank-you:b@0.3", "b": "what-downloads:t", "via": [[1137, 740], [615, 740]] },
-    { "a": "thank-you:b@0.3", "b": "walkthrough:t@0.5", "via": [[1137, 740], [1070, 740]] },
+    { "a": "thank-you:b@0.3", "b": "reader-portal:t", "via": [[1137, 740], [700, 740]], "label": "on purchase", "lx": 860, "ly": 714 },
 
-    { "a": "what-ships:b", "b": "core-nurture:t@0.15", "via": [[285, 1020], [511, 1020]], "label": "every buyer", "lx": 330, "ly": 994 },
-    { "a": "what-downloads:b", "b": "core-nurture:t@0.3426" },
-    { "a": "walkthrough:b@0.5", "b": "core-nurture:t@0.85", "via": [[1070, 1020], [889, 1020]] },
+    { "a": "reader-portal:b", "b": "core-nurture:t@0.5", "label": "every buyer", "lx": 712, "ly": 1004 },
 
     { "a": "core-nurture:b@0.5", "b": "branch-engineer:t", "via": [[700, 1290], [205, 1290]], "label": "split by quiz result", "lx": 712, "ly": 1248 },
     { "a": "core-nurture:b@0.5", "b": "branch-grc:t", "via": [[700, 1290], [535, 1290]] },
@@ -278,8 +255,8 @@
     { "a": "branch-executive:b", "b": "review:t@0.6", "via": [[865, 1560], [729, 1560]] },
     { "a": "branch-builder:b", "b": "review:t@0.8", "via": [[1195, 1560], [787, 1560]] },
 
-    { "a": "what-ships:l@0.5", "b": "review:l@0.5", "via": [[30, 884], [30, 1694]], "dashed": true, "label": "QR code in the workbook", "lx": 150, "ly": 1668 },
-    { "a": "walkthrough:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1694]], "dashed": true, "label": "end of module 6", "lx": 1100, "ly": 1668 },
+    { "a": "reader-portal:l@0.5", "b": "review:l@0.5", "via": [[30, 884], [30, 1694]], "dashed": true, "label": "QR code in the printed workbook", "lx": 150, "ly": 1668 },
+    { "a": "reader-portal:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1694]], "dashed": true, "label": "end of module 6", "lx": 1100, "ly": 1668 },
 
     { "a": "review:b@0.3", "b": "comply:t@0.55", "via": [[642, 1830], [384.5, 1830]], "label": "Engineer, Technician, Builder", "lx": 400, "ly": 1804 },
     { "a": "review:b@0.5", "b": "optimize:t", "label": "Executive", "lx": 712, "ly": 1800 },
