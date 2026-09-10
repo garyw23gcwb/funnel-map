@@ -20,7 +20,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1050, "before": "followup", "text": "Break-even: $71 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+    { "y": 1110, "before": "followup", "text": "Break-even: $71 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -101,9 +101,9 @@
         ] } },
 
     { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
-      "x": 555, "y": 800, "w": 440, "h": 168,
+      "x": 555, "y": 860, "w": 440, "h": 168,
       "job": "Where the buyer logs in and downloads. The paperback and physical branded workbook ship in one box; everything else is in here. Click a box.",
-      "chips": { "x": 572, "y": 930, "w": 406, "h": 28, "items": [
+      "chips": { "x": 572, "y": 990, "w": 406, "h": 28, "items": [
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already yours", "title": "The ebook",
           "body": [ "The Kindle edition as it exists today, delivered as a download the moment the order goes through." ] } },
         { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the bump upgrade", "title": "The audiobook",
@@ -118,9 +118,9 @@
       ] } },
 
     { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
-      "x": 225, "y": 1130, "w": 950, "h": 168,
+      "x": 225, "y": 1190, "w": 950, "h": 168,
       "job": "Eight emails over three weeks for every buyer, one per worksheet, each ending on a single cell to fill in. Then three more, chosen by the quiz result, that close on the workshop. Click a track.",
-      "chips": { "x": 242, "y": 1260, "w": 916, "h": 28, "items": [
+      "chips": { "x": 242, "y": 1320, "w": 916, "h": 28, "items": [
         { "label": "Core: 8 emails", "status": "build", "popup": { "kicker": "Nurture, everyone", "title": "The core track: eight emails over three weeks",
           "body": [
             "1. Welcome. What's in the box. Take the quiz.",
@@ -172,7 +172,7 @@
       ] } },
 
     { "id": "review", "layer": "convert", "label": "Guided STOS Workshop", "status": "build",
-      "x": 555, "y": 1400, "w": 290, "h": 168, "cta": "How it works",
+      "x": 555, "y": 1460, "w": 290, "h": 168, "cta": "How it works",
       "job": "45 minutes on Zoom with a risk3sixty practitioner, on the completed RACI and rhythm calendar. A one-page gap summary and a next step.",
       "popup": { "kicker": "The backend door, your guided workshop reframed", "title": "The Guided STOS Workshop",
         "price": "45 minutes", "note": "the backend door",
@@ -185,7 +185,7 @@
         ] } },
 
     { "id": "backend", "layer": "backend", "label": "Backend Engagement", "status": "client",
-      "x": 430, "y": 1670, "w": 540, "h": 168, "cta": "The proof",
+      "x": 430, "y": 1730, "w": 540, "h": 168, "cta": "The proof",
       "job": "One partner, one program, scoped from what the workshop found. One engagement covers a year of book ad spend. Click a service line.",
       "popup": { "kicker": "Backend engagement, the paid client", "title": "One partner. One program. Built for CISOs.",
         "body": [
@@ -193,7 +193,7 @@
           "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA. 100% three-year client retention. Clients include GE, Citrix, Tinder, VMware, Washington Post and Datadog.",
           "Every engagement is scoped from the workshop, where the reader has already written down the audits, frameworks and testing nobody owns."
         ] },
-      "chips": { "x": 447, "y": 1800, "w": 506, "h": 28, "items": [
+      "chips": { "x": 447, "y": 1860, "w": 506, "h": 28, "items": [
         { "label": "Comply (ethOS)", "status": "client", "popup": { "kicker": "Service line, the paid client", "title": "Comply (ethOS)",
           "body": [
             "Audits and certifications: SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
@@ -223,15 +223,15 @@
     { "a": "one-click:r", "b": "thank-you:l" },
     { "a": "downsell:r", "b": [1018, 430], "via": [[1018, 632]], "arrow": false },
 
-    { "a": "thank-you:b@0.35", "b": "reader-portal:t", "via": [[1151.5, 740], [775, 740]] },
+    { "a": "thank-you:b@0.35", "b": "reader-portal:t", "via": [[1151.5, 800], [775, 800]] },
 
-    { "a": "thank-you:b@0.65", "b": "nurture:t@0.921", "via": [[1238.5, 1090], [1100, 1090]], "label": "result picks the branch", "vert": true, "lx": 1250, "ly": 1010 },
-    { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1336 },
-
-
+    { "a": "thank-you:b@0.65", "b": "nurture:t@0.5", "via": [[1238.5, 1150], [700, 1150]], "label": "result picks the branch", "vert": true, "lx": 1250, "ly": 1070 },
+    { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1396 },
 
 
-    { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1606 }
+
+
+    { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1666 }
   ],
   "economics": {
     "title": "Ad spend example",

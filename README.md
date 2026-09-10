@@ -56,7 +56,8 @@ The domain lives in HighLevel, so the page is hosted separately and embedded.
    accepts `/` or `/docs` as a source, which is why the built page lives in
    `docs/`. The page lands at `https://<user>.github.io/funnel-map/`.
 3. Send the client `https://<user>.github.io/funnel-map/?c=jacqueline-oberst`, or
-   build a HighLevel page holding a responsive iframe pointing at it.
+   build a HighLevel page holding a responsive iframe pointing at it:
+   `docs/embed.html` is the paste-ready element, with the height listener.
 
 The map posts its own height to the parent window
 (`{type:'bfmap:height', height}`), because the page height is not fixed: the
