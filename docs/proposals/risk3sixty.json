@@ -19,6 +19,9 @@
   ],
   "groups": [],
   "sublabels": [],
+  "markers": [
+    { "y": 1050, "before": "followup", "text": "Break-even: $72 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+  ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
       "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
@@ -30,9 +33,9 @@
           "Expected cost per book buyer: $40 to $80 on Meta, $80 to $150 with LinkedIn as the front door."
         ] } },
 
-    { "id": "sales-page", "layer": "book", "label": "The Book", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 140, "cta": "See the page plan",
-      "job": "Sales page on Bookfunnels, $25 paperback or $15 ebook. Replaces the Amazon link.",
+    { "id": "sales-page", "layer": "book", "label": "STOS Book", "status": "build", "tilt": 1,
+      "x": 60, "y": 348, "w": 290, "h": 156, "cta": "See the page plan", "price": "$25 paperback, $15 ebook",
+      "job": "Sales page on Bookfunnels. Replaces the Amazon link.",
       "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
         "price": "$25", "note": "paperback, or $15 ebook",
         "body": [
@@ -44,12 +47,12 @@
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
-      "x": 378, "y": 348, "w": 290, "h": 140,
+      "x": 378, "y": 348, "w": 290, "h": 156,
       "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
 
-    { "id": "order-bump", "layer": "book", "label": "The Audiobook", "status": "build",
-      "x": 378, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
-      "job": "Bump upgrade, $40. One tick, above the order button.",
+    { "id": "order-bump", "layer": "book", "label": "STOS Audiobook", "status": "build",
+      "x": 378, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$40",
+      "job": "Bump upgrade. One tick, above the order button.",
       "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
         "price": "$40",
         "check": "YES! Add the audiobook to my order for $40",
@@ -62,8 +65,8 @@
         "footnote": "Round pricing throughout the stack. Charm pricing reads as an info product to this buyer." } },
 
     { "id": "one-click", "layer": "book", "label": "STOS Implementation Pack", "status": "build", "tilt": 2,
-      "x": 696, "y": 348, "w": 290, "h": 140, "cta": "See the offer",
-      "job": "One-click offer, $250. Printed workbook shipped with the book, plus the walkthrough, tools and calendar.",
+      "x": 696, "y": 348, "w": 290, "h": 156, "cta": "See the offer", "price": "$250",
+      "job": "One-click offer. Printed workbook in the box, plus walkthrough, tools and calendar.",
       "popup": { "kicker": "One-click offer, after checkout", "title": "The STOS Implementation Pack",
         "price": "$250",
         "body": [
@@ -76,9 +79,9 @@
         ],
         "cta": "Yes, add the pack" } },
 
-    { "id": "downsell", "layer": "book", "label": "Digital Implementation Pack", "status": "build",
-      "x": 696, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
-      "job": "Downsell, $100. Shown only to people who decline the pack.",
+    { "id": "downsell", "layer": "book", "label": "Downsell: Digital Implementation Pack", "status": "build",
+      "x": 696, "y": 544, "w": 290, "h": 160, "cta": "See the offer", "price": "$100",
+      "job": "Shown only to people who decline the pack.",
       "popup": { "kicker": "Downsell, shown only if the pack is declined", "title": "The Digital Implementation Pack",
         "price": "$100",
         "body": [
@@ -116,9 +119,9 @@
       ] } },
 
     { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
-      "x": 225, "y": 1070, "w": 950, "h": 168,
+      "x": 225, "y": 1130, "w": 950, "h": 168,
       "job": "Eight emails over three weeks for every buyer, one per worksheet, each ending on a single cell to fill in. Then three more, chosen by the quiz result, that close on the workshop. Click a track.",
-      "chips": { "x": 242, "y": 1200, "w": 916, "h": 28, "items": [
+      "chips": { "x": 242, "y": 1260, "w": 916, "h": 28, "items": [
         { "label": "Core: 8 emails", "status": "build", "popup": { "kicker": "Nurture, everyone", "title": "The core track: eight emails over three weeks",
           "body": [
             "1. Welcome. What's in the box. Take the quiz.",
@@ -170,7 +173,7 @@
       ] } },
 
     { "id": "review", "layer": "convert", "label": "Guided STOS Workshop", "status": "reframe",
-      "x": 555, "y": 1340, "w": 290, "h": 168, "cta": "How it works",
+      "x": 555, "y": 1400, "w": 290, "h": 168, "cta": "How it works",
       "job": "45 minutes on Zoom with a risk3sixty practitioner, on the completed RACI and rhythm calendar. A one-page gap summary and a next step.",
       "popup": { "kicker": "The backend door, your guided workshop reframed", "title": "The Guided STOS Workshop",
         "price": "45 minutes", "note": "the backend door",
@@ -183,7 +186,7 @@
         ] } },
 
     { "id": "backend", "layer": "backend", "label": "Backend Engagement", "status": "exists",
-      "x": 225, "y": 1610, "w": 950, "h": 168, "cta": "The proof",
+      "x": 225, "y": 1670, "w": 950, "h": 168, "cta": "The proof",
       "job": "One partner, one program. Comply, Optimize and Secure, scoped from what the workshop found. One engagement covers a year of book ad spend. Click a service line.",
       "popup": { "kicker": "Backend engagement, already yours", "title": "One partner. One program. Built for CISOs.",
         "body": [
@@ -191,7 +194,7 @@
           "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA. 100% three-year client retention. Clients include GE, Citrix, Tinder, VMware, Washington Post and Datadog.",
           "Every engagement is scoped from the workshop, where the reader has already written down the audits, frameworks and testing nobody owns."
         ] },
-      "chips": { "x": 242, "y": 1740, "w": 916, "h": 28, "items": [
+      "chips": { "x": 242, "y": 1800, "w": 916, "h": 28, "items": [
         { "label": "Comply (ethOS)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Comply (ethOS)",
           "body": [
             "Audits and certifications: SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
@@ -217,20 +220,19 @@
     { "a": "sales-page:r", "b": "order-form:l" },
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
-    { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 497 },
-    { "a": "downsell:r", "b": [1120, 590], "arrow": false },
+    { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 854, "ly": 515 },
+    { "a": "downsell:r", "b": [1120, 624], "arrow": false },
 
     { "a": "one-click:r", "b": "reader-portal:t", "via": [[1120, 418], [1120, 740], [775, 740]] },
     { "a": "one-click:r", "b": "thank-you:t", "via": [[1120, 418], [1120, 740], [370, 740]] },
 
     { "a": "thank-you:b", "b": "nurture:t@0.1526", "label": "result picks the branch", "lx": 382, "ly": 1004 },
-    { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1276 },
+    { "a": "nurture:b@0.5", "b": "review:t", "label": "every branch closes here", "lx": 712, "ly": 1336 },
 
 
 
-    { "a": "reader-portal:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1424]], "dashed": true, "label": "QR code in the workbook, end of module 6", "lx": 1010, "ly": 1398 },
 
-    { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1546 }
+    { "a": "review:b", "b": "backend:t@0.5", "label": "scoped from the workshop", "lx": 712, "ly": 1606 }
   ],
   "economics": {
     "title": "Ad spend example",

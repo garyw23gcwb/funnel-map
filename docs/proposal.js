@@ -124,6 +124,20 @@
       }
     });
 
+    /* A threshold drawn across the whole board: a dashed rule with a
+       label on it, for a point in the funnel worth naming (break-even). */
+    (cfg.markers || []).forEach(function (m) {
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', 'M40,' + m.y + ' L' + (BOARD_W - 40) + ',' + m.y);
+      p.setAttribute('class', 'marker');
+      wg.appendChild(p);
+      var t = el('div', 'titlebox marker');
+      t.style.left = (BOARD_W / 2) + 'px';
+      t.style.top = m.y + 'px';
+      t.textContent = m.text;
+      board.appendChild(t);
+    });
+
     cfg.layers.forEach(function (L) {
       if (L.lx == null) return;
       var t = el('div', 'titlebox');
@@ -203,6 +217,13 @@
     var lab = el('span', 'clabel');
     lab.textContent = n.label;
     card.appendChild(lab);
+    /* The price, on its own line under the name, so the stack of offers
+       can be read down the funnel row without opening anything. */
+    if (n.price) {
+      var pr = el('span', 'cprice');
+      pr.textContent = n.price;
+      card.appendChild(pr);
+    }
     if (!n.terse || cls === 'scard') {
       var job = el('span', 'cjob');
       job.textContent = n.job || '';
@@ -221,6 +242,12 @@
     cfg.layers.forEach(function (L) {
       var members = cfg.nodes.filter(function (n) { return n.layer === L.id; });
       if (!members.length) return;
+      (cfg.markers || []).forEach(function (m) {
+        if (m.before !== L.id) return;
+        var mk = el('p', 'smarker');
+        mk.textContent = m.text;
+        stack.appendChild(mk);
+      });
       var sec = el('section', 'slayer');
       var h = el('h2', 'stitle');
       h.textContent = L.title;
