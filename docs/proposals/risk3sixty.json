@@ -7,7 +7,7 @@
   "legend": [
     { "status": "exists", "label": "Already yours" },
     { "status": "build", "label": "We build" },
-    { "status": "reframe", "label": "Your workshop, reframed" }
+    { "status": "client", "label": "Paid client" }
   ],
   "layers": [
     { "id": "traffic", "title": "Traffic" },
@@ -171,7 +171,7 @@
           ] } }
       ] } },
 
-    { "id": "review", "layer": "convert", "label": "Guided STOS Workshop", "status": "reframe",
+    { "id": "review", "layer": "convert", "label": "Guided STOS Workshop", "status": "build",
       "x": 555, "y": 1400, "w": 290, "h": 168, "cta": "How it works",
       "job": "45 minutes on Zoom with a risk3sixty practitioner, on the completed RACI and rhythm calendar. A one-page gap summary and a next step.",
       "popup": { "kicker": "The backend door, your guided workshop reframed", "title": "The Guided STOS Workshop",
@@ -184,29 +184,29 @@
           "Today it is a free walkthrough of a free workbook for someone who has not filled it in. Same team, same hour, different conversation: a workshop on work the reader has already done."
         ] } },
 
-    { "id": "backend", "layer": "backend", "label": "Backend Engagement", "status": "exists",
-      "x": 225, "y": 1670, "w": 950, "h": 168, "cta": "The proof",
-      "job": "One partner, one program. Comply, Optimize and Secure, scoped from what the workshop found. One engagement covers a year of book ad spend. Click a service line.",
-      "popup": { "kicker": "Backend engagement, already yours", "title": "One partner. One program. Built for CISOs.",
+    { "id": "backend", "layer": "backend", "label": "Backend Engagement", "status": "client",
+      "x": 430, "y": 1670, "w": 540, "h": 168, "cta": "The proof",
+      "job": "One partner, one program, scoped from what the workshop found. One engagement covers a year of book ad spend. Click a service line.",
+      "popup": { "kicker": "Backend engagement, the paid client", "title": "One partner. One program. Built for CISOs.",
         "body": [
           "Replace the patchwork of vendors, compliance firms and GRC software with one team. Three product lines, one buyer.",
           "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA. 100% three-year client retention. Clients include GE, Citrix, Tinder, VMware, Washington Post and Datadog.",
           "Every engagement is scoped from the workshop, where the reader has already written down the audits, frameworks and testing nobody owns."
         ] },
-      "chips": { "x": 242, "y": 1800, "w": 916, "h": 28, "items": [
-        { "label": "Comply (ethOS)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Comply (ethOS)",
+      "chips": { "x": 447, "y": 1800, "w": 506, "h": 28, "items": [
+        { "label": "Comply (ethOS)", "status": "client", "popup": { "kicker": "Service line, the paid client", "title": "Comply (ethOS)",
           "body": [
             "Audits and certifications: SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
             "Includes Compliance as a Service and multi-framework harmonization.",
             "Runs the Engineer, Technician and Builder workshops."
           ] } },
-        { "label": "Optimize (fullCircle)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Optimize (fullCircle)",
+        { "label": "Optimize (fullCircle)", "status": "client", "popup": { "kicker": "Service line, the paid client", "title": "Optimize (fullCircle)",
           "body": [
             "The GRC platform plus AI agents that automate evidence collection, vendor assessments and policy compliance.",
             "Harmonization lives here: Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA.",
             "Runs the Executive workshops."
           ] } },
-        { "label": "Secure (Armada)", "status": "exists", "popup": { "kicker": "Service line, already yours", "title": "Secure (Armada)",
+        { "label": "Secure (Armada)", "status": "client", "popup": { "kicker": "Service line, the paid client", "title": "Secure (Armada)",
           "body": [
             "Attack surface management, continuous penetration testing, red teaming.",
             "Runs the GRC Guru workshops."
@@ -235,7 +235,7 @@
   ],
   "economics": {
     "title": "Ad spend example",
-    "quote": "$6K spend/month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
+    "quote": "$6K spend/month ($200 a day) buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
     "aov": {
       "title": "Average order value per book buyer",
       "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $37, pack $250, digital downsell $100 offered to pack decliners.",

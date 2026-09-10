@@ -77,6 +77,7 @@
   .dot.exists { border-color: var(--cyan); background: rgba(55, 187, 212, 0.22); }
   .dot.build { border-color: var(--teal); }
   .dot.reframe { border-color: var(--cyan); border-style: dashed; }
+  .dot.client { border-color: var(--aqua); background: rgba(211, 245, 250, 0.35); }
 
   .notice {
     display: none; margin: 22px 0 0; padding: 10px 14px;
@@ -101,7 +102,7 @@
   #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(244,246,249,0.55); pointer-events: none; }
   #wires path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   #wires path.dashed { stroke-dasharray: 7 7; opacity: 0.65; }
-  #wires path.marker { stroke: var(--teal); stroke-dasharray: 3 9; stroke-width: 2; opacity: 0.9; }
+  #wires path.marker { stroke: var(--teal); stroke-dasharray: 0.1 8; stroke-width: 2.5; stroke-linecap: round; opacity: 0.9; }
 
   .group {
     position: absolute; background: rgba(244, 246, 249, 0.022);
@@ -116,6 +117,7 @@
   .titlebox.marker {
     transform: translate(-50%, -50%); color: var(--aqua);
     border-color: rgba(55, 187, 212, 0.55); letter-spacing: 0.12em;
+    white-space: normal; width: max-content; max-width: 960px; text-align: center; line-height: 1.5;
   }
   .smarker {
     margin: 0 0 26px; padding: 12px 14px; text-align: center;
@@ -156,6 +158,9 @@
   .card.exists, .scard.exists { border-color: var(--cyan); }
   .card.build, .scard.build { border-color: var(--teal); }
   .card.reframe, .scard.reframe { border-color: var(--cyan); border-style: dashed; }
+  /* The paid client: lit from inside, the one box on the board that is money in. */
+  .card.client, .scard.client { border-color: var(--aqua); background: rgba(55, 187, 212, 0.13); }
+  button.card.client:hover, button.card.client:focus-visible { background: rgba(55, 187, 212, 0.22); }
 
   .clabel { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
   .cprice { font-size: 15px; font-weight: 700; letter-spacing: 0.01em; line-height: 1.2; color: var(--teal); margin-top: -2px; }
@@ -191,6 +196,7 @@
   .slot.exists { color: var(--cyan); border-color: var(--cyan); }
   .slot.build { color: var(--teal); border-color: var(--teal); }
   .slot.stage { color: var(--ink); border-color: var(--slate); }
+  .slot.client, button.slot.client { color: var(--aqua); border-color: rgba(211, 245, 250, 0.6); }
   button.slot { font-family: var(--sans); cursor: pointer; color: var(--cyan); border-color: var(--cyan); }
   button.slot.build { color: var(--teal); border-color: var(--teal); }
   button.slot:hover, button.slot:focus-visible { background: var(--wash); color: var(--ink); }
