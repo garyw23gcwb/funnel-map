@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="logomark.svg" type="image/svg+xml">
+<title>Funnel Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
+<style>*,*::before,*::after{box-sizing:border-box}</style>
+<style>
+  /* The proposal map: the client map's look (index.html), with a board whose
+     geometry comes from the prospect file instead of the shared catalogue,
+     and a few sections under it. Brand Guidelines, GCWB & Bookfunnels.io. */
+  :root {
+    color-scheme: dark;
+    --navy: #1a212c;
+    --pearl: #f4f6f9;
+    --teal: #2899ad;
+    --cyan: #37bbd4;
+    --aqua: #d3f5fa;
+    --deep-teal: #176b7b;
+    --deep-blue: #23486b;
+
+    --paper: var(--navy);
+    --ink: var(--pearl);
+    --panel: rgba(244, 246, 249, 0.028);
+    --boxbg: #202836;
+    --line: rgba(244, 246, 249, 0.16);
+    --faint: #8a97ab;
+    --slate: #3c4859;
+    --wash: rgba(55, 187, 212, 0.14);
+    --pen: var(--cyan);
+    --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  }
+
+  html { background: var(--paper); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); background: var(--navy); }
+  .wrap { max-width: 1520px; margin: 0 auto; padding: 40px 56px 72px; }
+  .head { width: min(1400px, 100%); margin: 0 auto 20px; }
+
+  .logo {
+    display: block; width: 178px; height: 28px; margin-bottom: 22px;
+    background: url(logo.svg) no-repeat left center / contain;
+  }
+  .metarow {
+    display: flex; flex-wrap: wrap; gap: 6px 40px;
+    padding: 13px 0 14px; margin-bottom: 40px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    letter-spacing: 0.14em; text-transform: uppercase; font-size: 11.5px; color: var(--faint);
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 300; font-size: 58px;
+    line-height: 1.04; letter-spacing: -0.005em; margin: 0; color: var(--ink);
+  }
+  .booktitle {
+    font-family: var(--serif); font-weight: 300; font-size: 34px;
+    line-height: 1.12; margin: 6px 0 0; color: var(--cyan);
+  }
+  .sub {
+    font-size: 15.5px; color: var(--faint); margin: 18px 0 0;
+    line-height: 1.6; max-width: 880px; text-wrap: pretty;
+  }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px 26px; margin: 26px 0 0;
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--faint);
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .dot {
+    width: 10px; height: 10px; flex: none;
+    border: 2px solid var(--slate); border-radius: 2px 4px 3px 5px;
+  }
+  .dot.exists { border-color: var(--cyan); background: rgba(55, 187, 212, 0.22); }
+  .dot.build { border-color: var(--teal); }
+  .dot.reframe { border-color: var(--cyan); border-style: dashed; }
+
+  .notice {
+    display: none; margin: 22px 0 0; padding: 10px 14px;
+    font-size: 13.5px; color: var(--aqua);
+    border: 1px solid rgba(211, 245, 250, 0.3); border-radius: 2px;
+    background: rgba(211, 245, 250, 0.06);
+  }
+  .notice.on { display: block; }
+
+  .shell { overflow-x: auto; padding-bottom: 6px; }
+  .stage { position: relative; margin: 0 auto; }
+  .board {
+    position: relative; width: 1400px; height: 1400px; margin: 0 auto;
+    transform-origin: top left;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background:
+      radial-gradient(880px 620px at 7% 80%, rgba(23, 107, 123, 0.42), transparent 62%),
+      radial-gradient(820px 580px at 93% 12%, rgba(35, 72, 107, 0.46), transparent 64%),
+      var(--navy);
+  }
+  #wires { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(244,246,249,0.55); pointer-events: none; }
+  #wires path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  #wires path.dashed { stroke-dasharray: 7 7; opacity: 0.65; }
+
+  .group {
+    position: absolute; background: rgba(244, 246, 249, 0.022);
+    border: 1px solid var(--line); border-radius: 3px;
+  }
+  .titlebox {
+    position: absolute; display: inline-block; padding: 6px 16px 7px;
+    background: var(--navy); border: 1px solid var(--line); border-radius: 2px;
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); white-space: nowrap;
+  }
+  .sublabel {
+    position: absolute; font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); white-space: nowrap;
+  }
+  .wirelabel {
+    position: absolute; font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+    white-space: nowrap; background: var(--navy); padding: 2px 7px 3px; border-radius: 2px;
+  }
+  .wirelabel.vert { transform: rotate(-90deg); transform-origin: left top; }
+
+  .card {
+    position: absolute; display: flex; flex-direction: column; gap: 7px;
+    padding: 15px 17px 14px; text-decoration: none; color: inherit;
+    background: var(--boxbg); border: 2.5px solid var(--slate);
+    border-radius: 4px 9px 5px 8px;
+    font-family: var(--sans); overflow: hidden;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  button.card { font: inherit; text-align: left; cursor: pointer; }
+  button.card:hover, button.card:focus-visible {
+    background: var(--wash); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+  button.card:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+  button.card .cmeta { color: var(--pen); }
+  .card.hasslots { padding-bottom: 46px; }
+  .card.tilt { transform: rotate(0.6deg); }
+  .card.tilt2 { transform: rotate(-0.5deg); }
+  /* The three states of a proposal: already the prospect's, ours to build,
+     or theirs but reframed. Cyan is the client map's "live", so the board
+     reads as mostly theirs already; teal is its "in review". */
+  .card.exists, .scard.exists { border-color: var(--cyan); }
+  .card.build, .scard.build { border-color: var(--teal); }
+  .card.reframe, .scard.reframe { border-color: var(--cyan); border-style: dashed; }
+
+  .clabel { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  .cjob { font-size: 12.5px; line-height: 1.42; color: var(--faint); flex: 1; }
+  .cmeta { font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+
+  .chips {
+    position: absolute; display: flex; flex-wrap: wrap; gap: 6px;
+    align-content: flex-start; font-family: var(--sans);
+  }
+  .chip {
+    display: grid; place-items: center; width: 40px; height: 28px;
+    font-size: 12.5px; font-weight: 500; color: var(--faint);
+    text-decoration: none; background: var(--boxbg);
+    border: 2px solid var(--slate); border-radius: 3px 6px 4px 7px;
+  }
+  button.chip { font-family: var(--sans); cursor: pointer; padding: 0; color: var(--cyan); border-color: var(--cyan); }
+  button.chip:hover, button.chip:focus-visible { background: var(--wash); color: var(--ink); }
+  button.chip:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+  .slots {
+    position: absolute; display: flex; gap: 6px;
+    align-items: stretch; font-family: var(--sans);
+  }
+  .slot {
+    flex: 1 1 0; min-width: 0; display: grid; place-items: center;
+    font-size: 10.5px; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; color: var(--faint); background: var(--navy);
+    border: 1.5px solid var(--slate); border-radius: 3px 5px 3px 5px;
+    overflow: hidden; white-space: nowrap; padding: 0 4px;
+  }
+  .slot.exists { color: var(--cyan); border-color: var(--cyan); }
+  .slot.build { color: var(--teal); border-color: var(--teal); }
+  .slot.stage { color: var(--ink); border-color: var(--slate); }
+  button.slot { font-family: var(--sans); cursor: pointer; color: var(--cyan); border-color: var(--cyan); }
+  button.slot:hover, button.slot:focus-visible { background: var(--wash); color: var(--ink); }
+  button.slot:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+  /* Pop-up, as on the client map. */
+  .veil {
+    position: fixed; inset: 0; z-index: 50; display: none;
+    background: rgba(14, 19, 26, 0.86); padding: 28px 18px;
+    overflow-y: auto; font-family: var(--sans);
+  }
+  .veil.on { display: block; }
+  .modal {
+    position: relative; max-width: 720px; margin: 0 auto;
+    background: #1c2430; border: 1px solid var(--line); border-radius: 3px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  }
+  .mclose {
+    position: absolute; top: -14px; right: -14px; width: 34px; height: 34px;
+    display: grid; place-items: center; cursor: pointer;
+    font-size: 19px; line-height: 1; color: var(--ink);
+    background: var(--navy); border: 1px solid var(--line); border-radius: 50%;
+  }
+  .mclose:hover { background: var(--wash); }
+  .mclose:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+  .mhead { padding: 16px 20px 13px; border-bottom: 1.5px solid #333e52; }
+  .mkicker { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .mtitle { font-family: var(--serif); font-size: 27px; font-weight: 400; margin: 6px 0 3px; line-height: 1.15; }
+  .mprice { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; font-size: 15px; }
+  .mprice b { font-size: 21px; font-weight: 600; color: var(--cyan); }
+  .mprice s { color: var(--faint); }
+  .mprice span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+  .mcheck {
+    display: flex; gap: 11px; align-items: flex-start;
+    margin: 16px 20px 0; padding: 13px 15px;
+    border: 1.5px dashed var(--cyan); border-radius: 3px 7px 4px 6px;
+    background: rgba(55, 187, 212, 0.07); font-size: 14.5px; line-height: 1.45;
+  }
+  .mtick {
+    flex: none; display: grid; place-items: center; width: 20px; height: 20px;
+    color: var(--navy); background: var(--cyan);
+    border-radius: 3px 5px 3px 5px; font-size: 13px; font-weight: 700;
+  }
+  .mbody { padding: 16px 20px; }
+  .mbody p { margin: 0 0 12px; font-size: 15px; line-height: 1.6; }
+  .mbody p:last-child { margin-bottom: 0; }
+  .mfoot {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    padding: 13px 20px 14px; border-top: 1.5px solid #333e52; background: var(--boxbg);
+  }
+  .mfoot .txt { flex: 1; min-width: 190px; }
+  .mdesc { font-size: 13px; color: var(--faint); margin-top: 2px; }
+  .mcta {
+    padding: 8px 14px 9px; font-size: 13px; font-weight: 500; white-space: nowrap;
+    color: var(--ink); background: var(--panel);
+    border: 1.5px solid var(--faint); border-radius: 6px;
+  }
+  .mnav { display: flex; justify-content: space-between; gap: 10px; padding: 12px 20px 16px; }
+  .mnav button {
+    font-family: var(--sans); font-size: 13.5px; cursor: pointer; color: var(--pen);
+    background: transparent; border: 1.5px solid #38445a; border-radius: 8px; padding: 7px 13px 8px;
+  }
+  .mnav button:hover:not(:disabled) { background: var(--wash); }
+  .mnav button:disabled { opacity: 0.35; cursor: default; }
+
+  /* Narrow view: the same nodes listed layer by layer. */
+  .stack { display: none; width: 100%; margin: 4px auto 0; font-family: var(--sans); }
+  .slayer { margin: 0 0 26px; }
+  .stitle {
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 12px;
+    padding-bottom: 9px; border-bottom: 1px solid var(--line);
+  }
+  .scard {
+    display: flex; flex-direction: column; gap: 4px;
+    text-decoration: none; color: inherit; width: 100%;
+    padding: 12px 14px; margin: 0 0 8px;
+    background: var(--boxbg); border: 2px solid var(--slate);
+    border-radius: 4px 9px 5px 8px;
+  }
+  button.scard { font: inherit; text-align: left; cursor: pointer; }
+  .scard .clabel { font-size: 15.5px; }
+  .scard .cjob { font-size: 13px; flex: none; }
+  .scard .cmeta { font-size: 11px; margin-top: 2px; }
+  button.scard .cmeta { color: var(--pen); }
+  button.scard:active { background: var(--wash); }
+  .schips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+  .schips .slot { flex: 0 0 auto; height: 28px; padding: 0 10px; }
+
+  /* ----------------------- under the board ----------------------- */
+  .sec { width: min(1400px, 100%); margin: 64px auto 0; }
+  .seckick {
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 8px;
+  }
+  .sech2 {
+    font-family: var(--serif); font-weight: 300; font-size: 34px;
+    line-height: 1.1; margin: 0 0 8px; color: var(--ink);
+  }
+  .secsub { font-size: 14.5px; color: var(--faint); margin: 0 0 24px; max-width: 760px; line-height: 1.55; }
+
+  .offers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+  .ocard {
+    position: relative; display: flex; flex-direction: column; gap: 10px;
+    padding: 18px 18px 16px; background: var(--boxbg);
+    border: 2.5px solid var(--slate); border-radius: 4px 9px 5px 8px;
+  }
+  .ocard.exists { border-color: var(--cyan); }
+  .ocard.build { border-color: var(--teal); }
+  .ocard.reframe { border-color: var(--cyan); border-style: dashed; }
+  .otag { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  .oname { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  .oprice { font-family: var(--serif); font-weight: 300; font-size: 32px; line-height: 1; color: var(--cyan); margin-top: 2px; }
+  .oprice small { display: block; font-size: 17px; margin-top: 6px; color: var(--cyan); }
+  .olist { margin: 4px 0 0; padding-left: 16px; font-size: 12.5px; line-height: 1.5; color: var(--faint); flex: 1; }
+  .olist li { margin: 0 0 3px; }
+  .oprob { font-size: 13.5px; line-height: 1.5; color: var(--ink); border-top: 1px solid var(--line); padding-top: 10px; }
+  .obranch {
+    display: inline-block; align-self: flex-start; padding: 3px 9px 4px; font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--aqua);
+    border: 1px dashed rgba(211, 245, 250, 0.4); border-radius: 2px; background: rgba(211, 245, 250, 0.06);
+  }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 3px; background: rgba(244, 246, 249, 0.022); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th {
+    text-align: left; padding: 11px 14px; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; color: var(--ink); }
+  tr:last-child td { border-bottom: 0; }
+  td.first { color: var(--faint); }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  th.hi, td.hi { background: rgba(55, 187, 212, 0.08); }
+  th.hi { color: var(--cyan); }
+  tr.total td { font-weight: 600; border-top: 2px solid var(--slate); }
+  tr.total td.hi { color: var(--cyan); }
+  tr.cpa td { color: var(--faint); font-style: italic; }
+  tr.cpa td.hi { color: var(--aqua); }
+  .tsub { font-size: 12.5px; color: var(--faint); margin: 10px 0 0; line-height: 1.5; }
+  .ttitle { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+  .econ + .econ { margin-top: 28px; }
+
+  .quote {
+    font-family: var(--serif); font-weight: 300; font-size: 27px; line-height: 1.32;
+    max-width: 900px; margin: 0 0 30px; padding-left: 20px; color: var(--ink);
+    border-left: 3px solid var(--cyan); text-wrap: pretty;
+  }
+  .notes { max-width: 880px; margin: 26px 0 0; }
+  .notes p { font-size: 13px; line-height: 1.6; color: var(--faint); margin: 0 0 7px; }
+
+  details { border: 1px solid var(--line); border-radius: 3px; }
+  summary {
+    cursor: pointer; padding: 14px 18px; font-size: 11.5px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--faint); list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '+'; display: inline-block; width: 18px; color: var(--cyan); }
+  details[open] summary::before { content: '\2212'; }
+  summary:hover { color: var(--ink); }
+  details .tablewrap { border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+
+  .foot {
+    width: min(1400px, 100%); margin: 60px auto 0; padding-top: 16px;
+    border-top: 1px solid var(--line); font-size: 11.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint);
+  }
+
+  @media (max-width: 1180px) { .offers { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 900px) {
+    .shell { display: none; }
+    .stack { display: block; }
+  }
+  @media (max-width: 1000px) { .wrap { padding: 32px 28px 56px; } }
+  @media (max-width: 720px) { .offers { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) {
+    .wrap { padding: 24px 18px 40px; }
+    h1 { font-size: 26px; }
+    .booktitle { font-size: 22px; }
+    .sech2 { font-size: 26px; }
+    .quote { font-size: 21px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+
+  @page { size: landscape; margin: 10mm; }
+  @media print {
+    .wrap { padding: 0; max-width: none; }
+    .shell { overflow: visible; }
+    .stack, .notice { display: none !important; }
+    .head { margin-bottom: 10px; }
+    .logo { margin-bottom: 12px; }
+    h1 { font-size: 24px; }
+    .sub, .legend { font-size: 11px; }
+    details { border: 0; }
+    details:not([open]) > *:not(summary) { display: block; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <span class="logo" role="img" aria-label="bookfunnels.io"></span>
+    <div class="metarow" id="metarow">
+      <span id="mKicker">Funnel proposal</span>
+    </div>
+    <h1 id="hClient">Funnel Proposal</h1>
+    <p class="booktitle" id="hBook"></p>
+    <p class="sub" id="hSub"></p>
+    <div class="legend" id="legend"></div>
+    <p class="notice" id="notice"></p>
+  </div>
+
+  <div class="shell">
+    <div class="stage" id="stage">
+      <div class="board" id="board">
+        <svg id="wires" viewBox="0 0 1400 1400" aria-hidden="true">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M1.5,1.2 L8.5,5 L1.5,8.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <g id="wiregroup"></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack" id="stack"></div>
+
+  <div id="sections"></div>
+  <p class="foot" id="foot"></p>
+</div>
+
+<div class="veil" id="veil" role="dialog" aria-modal="true" aria-labelledby="mtitle" hidden>
+  <div class="modal" id="modal">
+    <button class="mclose" id="mclose" aria-label="Close">&times;</button>
+    <div id="mcontent"></div>
+  </div>
+</div>
+
+<script>
+/* Loaded with a timestamp so a viewer is never served a stale copy, as on
+   the client map. Only this small shell can go stale. */
+(function () {
+  document.write('<script src="proposal.js?t=' + Date.now() + '"><\/script>');
+})();
+</script>
+</body>
+</html>

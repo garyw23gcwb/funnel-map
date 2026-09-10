@@ -1,0 +1,408 @@
+{
+  "client": "risk3sixty",
+  "book": "Security Team Operating System",
+  "prepared": "10 September 2026",
+  "kicker": "Funnel proposal",
+  "sub": "STOS is the front end of a machine you have already built. The book sells the operating system, and the Security Program Review sells the help. This is how a reader gets from an ad to that review, and how little of it still has to be made.",
+  "legend": [
+    { "status": "exists", "label": "Already yours" },
+    { "status": "build", "label": "We build" },
+    { "status": "reframe", "label": "Reframed from your workshop" }
+  ],
+  "layers": [
+    { "id": "traffic", "title": "Traffic" },
+    { "id": "book", "title": "The Book Funnel" },
+    { "id": "delivery", "title": "What The Buyer Gets" },
+    { "id": "followup", "title": "Follow-up" },
+    { "id": "convert", "title": "The Review" },
+    { "id": "backend", "title": "Backend Engagement", "lx": 124, "ly": 1837 },
+    { "id": "pipeline", "title": "Pipeline" }
+  ],
+  "groups": [
+    { "id": "backend", "x": 100, "y": 1852, "w": 1200, "h": 220 }
+  ],
+  "sublabels": [],
+  "nodes": [
+    { "id": "seed-list", "layer": "traffic", "label": "Your List", "status": "exists",
+      "x": 60, "y": 60, "w": 290, "h": 140, "cta": "What it does",
+      "job": "HubSpot workbook and first-chapter downloads, past clients, newsletter, and Christian's LinkedIn audience.",
+      "popup": { "kicker": "Traffic, already yours", "title": "The list you already have",
+        "body": [
+          "Everyone who downloaded the STOS workbook or the free first chapter through HubSpot, past clients, and the newsletter. Christian's LinkedIn audience on top.",
+          "Two jobs. It is the first audience the book is announced to, and it is the seed list Meta builds lookalikes from.",
+          "Nothing to build here. It gets wired in."
+        ] } },
+
+    { "id": "meta-ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
+      "x": 390, "y": 60, "w": 290, "h": 168, "cta": "See the targeting",
+      "job": "Lookalikes from your list, interest stacks, and retargeting for everyone who visits and does not buy. Three hooks.",
+      "popup": { "kicker": "Traffic, we build", "title": "Meta: lookalikes and retargeting",
+        "body": [
+          "Lookalike audiences built from your seed list.",
+          "Interest stacks: cybersecurity, CISSP, SANS, RSA Conference, Black Hat, CISO Tradecraft, Traction, The CISO Evolution.",
+          "Retargeting for everyone who reaches the sales page and does not buy.",
+          "Expected cost per book buyer on Meta for this audience: $40 to $80."
+        ] },
+      "chips": { "x": 407, "y": 190, "w": 256, "h": 28, "items": [
+        { "label": "Book", "popup": { "kicker": "Ad hook 1 of 3", "title": "The book",
+          "body": [ "\"The book on how to run an unstoppable security team.\"", "The direct hook. Cold and warm audiences, sent straight to the sales page." ] } },
+        { "label": "Workbook", "popup": { "kicker": "Ad hook 2 of 3", "title": "The workbook",
+          "body": [ "The 41-page STOS Workbook, the free asset that already draws downloads, as the reason to click.", "Lands on the sales page. The printed workbook then appears again inside the Implementation Pack." ] } },
+        { "label": "Quiz", "popup": { "kicker": "Ad hook 3 of 3", "title": "The archetype quiz",
+          "body": [ "The five-minute CISO Archetype quiz as the reason to click. Which kind of security leader are you?", "Lands on the sales page. The quiz itself waits on the thank-you page, where it tags the buyer." ] } }
+      ] } },
+
+    { "id": "linkedin-ads", "layer": "traffic", "label": "LinkedIn Ads", "status": "build",
+      "x": 720, "y": 60, "w": 290, "h": 140, "cta": "See the targeting",
+      "job": "Title targeting: CISO, VP Security, Director of GRC. The cold front door.",
+      "popup": { "kicker": "Traffic, we build", "title": "LinkedIn: the cold front door",
+        "body": [
+          "Title targeting reaches the exact buyer: CISO, VP Security, Director of GRC.",
+          "LinkedIn is the cold front door. Meta picks up the retargeting.",
+          "Expected cost per book buyer with LinkedIn as the front door: $80 to $150."
+        ] } },
+
+    { "id": "sales-page", "layer": "book", "label": "Sales Page", "status": "build", "tilt": 1,
+      "x": 60, "y": 348, "w": 290, "h": 140, "cta": "See the page plan",
+      "job": "Built on Bookfunnels. Replaces the Amazon link. Leads with the back cover paragraph.",
+      "popup": { "kicker": "The book funnel, we build", "title": "Security Team Operating System: How to Run an Unstoppable Team",
+        "body": [
+          "Opens with the back cover, in Christian's words: \"Have you felt the pressure of leading an InfoSec program? The board of directors and executives have questions. Peers in Legal, I.T., Engineering, and Sales need your support. Roles and responsibilities expand boundaries from vulnerability management to compliance audits. The weight of the job can feel overwhelming.\"",
+          "Product selector: paperback $25, ebook $15. The audiobook is the bump, not a selector option.",
+          "Endorsements from Major General David Kratzer (US Army, Ret), Matthew Sharp, Greg Crabtree, Ross Young, Aviva Wolmer and Phil Agcaoili.",
+          "Captures email, shipping address and role. Fulfillment through AccuTrack."
+        ] } },
+
+    { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
+      "x": 390, "y": 348, "w": 290, "h": 140,
+      "job": "Paperback or ebook. Card details captured here. Invoice-style receipt with company name, for the buyer who expenses it." },
+
+    { "id": "order-bump", "layer": "book", "label": "Bump Upgrade", "status": "build",
+      "x": 390, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
+      "job": "The audiobook, $40. One tick, above the order button.",
+      "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Security Team Operating System audiobook",
+        "price": "$40",
+        "check": "YES! Add the audiobook to my order for $40",
+        "body": [
+          "The full book, chaptered, in Christian's voice.",
+          "For the security leader with no reading time. Commutes and flights.",
+          "No audiobook exists today. We create it with an AI clone of Christian's voice, and list it on Audible as well for authority and discovery."
+        ],
+        "cta": "Add",
+        "footnote": "Round pricing throughout the stack. Charm pricing reads as an info product to this buyer." } },
+
+    { "id": "one-click", "layer": "book", "label": "One-Click Offer", "status": "build", "tilt": 2,
+      "x": 720, "y": 348, "w": 290, "h": 140, "cta": "See the offer",
+      "job": "The STOS Implementation Pack, $250. Offered on purchase momentum, no card re-entry.",
+      "popup": { "kicker": "One-click offer, after checkout", "title": "The STOS Implementation Pack",
+        "price": "$250",
+        "body": [
+          "The printed workbook, shipped in the same box as the book.",
+          "The recorded walkthrough: six modules in Christian's voice, one per section of the workbook.",
+          "The seven editable Word tools.",
+          "A 90-day implementation calendar.",
+          "The book says what a good team looks like. The pack gets it built in a quarter, with Christian guiding every worksheet.",
+          "This is your free guided workshop turned into an on-demand product."
+        ],
+        "cta": "Yes, add the pack" } },
+
+    { "id": "downsell", "layer": "book", "label": "Downsell", "status": "build",
+      "x": 720, "y": 528, "w": 290, "h": 124, "cta": "See the offer",
+      "job": "The Digital Implementation Pack, $100. Shown only to people who decline the pack.",
+      "popup": { "kicker": "Downsell, shown only if the pack is declined", "title": "The Digital Implementation Pack",
+        "price": "$100",
+        "body": [
+          "The recorded walkthrough, the digital workbook (PDF), the seven editable Word tools and the 90-day calendar. No printed workbook, no shipping.",
+          "For the buyer who wants to start tonight without the physical version, or who balked at the price.",
+          "Decliners go straight to the thank-you page and the quiz. Pack buyers and digital buyers enter the same walkthrough and the same nurture."
+        ] } },
+
+    { "id": "thank-you", "layer": "book", "label": "Thank-you Page", "status": "build",
+      "x": 1050, "y": 348, "w": 290, "h": 140, "cta": "See the quiz",
+      "job": "The CISO Archetype quiz. Five minutes, result emailed, contact tagged with one of five archetypes.",
+      "popup": { "kicker": "Thank-you page, rebuilt from your quiz", "title": "The CISO Archetype quiz",
+        "body": [
+          "A five-minute self-assessment. The result is emailed.",
+          "The reader does not know which leader type they are, so they do not know which gaps their team needs to cover. The quiz tells them.",
+          "Tags the contact as Executive, Engineer, GRC Guru, Technician or Builder. That tag chooses their nurture branch and who takes their review.",
+          "Your quiz exists today in Microsoft Forms. We rebuild it in GoHighLevel so the tag lands on the contact."
+        ] } },
+
+    { "id": "what-ships", "layer": "delivery", "label": "What Ships", "status": "exists",
+      "x": 140, "y": 800, "w": 290, "h": 168,
+      "job": "The paperback and the printed workbook, one box, via AccuTrack. The workbook carries a QR code to the review where the \"Book a Guided Workshop\" buttons are now.",
+      "slots": { "x": 157, "y": 930, "w": 256, "h": 28, "items": [
+        { "label": "Paperback", "status": "exists", "title": "The book as it exists today" },
+        { "label": "Printed workbook", "status": "build", "title": "Portrait reformat of the 41-page workbook for print" }
+      ] } },
+
+    { "id": "what-downloads", "layer": "delivery", "label": "What Downloads", "status": "exists",
+      "x": 470, "y": 800, "w": 290, "h": 168,
+      "job": "The digital side of the order: the ebook, the audiobook, the seven Word tools and the 90-day calendar.",
+      "slots": { "x": 487, "y": 930, "w": 256, "h": 28, "items": [
+        { "label": "Ebook", "status": "exists", "title": "The Kindle edition as it exists today" },
+        { "label": "Audio", "status": "build", "title": "The audiobook, created for the bump" },
+        { "label": "Tools", "status": "exists", "title": "The seven editable Word tools" },
+        { "label": "Calendar", "status": "build", "title": "The 90-day implementation calendar" }
+      ] } },
+
+    { "id": "walkthrough", "layer": "delivery", "label": "The Recorded Walkthrough", "status": "build",
+      "x": 800, "y": 800, "w": 540, "h": 168, "cta": "About the voice",
+      "job": "Six modules, 15 to 20 minutes each, in Christian's voice. Pack and digital buyers both land here. Click a module.",
+      "popup": { "kicker": "Inside the Implementation Pack", "title": "The recorded walkthrough",
+        "body": [
+          "Six modules, 15 to 20 minutes each, one per section of the workbook.",
+          "Voice: an AI clone of Christian. The same voice as the audiobook and the short audio clips in the nurture emails.",
+          "Today the walkthrough happens live, for free, on a call your team gives away. Recorded, it is the product, and the call becomes a review of finished work."
+        ] },
+      "chips": { "x": 822, "y": 928, "w": 300, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "Module 1 of 6", "title": "Orientation", "body": [ "How to use the pack, and the 90-day calendar.", "Workbook: the whole pack, front to back." ] } },
+        { "n": 2, "popup": { "kicker": "Module 2 of 6", "title": "Purpose", "body": [ "The Purpose Finder and the three business objectives: risk management, cost and complexity reduction, revenue and customer trust.", "Workbook: Chapter 2, the Purpose Finder." ] } },
+        { "n": 3, "popup": { "kicker": "Module 3 of 6", "title": "Values", "body": [ "The Values Creator and where to integrate values: hiring, onboarding, performance reviews.", "Workbook: Chapter 3, the Values Creator." ] } },
+        { "n": 4, "popup": { "kicker": "Module 4 of 6", "title": "Roles", "body": [ "The org chart, the four RACI tables (Executive and Governance, Risk and Compliance, Security Operations, Product, IT), delegate and elevate.", "Workbook: Chapter 4, the Security Program RACI and the Security Program KPIs." ] } },
+        { "n": 5, "popup": { "kicker": "Module 5 of 6", "title": "Rhythms", "body": [ "The rhythm calendar, six meeting agendas (annual off-site, quarterly team review, IRC, IRB, weekly all-hands, weekly stand-up, 1-on-1), and the two Commander's tools.", "Workbook: Chapter 5, the Meeting Rhythm Agendas, the Commander's Critical Information Requirements and the Commander's Impact Filter." ] } },
+        { "n": 6, "popup": { "kicker": "Module 6 of 6", "title": "Goals and KPIs", "body": [ "The goal tree, the KPI table, what to do with the finished workbook, and the invitation to the review.", "Workbook: Goals and KPIs.", "This is one of the four doors into the Security Program Review." ] } }
+      ] } },
+
+    { "id": "core-nurture", "layer": "followup", "label": "Core Nurture", "status": "build",
+      "x": 430, "y": 1070, "w": 540, "h": 168,
+      "job": "Eight emails over three weeks, one per worksheet. Each ends on a single cell to fill in, with an optional short audio clip of Christian introducing it. Click an email.",
+      "chips": { "x": 452, "y": 1198, "w": 370, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "Core nurture, email 1 of 8", "title": "Welcome", "body": [ "What's in the box. Take the quiz." ] } },
+        { "n": 2, "popup": { "kicker": "Core nurture, email 2 of 8", "title": "Purpose", "body": [ "Ends on one cell: \"Which of the three objectives is your exec team really paying you for?\"" ] } },
+        { "n": 3, "popup": { "kicker": "Core nurture, email 3 of 8", "title": "Values", "body": [ "Ends on one cell: \"Which value would your team say you don't live?\"" ] } },
+        { "n": 4, "popup": { "kicker": "Core nurture, email 4 of 8", "title": "Org chart", "body": [ "Ends on one cell: \"Which box has no name in it?\"" ] } },
+        { "n": 5, "popup": { "kicker": "Core nurture, email 5 of 8", "title": "RACI, Risk and Compliance", "body": [ "Ends on one cell: \"Who is Responsible for SOC 2 and ISO? Is it the same overloaded person?\"" ] } },
+        { "n": 6, "popup": { "kicker": "Core nurture, email 6 of 8", "title": "RACI, Security Operations", "body": [ "Ends on one cell: \"Who owns penetration testing this year?\"" ] } },
+        { "n": 7, "popup": { "kicker": "Core nurture, email 7 of 8", "title": "Rhythms", "body": [ "Ends on one cell: \"Which audits and tests are actually on your calendar?\"" ] } },
+        { "n": 8, "popup": { "kicker": "Core nurture, email 8 of 8", "title": "KPIs", "body": [ "Ends on one cell: \"Can you report audit results to the board next quarter without a scramble?\"" ] } }
+      ] } },
+
+    { "id": "branch-engineer", "layer": "followup", "label": "Engineer or Technician", "status": "build",
+      "x": 60, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
+      "job": "Their compliance rows are the blanks. Three emails, closing on Compliance as a Service and fullCircle.",
+      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Engineer or Technician",
+        "body": [
+          "From your archetypes ebook. The Engineer \"dislikes compliance and bureaucracies\" and \"thrives when paired with GRC managers.\" The Technician \"took on security as an additional duty\" and \"will require a security manager or analyst as soon as feasible.\"",
+          "Three emails, then the review. The review goes to a Comply practitioner.",
+          "Every branch closes the same way: \"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\""
+        ] },
+      "chips": { "x": 77, "y": 1468, "w": 132, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "Engineer or Technician, email 1 of 3", "title": "Your compliance rows are the ones with blanks", "body": [ "Points at the Risk and Compliance table in their own RACI." ] } },
+        { "n": 2, "popup": { "kicker": "Engineer or Technician, email 2 of 3", "title": "What a GRC partner does for a technical leader", "body": [ "The pairing the ebook already recommends." ] } },
+        { "n": 3, "popup": { "kicker": "Engineer or Technician, email 3 of 3", "title": "Compliance as a Service and fullCircle, then book the review", "body": [ "\"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\"" ] } }
+      ] } },
+
+    { "id": "branch-grc", "layer": "followup", "label": "GRC Guru", "status": "build",
+      "x": 390, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
+      "job": "Their Security Operations rows are the gap. Three emails, closing on Armada.",
+      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "GRC Guru",
+        "body": [
+          "From your archetypes ebook. The GRC Guru \"lacks experience with tools and technology\" and \"may not have the expertise to manage or implement technical solutions.\"",
+          "Three emails, then the review. The review goes to an Armada practitioner.",
+          "Every branch closes the same way: \"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\""
+        ] },
+      "chips": { "x": 407, "y": 1468, "w": 132, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "GRC Guru, email 1 of 3", "title": "Your Security Operations rows are the gap", "body": [ "Penetration testing, red team, vulnerability management: the table their RACI leaves blank." ] } },
+        { "n": 2, "popup": { "kicker": "GRC Guru, email 2 of 3", "title": "What continuous testing looks like", "body": [ "The testing rhythm a GRC-led program is missing." ] } },
+        { "n": 3, "popup": { "kicker": "GRC Guru, email 3 of 3", "title": "Armada, then book the review", "body": [ "\"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\"" ] } }
+      ] } },
+
+    { "id": "branch-executive", "layer": "followup", "label": "Executive", "status": "build",
+      "x": 720, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
+      "job": "The MegaSaaS case study and the Platform.sh result. Three emails, closing on Optimize.",
+      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Executive",
+        "body": [
+          "From your archetypes ebook. The Executive \"may lack technical skills or compliance experience\" and is the best fit for \"organizations with multiple business units.\"",
+          "Three emails, then the review. The review goes to harmonization.",
+          "Every branch closes the same way: \"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\""
+        ] },
+      "chips": { "x": 737, "y": 1468, "w": 132, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "Executive, email 1 of 3", "title": "The MegaSaaS case study is you", "body": [ "Your own case study: SOC 2, ISO 27001, HITRUST, PCI, GDPR, engineers missing deadlines collecting audit evidence." ] } },
+        { "n": 2, "popup": { "kicker": "Executive, email 2 of 3", "title": "The Platform.sh 75% harmonization result", "body": [ "Platform.sh saved 75% by harmonizing SOC 2, PCI DSS and HIPAA." ] } },
+        { "n": 3, "popup": { "kicker": "Executive, email 3 of 3", "title": "Optimize (harmonization and fullCircle), then book the review", "body": [ "\"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\"" ] } }
+      ] } },
+
+    { "id": "branch-builder", "layer": "followup", "label": "Builder", "status": "build",
+      "x": 1050, "y": 1340, "w": 290, "h": 168, "cta": "Why this branch",
+      "job": "Getting a program off the ground. Three emails, closing on Comply.",
+      "popup": { "kicker": "Nurture branch, chosen by the quiz", "title": "Builder",
+        "body": [
+          "From your archetypes ebook. The Builder is the \"best fit for any organization with the goal of getting a security program off the ground,\" especially \"achieving certification.\"",
+          "Three emails, then the review. The review goes to a Comply practitioner.",
+          "Every branch closes the same way: \"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\""
+        ] },
+      "chips": { "x": 1067, "y": 1468, "w": 132, "h": 28, "items": [
+        { "n": 1, "popup": { "kicker": "Builder, email 1 of 3", "title": "The ISO 27001 goal tree in the workbook is your plan", "body": [ "They have already drawn the plan. This email tells them so." ] } },
+        { "n": 2, "popup": { "kicker": "Builder, email 2 of 3", "title": "Certification on a timeline", "body": [ "What the 90-day calendar becomes when certification is the goal." ] } },
+        { "n": 3, "popup": { "kicker": "Builder, email 3 of 3", "title": "Comply, then book the review", "body": [ "\"Bring your completed RACI to the review and we'll tell you what to do about the blanks.\"" ] } }
+      ] } },
+
+    { "id": "review", "layer": "convert", "label": "Security Program Review", "status": "reframe",
+      "x": 555, "y": 1610, "w": 290, "h": 168, "cta": "How it works",
+      "job": "45 minutes on Zoom with a risk3sixty practitioner. The completed RACI and rhythm calendar reviewed, a one-page gap summary, a recommended next step.",
+      "popup": { "kicker": "The backend door, reframed from the guided workshop", "title": "The Security Program Review",
+        "body": [
+          "Included: 45 minutes on Zoom with a risk3sixty practitioner reviewing the completed RACI and rhythm calendar, plus a one-page gap summary and recommended next step.",
+          "The reader has documented, in their own hand, the audits, frameworks and testing nobody owns. The review turns the blanks into a scoped engagement.",
+          "Four ways in: the QR code in the printed workbook, the end of walkthrough module 6, the final email of every archetype branch, and the pack thank-you page for people ready to move fast.",
+          "Booking: a short qualifying form (company size, frameworks in play, archetype pre-filled, optional upload of the completed RACI), then the calendar. Your HubSpot meetings scheduler, or a GHL calendar pushing to HubSpot.",
+          "Today the guided workshop is a free walkthrough of a free workbook for someone who has not filled it in. Same team, same hour, different conversation."
+        ] } },
+
+    { "id": "comply", "layer": "backend", "label": "Comply (ethOS)", "status": "exists",
+      "x": 225, "y": 1900, "w": 290, "h": 140, "cta": "The full list",
+      "job": "Audits and certifications, SOC 2 to FedRAMP, plus Compliance as a Service and multi-framework harmonization.",
+      "popup": { "kicker": "Backend engagement, already yours", "title": "Comply (ethOS)",
+        "body": [
+          "SOC 1, SOC 2, SOC 3, ISO 27001, ISO 27701, ISO 42001, ISO 22301, ISO 9001, PCI DSS, HITRUST, FedRAMP, CMMC advisory.",
+          "Includes Compliance as a Service and multi-framework harmonization.",
+          "Takes the Engineer, Technician and Builder reviews."
+        ] } },
+    { "id": "optimize", "layer": "backend", "label": "Optimize (fullCircle)", "status": "exists",
+      "x": 555, "y": 1900, "w": 290, "h": 140,
+      "job": "The GRC platform plus AI agents that automate evidence collection, vendor assessments and policy compliance." },
+    { "id": "secure", "layer": "backend", "label": "Secure (Armada)", "status": "exists",
+      "x": 885, "y": 1900, "w": 290, "h": 140,
+      "job": "Attack surface management, continuous penetration testing, red teaming." },
+
+    { "id": "pipeline", "layer": "pipeline", "label": "Pipeline", "status": "build",
+      "x": 100, "y": 2172, "w": 1200, "h": 110,
+      "job": "Seven stages in HubSpot, or GHL pushing to HubSpot, so you can read what a book sale is worth in engagements.",
+      "slots": { "x": 122, "y": 2240, "w": 1156, "h": 28, "items": [
+        { "label": "Book buyer", "status": "stage" },
+        { "label": "Pack buyer", "status": "stage" },
+        { "label": "Quiz completed", "status": "stage" },
+        { "label": "Review booked", "status": "stage" },
+        { "label": "Review completed", "status": "stage" },
+        { "label": "Proposal sent", "status": "stage" },
+        { "label": "Won", "status": "stage" }
+      ] } }
+  ],
+  "edges": [
+    { "a": "seed-list:b@0.35", "b": "sales-page:t@0.35" },
+    { "a": "meta-ads:b", "b": "sales-page:t@0.5", "via": [[535, 272], [205, 272]] },
+    { "a": "linkedin-ads:b", "b": "sales-page:t@0.65", "via": [[865, 304], [248.5, 304]] },
+
+    { "a": "sales-page:r", "b": "order-form:l" },
+    { "a": "order-form:r", "b": "one-click:l" },
+    { "a": "one-click:r", "b": "thank-you:l" },
+    { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
+    { "a": "one-click:b", "b": "downsell:t", "label": "if declined", "lx": 878, "ly": 497 },
+    { "a": "downsell:r", "b": "thank-you:b@0.5", "via": [[1195, 590]] },
+
+    { "a": "thank-you:b@0.3", "b": "what-ships:t", "via": [[1137, 740], [285, 740]], "label": "on purchase", "lx": 760, "ly": 714 },
+    { "a": "thank-you:b@0.3", "b": "what-downloads:t", "via": [[1137, 740], [615, 740]] },
+    { "a": "thank-you:b@0.3", "b": "walkthrough:t@0.5", "via": [[1137, 740], [1070, 740]] },
+
+    { "a": "what-ships:b", "b": "core-nurture:t@0.15", "via": [[285, 1020], [511, 1020]], "label": "every buyer", "lx": 330, "ly": 994 },
+    { "a": "what-downloads:b", "b": "core-nurture:t@0.3426" },
+    { "a": "walkthrough:b@0.5", "b": "core-nurture:t@0.85", "via": [[1070, 1020], [889, 1020]] },
+
+    { "a": "core-nurture:b@0.5", "b": "branch-engineer:t", "via": [[700, 1290], [205, 1290]], "label": "split by quiz result", "lx": 712, "ly": 1248 },
+    { "a": "core-nurture:b@0.5", "b": "branch-grc:t", "via": [[700, 1290], [535, 1290]] },
+    { "a": "core-nurture:b@0.5", "b": "branch-executive:t", "via": [[700, 1290], [865, 1290]] },
+    { "a": "core-nurture:b@0.5", "b": "branch-builder:t", "via": [[700, 1290], [1195, 1290]] },
+
+    { "a": "branch-engineer:b", "b": "review:t@0.2", "via": [[205, 1560], [613, 1560]] },
+    { "a": "branch-grc:b", "b": "review:t@0.4", "via": [[535, 1560], [671, 1560]] },
+    { "a": "branch-executive:b", "b": "review:t@0.6", "via": [[865, 1560], [729, 1560]] },
+    { "a": "branch-builder:b", "b": "review:t@0.8", "via": [[1195, 1560], [787, 1560]] },
+
+    { "a": "what-ships:l@0.5", "b": "review:l@0.5", "via": [[30, 884], [30, 1694]], "dashed": true, "label": "QR code in the workbook", "lx": 150, "ly": 1668 },
+    { "a": "walkthrough:r@0.5", "b": "review:r@0.5", "via": [[1370, 884], [1370, 1694]], "dashed": true, "label": "end of module 6", "lx": 1100, "ly": 1668 },
+
+    { "a": "review:b@0.3", "b": "comply:t@0.55", "via": [[642, 1830], [384.5, 1830]], "label": "Engineer, Technician, Builder", "lx": 400, "ly": 1804 },
+    { "a": "review:b@0.5", "b": "optimize:t", "label": "Executive", "lx": 712, "ly": 1800 },
+    { "a": "review:b@0.7", "b": "secure:t", "via": [[758, 1830], [1030, 1830]], "label": "GRC Guru", "lx": 930, "ly": 1804 }
+  ],
+  "offers": [
+    { "name": "The Book", "tag": "The front end", "status": "build",
+      "price": "$25 paperback", "price2": "$15 ebook",
+      "included": [ "Paperback or ebook, shipped by AccuTrack", "Six named endorsements on the page", "Email, shipping address and role captured" ],
+      "problem": "Replaces the Amazon link with a page that knows who bought." },
+    { "name": "The Audiobook", "tag": "Bump upgrade, one tick at checkout", "status": "build",
+      "price": "$40",
+      "included": [ "The full book, chaptered, in Christian's voice", "Listed on Audible as well" ],
+      "problem": "No reading time. Commutes and flights." },
+    { "name": "The STOS Implementation Pack", "tag": "One-click offer", "status": "build",
+      "price": "$250",
+      "included": [ "Printed workbook, in the same box as the book", "Six-module recorded walkthrough", "The seven editable Word tools", "A 90-day implementation calendar" ],
+      "problem": "The book says what a good team looks like. The pack gets it built in a quarter, with Christian guiding every worksheet." },
+    { "name": "The Digital Implementation Pack", "tag": "Downsell", "status": "build", "branch": "Shown only if the pack is declined",
+      "price": "$100",
+      "included": [ "The recorded walkthrough", "The digital workbook (PDF)", "The seven editable Word tools", "The 90-day calendar" ],
+      "problem": "For the buyer who wants to start tonight, or who balked at the price. No printing, no shipping." },
+    { "name": "The Security Program Review", "tag": "The backend door", "status": "reframe",
+      "price": "45 minutes",
+      "included": [ "A risk3sixty practitioner on Zoom", "The completed RACI and rhythm calendar reviewed", "A one-page gap summary and a recommended next step" ],
+      "problem": "The reader has written down the audits, frameworks and testing nobody owns. The review turns the blanks into a scoped engagement." }
+  ],
+  "routing": {
+    "columns": [ "Archetype", "In your ebook's words", "Where their RACI goes blank", "Service line", "Who takes the review" ],
+    "rows": [
+      [ "Executive", "\"may lack technical skills or compliance experience\"; best fit for \"organizations with multiple business units\"", "The MegaSaaS pattern: SOC 2, ISO 27001, HITRUST, PCI, GDPR, engineers missing deadlines collecting audit evidence", "Optimize: harmonization and fullCircle", "Harmonization" ],
+      [ "Engineer", "\"dislikes compliance and bureaucracies,\" \"thrives when paired with GRC managers\"", "The Risk and Compliance table", "Comply: Compliance as a Service and fullCircle", "Comply practitioner" ],
+      [ "Technician", "\"took on security as an additional duty,\" \"will require a security manager or analyst as soon as feasible\"", "The Risk and Compliance table", "Comply", "Comply practitioner" ],
+      [ "GRC Guru", "\"lacks experience with tools and technology,\" \"may not have the expertise to manage or implement technical solutions\"", "The Security Operations table: penetration testing, red team, vulnerability management", "Secure: Armada", "Armada practitioner" ],
+      [ "Builder", "\"best fit for any organization with the goal of getting a security program off the ground,\" especially \"achieving certification\"", "The ISO 27001 goal tree", "Comply", "Comply practitioner" ]
+    ]
+  },
+  "economics": {
+    "quote": "Six thousand a month buys you 100 security leaders who paid to read your book, roughly seven of whom sit down with your team every month, and the front end pays for itself in the expected case.",
+    "aov": {
+      "title": "Average order value per book buyer",
+      "note": "Book blended at $22 (70/30 paperback $25 and ebook $15). Bump $40, pack $250, digital downsell $100 offered to pack decliners.",
+      "columns": [ "", "Conservative", "Expected", "Strong" ],
+      "rows": [
+        [ "Audiobook bump, $40", "30% = $12", "35% = $14", "40% = $16" ],
+        [ "Implementation Pack, $250", "7% = $17.50", "11% = $27.50", "14% = $35" ],
+        [ "Digital Pack, $100 (decliners only)", "8% of 93% = $7", "10% of 89% = $9", "12% of 86% = $10" ]
+      ],
+      "total": [ "AOV", "$59", "$72", "$83" ],
+      "cpa": [ "Against a $60 CPA", "Breaks even", "$12 ahead per buyer", "$23 ahead per buyer" ]
+    },
+    "monthly": {
+      "title": "What $6,000 a month buys",
+      "note": "At a $60 CPA, that is 100 security leaders a month who bought the book and gave you their address and role.",
+      "columns": [ "", "Conservative", "Expected", "Strong" ],
+      "rows": [
+        [ "Front-end revenue", "$5,900", "$7,200", "$8,300" ],
+        [ "Front-end net vs spend", "-$100", "+$1,200", "+$2,300" ],
+        [ "Quizzes completed", "35", "50", "60" ],
+        [ "Reviews booked per month", "4", "7", "10" ],
+        [ "Proposals per month", "2", "4", "6" ],
+        [ "Engagements won per month", "0.4", "1.1", "2.1" ]
+      ],
+      "total": [ "Engagements per quarter", "1", "3", "6" ]
+    },
+    "notes": [
+      "Expected cost per book buyer: $40 to $80 on Meta for this audience, $80 to $150 with LinkedIn as the front door.",
+      "Rates behind the tables: sales page conversion 1.5% to 3.5% on cold Meta and 4% to 8% on retargeting and the seed list; quiz completion 35% to 60%; review booked 4% to 10% of all buyers; review to proposal 40% to 60%; proposal to won 25% to 35%. The nurture keeps working on the buyers who do not book.",
+      "AOV is not margin. Print, packing and AccuTrack shipping on the pack come off the top, and the plan carries a per-unit cost line once the print quote is in.",
+      "Further levers if needed: the pack to $300, a second bump (the Five CISO Archetypes package at $20), a shift in mix toward paperback.",
+      "One SOC 2 or ISO 27001 engagement per quarter pays for the year. Two makes it your cheapest channel. Read the CPA as cost per qualified conversation, not cost per book."
+    ]
+  },
+  "assets": {
+    "columns": [ "Asset", "Format", "Status", "Where it goes" ],
+    "rows": [
+      [ "STOS Workbook", "41-page designed PDF, landscape", "Exists, free", "Printed and bundled in the pack (portrait reformat for print)" ],
+      [ "Purpose Finder", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Values Creator", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Security Program RACI", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Security Program KPIs", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Meeting Rhythm Agendas", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Commander's Critical Information Requirements", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Commander's Impact Filter", "Editable .docx", "Exists, free", "Pack and digital pack" ],
+      [ "Five CISO Archetypes ebook", "24-page designed PDF", "Exists, free", "Source for the quiz and the nurture branches" ],
+      [ "CISO Archetype quiz", "Microsoft Forms, 5 minutes", "Exists, free", "Rebuilt in GHL for tagging" ],
+      [ "Guided workshop", "Free call with a risk3sixty professional", "Exists, unproductized", "Becomes the Security Program Review" ],
+      [ "Free first chapter", "HubSpot form", "Exists", "Retargeting seed list" ],
+      [ "Workbook download page", "HubSpot form", "Exists", "Existing STOS lead list" ],
+      [ "Audiobook", "AI voice clone of Christian", "Does not exist", "The bump upgrade" ],
+      [ "Recorded walkthrough", "Six modules, AI voice clone", "Does not exist", "The pack and the digital pack" ]
+    ]
+  },
+  "footer": "Prepared by Get Clients With Books for risk3sixty, 10 September 2026. A proposal, ahead of the call."
+}

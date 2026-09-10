@@ -138,6 +138,35 @@ Geometry deliberately lives here and not in the client files, so every client's
 map has the same layout and only the links change. After moving anything, load
 `?c=demo` and check nothing collides: the demo file has every node populated.
 
+## Proposal maps
+
+`docs/proposal.html?c=<slug>` is the same map drawn for a prospect, before
+anything is built. It reads `docs/proposals/<slug>.json`, and that one file
+carries everything: the nodes with their geometry, the wires, the pop-up copy,
+and the sections under the board (the offer stack, a routing table, the
+economics tables, and a collapsed asset inventory). Geometry lives in the
+prospect file on purpose, the opposite of the client maps: a prospect's funnel
+has its own shape, and one shared catalogue would have to grow an optional node
+for every idea ever pitched.
+
+Nothing on a proposal map opens a page, because nothing exists yet. A card or a
+chip with a `popup` opens it instead, in the same pop-up the client map uses for
+the bump. Chips are numbered (`n`) for a set of modules or emails, or labelled
+(`label`) for a set of ad hooks, and the pop-up pages through the set with the
+arrow keys.
+
+Status is a fixed vocabulary of three: `exists` (cyan, the client map's "live":
+already theirs), `build` (teal, its "in review": what we make) and `reframe`
+(dashed cyan: theirs, repurposed). Slots carry their own status, so a printed
+workbook can be teal inside a cyan card. The point of the colouring is that the
+board reads as mostly theirs already.
+
+`proposal.js` is a copy of the board code in `app.js` with the client-file
+logic taken out; `proposal.html` copies the style block from `index.html` and
+adds the section styles. Neither touches the client maps. To add a prospect,
+copy `docs/proposals/risk3sixty.json`, keep the 1400-wide board and the
+290 by 140 cards, and check nothing collides before sending the link.
+
 ## Known limits
 
 - Printing fits the board to the width of a landscape page. A board this tall
