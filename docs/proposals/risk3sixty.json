@@ -20,7 +20,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1110, "before": "followup", "text": "Break-even: $74 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
+    { "y": 1110, "before": "followup", "text": "Break-even: $75 expected AOV against a $60 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -240,12 +240,12 @@
       "note": "Book blended at $31 on a 50/30/20 mix of paperback $37, audiobook $29 and ebook $21. Bump $17, pack $250, digital downsell $100 offered to pack decliners.",
       "columns": [ "", "Conservative", "Expected", "Strong" ],
       "rows": [
-        [ "CISO the Dog bump, $17", "30% = $5.10", "35% = $5.95", "40% = $6.80" ],
+        [ "CISO the Dog bump, $17", "35% = $5.95", "40% = $6.80", "45% = $7.65" ],
         [ "Implementation Pack, $250", "7% = $17.50", "11% = $27.50", "14% = $35" ],
         [ "Digital Pack, $100 (decliners only)", "8% of 93% = $7", "10% of 89% = $9", "12% of 86% = $10" ]
       ],
-      "total": [ "AOV", "$61", "$74", "$83" ],
-      "cpa": [ "Against a $60 CPA", "$1 ahead per buyer", "$14 ahead per buyer", "$23 ahead per buyer" ]
+      "total": [ "AOV", "$62", "$75", "$84" ],
+      "cpa": [ "Against a $60 CPA", "$2 ahead per buyer", "$15 ahead per buyer", "$24 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for risk3sixty, 10 September 2026. A proposal, ahead of the call."
