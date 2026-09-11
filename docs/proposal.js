@@ -236,7 +236,8 @@
        can be read down the funnel row without opening anything. */
     if (n.price) {
       var pr = el('span', 'cprice');
-      pr.textContent = n.price;
+      /* A list of prices is one tier per line. */
+      pr.textContent = Array.isArray(n.price) ? n.price.join('\n') : n.price;
       card.appendChild(pr);
     }
     if (!n.terse || cls === 'scard') {

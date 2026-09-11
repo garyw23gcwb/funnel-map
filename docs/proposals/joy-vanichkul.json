@@ -69,7 +69,11 @@
       "y": 348,
       "w": 290,
       "h": 180,
-      "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
+      "price": [
+        "$21 ebook only",
+        "$29 audiobook bundle",
+        "$37 paperback bundle"
+      ],
       "job": "Three tiers. Card details captured here, for the first time."
     },
     {
