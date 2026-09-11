@@ -251,7 +251,7 @@
       "label": "Becoming Magnificent Retreat",
       "status": "client",
       "x": 225,
-      "y": 1500,
+      "y": 1600,
       "w": 290,
       "h": 156,
       "job": "Listed on her site among her curated experiences. Sold in a conversation with Joy."
@@ -262,7 +262,7 @@
       "label": "Intelligent Beauty Method",
       "status": "client",
       "x": 555,
-      "y": 1500,
+      "y": 1600,
       "w": 290,
       "h": 156,
       "job": "Her signature method. The book is its front end; the program is the help."
@@ -273,7 +273,7 @@
       "label": "Magnificent Collective",
       "status": "client",
       "x": 885,
-      "y": 1500,
+      "y": 1600,
       "w": 290,
       "h": 156,
       "job": "The private community, 2,343 members today. Sold straight from the emails and from the book itself."
@@ -326,12 +326,12 @@
       "a": "reader-portal:b",
       "b": [
         700,
-        1300
+        1220
       ],
       "via": [
         [
           545,
-          1300
+          1220
         ]
       ],
       "arrow": false
@@ -340,57 +340,54 @@
       "a": "nurture:b@0.8056",
       "b": [
         700,
-        1300
+        1220
       ],
       "via": [
         [
           1195,
-          1300
+          1220
         ]
       ],
-      "arrow": false,
-      "label": "invited from the emails",
-      "lx": 760,
-      "ly": 1274
+      "arrow": false
     },
     {
       "a": [
         700,
-        1300
+        1220
       ],
       "b": "retreat:t",
       "via": [
         [
           700,
-          1390
+          1500
         ],
         [
           370,
-          1390
+          1500
         ]
       ]
     },
     {
       "a": [
         700,
-        1300
+        1220
       ],
       "b": "method:t"
     },
     {
       "a": [
         700,
-        1300
+        1220
       ],
       "b": "collective:t",
       "via": [
         [
           700,
-          1390
+          1500
         ],
         [
           1030,
-          1390
+          1500
         ]
       ]
     }
