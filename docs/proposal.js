@@ -195,7 +195,15 @@
   /* A chip is a pop-up button: numbered (a module, an email) or labelled
      (an ad hook). Both keep their place in the node's set for prev/next. */
   function chipEl(n, c, i) {
-    if (!c.popup) return slotEl(c);
+    /* No pop-up: a labelled box, or a plain numbered marker for a set that
+       is only being counted (the emails, before they are written). */
+    if (!c.popup) {
+      if (c.label) return slotEl(c);
+      var m = el('span', 'chip');
+      m.textContent = c.n;
+      m.title = (n.label || '') + ' ' + c.n;
+      return m;
+    }
     var b = el('button', (c.label ? 'slot' : 'chip') + (c.status ? ' ' + c.status : ''));
     b.type = 'button';
     b.textContent = c.label || c.n;
