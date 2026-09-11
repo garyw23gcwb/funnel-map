@@ -19,7 +19,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 780, "before": "delivery", "text": "Break-even: $52 benchmark AOV against a $50 CPA. The ads are paid for before the first email goes out." }
+    { "y": 780, "before": "delivery", "text": "Break-even: $52 benchmark AOV against a $40 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -98,23 +98,21 @@
           "body": [ "The bundle on its own URL for readers who buy later from email, and three emails to anyone who opens that page and does not buy within 24 hours." ] } }
       ] } },
 
-    { "id": "backend", "layer": "backend", "label": "Joy's Programs", "status": "client",
-      "x": 350, "y": 1460, "w": 700, "h": 168, "cta": "The three doors",
-      "job": "All three exist today. The emails open each door, and a reader who has paid for the book twice walks through the one that fits. Click a program.",
-      "popup": { "kicker": "Backend, the paid client", "title": "Three doors, all hers already",
-        "body": [
-          "Her site lists six curated experiences. The funnel points at three: the Becoming Magnificent Retreat, the Intelligent Beauty Method, and the Magnificent Collective.",
-          "The Collective is the low door, sold straight from the emails. The Method and the Retreat are the high doors, sold in a conversation with Joy.",
-          "Every reader arriving here has bought the book, given an address, and read three weeks of Joy's emails."
-        ] },
-      "chips": { "x": 367, "y": 1590, "w": 666, "h": 28, "items": [
-        { "label": "Becoming Magnificent Retreat", "status": "client", "popup": { "kicker": "Program, already hers", "title": "Becoming Magnificent Retreat",
-          "body": [ "Listed on her site among her curated experiences. The high door: an in-person experience of the book, sold in a conversation with Joy." ] } },
-        { "label": "Intelligent Beauty Method", "status": "client", "popup": { "kicker": "Program, already hers", "title": "The Intelligent Beauty Method",
-          "body": [ "Her signature method, in her words \"a set of guidelines and principles combined with ancient practices and modern technologies.\" The book is its front end; the program is the help." ] } },
-        { "label": "Magnificent Collective", "status": "client", "popup": { "kicker": "Program, already hers", "title": "The Magnificent Collective",
-          "body": [ "The private community, 2,343 members today, entered from her site. The low door, sold straight from the emails to a reader who already feels part of the movement." ] } }
-      ] } }
+    { "id": "retreat", "layer": "backend", "label": "Becoming Magnificent Retreat", "status": "client",
+      "x": 225, "y": 1460, "w": 290, "h": 156, "cta": "The high door",
+      "job": "Listed on her site among her curated experiences. Sold in a conversation with Joy.",
+      "popup": { "kicker": "Program, already hers", "title": "Becoming Magnificent Retreat",
+        "body": [ "Listed on her site among her curated experiences. The high door: an in-person experience of the book, sold in a conversation with Joy.", "Every reader arriving here has bought the book, given an address, and read three weeks of Joy's emails." ] } },
+    { "id": "method", "layer": "backend", "label": "Intelligent Beauty Method", "status": "client",
+      "x": 555, "y": 1460, "w": 290, "h": 156, "cta": "The program",
+      "job": "Her signature method. The book is its front end; the program is the help.",
+      "popup": { "kicker": "Program, already hers", "title": "The Intelligent Beauty Method",
+        "body": [ "Her signature method, in her words \"a set of guidelines and principles combined with ancient practices and modern technologies.\" The book is its front end; the program is the help.", "Sold in a conversation with Joy, to a reader who has already paid for the book twice." ] } },
+    { "id": "collective", "layer": "backend", "label": "Magnificent Collective", "status": "client",
+      "x": 885, "y": 1460, "w": 290, "h": 156, "cta": "The low door",
+      "job": "The private community, 2,343 members today. Sold straight from the emails and from the book itself.",
+      "popup": { "kicker": "Program, already hers", "title": "The Magnificent Collective",
+        "body": [ "The private community, 2,343 members today, entered from her site. The low door, sold straight from the emails and from the book, to a reader who already feels part of the movement." ] } }
   ],
   "edges": [
     { "a": "ads:b", "b": "sales-page:t" },
@@ -124,7 +122,10 @@
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
     { "a": "thank-you:b", "b": "reader-portal:t", "via": [[1195, 860], [775, 860]] },
     { "a": "reader-portal:b", "b": "nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1124 },
-    { "a": "nurture:b@0.5", "b": "backend:t@0.5", "label": "invited from the emails", "lx": 712, "ly": 1394 }
+    { "a": "nurture:b@0.5", "b": "retreat:t", "via": [[700, 1410], [370, 1410]], "label": "invited from the emails", "lx": 712, "ly": 1368 },
+    { "a": "nurture:b@0.5", "b": "method:t" },
+    { "a": "nurture:b@0.5", "b": "collective:t", "via": [[700, 1410], [1030, 1410]] },
+    { "a": "reader-portal:r@0.5", "b": "collective:r@0.5", "via": [[1370, 1004], [1370, 1538]], "label": "in-book CTA", "lx": 1200, "ly": 1512 }
   ],
   "economics": {
     "title": "What a book buyer is worth",
@@ -138,7 +139,7 @@
         [ "Book, blended", "$31.40", "$31.40", "$31.40" ]
       ],
       "total": [ "AOV", "$47", "$52", "$56" ],
-      "cpa": [ "Against a $50 CPA", "$3 short per buyer", "$2 ahead per buyer", "$6 ahead per buyer" ]
+      "cpa": [ "Against a $40 CPA", "$7 ahead per buyer", "$12 ahead per buyer", "$16 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call."
