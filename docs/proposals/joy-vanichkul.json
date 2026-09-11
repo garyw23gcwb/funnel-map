@@ -53,10 +53,10 @@
         ],
         "cta": "Add" } },
 
-    { "id": "one-click", "layer": "book", "label": "The Companion Bundle", "status": "build", "tilt": 2,
+    { "id": "one-click", "layer": "book", "label": "Becoming Magnificent Companion Bundle", "status": "build", "tilt": 2,
       "x": 696, "y": 348, "w": 290, "h": 180, "cta": "See the offer", "price": "$97",
       "job": "One-click offer. Her four existing bonuses, sold as the practices behind the book. No card re-entry.",
-      "popup": { "kicker": "One-click offer, after checkout", "title": "The Companion Bundle",
+      "popup": { "kicker": "One-click offer, after checkout", "title": "Becoming Magnificent Companion Bundle",
         "price": "$97",
         "body": [
           "The Exclusive Journal Companion, the Virtual Meditation Guide, the Digital Affirmations and the Reader's Reflection Guide.",
@@ -77,7 +77,7 @@
           "body": [ "The digital edition her page already lists, delivered as a download the moment the order goes through." ] } },
         { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
           "body": [ "Her page promises an Audible version as a pre-order bonus. Here it is a format tier, delivered in the portal for the buyer on the $29 or $37 tier." ] } },
-        { "label": "Bundle", "status": "exists", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "The Companion Bundle",
+        { "label": "Bundle", "status": "exists", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "Becoming Magnificent Companion Bundle",
           "body": [ "The journal companion, meditation guide, affirmations and reflection guide, for bundle buyers. The assets exist today; the portal is where they live." ] } }
       ] } },
 
@@ -145,7 +145,7 @@
       "columns": [ "", "Conservative", "Benchmark", "Strong" ],
       "rows": [
         [ "Signed Collector Upgrade, $24", "35% = $8.40", "40% = $9.60", "45% = $10.80" ],
-        [ "The Companion Bundle, $97", "7% = $6.79", "11% = $10.67", "14% = $13.58" ],
+        [ "Becoming Magnificent Companion Bundle, $97", "7% = $6.79", "11% = $10.67", "14% = $13.58" ],
         [ "Book, blended", "$31.40", "$31.40", "$31.40" ]
       ],
       "total": [ "AOV", "$47", "$52", "$56" ],
