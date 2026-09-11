@@ -247,7 +247,7 @@
       "label": "Becoming Magnificent Retreat",
       "status": "client",
       "x": 225,
-      "y": 1488,
+      "y": 1450,
       "w": 290,
       "h": 156,
       "job": "Listed on your site among your curated experiences. Sold in a conversation with you."
@@ -258,7 +258,7 @@
       "label": "Intelligent Beauty Method",
       "status": "client",
       "x": 555,
-      "y": 1488,
+      "y": 1450,
       "w": 290,
       "h": 156,
       "job": "Your signature method. The book is its front end; the program is the help."
@@ -269,7 +269,7 @@
       "label": "Magnificent Collective",
       "status": "client",
       "x": 885,
-      "y": 1488,
+      "y": 1450,
       "w": 290,
       "h": 156,
       "job": "The private community, 2,343 members today. Sold straight from the emails and from the book itself."
@@ -364,11 +364,11 @@
       "via": [
         [
           700,
-          1388
+          1350
         ],
         [
           370,
-          1388
+          1350
         ]
       ]
     },
@@ -388,11 +388,11 @@
       "via": [
         [
           700,
-          1388
+          1350
         ],
         [
           1030,
-          1388
+          1350
         ]
       ]
     }
