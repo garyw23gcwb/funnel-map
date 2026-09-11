@@ -82,7 +82,7 @@
       "w": 290,
       "h": 160,
       "cta": "See the offer",
-      "price": "$24",
+      "price": "$24 TBC",
       "job": "Bump upgrade. One tick, above the order button.",
       "popup": {
         "kicker": "Bump upgrade, inside the order form",
@@ -93,7 +93,8 @@
           "The hardcover, signed, with a personal note from the author. It is the collector edition your site already offers at $48; as a bump it is the same upgrade for the $24 difference.",
           "For the reader who wants the book as an object, not just a read."
         ],
-        "cta": "Add"
+        "cta": "Add",
+        "note": "TBC"
       }
     },
     {
@@ -106,7 +107,7 @@
       "y": 348,
       "w": 290,
       "h": 180,
-      "price": "$97",
+      "price": "$97 TBC",
       "job": "One-click offer. Your four existing bonuses, sold as the practices behind the book. No card re-entry."
     },
     {
