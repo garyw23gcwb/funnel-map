@@ -13,13 +13,13 @@
     { "id": "traffic", "title": "Traffic" },
     { "id": "book", "title": "The Book Funnel" },
     { "id": "followup", "title": "Follow-up" },
-    { "id": "delivery", "title": "The Reader Portal" },
+    { "id": "delivery", "title": "The Secure Custom Reader Portal" },
     { "id": "backend", "title": "Backend" }
   ],
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 780, "before": "followup", "text": "Break-even: $52 benchmark AOV against a $40 CPA. The ads are paid for before the first email goes out." }
+    { "y": 780, "before": "followup", "text": "Break-even: $52 benchmark AOV against an estimated $40 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
@@ -69,7 +69,7 @@
       "x": 1050, "y": 348, "w": 290, "h": 180,
       "job": "Confirms the order and points the buyer to the reader portal." },
 
-    { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
+    { "id": "reader-portal", "layer": "delivery", "label": "Secure Custom Reader Portal", "status": "build",
       "x": 1010, "y": 960, "w": 330, "h": 168,
       "job": "Where the buyer logs in and downloads. The paperback ships; the rest is in here.",
       "chips": { "x": 1027, "y": 1090, "w": 296, "h": 28, "items": [
@@ -149,7 +149,7 @@
         [ "Book, blended", "$31.40", "$31.40", "$31.40" ]
       ],
       "total": [ "AOV", "$47", "$52", "$56" ],
-      "cpa": [ "Against a $40 CPA", "$7 ahead per buyer", "$12 ahead per buyer", "$16 ahead per buyer" ]
+      "cpa": [ "Against an estimated $40 CPA", "$7 ahead per buyer", "$12 ahead per buyer", "$16 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call."
