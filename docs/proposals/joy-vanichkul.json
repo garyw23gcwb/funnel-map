@@ -73,12 +73,9 @@
       "x": 1010, "y": 960, "w": 330, "h": 168,
       "job": "Where the buyer logs in and downloads. The paperback ships; the rest is in here.",
       "chips": { "x": 1027, "y": 1090, "w": 296, "h": 28, "items": [
-        { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already hers", "title": "The ebook",
-          "body": [ "The digital edition her page already lists, delivered as a download the moment the order goes through." ] } },
-        { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
-          "body": [ "Her page promises an Audible version as a pre-order bonus. Here it is a format tier, delivered in the portal for the buyer on the $29 or $37 tier." ] } },
-        { "label": "Bundle", "status": "exists", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "Becoming Magnificent Companion Bundle",
-          "body": [ "The journal companion, meditation guide, affirmations and reflection guide, for bundle buyers. The assets exist today; the portal is where they live." ] } }
+        { "label": "Ebook", "status": "exists", "title": "The digital edition her page already lists" },
+        { "label": "Audiobook", "status": "build", "title": "The audiobook, for the $29 and $37 tiers" },
+        { "label": "Bundle", "status": "exists", "title": "The Becoming Magnificent Companion Bundle, for bundle buyers" }
       ] } },
 
     { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
