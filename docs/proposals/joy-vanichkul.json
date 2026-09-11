@@ -428,5 +428,11 @@
       ]
     }
   },
-  "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call."
+  "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call.",
+  "logos": [
+    {
+      "src": "logo-authors-unite.png",
+      "alt": "Authors Unite"
+    }
+  ]
 }

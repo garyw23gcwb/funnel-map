@@ -41,10 +41,19 @@
   .wrap { max-width: 1520px; margin: 0 auto; padding: 40px 56px 72px; }
   .head { width: min(1400px, 100%); margin: 0 auto 20px; }
 
+  .logos { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
   .logo {
-    display: block; width: 178px; height: 28px; margin-bottom: 22px;
+    display: block; width: 178px; height: 28px;
     background: url(logo.svg) no-repeat left center / contain;
   }
+  /* A partner mark, when a prospect file names one. Supplied dark-on-light
+     and inverted here, so the same file serves both grounds. */
+  .logo2 {
+    display: block; height: 24px; width: auto;
+    padding-left: 22px; border-left: 1px solid var(--line);
+    filter: invert(1) brightness(1.08); opacity: 0.95;
+  }
+  @media (max-width: 620px) { .logo2 { height: 18px; } }
   .metarow {
     display: flex; flex-wrap: wrap; gap: 6px 40px;
     padding: 13px 0 14px; margin-bottom: 40px;
@@ -390,7 +399,7 @@
     .shell { overflow: visible; }
     .stack, .notice { display: none !important; }
     .head { margin-bottom: 10px; }
-    .logo { margin-bottom: 12px; }
+    .logos { margin-bottom: 12px; }
     h1 { font-size: 24px; }
     .sub, .legend { font-size: 11px; }
     details { border: 0; }
@@ -401,7 +410,9 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <span class="logo" role="img" aria-label="bookfunnels.io"></span>
+    <div class="logos" id="logos">
+      <span class="logo" role="img" aria-label="bookfunnels.io"></span>
+    </div>
     <div class="metarow" id="metarow">
       <span id="mKicker">Funnel proposal</span>
     </div>

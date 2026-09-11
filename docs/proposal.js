@@ -78,6 +78,13 @@
     }
     var by = el('span'); by.textContent = 'Get Clients With Books'; $('metarow').appendChild(by);
 
+    (cfg.logos || []).forEach(function (L) {
+      var im = el('img', 'logo2');
+      im.src = L.src;
+      im.alt = L.alt || '';
+      $('logos').appendChild(im);
+    });
+
     (cfg.legend || []).forEach(function (L) {
       var s = el('span');
       var i = el('i', 'dot ' + L.status);
