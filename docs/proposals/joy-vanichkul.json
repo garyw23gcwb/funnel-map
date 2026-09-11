@@ -19,7 +19,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 780, "before": "followup", "text": "Break-even: $52 benchmark AOV against an estimated $40 CPA. The ads are paid for before the first email goes out." }
+    { "y": 780, "before": "followup", "text": "Break-even: $52 benchmark AOV against an estimated $40 CPA. The ad acquisition cost is paid for before the reader logs in to download the book." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
