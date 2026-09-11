@@ -22,12 +22,12 @@
     { "y": 780, "before": "delivery", "text": "Break-even: $52 benchmark AOV against a $40 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
-    { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
+    { "id": "ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
       "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
-      "job": "Meta, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting.",
+      "job": "Instagram and Facebook ads, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting.",
       "popup": { "kicker": "Traffic, we build", "title": "Where the readers come from",
         "body": [
-          "Meta first. Lookalike audiences built from the 2,343 members of the Becoming Magnificent community and the early-reader list, plus retargeting for everyone who reaches the sales page and does not buy.",
+          "Instagram and Facebook. Lookalike audiences built from the 2,343 members of the Becoming Magnificent community and the early-reader list, plus retargeting for everyone who reaches the sales page and does not buy.",
           "The creative has a lot to lean on: a former supermodel and TEDx speaker with VOGUE, ELLE, Forbes, Harper's BAZAAR and InStyle behind her name, and the book's own line, \"Stop chasing beauty. Start remembering the radiance that has always been yours.\"",
           "Pre-orders run until the October 2026 release, so the ads can start before the book ships."
         ] } },
