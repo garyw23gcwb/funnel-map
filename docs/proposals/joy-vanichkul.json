@@ -55,7 +55,7 @@
       "y": 100,
       "w": 290,
       "h": 156,
-      "job": "Instagram and Facebook ads, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting."
+      "job": "Instagram and Facebook ads, pointed at the sales page. Your community and early-reader list are the seed for lookalikes and retargeting."
     },
     {
       "id": "sales-page",
@@ -67,7 +67,7 @@
       "y": 348,
       "w": 290,
       "h": 180,
-      "job": "Sales page on Bookfunnels. Her copy needs adjusting for conversion optimization; the checkout is new."
+      "job": "Sales page on Bookfunnels. Your copy needs adjusting for conversion optimization; the checkout is new."
     },
     {
       "id": "order-form",
@@ -99,7 +99,7 @@
         "price": "$24",
         "check": "YES! Upgrade my copy to the signed hardcover with a personal note from Joy for $24",
         "body": [
-          "The hardcover, signed, with a personal note from the author. It is the collector edition her site already offers at $48; as a bump it is the same upgrade for the $24 difference.",
+          "The hardcover, signed, with a personal note from the author. It is the collector edition your site already offers at $48; as a bump it is the same upgrade for the $24 difference.",
           "For the reader who wants the book as an object, not just a read."
         ],
         "cta": "Add"
@@ -116,7 +116,7 @@
       "w": 290,
       "h": 180,
       "price": "$97",
-      "job": "One-click offer. Her four existing bonuses, sold as the practices behind the book. No card re-entry."
+      "job": "One-click offer. Your four existing bonuses, sold as the practices behind the book. No card re-entry."
     },
     {
       "id": "thank-you",
@@ -148,7 +148,7 @@
           {
             "label": "Ebook",
             "status": "build",
-            "title": "The digital edition her page already lists"
+            "title": "The digital edition your page already lists"
           },
           {
             "label": "Audiobook",
@@ -172,7 +172,7 @@
       "y": 960,
       "w": 540,
       "h": 200,
-      "job": "Twenty-one emails over thirty days, in Joy's voice. Delivers the book, builds the relationship, then opens the doors to her programs.",
+      "job": "Twenty-one emails over thirty days, in your voice. Delivers the book, builds the relationship, then opens the doors to your programs.",
       "chips": {
         "x": 780,
         "y": 1084,
@@ -254,7 +254,7 @@
       "y": 1600,
       "w": 290,
       "h": 156,
-      "job": "Listed on her site among her curated experiences. Sold in a conversation with Joy."
+      "job": "Listed on your site among your curated experiences. Sold in a conversation with you."
     },
     {
       "id": "method",
@@ -265,7 +265,7 @@
       "y": 1600,
       "w": 290,
       "h": 156,
-      "job": "Her signature method. The book is its front end; the program is the help."
+      "job": "Your signature method. The book is its front end; the program is the help."
     },
     {
       "id": "collective",
