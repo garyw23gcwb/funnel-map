@@ -157,13 +157,13 @@
     {
       "id": "nurture",
       "layer": "followup",
-      "label": "Nurture Sequence",
+      "label": "Nurture and Conversion Email Sequence",
       "status": "build",
       "x": 760,
       "y": 960,
       "w": 540,
       "h": 200,
-      "job": "Twenty-one emails over thirty days, in your voice. Delivers the book, builds the relationship, then opens the doors to your programs.",
+      "job": "Professionally copywritten nurture and conversion email sequence, in your voice. Twenty-one emails over thirty days delivers the book, builds the relationship, then opens the doors to your programs.",
       "chips": {
         "x": 780,
         "y": 1084,
