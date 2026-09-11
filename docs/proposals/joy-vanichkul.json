@@ -18,6 +18,9 @@
   ],
   "groups": [],
   "sublabels": [],
+  "markers": [
+    { "y": 1110, "before": "followup", "text": "Break-even: $52 benchmark AOV against a $50 CPA. The ads are paid for before the first email goes out." }
+  ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
       "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
@@ -86,9 +89,9 @@
       ] } },
 
     { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
-      "x": 430, "y": 1130, "w": 540, "h": 168,
+      "x": 430, "y": 1190, "w": 540, "h": 168,
       "job": "Twenty-one emails over thirty days, in Joy's voice. Delivers the book, builds the relationship, then opens the doors to her programs. Click a track.",
-      "chips": { "x": 447, "y": 1260, "w": 506, "h": 28, "items": [
+      "chips": { "x": 447, "y": 1320, "w": 506, "h": 28, "items": [
         { "label": "21 emails over 30 days", "status": "build", "popup": { "kicker": "Nurture, every buyer", "title": "Twenty-one emails over thirty days",
           "body": [ "Written in Joy's voice from the book itself. The first week delivers and gets the reader reading; the middle builds the relationship around the Intelligent Beauty Method; the last week invites them into the Collective, the Method and the Retreat.", "Every buyer gets the sequence. Bundle buyers get their bundle emails woven in." ] } },
         { "label": "3 abandonment emails", "status": "build", "popup": { "kicker": "Nurture, bundle page", "title": "Three abandonment emails",
@@ -96,7 +99,7 @@
       ] } },
 
     { "id": "backend", "layer": "backend", "label": "Joy's Programs", "status": "client",
-      "x": 350, "y": 1400, "w": 700, "h": 168, "cta": "The three doors",
+      "x": 350, "y": 1460, "w": 700, "h": 168, "cta": "The three doors",
       "job": "All three exist today. The emails open each door, and a reader who has paid for the book twice walks through the one that fits. Click a program.",
       "popup": { "kicker": "Backend, the paid client", "title": "Three doors, all hers already",
         "body": [
@@ -104,7 +107,7 @@
           "The Collective is the low door, sold straight from the emails. The Method and the Retreat are the high doors, sold in a conversation with Joy.",
           "Every reader arriving here has bought the book, given an address, and read three weeks of Joy's emails."
         ] },
-      "chips": { "x": 367, "y": 1530, "w": 666, "h": 28, "items": [
+      "chips": { "x": 367, "y": 1590, "w": 666, "h": 28, "items": [
         { "label": "Becoming Magnificent Retreat", "status": "client", "popup": { "kicker": "Program, already hers", "title": "Becoming Magnificent Retreat",
           "body": [ "Listed on her site among her curated experiences. The high door: an in-person experience of the book, sold in a conversation with Joy." ] } },
         { "label": "Intelligent Beauty Method", "status": "client", "popup": { "kicker": "Program, already hers", "title": "The Intelligent Beauty Method",
@@ -121,7 +124,7 @@
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
     { "a": "thank-you:b", "b": "reader-portal:t", "via": [[1195, 800], [775, 800]] },
     { "a": "reader-portal:b", "b": "nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1064 },
-    { "a": "nurture:b@0.5", "b": "backend:t@0.5", "label": "invited from the emails", "lx": 712, "ly": 1334 }
+    { "a": "nurture:b@0.5", "b": "backend:t@0.5", "label": "invited from the emails", "lx": 712, "ly": 1394 }
   ],
   "economics": {
     "title": "What a book buyer is worth",
@@ -134,7 +137,8 @@
         [ "The Companion Bundle, $97", "7% = $6.79", "11% = $10.67", "14% = $13.58" ],
         [ "Book, blended", "$31.40", "$31.40", "$31.40" ]
       ],
-      "total": [ "AOV", "$47", "$52", "$56" ]
+      "total": [ "AOV", "$47", "$52", "$56" ],
+      "cpa": [ "Against a $50 CPA", "$3 short per buyer", "$2 ahead per buyer", "$6 ahead per buyer" ]
     }
   },
   "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call."
