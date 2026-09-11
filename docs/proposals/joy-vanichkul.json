@@ -127,7 +127,7 @@
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "one-click:r", "b": "thank-you:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
-    { "a": "thank-you:b", "b": "nurture:t", "via": [[1195, 880], [700, 880]], "label": "every buyer", "lx": 900, "ly": 854 },
+    { "a": "thank-you:b", "b": "nurture:t", "via": [[1195, 880], [700, 880]], "label": "Direct line of communication with every book buyer", "lx": 748, "ly": 854 },
     { "a": [1195, 880], "b": "reader-portal:t@0.5606" },
     { "a": "nurture:b@0.5", "b": "retreat:t", "via": [[700, 1300], [370, 1300]], "label": "invited from the emails", "lx": 712, "ly": 1318 },
     { "a": "nurture:b@0.5", "b": "method:t" },
