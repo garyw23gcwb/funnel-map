@@ -2,7 +2,7 @@
   "client": "Joy Vanichkul",
   "book": "Becoming Magnificent",
   "prepared": "11 September 2026",
-  "kicker": "Funnel proposal",
+  "kicker": "Bookfunnel proposal",
   "sub": "The existing AI-generated book site is a solid foundation but lacks the infrastructure to increase order value enough to make ads financially viable and sustainable. The Bookfunnel provides the infrastructure to capture readers, increase order value, and ascend into backend programs.",
   "legend": [
     {
@@ -327,11 +327,11 @@
       ]
     },
     {
-      "a": "nurture:b@0.5",
+      "a": "nurture:b@0.8056",
       "b": "retreat:t",
       "via": [
         [
-          1030,
+          1195,
           1390
         ],
         [
@@ -340,15 +340,15 @@
         ]
       ],
       "label": "invited from the emails",
-      "lx": 1042,
+      "lx": 973,
       "ly": 1300
     },
     {
-      "a": "nurture:b@0.5",
+      "a": "nurture:b@0.8056",
       "b": "method:t",
       "via": [
         [
-          1030,
+          1195,
           1390
         ],
         [
@@ -358,14 +358,23 @@
       ]
     },
     {
-      "a": "nurture:b@0.5",
+      "a": "nurture:b@0.8056",
       "b": "collective:t",
-      "via": []
+      "via": [
+        [
+          1195,
+          1390
+        ],
+        [
+          1030,
+          1390
+        ]
+      ]
     },
     {
       "a": "reader-portal:b",
       "b": [
-        1030,
+        1195,
         1250
       ],
       "via": [

@@ -68,7 +68,7 @@
     cfg.sublabels = cfg.sublabels || [];
     cfg.nodes.forEach(function (n) { NODE[n.id] = n; });
 
-    document.title = (cfg.client || 'Funnel') + ' | Funnel Proposal';
+    document.title = (cfg.client || 'Funnel') + ' | ' + (cfg.kicker || 'Funnel Proposal');
     $('hClient').textContent = cfg.client || 'Funnel Proposal';
     $('hBook').textContent = cfg.book || '';
     $('hSub').textContent = cfg.sub || '';
