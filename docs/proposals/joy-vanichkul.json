@@ -23,7 +23,7 @@
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
-      "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
+      "x": 60, "y": 100, "w": 290, "h": 156, "cta": "See the targeting",
       "job": "Instagram and Facebook ads, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting.",
       "popup": { "kicker": "Traffic, we build", "title": "Where the readers come from",
         "body": [
@@ -33,8 +33,8 @@
         ] } },
 
     { "id": "sales-page", "layer": "book", "label": "Becoming Magnificent", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
-      "job": "Sales page on Bookfunnels. Her copy carries over; the checkout is new.",
+      "x": 60, "y": 348, "w": 290, "h": 180, "cta": "See the page plan", "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
+      "job": "Sales page on Bookfunnels. Her copy needs adjusting for conversion optimization; the checkout is new.",
       "popup": { "kicker": "The book funnel, we build", "title": "Becoming Magnificent",
         "price": "$21", "note": "ebook only; $29 audiobook bundle; $37 paperback bundle",
         "body": [
@@ -45,11 +45,11 @@
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
-      "x": 378, "y": 348, "w": 290, "h": 164,
+      "x": 378, "y": 348, "w": 290, "h": 180,
       "job": "Three tiers: $21 ebook only, $29 audiobook bundle, $37 paperback bundle. Card details captured here, for the first time." },
 
     { "id": "order-bump", "layer": "book", "label": "Signed Collector Upgrade", "status": "build",
-      "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$24",
+      "x": 378, "y": 568, "w": 290, "h": 160, "cta": "See the offer", "price": "$24",
       "job": "Bump upgrade. One tick, above the order button.",
       "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Signed Collector Edition",
         "price": "$24",
@@ -61,7 +61,7 @@
         "cta": "Add" } },
 
     { "id": "one-click", "layer": "book", "label": "The Companion Bundle", "status": "build", "tilt": 2,
-      "x": 696, "y": 348, "w": 290, "h": 164, "cta": "See the offer", "price": "$97",
+      "x": 696, "y": 348, "w": 290, "h": 180, "cta": "See the offer", "price": "$97",
       "job": "One-click offer. Her four existing bonuses, sold as the practices behind the book. No card re-entry.",
       "popup": { "kicker": "One-click offer, after checkout", "title": "The Companion Bundle",
         "price": "$97",
@@ -73,7 +73,7 @@
         "cta": "Yes, add the bundle" } },
 
     { "id": "thank-you", "layer": "book", "label": "Order Confirmation", "status": "build",
-      "x": 1050, "y": 348, "w": 290, "h": 164,
+      "x": 1050, "y": 348, "w": 290, "h": 180,
       "job": "Confirms the order and points the buyer to the reader portal." },
 
     { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
