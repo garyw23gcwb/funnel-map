@@ -334,10 +334,7 @@
           1300
         ]
       ],
-      "arrow": false,
-      "label": "in-book CTA",
-      "lx": 560,
-      "ly": 1274
+      "arrow": false
     },
     {
       "a": "nurture:b@0.8056",
