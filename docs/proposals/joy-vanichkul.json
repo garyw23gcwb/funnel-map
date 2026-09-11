@@ -6,10 +6,6 @@
   "sub": "The existing AI-generated book site is a solid foundation but lacks the infrastructure to increase order value enough to make advertising financially viable and sustainable. Bookfunnels.io provides the infrastructure to capture readers, increase order value, and ascend into backend programs.",
   "legend": [
     {
-      "status": "exists",
-      "label": "Already hers"
-    },
-    {
       "status": "build",
       "label": "We build"
     },
@@ -151,7 +147,7 @@
         "items": [
           {
             "label": "Ebook",
-            "status": "exists",
+            "status": "build",
             "title": "The digital edition her page already lists"
           },
           {
@@ -161,7 +157,7 @@
           },
           {
             "label": "Bundle",
-            "status": "exists",
+            "status": "build",
             "title": "The Becoming Magnificent Companion Bundle, for bundle buyers"
           }
         ]
