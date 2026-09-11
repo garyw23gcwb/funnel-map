@@ -70,9 +70,9 @@
       "job": "Confirms the order and points the buyer to the reader portal." },
 
     { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
-      "x": 1010, "y": 920, "w": 330, "h": 168,
+      "x": 1010, "y": 960, "w": 330, "h": 168,
       "job": "Where the buyer logs in and downloads. The paperback ships; the rest is in here.",
-      "chips": { "x": 1027, "y": 1050, "w": 296, "h": 28, "items": [
+      "chips": { "x": 1027, "y": 1090, "w": 296, "h": 28, "items": [
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already hers", "title": "The ebook",
           "body": [ "The digital edition her page already lists, delivered as a download the moment the order goes through." ] } },
         { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
@@ -82,9 +82,9 @@
       ] } },
 
     { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
-      "x": 430, "y": 920, "w": 540, "h": 200,
+      "x": 430, "y": 960, "w": 540, "h": 200,
       "job": "Twenty-one emails over thirty days, in Joy's voice. Delivers the book, builds the relationship, then opens the doors to her programs.",
-      "chips": { "x": 450, "y": 1044, "w": 500, "h": 62, "items": [
+      "chips": { "x": 450, "y": 1084, "w": 500, "h": 62, "items": [
         { "n": 1 },
         { "n": 2 },
         { "n": 3 },
@@ -109,17 +109,17 @@
       ] } },
 
     { "id": "retreat", "layer": "backend", "label": "Becoming Magnificent Retreat", "status": "client",
-      "x": 225, "y": 1270, "w": 290, "h": 156, "cta": "The high door",
+      "x": 130, "y": 1380, "w": 290, "h": 156, "cta": "The high door",
       "job": "Listed on her site among her curated experiences. Sold in a conversation with Joy.",
       "popup": { "kicker": "Program, already hers", "title": "Becoming Magnificent Retreat",
         "body": [ "Listed on her site among her curated experiences. The high door: an in-person experience of the book, sold in a conversation with Joy.", "Every reader arriving here has bought the book, given an address, and read three weeks of Joy's emails." ] } },
     { "id": "method", "layer": "backend", "label": "Intelligent Beauty Method", "status": "client",
-      "x": 555, "y": 1270, "w": 290, "h": 156, "cta": "The program",
+      "x": 555, "y": 1380, "w": 290, "h": 156, "cta": "The program",
       "job": "Her signature method. The book is its front end; the program is the help.",
       "popup": { "kicker": "Program, already hers", "title": "The Intelligent Beauty Method",
         "body": [ "Her signature method, in her words \"a set of guidelines and principles combined with ancient practices and modern technologies.\" The book is its front end; the program is the help.", "Sold in a conversation with Joy, to a reader who has already paid for the book twice." ] } },
     { "id": "collective", "layer": "backend", "label": "Magnificent Collective", "status": "client",
-      "x": 885, "y": 1270, "w": 290, "h": 156, "cta": "The low door",
+      "x": 980, "y": 1380, "w": 290, "h": 156, "cta": "The low door",
       "job": "The private community, 2,343 members today. Sold straight from the emails and from the book itself.",
       "popup": { "kicker": "Program, already hers", "title": "The Magnificent Collective",
         "body": [ "The private community, 2,343 members today, entered from her site. The low door, sold straight from the emails and from the book, to a reader who already feels part of the movement." ] } }
@@ -130,12 +130,12 @@
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "one-click:r", "b": "thank-you:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
-    { "a": "thank-you:b", "b": "nurture:t", "via": [[1195, 860], [700, 860]], "label": "every buyer", "lx": 900, "ly": 834 },
-    { "a": [1195, 860], "b": "reader-portal:t", "dashed": true },
-    { "a": "nurture:b@0.5", "b": "retreat:t", "via": [[700, 1210], [370, 1210]], "label": "invited from the emails", "lx": 712, "ly": 1224 },
+    { "a": "thank-you:b", "b": "nurture:t", "via": [[1195, 880], [700, 880]], "label": "every buyer", "lx": 900, "ly": 854 },
+    { "a": [1195, 880], "b": "reader-portal:t" },
+    { "a": "nurture:b@0.5", "b": "retreat:t", "via": [[700, 1300], [275, 1300]], "label": "invited from the emails", "lx": 712, "ly": 1318 },
     { "a": "nurture:b@0.5", "b": "method:t" },
-    { "a": "nurture:b@0.5", "b": "collective:t", "via": [[700, 1210], [1030, 1210]] },
-    { "a": "reader-portal:b", "b": [700, 1160], "via": [[1175, 1160]], "arrow": false, "label": "in-book CTA", "lx": 900, "ly": 1132 }
+    { "a": "nurture:b@0.5", "b": "collective:t", "via": [[700, 1300], [1125, 1300]] },
+    { "a": "reader-portal:b", "b": [700, 1220], "via": [[1175, 1220]], "arrow": false, "label": "in-book CTA", "lx": 900, "ly": 1194 }
   ],
   "economics": {
     "title": "What a book buyer is worth",
