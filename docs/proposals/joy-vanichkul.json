@@ -1,0 +1,141 @@
+{
+  "client": "Joy Vanichkul",
+  "book": "Becoming Magnificent",
+  "prepared": "11 September 2026",
+  "kicker": "Funnel proposal",
+  "sub": "The book site, the pre-order page, the endorsements and the bonuses already exist. What is missing is a checkout that takes the money, an offer after it, and the emails that carry a reader from the book to Joy's programs.",
+  "legend": [
+    { "status": "exists", "label": "Already hers" },
+    { "status": "build", "label": "We build" },
+    { "status": "client", "label": "Paid client" }
+  ],
+  "layers": [
+    { "id": "traffic", "title": "Traffic" },
+    { "id": "book", "title": "The Book Funnel" },
+    { "id": "delivery", "title": "After Checkout" },
+    { "id": "followup", "title": "Follow-up" },
+    { "id": "backend", "title": "Backend" }
+  ],
+  "groups": [],
+  "sublabels": [],
+  "nodes": [
+    { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
+      "x": 60, "y": 108, "w": 290, "h": 140, "cta": "See the targeting",
+      "job": "Meta, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting.",
+      "popup": { "kicker": "Traffic, we build", "title": "Where the readers come from",
+        "body": [
+          "Meta first. Lookalike audiences built from the 2,343 members of the Becoming Magnificent community and the early-reader list, plus retargeting for everyone who reaches the sales page and does not buy.",
+          "The creative has a lot to lean on: a former supermodel and TEDx speaker with VOGUE, ELLE, Forbes, Harper's BAZAAR and InStyle behind her name, and the book's own line, \"Stop chasing beauty. Start remembering the radiance that has always been yours.\"",
+          "Pre-orders run until the October 2026 release, so the ads can start before the book ships."
+        ] } },
+
+    { "id": "sales-page", "layer": "book", "label": "Becoming Magnificent", "status": "build", "tilt": 1,
+      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$21 ebook, $29 audiobook, $37 paperback",
+      "job": "Sales page on Bookfunnels. Her copy carries over; the checkout is new.",
+      "popup": { "kicker": "The book funnel, we build", "title": "Becoming Magnificent",
+        "price": "$21", "note": "ebook; $29 with the audiobook; $37 paperback",
+        "body": [
+          "Her book site already carries the pitch, the ten-point summary, the author story and three endorsements: Michael Strasner, Vicki Kennedy and Eugenie Kuzmina. All of it moves onto a Bookfunnels page built to sell.",
+          "Today the pre-order form collects a name, an address and an edition, then says \"No payment will be collected at this time.\" The new page takes payment at the point of order and ships on release.",
+          "Three format tiers: ebook $21, audiobook $29, paperback $37. The signed hardcover becomes the bump.",
+          "Captures email and shipping address. Paperbacks shipped by AccuTrack."
+        ] } },
+
+    { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
+      "x": 378, "y": 348, "w": 290, "h": 164,
+      "job": "Three format tiers: $21 ebook, $29 audiobook, $37 paperback. Card details captured here, for the first time." },
+
+    { "id": "order-bump", "layer": "book", "label": "Signed Collector Upgrade", "status": "build",
+      "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$24",
+      "job": "Bump upgrade. One tick, above the order button.",
+      "popup": { "kicker": "Bump upgrade, inside the order form", "title": "The Signed Collector Edition",
+        "price": "$24",
+        "check": "YES! Upgrade my copy to the signed hardcover with a personal note from Joy for $24",
+        "body": [
+          "The hardcover, signed, with a personal note from the author. It is the collector edition her site already offers at $48; as a bump it is the same upgrade for the $24 difference.",
+          "For the reader who wants the book as an object, not just a read."
+        ],
+        "cta": "Add" } },
+
+    { "id": "one-click", "layer": "book", "label": "The Companion Bundle", "status": "build", "tilt": 2,
+      "x": 696, "y": 348, "w": 290, "h": 164, "cta": "See the offer", "price": "$97",
+      "job": "One-click offer. Her four existing bonuses, sold as the practices behind the book. No card re-entry.",
+      "popup": { "kicker": "One-click offer, after checkout", "title": "The Companion Bundle",
+        "price": "$97",
+        "body": [
+          "The Exclusive Journal Companion, the Virtual Meditation Guide, the Digital Affirmations and the Reader's Reflection Guide.",
+          "Today all four are given away as pre-order bonuses. As a bundle they are the offer for the reader who wants the practices, not just the pages, and the offer that makes the ad spend back.",
+          "Nothing to create. Package and wire."
+        ],
+        "cta": "Yes, add the bundle" } },
+
+    { "id": "thank-you", "layer": "book", "label": "Order Confirmation", "status": "build",
+      "x": 1050, "y": 348, "w": 290, "h": 164,
+      "job": "Confirms the order and points the buyer to the reader portal." },
+
+    { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
+      "x": 555, "y": 860, "w": 440, "h": 168,
+      "job": "Where the buyer logs in and downloads. The paperback ships; everything else is in here. Click a box.",
+      "chips": { "x": 572, "y": 990, "w": 406, "h": 28, "items": [
+        { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already hers", "title": "The ebook",
+          "body": [ "The digital edition her page already lists, delivered as a download the moment the order goes through." ] } },
+        { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
+          "body": [ "Her page promises an Audible version as a pre-order bonus. Here it is a format tier, delivered in the portal for the buyer on the $29 or $37 tier." ] } },
+        { "label": "Companion Bundle", "status": "exists", "popup": { "kicker": "In the reader portal, the one-click offer", "title": "The Companion Bundle",
+          "body": [ "The journal companion, meditation guide, affirmations and reflection guide, for bundle buyers. The assets exist today; the portal is where they live." ] } }
+      ] } },
+
+    { "id": "nurture", "layer": "followup", "label": "Nurture Sequence", "status": "build",
+      "x": 430, "y": 1130, "w": 540, "h": 168,
+      "job": "Twenty-one emails over thirty days, in Joy's voice. Delivers the book, builds the relationship, then opens the doors to her programs. Click a track.",
+      "chips": { "x": 447, "y": 1260, "w": 506, "h": 28, "items": [
+        { "label": "21 emails over 30 days", "status": "build", "popup": { "kicker": "Nurture, every buyer", "title": "Twenty-one emails over thirty days",
+          "body": [ "Written in Joy's voice from the book itself. The first week delivers and gets the reader reading; the middle builds the relationship around the Intelligent Beauty Method; the last week invites them into the Collective, the Method and the Retreat.", "Every buyer gets the sequence. Bundle buyers get their bundle emails woven in." ] } },
+        { "label": "3 abandonment emails", "status": "build", "popup": { "kicker": "Nurture, bundle page", "title": "Three abandonment emails",
+          "body": [ "The bundle on its own URL for readers who buy later from email, and three emails to anyone who opens that page and does not buy within 24 hours." ] } }
+      ] } },
+
+    { "id": "backend", "layer": "backend", "label": "Joy's Programs", "status": "client",
+      "x": 350, "y": 1400, "w": 700, "h": 168, "cta": "The three doors",
+      "job": "All three exist today. The emails open each door, and a reader who has paid for the book twice walks through the one that fits. Click a program.",
+      "popup": { "kicker": "Backend, the paid client", "title": "Three doors, all hers already",
+        "body": [
+          "Her site lists six curated experiences. The funnel points at three: the Becoming Magnificent Retreat, the Intelligent Beauty Method, and the Magnificent Collective.",
+          "The Collective is the low door, sold straight from the emails. The Method and the Retreat are the high doors, sold in a conversation with Joy.",
+          "Every reader arriving here has bought the book, given an address, and read three weeks of Joy's emails."
+        ] },
+      "chips": { "x": 367, "y": 1530, "w": 666, "h": 28, "items": [
+        { "label": "Becoming Magnificent Retreat", "status": "client", "popup": { "kicker": "Program, already hers", "title": "Becoming Magnificent Retreat",
+          "body": [ "Listed on her site among her curated experiences. The high door: an in-person experience of the book, sold in a conversation with Joy." ] } },
+        { "label": "Intelligent Beauty Method", "status": "client", "popup": { "kicker": "Program, already hers", "title": "The Intelligent Beauty Method",
+          "body": [ "Her signature method, in her words \"a set of guidelines and principles combined with ancient practices and modern technologies.\" The book is its front end; the program is the help." ] } },
+        { "label": "Magnificent Collective", "status": "client", "popup": { "kicker": "Program, already hers", "title": "The Magnificent Collective",
+          "body": [ "The private community, 2,343 members today, entered from her site. The low door, sold straight from the emails to a reader who already feels part of the movement." ] } }
+      ] } }
+  ],
+  "edges": [
+    { "a": "ads:b", "b": "sales-page:t" },
+    { "a": "sales-page:r", "b": "order-form:l" },
+    { "a": "order-form:r", "b": "one-click:l" },
+    { "a": "one-click:r", "b": "thank-you:l" },
+    { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
+    { "a": "thank-you:b", "b": "reader-portal:t", "via": [[1195, 800], [775, 800]] },
+    { "a": "reader-portal:b", "b": "nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1064 },
+    { "a": "nurture:b@0.5", "b": "backend:t@0.5", "label": "invited from the emails", "lx": 712, "ly": 1334 }
+  ],
+  "economics": {
+    "title": "What a book buyer is worth",
+    "aov": {
+      "title": "Average order value per book buyer",
+      "note": "Book blended on a 50/30/20 mix of paperback $37, audiobook $29 and ebook $21. Bump $24 and bundle $97 are proposed prices, to agree on the call.",
+      "columns": [ "", "Conservative", "Benchmark", "Strong" ],
+      "rows": [
+        [ "Signed Collector Upgrade, $24", "35% = $8.40", "40% = $9.60", "45% = $10.80" ],
+        [ "The Companion Bundle, $97", "7% = $6.79", "11% = $10.67", "14% = $13.58" ],
+        [ "Book, blended", "$31.40", "$31.40", "$31.40" ]
+      ],
+      "total": [ "AOV", "$47", "$52", "$56" ]
+    }
+  },
+  "footer": "Prepared by Get Clients With Books for Joy Vanichkul, 11 September 2026. A proposal, ahead of the call."
+}
