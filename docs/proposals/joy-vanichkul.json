@@ -23,21 +23,14 @@
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Meta Ads", "status": "build",
-      "x": 60, "y": 100, "w": 290, "h": 156, "cta": "See the targeting",
-      "job": "Instagram and Facebook ads, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting.",
-      "popup": { "kicker": "Traffic, we build", "title": "Where the readers come from",
-        "body": [
-          "Instagram and Facebook. Lookalike audiences built from the 2,343 members of the Becoming Magnificent community and the early-reader list, plus retargeting for everyone who reaches the sales page and does not buy.",
-          "The creative has a lot to lean on: a former supermodel and TEDx speaker with VOGUE, ELLE, Forbes, Harper's BAZAAR and InStyle behind her name, and the book's own line, \"Stop chasing beauty. Start remembering the radiance that has always been yours.\"",
-          "Pre-orders run until the October 2026 release, so the ads can start before the book ships."
-        ] } },
+      "x": 60, "y": 100, "w": 290, "h": 156,
+      "job": "Instagram and Facebook ads, pointed at the sales page. Her community and early-reader list are the seed for lookalikes and retargeting." },
 
-    { "id": "sales-page", "layer": "book", "label": "Becoming Magnificent", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 180, "cta": "See the page plan", "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
+    { "id": "sales-page", "layer": "book", "label": "Becoming Magnificent Book Sales Page", "status": "build", "tilt": 1,
+      "x": 60, "y": 348, "w": 290, "h": 180, "cta": "See the page plan",
       "job": "Sales page on Bookfunnels. Her copy needs adjusting for conversion optimization; the checkout is new.",
       "popup": { "kicker": "The book funnel, we build", "title": "Becoming Magnificent",
-        "price": "$21", "note": "ebook only; $29 audiobook bundle; $37 paperback bundle",
-        "body": [
+                "body": [
           "Her book site already carries the pitch, the ten-point summary, the author story and three endorsements: Michael Strasner, Vicki Kennedy and Eugenie Kuzmina. All of it moves onto a Bookfunnels page built to sell.",
           "Today the pre-order form collects a name, an address and an edition, then says \"No payment will be collected at this time.\" The new page takes payment at the point of order and ships on release.",
           "Three tiers: $21 ebook only, $29 audiobook bundle, $37 paperback bundle. The signed hardcover becomes the bump.",
@@ -45,8 +38,8 @@
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
-      "x": 378, "y": 348, "w": 290, "h": 180,
-      "job": "Three tiers: $21 ebook only, $29 audiobook bundle, $37 paperback bundle. Card details captured here, for the first time." },
+      "x": 378, "y": 348, "w": 290, "h": 180, "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
+      "job": "Three tiers. Card details captured here, for the first time." },
 
     { "id": "order-bump", "layer": "book", "label": "Signed Collector Upgrade", "status": "build",
       "x": 378, "y": 568, "w": 290, "h": 160, "cta": "See the offer", "price": "$24",
