@@ -1,20 +1,30 @@
-<!-- Paste this into a GoHighLevel page as a Custom HTML/JS element. Change
-     the src to the map you want: index.html?c=<slug> for a client map,
-     proposal.html?c=<slug> for a proposal. The map posts its own height
-     to the parent, so the iframe grows with it and never scrolls inside. -->
+<!-- Paste this into a GoHighLevel page as a Custom HTML/JS element, once,
+     on a page such as bookfunnels.io/proposal. The slug comes from the
+     page's own address: bookfunnels.io/proposal?c=joy-vanichkul shows Joy's
+     map, ?c=risk3sixty shows Christian's. With no slug it falls back to the
+     one named in DEFAULT below. For a client map (index.html) change PAGE.
+     The map posts its own height to the parent, so the iframe grows with
+     it and never scrolls inside. -->
 <div id="bfmap" style="width:100%;max-width:1520px;margin:0 auto;">
-  <iframe id="bfmap-frame"
-    src="https://garyw23gcwb.github.io/funnel-map/proposal.html?c=risk3sixty"
-    title="Funnel map"
+  <iframe id="bfmap-frame" title="Funnel map"
     style="display:block;width:100%;height:1200px;border:0;"
     loading="eager"></iframe>
 </div>
 <script>
-  window.addEventListener('message', function (ev) {
-    if (ev.origin !== 'https://garyw23gcwb.github.io') return;
-    var d = ev.data || {};
-    if (d.type === 'bfmap:height' && d.height) {
-      document.getElementById('bfmap-frame').style.height = (d.height + 8) + 'px';
-    }
-  });
+  (function () {
+    var BASE = 'https://garyw23gcwb.github.io/funnel-map/';
+    var PAGE = 'proposal.html';
+    var DEFAULT = 'joy-vanichkul';
+    var raw = (new URLSearchParams(location.search).get('c') || DEFAULT).toLowerCase();
+    var slug = /^[a-z0-9-]{1,64}$/.test(raw) ? raw : DEFAULT;
+    var frame = document.getElementById('bfmap-frame');
+    frame.src = BASE + PAGE + '?c=' + slug;
+    window.addEventListener('message', function (ev) {
+      if (ev.origin !== 'https://garyw23gcwb.github.io') return;
+      var d = ev.data || {};
+      if (d.type === 'bfmap:height' && d.height) {
+        frame.style.height = (d.height + 8) + 'px';
+      }
+    });
+  })();
 </script>
