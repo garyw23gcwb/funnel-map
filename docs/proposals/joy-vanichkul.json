@@ -19,7 +19,7 @@
   "groups": [],
   "sublabels": [],
   "markers": [
-    { "y": 1110, "before": "followup", "text": "Break-even: $52 benchmark AOV against a $50 CPA. The ads are paid for before the first email goes out." }
+    { "y": 780, "before": "delivery", "text": "Break-even: $52 benchmark AOV against a $50 CPA. The ads are paid for before the first email goes out." }
   ],
   "nodes": [
     { "id": "ads", "layer": "traffic", "label": "Ads", "status": "build",
@@ -77,9 +77,9 @@
       "job": "Confirms the order and points the buyer to the reader portal." },
 
     { "id": "reader-portal", "layer": "delivery", "label": "Reader Portal", "status": "build",
-      "x": 555, "y": 860, "w": 440, "h": 168,
+      "x": 555, "y": 920, "w": 440, "h": 168,
       "job": "Where the buyer logs in and downloads. The paperback ships; everything else is in here. Click a box.",
-      "chips": { "x": 572, "y": 990, "w": 406, "h": 28, "items": [
+      "chips": { "x": 572, "y": 1050, "w": 406, "h": 28, "items": [
         { "label": "Ebook", "status": "exists", "popup": { "kicker": "In the reader portal, already hers", "title": "The ebook",
           "body": [ "The digital edition her page already lists, delivered as a download the moment the order goes through." ] } },
         { "label": "Audiobook", "status": "build", "popup": { "kicker": "In the reader portal, the $29 and $37 tiers", "title": "The audiobook",
@@ -122,8 +122,8 @@
     { "a": "order-form:r", "b": "one-click:l" },
     { "a": "one-click:r", "b": "thank-you:l" },
     { "a": "order-form:b", "b": "order-bump:t", "dashed": true, "arrow": false },
-    { "a": "thank-you:b", "b": "reader-portal:t", "via": [[1195, 800], [775, 800]] },
-    { "a": "reader-portal:b", "b": "nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1064 },
+    { "a": "thank-you:b", "b": "reader-portal:t", "via": [[1195, 860], [775, 860]] },
+    { "a": "reader-portal:b", "b": "nurture:t@0.6389", "label": "every buyer", "lx": 787, "ly": 1124 },
     { "a": "nurture:b@0.5", "b": "backend:t@0.5", "label": "invited from the emails", "lx": 712, "ly": 1394 }
   ],
   "economics": {
