@@ -33,20 +33,20 @@
         ] } },
 
     { "id": "sales-page", "layer": "book", "label": "Becoming Magnificent", "status": "build", "tilt": 1,
-      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$21 ebook, $29 audiobook, $37 paperback",
+      "x": 60, "y": 348, "w": 290, "h": 164, "cta": "See the page plan", "price": "$21 ebook only, $29 audiobook bundle, $37 paperback bundle",
       "job": "Sales page on Bookfunnels. Her copy carries over; the checkout is new.",
       "popup": { "kicker": "The book funnel, we build", "title": "Becoming Magnificent",
-        "price": "$21", "note": "ebook; $29 with the audiobook; $37 paperback",
+        "price": "$21", "note": "ebook only; $29 audiobook bundle; $37 paperback bundle",
         "body": [
           "Her book site already carries the pitch, the ten-point summary, the author story and three endorsements: Michael Strasner, Vicki Kennedy and Eugenie Kuzmina. All of it moves onto a Bookfunnels page built to sell.",
           "Today the pre-order form collects a name, an address and an edition, then says \"No payment will be collected at this time.\" The new page takes payment at the point of order and ships on release.",
-          "Three format tiers: ebook $21, audiobook $29, paperback $37. The signed hardcover becomes the bump.",
+          "Three tiers: $21 ebook only, $29 audiobook bundle, $37 paperback bundle. The signed hardcover becomes the bump.",
           "Captures email and shipping address. Paperbacks shipped by AccuTrack."
         ] } },
 
     { "id": "order-form", "layer": "book", "label": "Order Form", "status": "build",
       "x": 378, "y": 348, "w": 290, "h": 164,
-      "job": "Three format tiers: $21 ebook, $29 audiobook, $37 paperback. Card details captured here, for the first time." },
+      "job": "Three tiers: $21 ebook only, $29 audiobook bundle, $37 paperback bundle. Card details captured here, for the first time." },
 
     { "id": "order-bump", "layer": "book", "label": "Signed Collector Upgrade", "status": "build",
       "x": 378, "y": 552, "w": 290, "h": 160, "cta": "See the offer", "price": "$24",
@@ -131,7 +131,7 @@
     "title": "What a book buyer is worth",
     "aov": {
       "title": "Average order value per book buyer",
-      "note": "Book blended on a 50/30/20 mix of paperback $37, audiobook $29 and ebook $21. Bump $24 and bundle $97 are proposed prices, to agree on the call.",
+      "note": "Book blended on a 50/30/20 mix of paperback bundle $37, audiobook bundle $29 and ebook only $21. Bump $24 and bundle $97 are proposed prices, to agree on the call.",
       "columns": [ "", "Conservative", "Benchmark", "Strong" ],
       "rows": [
         [ "Signed Collector Upgrade, $24", "35% = $8.40", "40% = $9.60", "45% = $10.80" ],
