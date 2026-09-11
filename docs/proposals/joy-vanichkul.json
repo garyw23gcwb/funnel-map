@@ -4,16 +4,7 @@
   "prepared": "11 September 2026",
   "kicker": "Bookfunnel proposal",
   "sub": "Becoming Magnificent is perfectly positioned for paid advertising to the Bookfunnels model. The existing AI-generated book site is a solid foundation but lacks the infrastructure to increase order value enough to make advertising financially viable and sustainable. Bookfunnels.io provides the infrastructure to capture readers, increase order value, and ascend into backend programs.",
-  "legend": [
-    {
-      "status": "build",
-      "label": "We build"
-    },
-    {
-      "status": "client",
-      "label": "Paid client"
-    }
-  ],
+  "legend": [],
   "layers": [
     {
       "id": "traffic",
