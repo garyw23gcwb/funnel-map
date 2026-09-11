@@ -323,42 +323,72 @@
       ]
     },
     {
+      "a": "reader-portal:b",
+      "b": [
+        700,
+        1300
+      ],
+      "via": [
+        [
+          545,
+          1300
+        ]
+      ],
+      "arrow": false,
+      "label": "in-book CTA",
+      "lx": 560,
+      "ly": 1274
+    },
+    {
       "a": "nurture:b@0.8056",
-      "b": "retreat:t",
+      "b": [
+        700,
+        1300
+      ],
       "via": [
         [
           1195,
+          1300
+        ]
+      ],
+      "arrow": false,
+      "label": "invited from the emails",
+      "lx": 760,
+      "ly": 1274
+    },
+    {
+      "a": [
+        700,
+        1300
+      ],
+      "b": "retreat:t",
+      "via": [
+        [
+          700,
           1390
         ],
         [
           370,
           1390
         ]
-      ],
-      "label": "invited from the emails",
-      "lx": 973,
-      "ly": 1300
-    },
-    {
-      "a": "nurture:b@0.8056",
-      "b": "method:t",
-      "via": [
-        [
-          1195,
-          1390
-        ],
-        [
-          700,
-          1390
-        ]
       ]
     },
     {
-      "a": "nurture:b@0.8056",
+      "a": [
+        700,
+        1300
+      ],
+      "b": "method:t"
+    },
+    {
+      "a": [
+        700,
+        1300
+      ],
       "b": "collective:t",
       "via": [
         [
-          1195,
+          700,
           1390
         ],
         [
@@ -366,23 +396,6 @@
           1390
         ]
       ]
-    },
-    {
-      "a": "reader-portal:b",
-      "b": [
-        1195,
-        1250
-      ],
-      "via": [
-        [
-          545,
-          1250
-        ]
-      ],
-      "arrow": false,
-      "label": "in-book CTA",
-      "lx": 700,
-      "ly": 1224
     }
   ],
   "economics": {
