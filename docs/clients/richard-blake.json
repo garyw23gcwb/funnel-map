@@ -77,15 +77,15 @@
       "off": true
     },
     "file-digital": {
-      "status": "soon",
-      "label": "Audiobook",
-      "title": "The audiobook"
-    },
-    "file-audio": {
       "status": "live",
       "url": "https://readers.cutoffbook.com",
       "label": "Ebook",
       "title": "The ebook"
+    },
+    "file-audio": {
+      "status": "soon",
+      "label": "Audiobook",
+      "title": "The audiobook"
     },
     "file-bump": {
       "status": "live",
