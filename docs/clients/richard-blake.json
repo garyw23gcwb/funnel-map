@@ -35,7 +35,7 @@
     },
     "email-sequence": {
       "status": "soon",
-      "job": "Ten emails. Builds the relationship, then sends readers back to Video 1."
+      "job": "Ten emails that build the relationship and send readers back to Video 1."
     },
     "plan-page": {
       "off": true
@@ -162,7 +162,7 @@
   ],
   "bonusSellsCourse": true,
   "layout": {
-    "boardW": 1205,
+    "boardW": 1435,
     "nodes": {
       "ads": {
         "x": 60,
@@ -178,7 +178,7 @@
         "job": "His own audience, sent from his posts."
       },
       "outside-readers": {
-        "x": 995,
+        "x": 1225,
         "y": 95,
         "w": 150,
         "h": 70,
@@ -209,26 +209,26 @@
         "y": 1140
       },
       "reader-portal": {
-        "x": 565,
-        "y": 1140,
+        "x": 765,
+        "y": 1040,
         "slots": {
-          "x": 582,
-          "y": 1270
+          "x": 782,
+          "y": 1170
         }
       },
       "rb-optin": {
-        "x": 895,
-        "y": 1140
+        "x": 1105,
+        "y": 1040
       },
       "email-sequence": {
-        "x": 765,
-        "y": 910,
-        "w": 270,
-        "h": 190
+        "x": 565,
+        "y": 850,
+        "w": 500,
+        "h": 160
       },
       "welcome-email": {
         "x": 565,
-        "y": 1010,
+        "y": 1040,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -237,8 +237,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 846,
-        "y": 1340,
+        "x": 1056,
+        "y": 1240,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -248,10 +248,10 @@
       }
     },
     "chips": {
-      "x": 785,
-      "y": 990,
-      "w": 230,
-      "h": 62,
+      "x": 585,
+      "y": 922,
+      "w": 460,
+      "h": 28,
       "count": 10
     },
     "edges": [
@@ -305,43 +305,49 @@
         "b": "newsletter:t"
       },
       {
-        "a": "confirmation:r@0.25",
-        "b": "email-sequence:l@0.342"
+        "a": "confirmation:r@0.15",
+        "b": "email-sequence:l@0.694"
       },
       {
-        "a": "confirmation:r@0.75",
+        "a": "confirmation:r@0.964",
         "b": "welcome-email:l"
       },
       {
-        "a": "welcome-email:b",
-        "b": "reader-portal:t@0.2586"
+        "a": "welcome-email:r",
+        "b": "reader-portal:l@0.208"
       },
       {
         "a": "reader-portal:r@0.4167",
         "b": "rb-optin:l"
       },
       {
-        "a": "outside-readers:b",
-        "b": "rb-optin:t@0.66"
+        "a": "email-sequence:r@0.5",
+        "b": "rb-optin:t@0.283",
+        "via": [
+          [
+            1180,
+            930
+          ]
+        ]
       },
       {
-        "a": "email-sequence:b@0.85",
-        "b": "rb-optin:t@0.374"
+        "a": "outside-readers:b",
+        "b": "rb-optin:t@0.739"
       },
       {
         "a": "rb-optin:b@0.0981",
         "b": "sg-welcome:t",
         "label": "upgrade",
-        "lx": 931,
-        "ly": 1298
+        "lx": 1141,
+        "ly": 1198
       },
       {
         "a": "sg-welcome:l",
         "b": "reader-portal:b@0.79",
         "via": [
           [
-            794,
-            1375
+            994,
+            1275
           ]
         ]
       }
