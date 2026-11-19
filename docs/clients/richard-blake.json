@@ -220,7 +220,7 @@
       },
       "newsletter": {
         "x": 1285,
-        "y": 520
+        "y": 680
       },
       "reader-portal": {
         "x": 310,
@@ -340,11 +340,11 @@
         "b": "newsletter:t"
       },
       {
-        "a": "confirmation:b@0.1",
+        "a": "confirmation:b",
         "b": "welcome-email:t",
         "via": [
           [
-            1244,
+            1360,
             640
           ],
           [
