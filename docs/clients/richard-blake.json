@@ -122,9 +122,10 @@
       "label": "Solid Ground Welcome"
     },
     "sg-confirm": {
-      "status": "soon",
+      "status": "live",
       "label": "Solid Ground Confirmation",
-      "job": "Confirms the Solid Ground order and points the reader to the course."
+      "job": "Confirms the Solid Ground order and points the reader to the course.",
+      "url": "https://cutoffbook.com/course-confirmation"
     }
   },
   "emails": [
