@@ -119,7 +119,7 @@
     },
     "sg-welcome": {
       "status": "soon",
-      "label": "Solid Ground Welcome"
+      "label": "Course Welcome Email"
     },
     "sg-confirm": {
       "status": "live",
@@ -251,7 +251,7 @@
         "h": 70,
         "terse": true,
         "layer": "followup",
-        "label": "Solid Ground Welcome",
+        "label": "Course Welcome Email",
         "job": "Sent when a reader upgrades from Video 1."
       },
       "sg-confirm": {
