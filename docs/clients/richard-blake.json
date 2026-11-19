@@ -77,18 +77,21 @@
       "off": true
     },
     "file-digital": {
-      "off": true
-    },
-    "file-audio": {
       "status": "soon",
       "label": "Audiobook",
       "title": "The audiobook, the main purchase"
     },
-    "file-bump": {
+    "file-audio": {
       "status": "live",
       "url": "https://readers.cutoffbook.com",
       "label": "Ebook",
       "title": "The ebook, the order bump"
+    },
+    "file-bump": {
+      "status": "live",
+      "url": "https://readers.cutoffbook.com",
+      "label": "Solid Ground",
+      "title": "Solid Ground, the six-week course, unlocked for one-click buyers"
     }
   },
   "emails": [
