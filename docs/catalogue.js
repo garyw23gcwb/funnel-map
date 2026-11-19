@@ -34,6 +34,9 @@ window.FUNNEL_CATALOGUE = (function () {
      of the flow reads from its own shape. These titles are still used as
      the headings in the narrow-screen list view. */
   var LAYERS = [
+    /* Before the book is on sale. Sits above the funnel on the board,
+       because it happens first. */
+    { id: 'prelaunch', title: 'Before Launch' },
     { id: 'traffic',  title: 'Traffic' },
     { id: 'book',     title: 'The Book Funnel' },
     { id: 'delivery', title: 'Delivery' },
@@ -47,6 +50,24 @@ window.FUNNEL_CATALOGUE = (function () {
   ];
 
   var NODES = [
+    /* The waitlist run, above the funnel because it happens before it. Two
+       traffic sources converge on one opt-in, and what comes out the far end
+       is a list of people waiting on the day the book opens. Optional
+       throughout: a client with no launch ahead of them gets none of it, and
+       no empty band over their map. */
+    { id: 'wl-ads', layer: 'prelaunch', label: 'Waitlist Ads', x: A, y: -540, w: CW, h: CH, optional: true,
+      job: 'Paid traffic pointed at the waitlist, running before the book is on sale.' },
+    { id: 'wl-social', layer: 'prelaunch', label: 'Social Media', x: B, y: -540, w: CW, h: CH, optional: true,
+      job: 'Her own audience, sent to the same page from her own posts.' },
+    { id: 'wl-optin', layer: 'prelaunch', label: 'Waitlist Opt-in', x: P, y: -320, w: CW, h: CH, optional: true,
+      job: 'Collects emails before launch, against first access.' },
+    { id: 'wl-confirm', layer: 'prelaunch', label: 'Waitlist Confirmation', x: Q, y: -320, w: CW, h: CH, optional: true,
+      job: 'Confirms the spot and sets the launch expectation.' },
+    /* The point of the whole band: on launch day this is a list of people
+       who already asked for the book, not an audience to be found. */
+    { id: 'database', layer: 'prelaunch', label: 'The List', x: S, y: -320, w: CW, h: CH, optional: true, tilt: 1,
+      job: 'Everyone who put their name down, waiting for the day it opens.' },
+
     /* Wide enough to hold the ten ad chips inside it, and left aligned so
        the arrow drops straight into the sales page below. `holds` names the
        flag in the client file that fills it; without the chips it falls back
@@ -140,16 +161,12 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'backend-offer', layer: 'convert', label: 'Backend Offer', x: S, y: 1628, w: CW, h: CH, tilt: 1,
       job: 'Your core service, sold to a reader who has already paid you twice.' },
 
-    /* What is left down here is the traffic that does not come through the
-       book at all: a plan sold on its own, and a list built before launch. */
+    /* What is left down here is the one path that does not come through the
+       book at all: the plan sold on its own. */
     { id: 'sip-page', layer: 'side', label: 'SIP Sales Page', x: P, y: 1908, w: CW, h: 132,
       job: 'Sells the plan on its own, with the survey that builds it.' },
     { id: 'sip-confirm', layer: 'side', label: 'SIP Confirmation', x: P, y: 2072, w: CW, h: 132,
-      job: 'Sends the buyer straight into the survey.' },
-    { id: 'wl-optin', layer: 'side', label: 'Waitlist Opt-in', x: Q, y: 1908, w: CW, h: 132,
-      job: 'Collects emails before launch, against first access.' },
-    { id: 'wl-confirm', layer: 'side', label: 'Waitlist Confirmation', x: Q, y: 2072, w: CW, h: 132,
-      job: 'Confirms the spot and sets the launch expectation.' }
+      job: 'Sends the buyer straight into the survey.' }
   ];
 
   /* The frame is drawn at the size the columns actually shown need, so the
@@ -160,8 +177,7 @@ window.FUNNEL_CATALOGUE = (function () {
   ];
 
   var SUBLABELS = [
-    { text: 'Standalone SIP', x: P, y: 1884, needs: ['sip-page', 'sip-confirm'] },
-    { text: 'Waitlist',       x: Q, y: 1884, needs: ['wl-optin', 'wl-confirm'] }
+    { text: 'Standalone SIP', x: P, y: 1884, needs: ['sip-page', 'sip-confirm'] }
   ];
 
   /* Both chip strips sit inside their card. The ad strip is wide enough for
@@ -176,6 +192,17 @@ window.FUNNEL_CATALOGUE = (function () {
      changes with what it holds. `via` holds waypoints in board coordinates.
      An edge is drawn only if both nodes are shown. */
   var EDGES = [
+    /* Before launch: two sources into one opt-in, then the list that comes
+       out of it drops into the funnel on the day the book opens. The drop
+       runs down the right and turns in above the sales page, clearing the
+       ads card rather than cutting through it. */
+    { a: 'wl-ads:b',           b: 'wl-optin:t@0.35', via: [[205, -360], [326, -360]] },
+    { a: 'wl-social:b',        b: 'wl-optin:t@0.65', via: [[535, -360], [414, -360]] },
+    { a: 'wl-optin:r',         b: 'wl-confirm:l' },
+    { a: 'wl-confirm:r',       b: 'database:l' },
+    { a: 'database:b',         b: 'sales-page:t@0.83', via: [[1030, 250], [301, 250]],
+      label: 'on launch day', lx: 470, ly: 224 },
+
     /* Fixed at 145px so it drops into the middle of the sales page below
        whether the ads card is at its full width or its compact one. */
     { a: 'ads:b@+145',         b: 'sales-page:t' },

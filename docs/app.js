@@ -112,6 +112,12 @@
      not-yet without labouring it. */
   var quietSoon = false;
 
+  /* Everything before launch sits above the funnel proper, at negative y,
+     because it happens first and the funnel's own coordinates are fixed.
+     The board is grown upwards by this much when such a node is shown, so
+     no other client's geometry has to move to make room. */
+  var OFFSET = 0;
+
   function stateOf(cfg, id) {
     var c = cfg.nodes[id];
     /* Nodes marked optional stay hidden unless a client file mentions them,
@@ -177,7 +183,6 @@
        the board height all follow it. */
     if (cfg.layout) addLayoutNodes(cfg.layout);
 
-
     var title = cfg.client ? cfg.client : 'Funnel Ecosystem Map';
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
     $('hClient').textContent = title;
@@ -214,6 +219,12 @@
     });
     if (cfg.layout) applyLayout(cfg.layout);
 
+    /* Grow upwards for anything sitting above the funnel, keeping the same
+       60px of air over the topmost card that the funnel itself gets. */
+    var highest = 0;
+    NODES.forEach(function (n) { if (shown[n.id]) highest = Math.min(highest, n.y); });
+    OFFSET = highest < 0 ? -highest + 60 : 0;
+
     /* Size the board to what this client actually has, so switching whole
        sections off shortens the page instead of leaving empty space. */
     var lowest = 0;
@@ -226,7 +237,7 @@
          maximum, or a client using a short column gets dead board below. */
       lowest = Math.max(lowest, g.y + groupBox(g, members).h);
     });
-    BOARD_H = lowest + 44;
+    BOARD_H = lowest + OFFSET + 44;
 
 
     var states = {};
@@ -271,7 +282,7 @@
       if (e.label) {
         var l = el('div', 'wirelabel' + (e.vert ? ' vert' : ''));
         l.style.left = e.lx + 'px';
-        l.style.top = e.ly + 'px';
+        l.style.top = (e.ly + OFFSET) + 'px';
         l.textContent = e.label;
         board.appendChild(l);
       }
@@ -285,7 +296,7 @@
       if (!any) return;
       var t = el('div', 'titlebox');
       t.style.left = L.lx + 'px';
-      t.style.top = L.ly + 'px';
+      t.style.top = (L.ly + OFFSET) + 'px';
       t.textContent = L.title;
       board.appendChild(t);
     });
@@ -295,7 +306,7 @@
       if (s.needs.some(function (id) { return NODE[id] && solo[NODE[id].layer]; })) return;
       var d = el('div', 'sublabel');
       d.style.left = s.x + 'px';
-      d.style.top = s.y + 'px';
+      d.style.top = (s.y + OFFSET) + 'px';
       d.textContent = s.text;
       board.appendChild(d);
     });
@@ -399,7 +410,9 @@
     /* The catalogue is authoritative for board size. */
     $('board').style.width = BOARD_W + 'px';
     $('board').style.height = BOARD_H + 'px';
-    $('wires').setAttribute('viewBox', '0 0 ' + BOARD_W + ' ' + BOARD_H);
+    /* The wires keep the catalogue's coordinates and the viewBox moves
+       instead, so no route has to be rewritten to sit under the offset. */
+    $('wires').setAttribute('viewBox', '0 ' + (-OFFSET) + ' ' + BOARD_W + ' ' + BOARD_H);
 
     /* Warm the pop-up data now, so the first chip click is instant instead
        of waiting on a cold fetch. Failures are retried on click. */
@@ -441,7 +454,7 @@
   }
 
   function pos(x, y, w, h) {
-    return 'left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;height:' + h + 'px;';
+    return 'left:' + x + 'px;top:' + (y + OFFSET) + 'px;width:' + w + 'px;height:' + h + 'px;';
   }
 
   function buildCard(n, st, cls) {
