@@ -17,9 +17,7 @@
       "job": "Choose the ebook, the audiobook or both, only sold here. Page still shows the old products and pre-order wording."
     },
     "order-bump": {
-      "status": "soon",
-      "label": "Order Bump",
-      "job": "A separate add-on, not yet decided."
+      "off": true
     },
     "one-click": {
       "url": "https://cutoffbook.com/special-offer",
@@ -102,7 +100,8 @@
     },
     "outside-readers": {
       "status": "live",
-      "job": "Paperback buyers on Amazon, sent to Video 1 by the book itself."
+      "job": "Paperback buyers on Amazon, sent to Video 1 by the book itself.",
+      "label": "Amazon Buyers"
     },
     "organic": {
       "status": "theirs",
@@ -162,14 +161,14 @@
   ],
   "bonusSellsCourse": true,
   "layout": {
-    "boardW": 1100,
+    "boardW": 1205,
     "nodes": {
       "ads": {
         "x": 60,
         "y": 60
       },
       "organic": {
-        "x": 410,
+        "x": 390,
         "y": 60,
         "w": 290,
         "h": 140,
@@ -178,54 +177,57 @@
         "job": "His own audience, sent from his posts."
       },
       "outside-readers": {
-        "x": 760,
-        "y": 60
+        "x": 995,
+        "y": 95,
+        "w": 150,
+        "h": 70,
+        "terse": true
       },
       "sales-page": {
-        "x": 60,
-        "y": 260
+        "x": 225,
+        "y": 340
       },
       "order-form": {
-        "x": 60,
-        "y": 460
+        "x": 225,
+        "y": 540
       },
       "order-bump": {
-        "x": 410,
-        "y": 468
+        "x": 575,
+        "y": 548
       },
       "one-click": {
-        "x": 60,
-        "y": 660
+        "x": 225,
+        "y": 740
       },
       "confirmation": {
-        "x": 60,
-        "y": 860
+        "x": 225,
+        "y": 940
       },
       "newsletter": {
-        "x": 400,
-        "y": 955
+        "x": 565,
+        "y": 1035
       },
       "reader-portal": {
-        "x": 60,
-        "y": 1060,
+        "x": 225,
+        "y": 1140,
         "slots": {
-          "x": 77,
-          "y": 1190
+          "x": 242,
+          "y": 1270
         }
       },
       "rb-optin": {
-        "x": 430,
-        "y": 1060
+        "x": 595,
+        "y": 1140
       },
       "email-sequence": {
-        "x": 600,
-        "y": 830,
+        "x": 765,
+        "y": 910,
         "w": 270,
         "h": 190
       },
       "welcome-email": {
-        "x": 400,
-        "y": 865,
+        "x": 565,
+        "y": 945,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -234,8 +236,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 600,
-        "y": 1240,
+        "x": 765,
+        "y": 1320,
         "w": 170,
         "h": 70,
         "terse": true,
@@ -245,8 +247,8 @@
       }
     },
     "chips": {
-      "x": 620,
-      "y": 910,
+      "x": 785,
+      "y": 990,
       "w": 230,
       "h": 62,
       "count": 10
@@ -254,31 +256,40 @@
     "edges": [
       {
         "a": "ads:b@+145",
-        "b": "sales-page:t"
+        "b": "sales-page:t@0.25",
+        "via": [
+          [
+            205,
+            270
+          ],
+          [
+            297.5,
+            270
+          ]
+        ]
       },
       {
         "a": "organic:b",
         "b": "sales-page:t@0.75",
         "via": [
           [
-            555,
-            230
+            535,
+            270
           ],
           [
-            277.5,
-            230
+            442.5,
+            270
           ]
         ]
       },
       {
-        "a": "sales-page:b",
-        "b": "order-form:t"
+        "a": "organic:r",
+        "b": "outside-readers:l",
+        "dashed": true
       },
       {
-        "a": "order-form:r",
-        "b": "order-bump:l",
-        "dashed": true,
-        "arrow": false
+        "a": "sales-page:b",
+        "b": "order-form:t"
       },
       {
         "a": "order-form:b",
@@ -313,8 +324,8 @@
         "b": "rb-optin:r",
         "via": [
           [
-            905,
-            1130
+            1070,
+            1210
           ]
         ]
       },
@@ -322,25 +333,25 @@
         "a": "email-sequence:b@0.3",
         "b": "rb-optin:t@0.947",
         "label": "sends readers back",
-        "lx": 692,
-        "ly": 1032
+        "lx": 857,
+        "ly": 1112
       },
       {
         "a": "rb-optin:b@0.1",
         "b": "reader-portal:b@0.79",
         "via": [
           [
-            459,
-            1262
+            624,
+            1342
           ],
           [
-            289,
-            1262
+            454,
+            1342
           ]
         ],
         "label": "upgrade",
-        "lx": 300,
-        "ly": 1268
+        "lx": 465,
+        "ly": 1348
       },
       {
         "a": "rb-optin:b@0.8",
