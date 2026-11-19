@@ -268,8 +268,7 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'survey:r',           b: 'review-call:l' },
     { a: 'review-call:r',      b: 'backend-offer:l' },
 
-    { a: 'sip-page:b',         b: 'sip-confirm:t' },
-    { a: 'wl-optin:b',         b: 'wl-confirm:t' }
+    { a: 'sip-page:b',         b: 'sip-confirm:t' }
   ];
 
   return {
