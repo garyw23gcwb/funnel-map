@@ -238,6 +238,9 @@
       lowest = Math.max(lowest, g.y + groupBox(g, members).h);
     });
     BOARD_H = lowest + OFFSET + 44;
+    /* A client layout can ask for more board than its cards need, for a
+       wire that loops round underneath the lowest card. */
+    if (cfg.layout && cfg.layout.boardH) BOARD_H = Math.max(BOARD_H, cfg.layout.boardH + OFFSET);
 
 
     var states = {};
