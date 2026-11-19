@@ -55,6 +55,14 @@ window.FUNNEL_CATALOGUE = (function () {
       holds: ['adPages', 'ads'], compact: { w: CW, h: CH },
       job: 'Ten ad concepts, each running in feed and story sizes.' },
 
+    /* A second way in, beside the ads: readers who bought the book
+       somewhere else, Amazon usually, and reach the bonus page from the
+       book itself, never seeing the funnel. Top right, so it reads as an
+       alternative entry point; its wire runs down the board's right edge,
+       clear of the funnel row, and into the bonus page's right side.
+       Optional, and only for a map with no `rb-thanks` beside the bonus. */
+    { id: 'outside-readers', layer: 'traffic', label: 'Amazon Readers', x: D, y: 60, w: CW, h: CH,
+      optional: true, job: 'Bought the book elsewhere and arrive from the book itself.' },
     { id: 'sales-page', layer: 'book', label: 'Sales Page', x: A, y: 318, w: CW, h: CH, tilt: 1,
       job: 'Eighteen sections selling the book. Every button goes to checkout.' },
     { id: 'order-form', layer: 'book', label: 'Order Form', x: B, y: 318, w: CW, h: CH,
@@ -70,13 +78,14 @@ window.FUNNEL_CATALOGUE = (function () {
     { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: D, y: 318, w: CW, h: CH,
       job: 'Confirms the order and points the buyer to the reader portal.' },
     /* A second destination out of the confirmation page: the buyer is also
-       added to the author's own newsletter. Sits on the portal's row under
-       the confirmation card, so its arrow shares the confirmation drop and
-       carries straight on where the portal arrow turns left. Optional, and
-       it shares the row's right end with `rb-thanks` and `free-tool`: no
-       map has those and this together yet (first used by Richard Blake). */
-    { id: 'newsletter', layer: 'delivery', label: 'Newsletter', x: D, y: 802, w: CW, h: CH, optional: true,
-      job: 'Every buyer is added to the author\'s newsletter.' },
+       added to the author's own newsletter. A small marker tucked under the
+       confirmation card, close to the funnel it comes out of: its arrow
+       shares the confirmation drop and branches right partway down, before
+       the portal arrow turns left. Optional, and it sits where
+       `one-click-2`'s wire turns in: no map has both yet (first used by
+       Richard Blake). */
+    { id: 'newsletter', layer: 'delivery', label: 'Newsletter', x: 1190, y: 545, w: 150, h: 70,
+      optional: true, terse: true, job: 'Every buyer is added to the author\'s newsletter.' },
 
     /* A container, and the book itself as far as this map is concerned: the
        formats are slots inside this card rather than a node of their own.
@@ -116,12 +125,6 @@ window.FUNNEL_CATALOGUE = (function () {
        a two-step bonus is unaffected. */
     { id: 'free-tool', layer: 'inbook', label: 'The Free Tool', x: 1165, y: 832, w: 175, h: 80,
       optional: true, terse: true, job: 'The tool itself, free, on its own page.' },
-    /* Readers who bought the book somewhere else, Amazon usually, and reach
-       the bonus page from the book itself, never having seen the funnel.
-       A marker like the free tool, sitting where `rb-thanks` would: a map
-       that turns this on has no separate bonus delivery page. Optional. */
-    { id: 'outside-readers', layer: 'inbook', label: 'Amazon Readers', x: 860, y: 832, w: 150, h: 80,
-      optional: true, terse: true, job: 'Bought the book elsewhere and arrive from the book itself.' },
 
     { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 1070, w: 540, h: 218,
       job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.' },
@@ -185,7 +188,7 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'one-click-2:r',      b: 'confirmation:b@0.5', via: [[1195, 560]] },
 
     { a: 'confirmation:b@0.35', b: 'reader-portal:t', via: [[1151, 712], [370, 712]] },
-    { a: 'confirmation:b@0.35', b: 'newsletter:t@0.35' },
+    { a: 'confirmation:b@0.35', b: 'newsletter:l', via: [[1151, 580]] },
     { a: 'reader-portal:r@0.4167', b: 'scorecard:l', label: 'in-book CTA', lx: 600, ly: 846 },
 
     /* The book's own run: opt in, get the bonus, use the tool. It leaves the
@@ -200,7 +203,7 @@ window.FUNNEL_CATALOGUE = (function () {
        emails send buyers back to it, and the upgrade is delivered in the
        portal. `needs` keeps the two shared-node wires off every other map,
        since every client has an email sequence and a bonus opt-in. */
-    { a: 'outside-readers:l',  b: 'rb-optin:r' },
+    { a: 'outside-readers:r',  b: 'rb-optin:r', via: [[1375, 130], [1375, 872]] },
     { a: 'email-sequence:t@0.6', b: 'rb-optin:b@0.75', needs: 'bonusSellsCourse',
       label: 'sends readers back', lx: 764, ly: 1000 },
     { a: 'rb-optin:b@0.25',    b: 'reader-portal:b@0.8', needs: 'bonusSellsCourse',
