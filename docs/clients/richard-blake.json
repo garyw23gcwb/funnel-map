@@ -110,7 +110,8 @@
     },
     "welcome-email": {
       "status": "soon",
-      "label": "Welcome Email"
+      "label": "Welcome Email",
+      "job": "Sent to every buyer straight after the order, with their reader portal login."
     },
     "sg-welcome": {
       "status": "soon",
@@ -204,19 +205,19 @@
         "y": 940
       },
       "newsletter": {
-        "x": 565,
-        "y": 1035
+        "x": 295,
+        "y": 1140
       },
       "reader-portal": {
-        "x": 225,
+        "x": 565,
         "y": 1140,
         "slots": {
-          "x": 242,
+          "x": 582,
           "y": 1270
         }
       },
       "rb-optin": {
-        "x": 595,
+        "x": 895,
         "y": 1140
       },
       "email-sequence": {
@@ -227,7 +228,7 @@
       },
       "welcome-email": {
         "x": 565,
-        "y": 945,
+        "y": 1010,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -236,8 +237,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 765,
-        "y": 1320,
+        "x": 1030,
+        "y": 1340,
         "w": 170,
         "h": 70,
         "terse": true,
@@ -301,19 +302,19 @@
       },
       {
         "a": "confirmation:b",
-        "b": "reader-portal:t"
+        "b": "newsletter:t"
       },
       {
-        "a": "confirmation:r@0.2857",
+        "a": "confirmation:r@0.25",
+        "b": "email-sequence:l@0.342"
+      },
+      {
+        "a": "confirmation:r@0.75",
         "b": "welcome-email:l"
       },
       {
-        "a": "welcome-email:r",
-        "b": "email-sequence:l@0.368"
-      },
-      {
-        "a": "confirmation:r@0.9286",
-        "b": "newsletter:l"
+        "a": "welcome-email:b",
+        "b": "reader-portal:t@0.2586"
       },
       {
         "a": "reader-portal:r@0.4167",
@@ -321,41 +322,32 @@
       },
       {
         "a": "outside-readers:b",
-        "b": "rb-optin:r",
-        "via": [
-          [
-            1070,
-            1210
-          ]
-        ]
+        "b": "rb-optin:t@0.66"
       },
       {
-        "a": "email-sequence:b@0.3",
-        "b": "rb-optin:t@0.947",
-        "label": "sends readers back",
-        "lx": 857,
-        "ly": 1112
+        "a": "email-sequence:b@0.85",
+        "b": "rb-optin:t@0.374"
       },
       {
         "a": "rb-optin:b@0.1",
         "b": "reader-portal:b@0.79",
         "via": [
           [
-            624,
-            1342
+            921.5,
+            1335
           ],
           [
-            454,
-            1342
+            794,
+            1335
           ]
         ],
         "label": "upgrade",
-        "lx": 465,
-        "ly": 1348
+        "lx": 805,
+        "ly": 1341
       },
       {
         "a": "rb-optin:b@0.8",
-        "b": "sg-welcome:t@0.247"
+        "b": "sg-welcome:t@0.453"
       }
     ]
   }
