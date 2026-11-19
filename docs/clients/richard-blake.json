@@ -101,12 +101,16 @@
     "outside-readers": {
       "status": "live",
       "job": "Paperback buyers on Amazon, sent to Video 1 by the book itself.",
-      "label": "Amazon Buyers"
+      "label": "Amazon Buyers",
+      "url": "https://www.amazon.com/dp/1066725004",
+      "cta": "Open on Amazon"
     },
     "organic": {
-      "status": "theirs",
+      "status": "live",
       "label": "Organic Following",
-      "job": "Richard's own audience, sent to the sales page from his posts."
+      "job": "Richard's own audience, 149K on Instagram, sent to the sales page from his posts.",
+      "url": "https://www.instagram.com/the_breath_geek/",
+      "cta": "Open Instagram"
     },
     "welcome-email": {
       "status": "soon",
