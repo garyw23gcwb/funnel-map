@@ -23,7 +23,7 @@
       "url": "https://cutoffbook.com/special-offer",
       "status": "review",
       "label": "Solid Ground Upgrade",
-      "job": "Six-week course: six videos, a workbook and a cheat sheet. Offered right after purchase, no card re-entry. Page still carries template copy."
+      "job": "The six-week course, offered straight after purchase."
     },
     "confirmation": {
       "url": "https://cutoffbook.com/confirmation",
@@ -237,9 +237,9 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 1030,
+        "x": 846,
         "y": 1340,
-        "w": 170,
+        "w": 150,
         "h": 70,
         "terse": true,
         "layer": "followup",
@@ -329,25 +329,21 @@
         "b": "rb-optin:t@0.374"
       },
       {
-        "a": "rb-optin:b@0.1",
+        "a": "rb-optin:b@0.0981",
+        "b": "sg-welcome:t",
+        "label": "upgrade",
+        "lx": 931,
+        "ly": 1298
+      },
+      {
+        "a": "sg-welcome:l",
         "b": "reader-portal:b@0.79",
         "via": [
           [
-            921.5,
-            1335
-          ],
-          [
             794,
-            1335
+            1375
           ]
-        ],
-        "label": "upgrade",
-        "lx": 805,
-        "ly": 1341
-      },
-      {
-        "a": "rb-optin:b@0.8",
-        "b": "sg-welcome:t@0.453"
+        ]
       }
     ]
   }
