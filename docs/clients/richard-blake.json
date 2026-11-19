@@ -35,7 +35,7 @@
     },
     "email-sequence": {
       "status": "soon",
-      "job": "Ten emails pointing back to Video 1."
+      "job": "Eight emails pointing back to Video 1."
     },
     "plan-page": {
       "off": true
@@ -164,14 +164,6 @@
     {
       "n": 8,
       "day": 12
-    },
-    {
-      "n": 9,
-      "day": 13
-    },
-    {
-      "n": 10,
-      "day": 15
     }
   ],
   "bonusSellsCourse": true,
@@ -224,12 +216,13 @@
       },
       "reader-portal": {
         "x": 310,
-        "y": 1056,
+        "y": 1070,
         "w": 415,
         "slots": {
           "x": 327,
-          "y": 1186
-        }
+          "y": 1174
+        },
+        "h": 140
       },
       "rb-optin": {
         "x": 850,
@@ -237,9 +230,9 @@
       },
       "email-sequence": {
         "x": 310,
-        "y": 780,
+        "y": 810,
         "w": 415,
-        "h": 200
+        "h": 140
       },
       "welcome-email": {
         "x": 60,
@@ -284,10 +277,10 @@
     },
     "chips": {
       "x": 330,
-      "y": 860,
-      "w": 230,
-      "h": 62,
-      "count": 10
+      "y": 878,
+      "w": 362,
+      "h": 28,
+      "count": 8
     },
     "edges": [
       {
@@ -436,13 +429,13 @@
       },
       {
         "a": "sg-welcome:l@0.6",
-        "b": "reader-portal:r@0.75"
+        "b": "reader-portal:r@0.8"
       },
       {
         "a": "sg-confirm:r",
         "b": "newsletter-2:l"
       }
     ],
-    "boardH": 1284
+    "boardH": 1270
   }
 }
