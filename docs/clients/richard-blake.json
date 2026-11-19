@@ -172,7 +172,7 @@
   ],
   "bonusSellsCourse": true,
   "layout": {
-    "boardW": 1980,
+    "boardW": 1755,
     "nodes": {
       "ads": {
         "x": 60,
@@ -188,7 +188,7 @@
         "job": "His own audience, sent from his posts."
       },
       "outside-readers": {
-        "x": 1381,
+        "x": 1545,
         "y": 95,
         "w": 150,
         "h": 70,
@@ -199,46 +199,46 @@
         "y": 340
       },
       "order-form": {
-        "x": 225,
-        "y": 540
+        "x": 555,
+        "y": 340
       },
       "order-bump": {
         "x": 575,
         "y": 548
       },
       "one-click": {
-        "x": 225,
-        "y": 740
+        "x": 885,
+        "y": 340
       },
       "confirmation": {
-        "x": 225,
-        "y": 940
+        "x": 1215,
+        "y": 340
       },
       "newsletter": {
-        "x": 295,
-        "y": 1140
+        "x": 1400,
+        "y": 510
       },
       "reader-portal": {
-        "x": 845,
-        "y": 1056,
+        "x": 310,
+        "y": 966,
         "slots": {
-          "x": 862,
-          "y": 1186
+          "x": 327,
+          "y": 1096
         }
       },
       "rb-optin": {
-        "x": 1260,
-        "y": 940
+        "x": 725,
+        "y": 850
       },
       "email-sequence": {
-        "x": 845,
-        "y": 780,
+        "x": 310,
+        "y": 690,
         "w": 290,
         "h": 200
       },
       "welcome-email": {
-        "x": 595,
-        "y": 975,
+        "x": 60,
+        "y": 885,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -247,8 +247,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 1700,
-        "y": 1140,
+        "x": 1160,
+        "y": 1050,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -257,8 +257,8 @@
         "job": "Sent when a reader upgrades from Video 1."
       },
       "sg-confirm": {
-        "x": 1630,
-        "y": 940,
+        "x": 1090,
+        "y": 850,
         "w": 290,
         "h": 140,
         "terse": false,
@@ -268,8 +268,8 @@
       }
     },
     "chips": {
-      "x": 865,
-      "y": 860,
+      "x": 330,
+      "y": 770,
       "w": 230,
       "h": 62,
       "count": 10
@@ -309,36 +309,52 @@
         "dashed": true
       },
       {
-        "a": "sales-page:b",
-        "b": "order-form:t"
+        "a": "sales-page:r",
+        "b": "order-form:l"
       },
       {
-        "a": "order-form:b",
-        "b": "one-click:t"
+        "a": "order-form:r",
+        "b": "one-click:l"
       },
       {
-        "a": "one-click:b",
-        "b": "confirmation:t"
+        "a": "one-click:r",
+        "b": "confirmation:l"
       },
       {
         "a": "confirmation:b",
-        "b": "newsletter:t"
+        "b": "newsletter:l",
+        "via": [
+          [
+            1360,
+            545
+          ]
+        ]
       },
       {
-        "a": "confirmation:r",
-        "b": "welcome-email:l"
+        "a": "confirmation:b",
+        "b": "welcome-email:t",
+        "via": [
+          [
+            1360,
+            610
+          ],
+          [
+            135,
+            610
+          ]
+        ]
       },
       {
         "a": "welcome-email:r",
         "b": "email-sequence:l",
         "via": [
           [
-            795,
-            1010
+            260,
+            920
           ],
           [
-            795,
-            880
+            260,
+            790
           ]
         ]
       },
@@ -347,12 +363,12 @@
         "b": "reader-portal:l",
         "via": [
           [
-            795,
-            1010
+            260,
+            920
           ],
           [
-            795,
-            1140
+            260,
+            1050
           ]
         ]
       },
@@ -361,12 +377,12 @@
         "b": "rb-optin:l",
         "via": [
           [
-            1200,
-            880
+            665,
+            790
           ],
           [
-            1200,
-            1010
+            665,
+            920
           ]
         ]
       },
@@ -375,53 +391,44 @@
         "b": "rb-optin:l",
         "via": [
           [
-            1200,
-            1140
+            665,
+            1050
           ],
           [
-            1200,
-            1010
+            665,
+            920
           ]
         ]
       },
       {
         "a": "outside-readers:b",
-        "b": "rb-optin:t@0.739"
+        "b": "rb-optin:t@0.739",
+        "via": [
+          [
+            1620,
+            800
+          ],
+          [
+            921,
+            800
+          ]
+        ]
       },
       {
         "a": "rb-optin:r",
         "b": "sg-confirm:l",
         "label": "upgrade",
-        "lx": 1545,
-        "ly": 984
+        "lx": 1010,
+        "ly": 894
       },
       {
-        "a": "sg-confirm:b",
+        "a": "sg-confirm:b@0.5172",
         "b": "sg-welcome:t"
       },
       {
-        "a": "sg-welcome:l",
-        "b": "reader-portal:l@0.75",
-        "via": [
-          [
-            1240,
-            1175
-          ],
-          [
-            1240,
-            1270
-          ],
-          [
-            815,
-            1270
-          ],
-          [
-            815,
-            1182
-          ]
-        ]
+        "a": "sg-welcome:l@0.6",
+        "b": "reader-portal:r@0.75"
       }
-    ],
-    "boardH": 1320
+    ]
   }
 }
