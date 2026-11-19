@@ -13,16 +13,18 @@
     "order-form": {
       "url": "https://cutoffbook.com/order",
       "status": "review",
-      "job": "Checkout: digital $21, audiobook $29, physical $37. Still worded as a pre-order for January 2027."
+      "job": "The audiobook, only sold here. Page still shows three products and pre-order wording."
     },
     "order-bump": {
       "status": "soon",
-      "label": "Bump: Solid Ground"
+      "label": "Bump: The Ebook",
+      "job": "The ebook, also only sold here, added with one tick."
     },
     "one-click": {
       "url": "https://cutoffbook.com/special-offer",
       "status": "review",
-      "job": "Page is up at $197 but still carries template copy."
+      "label": "Solid Ground",
+      "job": "Six-week course: six videos, a workbook and a cheat sheet. Offered right after purchase, no card re-entry. Page still carries template copy."
     },
     "confirmation": {
       "url": "https://cutoffbook.com/confirmation",
@@ -36,31 +38,31 @@
       "status": "soon"
     },
     "plan-page": {
-      "status": "soon"
+      "off": true
     },
     "abandonment": {
-      "status": "soon"
+      "off": true
     },
     "survey": {
-      "status": "soon"
+      "off": true
     },
     "review-call": {
-      "status": "soon"
+      "off": true
     },
     "backend-offer": {
-      "status": "soon"
+      "off": true
     },
     "rb-optin": {
       "url": "https://cutoffbook.com/bonus",
       "status": "live",
-      "label": "Solid Ground",
-      "job": "Six-week course: six videos, a workbook and a cheat sheet. $147 for Cut Off readers."
+      "label": "Solid Ground: Video 1",
+      "job": "The book sends readers here. Video 1 is free; Videos 2 to 6 are $147."
     },
     "rb-thanks": {
       "off": true
     },
     "free-tool": {
-      "status": "soon"
+      "off": true
     },
     "sip-page": {
       "off": true
@@ -75,15 +77,18 @@
       "off": true
     },
     "file-digital": {
-      "status": "live",
-      "url": "https://readers.cutoffbook.com"
+      "off": true
     },
     "file-audio": {
-      "status": "soon"
+      "status": "soon",
+      "label": "Audiobook",
+      "title": "The audiobook, the main purchase"
     },
     "file-bump": {
-      "status": "review",
-      "url": "https://readers.cutoffbook.com"
+      "status": "live",
+      "url": "https://readers.cutoffbook.com",
+      "label": "Ebook",
+      "title": "The ebook, the order bump"
     }
   },
   "emails": [
