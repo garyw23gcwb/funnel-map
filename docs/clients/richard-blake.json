@@ -126,6 +126,10 @@
       "label": "Solid Ground Confirmation",
       "job": "Confirms the Solid Ground order and points the reader to the course.",
       "url": "https://cutoffbook.com/course-confirmation"
+    },
+    "newsletter-2": {
+      "status": "soon",
+      "label": "Beehiiv Newsletter"
     }
   },
   "emails": [
@@ -172,7 +176,7 @@
   ],
   "bonusSellsCourse": true,
   "layout": {
-    "boardW": 1755,
+    "boardW": 1775,
     "nodes": {
       "ads": {
         "x": 60,
@@ -266,6 +270,16 @@
         "layer": "convert",
         "label": "Solid Ground Confirmation",
         "job": "Confirms the Solid Ground order after the upgrade."
+      },
+      "newsletter-2": {
+        "x": 1565,
+        "y": 885,
+        "w": 150,
+        "h": 70,
+        "terse": true,
+        "layer": "delivery",
+        "label": "Beehiiv Newsletter",
+        "job": "Amazon buyers who upgrade join the newsletter here, having skipped the Bookfunnel."
       }
     },
     "chips": {
@@ -326,11 +340,11 @@
         "b": "newsletter:t"
       },
       {
-        "a": "confirmation:b@0.15",
+        "a": "confirmation:b@0.1",
         "b": "welcome-email:t",
         "via": [
           [
-            1258.5,
+            1244,
             640
           ],
           [
@@ -397,14 +411,14 @@
       },
       {
         "a": "outside-readers:b",
-        "b": "rb-optin:t@0.739",
+        "b": "rb-optin:t",
         "via": [
           [
             1620,
             800
           ],
           [
-            1045.8,
+            982.5,
             800
           ]
         ]
@@ -423,7 +437,12 @@
       {
         "a": "sg-welcome:l@0.6",
         "b": "reader-portal:r@0.75"
+      },
+      {
+        "a": "sg-confirm:r",
+        "b": "newsletter-2:l"
       }
-    ]
+    ],
+    "boardH": 1194
   }
 }
