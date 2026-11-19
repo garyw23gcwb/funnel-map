@@ -91,12 +91,16 @@
       "status": "live",
       "url": "https://readers.cutoffbook.com",
       "label": "Solid Ground",
-      "title": "Solid Ground, the six-week course, unlocked for one-click buyers"
+      "title": "Solid Ground, unlocked by the one-click or the $147 upgrade"
     },
     "newsletter": {
       "status": "soon",
       "label": "Beehiiv Newsletter",
       "job": "Every buyer is also added to Richard's Beehiiv newsletter."
+    },
+    "outside-readers": {
+      "status": "live",
+      "job": "Paperback buyers on Amazon, sent to Video 1 by the book itself."
     }
   },
   "emails": [
@@ -184,5 +188,6 @@
       "n": 21,
       "day": 30
     }
-  ]
+  ],
+  "bonusSellsCourse": true
 }

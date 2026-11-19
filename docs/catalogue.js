@@ -116,6 +116,12 @@ window.FUNNEL_CATALOGUE = (function () {
        a two-step bonus is unaffected. */
     { id: 'free-tool', layer: 'inbook', label: 'The Free Tool', x: 1165, y: 832, w: 175, h: 80,
       optional: true, terse: true, job: 'The tool itself, free, on its own page.' },
+    /* Readers who bought the book somewhere else, Amazon usually, and reach
+       the bonus page from the book itself, never having seen the funnel.
+       A marker like the free tool, sitting where `rb-thanks` would: a map
+       that turns this on has no separate bonus delivery page. Optional. */
+    { id: 'outside-readers', layer: 'inbook', label: 'Amazon Readers', x: 860, y: 832, w: 150, h: 80,
+      optional: true, terse: true, job: 'Bought the book elsewhere and arrive from the book itself.' },
 
     { id: 'email-sequence', layer: 'followup', label: 'Email Sequence', x: 430, y: 1070, w: 540, h: 218,
       job: 'Twenty-one emails over thirty days. Delivers, builds the relationship, then makes the offer.' },
@@ -188,6 +194,17 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'reader-portal:r@0.4167', b: 'rb-optin:l' },
     { a: 'rb-optin:r',         b: 'rb-thanks:l' },
     { a: 'rb-thanks:r',        b: 'free-tool:l' },
+
+    /* For a funnel whose bonus page sells the course itself (Richard Blake's
+       free Video 1 with its upgrade): outside readers arrive there, the
+       emails send buyers back to it, and the upgrade is delivered in the
+       portal. `needs` keeps the two shared-node wires off every other map,
+       since every client has an email sequence and a bonus opt-in. */
+    { a: 'outside-readers:l',  b: 'rb-optin:r' },
+    { a: 'email-sequence:t@0.6', b: 'rb-optin:b@0.75', needs: 'bonusSellsCourse',
+      label: 'sends readers back', lx: 764, ly: 1000 },
+    { a: 'rb-optin:b@0.25',    b: 'reader-portal:b@0.8', needs: 'bonusSellsCourse',
+      via: [[621.25, 995], [457, 995]], label: 'upgrade', lx: 630, ly: 956 },
 
     { a: 'reader-portal:b',    b: 'email-sequence:t@0.5', via: [[370, 1020], [700, 1020]] },
     /* No label: the arrow already leaves the email card, so saying so twice
