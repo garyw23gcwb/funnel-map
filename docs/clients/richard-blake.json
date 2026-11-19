@@ -1,0 +1,175 @@
+{
+  "client": "Richard L. Blake",
+  "book": "Cut Off",
+  "updated": "19 November 2026",
+  "nodes": {
+    "ads": {
+      "status": "soon"
+    },
+    "sales-page": {
+      "url": "https://cutoffbook.com/book",
+      "status": "live"
+    },
+    "order-form": {
+      "url": "https://cutoffbook.com/order",
+      "status": "review",
+      "job": "Checkout: digital $21, audiobook $29, physical $37. Still worded as a pre-order for January 2027."
+    },
+    "order-bump": {
+      "status": "soon",
+      "label": "Bump: Solid Ground"
+    },
+    "one-click": {
+      "url": "https://cutoffbook.com/special-offer",
+      "status": "review",
+      "job": "Page is up at $197 but still carries template copy."
+    },
+    "confirmation": {
+      "url": "https://cutoffbook.com/confirmation",
+      "status": "live"
+    },
+    "reader-portal": {
+      "url": "https://readers.cutoffbook.com",
+      "status": "live"
+    },
+    "email-sequence": {
+      "status": "soon"
+    },
+    "plan-page": {
+      "status": "soon"
+    },
+    "abandonment": {
+      "status": "soon"
+    },
+    "survey": {
+      "status": "soon"
+    },
+    "review-call": {
+      "status": "soon"
+    },
+    "backend-offer": {
+      "status": "soon"
+    },
+    "rb-optin": {
+      "url": "https://cutoffbook.com/bonus",
+      "status": "live",
+      "label": "Solid Ground",
+      "job": "Six-week course: six videos, a workbook and a cheat sheet. $147 for Cut Off readers."
+    },
+    "rb-thanks": {
+      "off": true
+    },
+    "free-tool": {
+      "status": "soon"
+    },
+    "sip-page": {
+      "off": true
+    },
+    "sip-confirm": {
+      "off": true
+    },
+    "wl-optin": {
+      "off": true
+    },
+    "wl-confirm": {
+      "off": true
+    },
+    "file-digital": {
+      "status": "live",
+      "url": "https://readers.cutoffbook.com"
+    },
+    "file-audio": {
+      "status": "soon"
+    },
+    "file-bump": {
+      "status": "review",
+      "url": "https://readers.cutoffbook.com"
+    }
+  },
+  "emails": [
+    {
+      "n": 1,
+      "day": 0
+    },
+    {
+      "n": 2,
+      "day": 1
+    },
+    {
+      "n": 3,
+      "day": 3
+    },
+    {
+      "n": 4,
+      "day": 5
+    },
+    {
+      "n": 5,
+      "day": 7
+    },
+    {
+      "n": 6,
+      "day": 9
+    },
+    {
+      "n": 7,
+      "day": 11
+    },
+    {
+      "n": 8,
+      "day": 12
+    },
+    {
+      "n": 9,
+      "day": 13
+    },
+    {
+      "n": 10,
+      "day": 15
+    },
+    {
+      "n": 11,
+      "day": 16
+    },
+    {
+      "n": 12,
+      "day": 17
+    },
+    {
+      "n": 13,
+      "day": 18
+    },
+    {
+      "n": 14,
+      "day": 19
+    },
+    {
+      "n": 15,
+      "day": 21
+    },
+    {
+      "n": 16,
+      "day": 22
+    },
+    {
+      "n": 17,
+      "day": 24
+    },
+    {
+      "n": 18,
+      "day": 26
+    },
+    {
+      "n": 19,
+      "day": 27
+    },
+    {
+      "n": 20,
+      "day": 28
+    },
+    {
+      "n": 21,
+      "day": 30
+    }
+  ]
+}
