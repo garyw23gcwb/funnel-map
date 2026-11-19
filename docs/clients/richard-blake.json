@@ -123,7 +123,8 @@
     },
     "sg-confirm": {
       "status": "soon",
-      "label": "Solid Ground Confirmation"
+      "label": "Solid Ground Confirmation",
+      "job": "Confirms the Solid Ground order and points the reader to the course."
     }
   },
   "emails": [
@@ -170,7 +171,7 @@
   ],
   "bonusSellsCourse": true,
   "layout": {
-    "boardW": 1855,
+    "boardW": 1980,
     "nodes": {
       "ads": {
         "x": 60,
@@ -245,8 +246,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 1635,
-        "y": 1120,
+        "x": 1700,
+        "y": 1140,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -255,11 +256,11 @@
         "job": "Sent when a reader upgrades from Video 1."
       },
       "sg-confirm": {
-        "x": 1625,
-        "y": 975,
-        "w": 170,
-        "h": 70,
-        "terse": true,
+        "x": 1630,
+        "y": 940,
+        "w": 290,
+        "h": 140,
+        "terse": false,
         "layer": "convert",
         "label": "Solid Ground Confirmation",
         "job": "Confirms the Solid Ground order after the upgrade."
@@ -390,11 +391,11 @@
         "a": "rb-optin:r",
         "b": "sg-confirm:l",
         "label": "upgrade",
-        "lx": 1543,
-        "ly": 986
+        "lx": 1545,
+        "ly": 984
       },
       {
-        "a": "sg-confirm:b@0.5294",
+        "a": "sg-confirm:b",
         "b": "sg-welcome:t"
       },
       {
@@ -402,7 +403,7 @@
         "b": "reader-portal:b@0.79",
         "via": [
           [
-            1710,
+            1775,
             1280
           ],
           [
