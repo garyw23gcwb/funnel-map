@@ -222,7 +222,7 @@
       },
       "rb-optin": {
         "x": 1105,
-        "y": 756
+        "y": 940
       },
       "email-sequence": {
         "x": 765,
@@ -241,8 +241,8 @@
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 1056,
-        "y": 950,
+        "x": 1110,
+        "y": 755,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -341,16 +341,30 @@
         ]
       },
       {
-        "a": "reader-portal:r@0.4167",
-        "b": "rb-optin:l"
+        "a": "reader-portal:r",
+        "b": "rb-optin:l",
+        "via": [
+          [
+            1080,
+            840
+          ],
+          [
+            1080,
+            1010
+          ]
+        ]
       },
       {
         "a": "email-sequence:r",
-        "b": "rb-optin:b@0.5",
+        "b": "rb-optin:l",
         "via": [
           [
-            1237.5,
+            1080,
             1180
+          ],
+          [
+            1080,
+            1010
           ]
         ]
       },
@@ -359,21 +373,15 @@
         "b": "rb-optin:t@0.739"
       },
       {
-        "a": "rb-optin:b@0.0981",
-        "b": "sg-welcome:t",
+        "a": "rb-optin:t@0.0981",
+        "b": "sg-welcome:b@0.14",
         "label": "upgrade",
         "lx": 1141,
-        "ly": 912
+        "ly": 872
       },
       {
         "a": "sg-welcome:l",
-        "b": "reader-portal:b@0.79",
-        "via": [
-          [
-            994,
-            985
-          ]
-        ]
+        "b": "reader-portal:r@0.2024"
       }
     ]
   }
