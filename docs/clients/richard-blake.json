@@ -13,17 +13,17 @@
     "order-form": {
       "url": "https://cutoffbook.com/order",
       "status": "review",
-      "job": "The audiobook, only sold here. Page still shows three products and pre-order wording."
+      "job": "Choose the ebook, the audiobook or both, only sold here. Page still shows the old products and pre-order wording."
     },
     "order-bump": {
       "status": "soon",
-      "label": "Bump: The Ebook",
-      "job": "The ebook, also only sold here, added with one tick."
+      "label": "Order Bump",
+      "job": "A separate add-on, not yet decided."
     },
     "one-click": {
       "url": "https://cutoffbook.com/special-offer",
       "status": "review",
-      "label": "Solid Ground",
+      "label": "Solid Ground Upgrade",
       "job": "Six-week course: six videos, a workbook and a cheat sheet. Offered right after purchase, no card re-entry. Page still carries template copy."
     },
     "confirmation": {
@@ -35,7 +35,8 @@
       "status": "live"
     },
     "email-sequence": {
-      "status": "soon"
+      "status": "soon",
+      "job": "Ten emails. Builds the relationship, then sends readers back to Video 1."
     },
     "plan-page": {
       "off": true
@@ -79,13 +80,13 @@
     "file-digital": {
       "status": "soon",
       "label": "Audiobook",
-      "title": "The audiobook, the main purchase"
+      "title": "The audiobook"
     },
     "file-audio": {
       "status": "live",
       "url": "https://readers.cutoffbook.com",
       "label": "Ebook",
-      "title": "The ebook, the order bump"
+      "title": "The ebook"
     },
     "file-bump": {
       "status": "live",
@@ -106,6 +107,14 @@
       "status": "theirs",
       "label": "Organic Following",
       "job": "Richard's own audience, sent to the sales page from his posts."
+    },
+    "welcome-email": {
+      "status": "soon",
+      "label": "Welcome Email"
+    },
+    "sg-welcome": {
+      "status": "soon",
+      "label": "Solid Ground Welcome"
     }
   },
   "emails": [
@@ -148,50 +157,6 @@
     {
       "n": 10,
       "day": 15
-    },
-    {
-      "n": 11,
-      "day": 16
-    },
-    {
-      "n": 12,
-      "day": 17
-    },
-    {
-      "n": 13,
-      "day": 18
-    },
-    {
-      "n": 14,
-      "day": 19
-    },
-    {
-      "n": 15,
-      "day": 21
-    },
-    {
-      "n": 16,
-      "day": 22
-    },
-    {
-      "n": 17,
-      "day": 24
-    },
-    {
-      "n": 18,
-      "day": 26
-    },
-    {
-      "n": 19,
-      "day": 27
-    },
-    {
-      "n": 20,
-      "day": 28
-    },
-    {
-      "n": 21,
-      "day": 30
     }
   ],
   "bonusSellsCourse": true,
@@ -236,8 +201,8 @@
         "y": 860
       },
       "newsletter": {
-        "x": 410,
-        "y": 895
+        "x": 400,
+        "y": 955
       },
       "reader-portal": {
         "x": 60,
@@ -252,13 +217,38 @@
         "y": 1060
       },
       "email-sequence": {
-        "x": 60,
-        "y": 1300
+        "x": 600,
+        "y": 830,
+        "w": 270,
+        "h": 190
+      },
+      "welcome-email": {
+        "x": 400,
+        "y": 865,
+        "w": 150,
+        "h": 70,
+        "terse": true,
+        "layer": "followup",
+        "label": "Welcome Email",
+        "job": "Sent to every buyer straight after the order."
+      },
+      "sg-welcome": {
+        "x": 600,
+        "y": 1240,
+        "w": 170,
+        "h": 70,
+        "terse": true,
+        "layer": "followup",
+        "label": "Solid Ground Welcome",
+        "job": "Sent when a reader upgrades from Video 1."
       }
     },
     "chips": {
-      "x": 80,
-      "y": 1390
+      "x": 620,
+      "y": 910,
+      "w": 230,
+      "h": 62,
+      "count": 10
     },
     "edges": [
       {
@@ -302,7 +292,15 @@
         "b": "reader-portal:t"
       },
       {
-        "a": "confirmation:r",
+        "a": "confirmation:r@0.2857",
+        "b": "welcome-email:l"
+      },
+      {
+        "a": "welcome-email:r",
+        "b": "email-sequence:l@0.368"
+      },
+      {
+        "a": "confirmation:r@0.9286",
         "b": "newsletter:l"
       },
       {
@@ -320,15 +318,11 @@
         ]
       },
       {
-        "a": "reader-portal:b@0.3",
-        "b": "email-sequence:t@0.161"
-      },
-      {
-        "a": "email-sequence:t@0.9",
-        "b": "rb-optin:b@0.4",
+        "a": "email-sequence:b@0.3",
+        "b": "rb-optin:t@0.947",
         "label": "sends readers back",
-        "lx": 556,
-        "ly": 1250
+        "lx": 692,
+        "ly": 1032
       },
       {
         "a": "rb-optin:b@0.1",
@@ -346,6 +340,10 @@
         "label": "upgrade",
         "lx": 300,
         "ly": 1268
+      },
+      {
+        "a": "rb-optin:b@0.8",
+        "b": "sg-welcome:t@0.247"
       }
     ]
   }

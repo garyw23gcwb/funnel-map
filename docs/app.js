@@ -137,7 +137,8 @@
      an unknown one is a new box and needs a label and a layer. `slots`
      moves a container's slot strip. `edges` replaces the shared wires
      outright, since a different shape needs different routes. `chips`
-     moves the email chip strip; `boardW` narrows the board. */
+     moves the email chip strip and can change how many chips it holds;
+     `boardW` narrows the board. */
   function addLayoutNodes(L) {
     Object.keys(L.nodes || {}).forEach(function (id) {
       if (NODE[id]) return;
@@ -159,7 +160,7 @@
       }
     });
     if (L.edges) EDGES = L.edges;
-    if (L.chips) ['x', 'y', 'w', 'h'].forEach(function (k) { if (L.chips[k] != null) CHIPS[k] = L.chips[k]; });
+    if (L.chips) ['x', 'y', 'w', 'h', 'count'].forEach(function (k) { if (L.chips[k] != null) CHIPS[k] = L.chips[k]; });
     if (L.boardW) BOARD_W = L.boardW;
   }
 
