@@ -101,6 +101,11 @@
     "outside-readers": {
       "status": "live",
       "job": "Paperback buyers on Amazon, sent to Video 1 by the book itself."
+    },
+    "organic": {
+      "status": "theirs",
+      "label": "Organic Following",
+      "job": "Richard's own audience, sent to the sales page from his posts."
     }
   },
   "emails": [
@@ -189,5 +194,159 @@
       "day": 30
     }
   ],
-  "bonusSellsCourse": true
+  "bonusSellsCourse": true,
+  "layout": {
+    "boardW": 1100,
+    "nodes": {
+      "ads": {
+        "x": 60,
+        "y": 60
+      },
+      "organic": {
+        "x": 410,
+        "y": 60,
+        "w": 290,
+        "h": 140,
+        "layer": "traffic",
+        "label": "Organic Following",
+        "job": "His own audience, sent from his posts."
+      },
+      "outside-readers": {
+        "x": 760,
+        "y": 60
+      },
+      "sales-page": {
+        "x": 60,
+        "y": 260
+      },
+      "order-form": {
+        "x": 60,
+        "y": 460
+      },
+      "order-bump": {
+        "x": 410,
+        "y": 468
+      },
+      "one-click": {
+        "x": 60,
+        "y": 660
+      },
+      "confirmation": {
+        "x": 60,
+        "y": 860
+      },
+      "newsletter": {
+        "x": 410,
+        "y": 895
+      },
+      "reader-portal": {
+        "x": 60,
+        "y": 1060,
+        "slots": {
+          "x": 77,
+          "y": 1190
+        }
+      },
+      "rb-optin": {
+        "x": 430,
+        "y": 1060
+      },
+      "email-sequence": {
+        "x": 60,
+        "y": 1300
+      }
+    },
+    "chips": {
+      "x": 80,
+      "y": 1390
+    },
+    "edges": [
+      {
+        "a": "ads:b@+145",
+        "b": "sales-page:t"
+      },
+      {
+        "a": "organic:b",
+        "b": "sales-page:t@0.75",
+        "via": [
+          [
+            555,
+            230
+          ],
+          [
+            277.5,
+            230
+          ]
+        ]
+      },
+      {
+        "a": "sales-page:b",
+        "b": "order-form:t"
+      },
+      {
+        "a": "order-form:r",
+        "b": "order-bump:l",
+        "dashed": true,
+        "arrow": false
+      },
+      {
+        "a": "order-form:b",
+        "b": "one-click:t"
+      },
+      {
+        "a": "one-click:b",
+        "b": "confirmation:t"
+      },
+      {
+        "a": "confirmation:b",
+        "b": "reader-portal:t"
+      },
+      {
+        "a": "confirmation:r",
+        "b": "newsletter:l"
+      },
+      {
+        "a": "reader-portal:r@0.4167",
+        "b": "rb-optin:l"
+      },
+      {
+        "a": "outside-readers:b",
+        "b": "rb-optin:r",
+        "via": [
+          [
+            905,
+            1130
+          ]
+        ]
+      },
+      {
+        "a": "reader-portal:b@0.3",
+        "b": "email-sequence:t@0.161"
+      },
+      {
+        "a": "email-sequence:t@0.9",
+        "b": "rb-optin:b@0.4",
+        "label": "sends readers back",
+        "lx": 556,
+        "ly": 1250
+      },
+      {
+        "a": "rb-optin:b@0.1",
+        "b": "reader-portal:b@0.79",
+        "via": [
+          [
+            459,
+            1262
+          ],
+          [
+            289,
+            1262
+          ]
+        ],
+        "label": "upgrade",
+        "lx": 300,
+        "ly": 1268
+      }
+    ]
+  }
 }

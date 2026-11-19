@@ -131,11 +131,51 @@
     return { status: c.status === 'review' ? 'review' : 'live', url: url, label: c.label, job: c.job, cta: c.cta, popup: c.popup };
   }
 
+  /* ------------------------ client layouts ----------------------- */
+
+  /* `layout.nodes` keyed by id: a known id moves (x, y, and w/h if given),
+     an unknown one is a new box and needs a label and a layer. `slots`
+     moves a container's slot strip. `edges` replaces the shared wires
+     outright, since a different shape needs different routes. `chips`
+     moves the email chip strip; `boardW` narrows the board. */
+  function addLayoutNodes(L) {
+    Object.keys(L.nodes || {}).forEach(function (id) {
+      if (NODE[id]) return;
+      var d = L.nodes[id];
+      var n = { id: id, layer: d.layer || 'traffic', label: d.label || id, job: d.job || '',
+                x: d.x, y: d.y, w: d.w || 290, h: d.h || 140, terse: !!d.terse, optional: true };
+      NODES.push(n);
+      NODE[id] = n;
+    });
+  }
+
+  function applyLayout(L) {
+    Object.keys(L.nodes || {}).forEach(function (id) {
+      var n = NODE[id], d = L.nodes[id];
+      ['x', 'y', 'w', 'h'].forEach(function (k) { if (d[k] != null) n[k] = d[k]; });
+      if (d.terse != null) n.terse = d.terse;
+      if (d.slots && n.slots) {
+        ['x', 'y', 'w', 'h'].forEach(function (k) { if (d.slots[k] != null) n.slots[k] = d.slots[k]; });
+      }
+    });
+    if (L.edges) EDGES = L.edges;
+    if (L.chips) ['x', 'y', 'w', 'h'].forEach(function (k) { if (L.chips[k] != null) CHIPS[k] = L.chips[k]; });
+    if (L.boardW) BOARD_W = L.boardW;
+  }
+
   /* --------------------------- render --------------------------- */
 
   function render(cfg, noticeText) {
     cfg = normalise(cfg);
     quietSoon = !!cfg.quietSoon;
+
+    /* A client whose funnel has its own shape can carry its own layout:
+       boxes the catalogue does not have, its own positions for the ones it
+       does, and its own wires. Every other client keeps the shared
+       geometry. Applied before anything is measured, so sizing, wires and
+       the board height all follow it. */
+    if (cfg.layout) addLayoutNodes(cfg.layout);
+
 
     var title = cfg.client ? cfg.client : 'Funnel Ecosystem Map';
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';
@@ -171,6 +211,7 @@
       n.w = size.w;
       n.h = size.h;
     });
+    if (cfg.layout) applyLayout(cfg.layout);
 
     /* Size the board to what this client actually has, so switching whole
        sections off shortens the page instead of leaving empty space. */
