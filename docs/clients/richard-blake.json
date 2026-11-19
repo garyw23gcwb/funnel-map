@@ -14,7 +14,7 @@
     "order-form": {
       "url": "https://cutoffbook.com/order",
       "status": "review",
-      "job": "Choose the ebook, the audiobook or both, only sold here. Page still shows the old products and pre-order wording."
+      "job": "Ebook, audiobook or both. The audiobook is exclusive, only sold here. Page still shows the old products and pre-order wording."
     },
     "order-bump": {
       "off": true
@@ -35,7 +35,7 @@
     },
     "email-sequence": {
       "status": "soon",
-      "job": "Ten emails that build the relationship and send readers back to Video 1."
+      "job": "Ten emails pointing back to Video 1."
     },
     "plan-page": {
       "off": true
@@ -214,21 +214,21 @@
       },
       "reader-portal": {
         "x": 765,
-        "y": 1086,
+        "y": 756,
         "slots": {
           "x": 782,
-          "y": 1216
+          "y": 886
         }
       },
       "rb-optin": {
         "x": 1105,
-        "y": 1086
+        "y": 756
       },
       "email-sequence": {
         "x": 765,
-        "y": 770,
-        "w": 500,
-        "h": 160
+        "y": 1080,
+        "w": 290,
+        "h": 200
       },
       "welcome-email": {
         "x": 565,
@@ -242,7 +242,7 @@
       },
       "sg-welcome": {
         "x": 1056,
-        "y": 1290,
+        "y": 950,
         "w": 150,
         "h": 70,
         "terse": true,
@@ -253,9 +253,9 @@
     },
     "chips": {
       "x": 785,
-      "y": 842,
-      "w": 460,
-      "h": 28,
+      "y": 1160,
+      "w": 230,
+      "h": 62,
       "count": 10
     },
     "edges": [
@@ -314,20 +314,6 @@
       },
       {
         "a": "welcome-email:r",
-        "b": "email-sequence:l",
-        "via": [
-          [
-            740,
-            1010
-          ],
-          [
-            740,
-            850
-          ]
-        ]
-      },
-      {
-        "a": "welcome-email:r",
         "b": "reader-portal:l",
         "via": [
           [
@@ -336,7 +322,21 @@
           ],
           [
             740,
-            1170
+            840
+          ]
+        ]
+      },
+      {
+        "a": "welcome-email:r",
+        "b": "email-sequence:l",
+        "via": [
+          [
+            740,
+            1010
+          ],
+          [
+            740,
+            1180
           ]
         ]
       },
@@ -345,8 +345,14 @@
         "b": "rb-optin:l"
       },
       {
-        "a": "email-sequence:b@0.8",
-        "b": "rb-optin:t@0.226"
+        "a": "email-sequence:r",
+        "b": "rb-optin:b@0.5",
+        "via": [
+          [
+            1237.5,
+            1180
+          ]
+        ]
       },
       {
         "a": "outside-readers:b",
@@ -357,7 +363,7 @@
         "b": "sg-welcome:t",
         "label": "upgrade",
         "lx": 1141,
-        "ly": 1246
+        "ly": 912
       },
       {
         "a": "sg-welcome:l",
@@ -365,7 +371,7 @@
         "via": [
           [
             994,
-            1325
+            985
           ]
         ]
       }
