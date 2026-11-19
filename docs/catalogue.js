@@ -69,6 +69,14 @@ window.FUNNEL_CATALOGUE = (function () {
       job: 'A second upsell, taken or declined the same way.' },
     { id: 'confirmation', layer: 'book', label: 'Order Confirmation', x: D, y: 318, w: CW, h: CH,
       job: 'Confirms the order and points the buyer to the reader portal.' },
+    /* A second destination out of the confirmation page: the buyer is also
+       added to the author's own newsletter. Sits on the portal's row under
+       the confirmation card, so its arrow shares the confirmation drop and
+       carries straight on where the portal arrow turns left. Optional, and
+       it shares the row's right end with `rb-thanks` and `free-tool`: no
+       map has those and this together yet (first used by Richard Blake). */
+    { id: 'newsletter', layer: 'delivery', label: 'Newsletter', x: D, y: 802, w: CW, h: CH, optional: true,
+      job: 'Every buyer is added to the author\'s newsletter.' },
 
     /* A container, and the book itself as far as this map is concerned: the
        formats are slots inside this card rather than a node of their own.
@@ -171,6 +179,7 @@ window.FUNNEL_CATALOGUE = (function () {
     { a: 'one-click-2:r',      b: 'confirmation:b@0.5', via: [[1195, 560]] },
 
     { a: 'confirmation:b@0.35', b: 'reader-portal:t', via: [[1151, 712], [370, 712]] },
+    { a: 'confirmation:b@0.35', b: 'newsletter:t@0.35' },
     { a: 'reader-portal:r@0.4167', b: 'scorecard:l', label: 'in-book CTA', lx: 600, ly: 846 },
 
     /* The book's own run: opt in, get the bonus, use the tool. It leaves the

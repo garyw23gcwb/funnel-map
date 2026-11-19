@@ -92,6 +92,11 @@
       "url": "https://readers.cutoffbook.com",
       "label": "Solid Ground",
       "title": "Solid Ground, the six-week course, unlocked for one-click buyers"
+    },
+    "newsletter": {
+      "status": "soon",
+      "label": "Beehiiv Newsletter",
+      "job": "Every buyer is also added to Richard's Beehiiv newsletter."
     }
   },
   "emails": [
