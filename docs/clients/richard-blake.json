@@ -32,7 +32,8 @@
     },
     "reader-portal": {
       "url": "https://readers.cutoffbook.com",
-      "status": "live"
+      "status": "live",
+      "job": "One login for the ebook, the exclusive audiobook and Solid Ground."
     },
     "email-sequence": {
       "status": "soon",
@@ -86,7 +87,8 @@
     "file-audio": {
       "status": "live",
       "label": "Audiobook",
-      "title": "The audiobook"
+      "title": "The audiobook",
+      "url": "https://readers.cutoffbook.com"
     },
     "file-bump": {
       "status": "live",
@@ -186,9 +188,9 @@
       },
       "outside-readers": {
         "x": 1545,
-        "y": 95,
+        "y": 74,
         "w": 150,
-        "h": 70,
+        "h": 112,
         "terse": true
       },
       "sales-page": {
@@ -213,7 +215,8 @@
       },
       "newsletter": {
         "x": 1285,
-        "y": 740
+        "y": 740,
+        "h": 96
       },
       "reader-portal": {
         "x": 310,
@@ -237,19 +240,19 @@
       },
       "welcome-email": {
         "x": 60,
-        "y": 975,
+        "y": 962,
         "w": 150,
-        "h": 70,
+        "h": 96,
         "terse": true,
         "layer": "followup",
         "label": "Welcome Email",
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
-        "x": 1285,
+        "x": 1265,
         "y": 1110,
-        "w": 150,
-        "h": 70,
+        "w": 190,
+        "h": 96,
         "terse": true,
         "layer": "followup",
         "label": "Course Welcome Email",
@@ -267,9 +270,9 @@
       },
       "newsletter-2": {
         "x": 1565,
-        "y": 975,
+        "y": 962,
         "w": 150,
-        "h": 70,
+        "h": 96,
         "terse": true,
         "layer": "delivery",
         "label": "Beehiiv Newsletter",
@@ -429,7 +432,7 @@
         "b": "sg-welcome:t"
       },
       {
-        "a": "sg-welcome:l@0.3",
+        "a": "sg-welcome:l@0.21875",
         "b": "reader-portal:r@0.6857"
       },
       {
