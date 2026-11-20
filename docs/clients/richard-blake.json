@@ -444,5 +444,53 @@
       }
     ],
     "boardH": 1240
-  }
+  },
+  "addresses": [
+    {
+      "names": [
+        "cutoffbook.com",
+        "cutoffbook.com/book"
+      ],
+      "role": "Book sales page"
+    },
+    {
+      "name": "cutoffbook.com/order",
+      "role": "Order form: ebook $9.99, audiobook $19 or both $21"
+    },
+    {
+      "name": "cutoffbook.com/special-offer",
+      "role": "Solid Ground upgrade, the one-click offer at $147"
+    },
+    {
+      "name": "cutoffbook.com/confirmation",
+      "role": "Order confirmation"
+    },
+    {
+      "name": "readers.cutoffbook.com",
+      "role": "Reader portal: the ebook, the audiobook and the Solid Ground course"
+    },
+    {
+      "name": "cutoffbook.com/bonus",
+      "role": "Solid Ground: Video 1, free for Cut Off readers, with the $147 upgrade"
+    },
+    {
+      "name": "cutoffbook.com/course-confirmation",
+      "role": "Solid Ground confirmation"
+    },
+    {
+      "names": [
+        "richardlblake.com",
+        "richardlblake.beehiiv.com"
+      ],
+      "role": "Richard's site and Beehiiv newsletter"
+    },
+    {
+      "name": "amazon.com/dp/1066725004",
+      "role": "Cut Off paperback on Amazon"
+    },
+    {
+      "name": "instagram.com/the_breath_geek",
+      "role": "Richard's Instagram"
+    }
+  ]
 }

@@ -172,6 +172,35 @@
 
   /* --------------------------- render --------------------------- */
 
+  /* Addresses under the board: the client's page addresses and what each
+     one is for, as on Gary's own map. Optional; a client file without an
+     "addresses" list draws nothing. Several addresses with one job share
+     a row (names: [...]). */
+  function renderAddresses(cfg) {
+    var host = $('addrs');
+    if (!host) return;
+    host.innerHTML = '';
+    var list = cfg.addresses || [];
+    if (!list.length) return;
+    var sec = el('section', 'sec');
+    var k = el('p', 'seckick'); k.textContent = 'Addresses'; sec.appendChild(k);
+    var h = el('h2', 'sech2'); h.textContent = cfg.addressesTitle || 'Pages in use'; sec.appendChild(h);
+    var wrap = el('div', 'tablewrap'), t = el('table'), thead = el('thead'), hr = el('tr');
+    ['Address', 'What it is for'].forEach(function (x) { var th = el('th'); th.textContent = x; hr.appendChild(th); });
+    thead.appendChild(hr); t.appendChild(thead);
+    var body = el('tbody');
+    list.forEach(function (A) {
+      var tr = el('tr'), a = el('td', 'first'), r = el('td');
+      (A.names || [A.name]).forEach(function (nm, i) {
+        if (i) a.appendChild(el('br'));
+        a.appendChild(document.createTextNode(nm));
+      });
+      r.textContent = A.role || '';
+      tr.appendChild(a); tr.appendChild(r); body.appendChild(tr);
+    });
+    t.appendChild(body); wrap.appendChild(t); sec.appendChild(wrap); host.appendChild(sec);
+  }
+
   function render(cfg, noticeText) {
     cfg = normalise(cfg);
     quietSoon = !!cfg.quietSoon;
@@ -182,6 +211,7 @@
        geometry. Applied before anything is measured, so sizing, wires and
        the board height all follow it. */
     if (cfg.layout) addLayoutNodes(cfg.layout);
+    renderAddresses(cfg);
 
     var title = cfg.client ? cfg.client : 'Funnel Ecosystem Map';
     document.title = cfg.client ? cfg.client + ' | Funnel Ecosystem Map' : 'Funnel Ecosystem Map';

@@ -326,6 +326,28 @@
     .shell { display: none; }
     .stack { display: block; }
   }
+  /* Addresses: an optional table under the board listing the client's page
+     addresses and what each is for. Only drawn when the client file has
+     an "addresses" list. */
+  .addrs { width: min(1400px, 100%); margin: 0 auto; }
+  .addrs .sec { margin-top: 56px; }
+  .addrs .seckick { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin: 0 0 8px; }
+  .addrs .sech2 { font-family: var(--serif); font-weight: 300; font-size: 34px; line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
+  .addrs .tablewrap { overflow-x: auto; width: fit-content; max-width: 100%; border: 1px solid var(--line); border-radius: 3px; background: rgba(244, 246, 249, 0.022); }
+  .addrs table { border-collapse: collapse; font-size: 14px; }
+  .addrs th { text-align: left; padding: 11px 14px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .addrs td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; color: var(--ink); }
+  .addrs tr:last-child td { border-bottom: 0; }
+  .addrs td.first { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: var(--teal); white-space: nowrap; line-height: 1.7; }
+  @media (max-width: 620px) {
+    .addrs .sech2 { font-size: 26px; }
+    .addrs thead { display: none; }
+    .addrs table, .addrs tbody, .addrs tr, .addrs td { display: block; }
+    .addrs tr { border-bottom: 1px solid var(--line); padding: 10px 14px; }
+    .addrs tr:last-child { border-bottom: 0; }
+    .addrs td { border-bottom: 0; padding: 0; }
+    .addrs td.first { white-space: normal; overflow-wrap: anywhere; margin-bottom: 2px; }
+  }
   @media (max-width: 1000px) { .wrap { padding: 32px 28px 56px; } }
   @media (max-width: 620px) {
     .wrap { padding: 24px 18px 40px; }
@@ -384,6 +406,7 @@
   </div>
 
   <div class="stack" id="stack"></div>
+  <div class="addrs" id="addrs"></div>
 </div>
 
 <div class="veil" id="veil" role="dialog" aria-modal="true" aria-labelledby="mtitle" hidden>
