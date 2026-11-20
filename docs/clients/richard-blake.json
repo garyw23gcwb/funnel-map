@@ -116,12 +116,12 @@
       "cta": "Open Instagram"
     },
     "welcome-email": {
-      "status": "soon",
+      "status": "theirs",
       "label": "Welcome Email",
       "job": "Sent to every buyer straight after the order, with their reader portal login."
     },
     "sg-welcome": {
-      "status": "soon",
+      "status": "theirs",
       "label": "Course Welcome Email"
     },
     "sg-confirm": {
@@ -478,19 +478,8 @@
       "role": "Solid Ground confirmation"
     },
     {
-      "names": [
-        "richardlblake.com",
-        "richardlblake.beehiiv.com"
-      ],
-      "role": "Richard's site and Beehiiv newsletter"
-    },
-    {
       "name": "amazon.com/dp/1066725004",
       "role": "Cut Off paperback on Amazon"
-    },
-    {
-      "name": "instagram.com/the_breath_geek",
-      "role": "Richard's Instagram"
     }
   ]
 }
