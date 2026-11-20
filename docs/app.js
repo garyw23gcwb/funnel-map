@@ -276,6 +276,9 @@
     var states = {};
     Object.keys(shown).forEach(function (id) { states[shown[id].status] = true; });
     if (quietSoon) states.soon = false;
+    /* A client file can leave an entry out of the key, for a style used on
+       its map with a meaning the key's wording does not fit. */
+    (cfg.hideKey || []).forEach(function (s) { states[s] = false; });
     [].forEach.call($('legend').children, function (sp) {
       sp.classList.toggle('on', !!states[sp.getAttribute('data-state')]);
     });

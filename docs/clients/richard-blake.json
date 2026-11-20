@@ -482,5 +482,8 @@
       "role": "Cut Off paperback on Amazon"
     }
   ],
-  "emailPages": true
+  "emailPages": true,
+  "hideKey": [
+    "theirs"
+  ]
 }
