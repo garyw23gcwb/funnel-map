@@ -771,6 +771,21 @@
     var t = el('div', 'mtitle'); t.id = 'mtitle'; t.textContent = e.subject; head.appendChild(t);
     if (e.preview) { var s = el('div', 'msub'); s.textContent = e.preview; head.appendChild(s); }
     c.appendChild(head);
+    /* A designed email (the client file gives its HTML file) shows as it
+       will arrive, in a frame sized to its full height. Otherwise, the
+       copy as paragraphs. */
+    if (e.html) {
+      var wrap = el('div', 'mframe');
+      var f = document.createElement('iframe');
+      f.title = 'Email ' + e.n + ': ' + e.subject;
+      f.src = e.html;
+      f.addEventListener('load', function () {
+        try { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; } catch (err) { f.style.height = '1600px'; }
+      });
+      wrap.appendChild(f);
+      c.appendChild(wrap);
+      return;
+    }
     var body = el('div', 'mbody');
     popParas(body, e.body);
     c.appendChild(body);

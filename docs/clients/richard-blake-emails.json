@@ -1,0 +1,63 @@
+{
+  "client": "Richard L. Blake",
+  "from": "Richard L. Blake",
+  "source": "Clients/richard-blake/copy/deliver/04_email_sequence.md, built by Clients/richard-blake/emails/build.py",
+  "emails": [
+    {
+      "n": 1,
+      "day": 1,
+      "subject": "Where did those words come from?",
+      "preview": "The question nobody tells parents to ask.",
+      "html": "clients/emails/richard-blake/email-1.html"
+    },
+    {
+      "n": 2,
+      "day": 2,
+      "subject": "Most estrangements end",
+      "preview": "The figure that rarely makes headlines.",
+      "html": "clients/emails/richard-blake/email-2.html"
+    },
+    {
+      "n": 3,
+      "day": 4,
+      "subject": "Why you keep checking",
+      "preview": "It's what a nervous system does.",
+      "html": "clients/emails/richard-blake/email-3.html"
+    },
+    {
+      "n": 4,
+      "day": 6,
+      "subject": "Both things can be true",
+      "preview": "The more complicated account.",
+      "html": "clients/emails/richard-blake/email-4.html"
+    },
+    {
+      "n": 5,
+      "day": 8,
+      "subject": "Why I nearly didn't make this",
+      "preview": "\"We don't care. Please just try.\"",
+      "html": "clients/emails/richard-blake/email-5.html"
+    },
+    {
+      "n": 6,
+      "day": 11,
+      "subject": "There is no ceremony",
+      "preview": "Why this grief is so hard to carry.",
+      "html": "clients/emails/richard-blake/email-6.html"
+    },
+    {
+      "n": 7,
+      "day": 14,
+      "subject": "Is Solid Ground for you?",
+      "preview": "Three questions, and an honest answer.",
+      "html": "clients/emails/richard-blake/email-7.html"
+    },
+    {
+      "n": 8,
+      "day": 18,
+      "subject": "Keep the door open",
+      "preview": "Without standing with your face pressed against it.",
+      "html": "clients/emails/richard-blake/email-8.html"
+    }
+  ]
+}
