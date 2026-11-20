@@ -7,14 +7,15 @@
       "status": "soon"
     },
     "sales-page": {
-      "url": "https://cutoffbook.com/book",
+      "url": "https://cutoffbook.com/",
       "status": "live",
-      "label": "Book Sales Page"
+      "label": "Book Sales Page",
+      "job": "Sells the ebook and the exclusive audiobook. Every button goes to the order form."
     },
     "order-form": {
       "url": "https://cutoffbook.com/order",
-      "status": "review",
-      "job": "Ebook, audiobook or both. The audiobook is exclusive, only sold here. Page still shows the old products and pre-order wording."
+      "status": "live",
+      "job": "Bundle $21 (preselected, best deal), audiobook $19 or ebook $9.99. The audiobook is only sold here."
     },
     "order-bump": {
       "off": true
