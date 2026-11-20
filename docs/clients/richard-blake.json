@@ -99,9 +99,7 @@
     "newsletter": {
       "status": "live",
       "label": "Beehiiv Newsletter",
-      "job": "Every buyer is also added to Richard's Beehiiv newsletter.",
-      "url": "https://www.richardlblake.com",
-      "cta": "Open site"
+      "job": "Every buyer is also added to Richard's Beehiiv newsletter."
     },
     "outside-readers": {
       "status": "live",
@@ -134,9 +132,7 @@
     },
     "newsletter-2": {
       "status": "live",
-      "label": "Beehiiv Newsletter",
-      "url": "https://www.richardlblake.com",
-      "cta": "Open site"
+      "label": "Beehiiv Newsletter"
     }
   },
   "emails": [
