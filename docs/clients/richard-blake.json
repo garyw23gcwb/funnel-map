@@ -117,12 +117,12 @@
     },
     "welcome-email": {
       "status": "theirs",
-      "label": "Welcome Email",
+      "label": "Portal Welcome Email",
       "job": "Sent to every buyer straight after the order, with their reader portal login."
     },
     "sg-welcome": {
       "status": "theirs",
-      "label": "Course Welcome Email"
+      "label": "Portal Welcome Email"
     },
     "sg-confirm": {
       "status": "live",
@@ -239,13 +239,13 @@
         "h": 140
       },
       "welcome-email": {
-        "x": 60,
+        "x": 40,
         "y": 962,
-        "w": 150,
+        "w": 190,
         "h": 96,
         "terse": true,
         "layer": "followup",
-        "label": "Welcome Email",
+        "label": "Portal Welcome Email",
         "job": "Sent to every buyer straight after the order."
       },
       "sg-welcome": {
@@ -255,7 +255,7 @@
         "h": 96,
         "terse": true,
         "layer": "followup",
-        "label": "Course Welcome Email",
+        "label": "Portal Welcome Email",
         "job": "Sent when a reader upgrades from Video 1."
       },
       "sg-confirm": {
